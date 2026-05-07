@@ -1,1 +1,12 @@
-{"runs": []}
+{
+  "runs": [
+    {
+      "timestamp": "2026-05-07T19:20:50.767982+00:00",
+      "articles_matched": 0,
+      "articles": [],
+      "cases_added": [],
+      "cases_updated": [],
+      "error": null
+    }
+  ]
+}

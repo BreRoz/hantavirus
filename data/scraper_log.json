@@ -7,6 +7,14 @@
       "cases_added": [],
       "cases_updated": [],
       "error": null
+    },
+    {
+      "timestamp": "2026-05-07T20:17:00.280930+00:00",
+      "articles_matched": 0,
+      "articles": [],
+      "cases_added": [],
+      "cases_updated": [],
+      "error": "anthropic package not installed"
     }
   ]
 }

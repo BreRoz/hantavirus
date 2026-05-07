@@ -576,6 +576,19 @@ body {
 .gen-dot { width: 8px; height: 8px; border-radius: 50%; }
 
 /* ---------- Tab 3: Exposure Map ---------- */
+.exposure-pending-banner {
+  display: flex; align-items: flex-start; gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: rgba(245,158,11,0.08);
+  border-bottom: 1px solid rgba(245,158,11,0.25);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  flex-shrink: 0;
+}
+.exposure-pending-banner strong { color: rgba(245,158,11,0.9); }
+.exposure-pending-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
 .exposure-layout {
   flex: 1; display: grid; grid-template-columns: 1fr 1fr;
   gap: 0; min-height: 0; overflow: hidden;

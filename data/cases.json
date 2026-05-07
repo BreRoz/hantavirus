@@ -765,6 +765,35 @@
       "reporter": "AP / Isabel Debre"
     },
     {
+      "id": "PAR002",
+      "name": "Bariloche Male Patient (Argentina Domestic, 2026)",
+      "age": null,
+      "sex": "male",
+      "nationality": "Argentine",
+      "status": "confirmed",
+      "generation": 0,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-06",
+      "incubation_start": null,
+      "location": {
+        "city": "Bariloche",
+        "state": "Río Negro Province",
+        "country": "Argentina",
+        "venue": "Hospital",
+        "lat": -41.1335,
+        "lng": -71.3103
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://apnews.com/article/hantavirus-argentina-cruise-ship-climate-change",
+      "source_notes": "AP / Isabel Debre, May 7 2026 — Río Negro Province government announcement",
+      "clinical_notes": "Male patient. First hantavirus case of 2026 recorded in Bariloche, Patagonia's most popular mountain resort town and northern entry point. Río Negro Province government announced the case on Tuesday May 6; patient was hospitalised on Wednesday May 6. Andes virus (rodent-borne). Part of Argentina's elevated 2025–26 season — 101 hantavirus infections nationally since June 2025, roughly double the prior-year caseload. UNRELATED to MV Hondius cruise ship cluster.",
+      "reporter": "Río Negro Province Government / AP"
+    },
+    {
       "id": "PGRP01",
       "name": "Saint Helena Departures \u2014 Untraced (30\u201340 passengers)",
       "age": null,

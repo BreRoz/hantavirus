@@ -11,7 +11,7 @@
     gtag('js', new Date());
     gtag('config', 'G-BREGB47YMK');
   </script>
-  <title>OUTBREAK TRACKER — MV Atlantic Star Surveillance</title>
+  <title>OUTBREAK TRACKER — MV Hondius Hantavirus Surveillance</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@
       <div class="header-brand-icon">📡</div>
       <div>
         <div class="header-brand-title">OUTBREAK TRACKER</div>
-        <div class="header-brand-sub">MV Atlantic Star · Surveillance System v2.0</div>
+        <div class="header-brand-sub">MV Hondius · Hantavirus Outbreak Tracker</div>
       </div>
     </div>
 
@@ -78,7 +78,6 @@
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         Simple View
       </button>
-      <button class="disclaimer-info-btn" onclick="DisclaimerSystem.openModal()">⚠ DATA DISCLAIMER</button>
       <input type="file" id="csv-file-input" accept=".csv" style="display:none">
     </div>
   </header>
@@ -211,11 +210,21 @@
 
     <!-- Tab 3: Exposure Map -->
     <div class="tab-pane" id="tab-exposure">
+      <div class="exposure-pending-banner">
+        <span class="exposure-pending-icon">🚢</span>
+        <div>
+          <strong>MANIFEST PENDING</strong> — MV Hondius is en route to Tenerife, Canary Islands.
+          Full passenger &amp; cabin manifest expected upon disembarkation
+          <strong>~May 9–10, 2026</strong>. Deck schematic will be populated once official
+          assignment data is released. Exposure events shown below are based on
+          currently confirmed crew contacts only.
+        </div>
+      </div>
       <div class="exposure-layout">
         <!-- Left: Ship deck schematic -->
         <div class="exposure-deck-panel">
           <div class="panel-header">
-            <span class="panel-title">MV Atlantic Star — Deck Schematic</span>
+            <span class="panel-title">MV Hondius — Deck Schematic</span>
             <div class="panel-actions">
               <span class="panel-badge" id="exposure-count-badge">— events</span>
             </div>
@@ -441,10 +450,6 @@
       <button class="btn btn--ghost btn--sm" id="ctrl-reset">Reset</button>
     </div>
     <div class="controls-spacer"></div>
-    <div class="export-group">
-      <button class="btn btn--ghost btn--sm" id="btn-export-cases">↓ Cases CSV</button>
-      <button class="btn btn--ghost btn--sm" id="btn-export-chain">↓ Chain JSON</button>
-    </div>
   </div>
 
 </div><!-- .app-layout -->

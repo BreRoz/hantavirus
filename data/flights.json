@@ -1,0 +1,42 @@
+{
+  "flights": [
+    {
+      "id": "FL001",
+      "flight_number": "4Z 301",
+      "airline": "Airlink",
+      "aircraft_type": "Embraer E190",
+      "layout": "2-2",
+      "seat_columns": ["A", "B", "C", "D"],
+      "aisle_after": [2],
+      "date": "2026-04-25",
+      "departure_time": "2026-04-25T08:00:00",
+      "arrival_time": "2026-04-25T12:00:00",
+      "duration_minutes": 240,
+      "departure_airport": "SHN",
+      "departure_city": "Saint Helena",
+      "departure_country": "Saint Helena",
+      "arrival_airport": "JNB",
+      "arrival_city": "Johannesburg",
+      "arrival_country": "South Africa",
+      "total_rows": 24,
+      "total_passengers": 82,
+      "total_crew": 6,
+      "risk_zone_rows": 3,
+      "status": "contact_tracing",
+      "source_url": "https://www.manilatimes.net/2026/05/06/world/who-tracing-over-80-people-on-flight-taken-by-hantavirus-victim/2336441",
+      "notes": "WHO is actively tracing all 82 passengers and 6 crew aboard this flight. Index case (PEDB43) boarded at Saint Helena with gastrointestinal symptoms on April 24; condition deteriorated in-flight and she died upon arrival at the Johannesburg ER, testing positive for hantavirus. South African authorities instructed Airlink to notify all passengers to contact the health department.",
+      "manifest": [
+        {
+          "passenger_id": "PEDB43",
+          "type": "case",
+          "name": "Dutch Female Passenger (Index Case)",
+          "seat": null,
+          "infectious": true,
+          "nationality": "Dutch",
+          "status": "deceased",
+          "notes": "Confirmed hantavirus. Boarded SHN symptomatic; deteriorated in-flight; died upon arrival at JNB ER. Seat unconfirmed."
+        }
+      ]
+    }
+  ]
+}

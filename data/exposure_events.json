@@ -1,0 +1,58 @@
+{
+  "exposure_events": [
+    {
+      "id": "EV001",
+      "type": "cabin",
+      "label": "Cabin 406 — Shared Accommodation",
+      "location": "MV Hondius · Deck 4, Cabin 406",
+      "deck": 4,
+      "area": "Cabin",
+      "zone": "starboard",
+      "cabin": "406",
+      "date_start": "2026-04-01",
+      "date_end": "2026-04-11",
+      "duration_days": 10,
+      "duration_hours_daily": 12,
+      "transmission_risk": "intimate",
+      "risk_score": 0.95,
+      "participants": ["PEDB43", "P002"],
+      "notes": "Married couple sharing a 12 m² cabin for the full voyage. Continuous shared-air exposure. Index case (PEDB43) onset approximately April 6; husband (P002) onset April 8. Highest-risk exposure category."
+    },
+    {
+      "id": "EV002",
+      "type": "medical",
+      "label": "Medical Assistance — Cabin 406 / Medical Bay",
+      "location": "MV Hondius · Deck 4, Cabin 406 and Medical Bay",
+      "deck": 4,
+      "area": "Cabin / Medical Bay",
+      "zone": "starboard",
+      "cabin": "406",
+      "date_start": "2026-04-06",
+      "date_end": "2026-04-10",
+      "duration_days": 4,
+      "duration_hours_daily": 6,
+      "transmission_risk": "prolonged",
+      "risk_score": 0.80,
+      "participants": ["PEDB43", "P003"],
+      "notes": "British crew member (P003) provided repeated close-contact care to symptomatic index case (PEDB43) without adequate PPE before shipboard physician was aware of severity. Onset 9 days post-exposure — within expected 7–14 day hantavirus incubation window."
+    },
+    {
+      "id": "EV003",
+      "type": "shift",
+      "label": "Crew Deck 2 — Shared Workspace & Ventilation",
+      "location": "MV Hondius · Deck 2, Crew Quarters / Engine Room",
+      "deck": 2,
+      "area": "Crew Area",
+      "zone": "midship",
+      "cabin": null,
+      "date_start": "2026-04-12",
+      "date_end": "2026-04-16",
+      "duration_days": 4,
+      "duration_hours_daily": 8,
+      "transmission_risk": "prolonged",
+      "risk_score": 0.55,
+      "participants": ["P003", "P004"],
+      "notes": "Dutch crew member (P004) shared enclosed lower-deck workspaces and ventilation zones with P003 during P003's prodromal phase. P004 onset April 18 — 6 days after shared-workspace exposure began. Serology pending."
+    }
+  ]
+}

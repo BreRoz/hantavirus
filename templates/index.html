@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OUTBREAK TRACKER — MV Atlantic Star Surveillance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <!-- THEME: swap this line to change visual theme -->
+  <link rel="stylesheet" href="/static/css/themes/retro80s.css" id="active-theme">
+</head>
+<body>
+
+<!-- ===== DISCLAIMER BANNER ===== -->
+<div class="disclaimer-banner" id="disclaimer-banner">
+  <span class="disclaimer-banner-icon">⚠</span>
+  <div class="disclaimer-banner-text">
+    <strong>ALERT:</strong> UNOFFICIAL TRACKER — NOT AN OFFICIAL PUBLIC HEALTH RESOURCE. Data is manually compiled from public sources and may be incomplete or inaccurate.
+  </div>
+  <button class="disclaimer-banner-btn" onclick="DisclaimerSystem.openModal()">ℹ FULL DISCLAIMER</button>
+  <button class="disclaimer-banner-close" onclick="DisclaimerSystem.dismissBanner()" title="Dismiss">✕</button>
+</div>
+
+<div class="app-layout">
+
+  <!-- ===== HEADER ===== -->
+  <header class="app-header">
+    <div class="header-brand">
+      <div class="header-brand-icon">📡</div>
+      <div>
+        <div class="header-brand-title">OUTBREAK TRACKER</div>
+        <div class="header-brand-sub">MV Atlantic Star · Surveillance System v2.0</div>
+      </div>
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="header-stats">
+      <div class="stat-chip stat-chip--total">
+        <span>Total</span><span class="stat-chip-count" id="stat-total">—</span>
+      </div>
+      <div class="stat-chip stat-chip--confirmed">
+        <span>Confirmed</span><span class="stat-chip-count" id="stat-confirmed">—</span>
+      </div>
+      <div class="stat-chip stat-chip--suspected">
+        <span>Suspected</span><span class="stat-chip-count" id="stat-suspected">—</span>
+      </div>
+      <div class="stat-chip stat-chip--recovered">
+        <span>Recovered</span><span class="stat-chip-count" id="stat-recovered">—</span>
+      </div>
+      <div class="stat-chip stat-chip--deceased">
+        <span>Deaths</span><span class="stat-chip-count" id="stat-deceased">—</span>
+      </div>
+      <div class="stat-chip stat-chip--total" style="color:var(--color-gen-0)">
+        <span>Gen 0</span><span class="stat-chip-count" id="stat-gen-0">—</span>
+      </div>
+      <div class="stat-chip stat-chip--total" style="color:var(--color-gen-1)">
+        <span>Gen 1</span><span class="stat-chip-count" id="stat-gen-1">—</span>
+      </div>
+      <div class="stat-chip stat-chip--total" style="color:var(--color-gen-2)">
+        <span>Gen 2+</span><span class="stat-chip-count" id="stat-gen-2plus">—</span>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="disclaimer-info-btn" onclick="DisclaimerSystem.openModal()">⚠ DATA DISCLAIMER</button>
+      <button class="btn btn--ghost btn--sm" id="btn-import-csv">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        Import
+      </button>
+      <input type="file" id="csv-file-input" accept=".csv">
+    </div>
+  </header>
+
+  <!-- ===== TAB NAV ===== -->
+  <nav class="tab-nav" role="tablist">
+    <button class="tab-btn active" data-tab="overview" role="tab">
+      <span class="tab-icon">🗺</span> Overview
+    </button>
+    <button class="tab-btn" data-tab="chains" role="tab">
+      <span class="tab-icon">🔗</span> Transmission Chains
+      <span class="tab-badge" id="tab-badge-chains">—</span>
+    </button>
+    <button class="tab-btn" data-tab="exposure" role="tab">
+      <span class="tab-icon">🚢</span> Exposure Map
+      <span class="tab-badge" id="tab-badge-exposure">—</span>
+    </button>
+    <button class="tab-btn" data-tab="flights" role="tab">
+      <span class="tab-icon">✈</span> Flight Risk
+      <span class="tab-badge" id="tab-badge-flights">—</span>
+    </button>
+    <button class="tab-btn" data-tab="timeline" role="tab">
+      <span class="tab-icon">📅</span> Timeline
+    </button>
+  </nav>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="text" id="sidebar-search" class="search-input" placeholder="Search ID, name, city…" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Status</div>
+      <div class="filter-pills">
+        <label class="filter-pill filter-pill--confirmed"><input type="checkbox" value="confirmed" checked> Confirmed</label>
+        <label class="filter-pill filter-pill--suspected"><input type="checkbox" value="suspected" checked> Suspected</label>
+        <label class="filter-pill filter-pill--recovered"><input type="checkbox" value="recovered" checked> Recovered</label>
+        <label class="filter-pill filter-pill--all"><input type="checkbox" value="deceased" checked> Deceased</label>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Generation</div>
+      <div class="filter-pills" id="gen-filter-pills">
+        <label class="filter-pill filter-pill--gen-0"><input type="checkbox" value="0" checked> G0</label>
+        <label class="filter-pill filter-pill--gen-1"><input type="checkbox" value="1" checked> G1</label>
+        <label class="filter-pill filter-pill--gen-2"><input type="checkbox" value="2" checked> G2</label>
+        <label class="filter-pill filter-pill--gen-3"><input type="checkbox" value="3" checked> G3+</label>
+      </div>
+    </div>
+
+    <div class="sidebar-section" style="padding-bottom:var(--space-2)">
+      <div class="sidebar-label">Cases <span id="sidebar-count" style="font-weight:400;text-transform:none;letter-spacing:0"></span></div>
+    </div>
+    <div class="case-list" id="case-list"></div>
+
+    <div class="sidebar-footer">
+      <button class="btn btn--primary btn--sm" id="btn-add-case">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        Add Case
+      </button>
+    </div>
+  </aside>
+
+  <!-- ===== TAB CONTENT ===== -->
+  <div class="tab-content">
+
+    <!-- Tab 1: Overview Map -->
+    <div class="tab-pane active" id="tab-overview">
+      <div class="overview-layout">
+        <div class="panel">
+          <div class="panel-header">
+            <span class="panel-title">Geographic Distribution</span>
+            <div class="map-legend">
+              <div class="legend-item"><span class="legend-dot" style="background:var(--color-confirmed)"></span>Confirmed</div>
+              <div class="legend-item"><span class="legend-dot" style="background:var(--color-suspected)"></span>Suspected</div>
+              <div class="legend-item"><span class="legend-dot" style="background:var(--color-recovered)"></span>Recovered</div>
+            </div>
+            <div class="panel-actions">
+              <span class="panel-badge" id="map-case-count">— cases</span>
+              <button class="btn btn--ghost btn--sm" id="btn-map-fit" title="Fit all markers">⊡ Fit</button>
+            </div>
+          </div>
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Transmission Chains -->
+    <div class="tab-pane" id="tab-chains">
+      <div class="chain-layout">
+        <div class="chain-toolbar">
+          <span class="chain-toolbar-label">Layout</span>
+          <div class="btn-group">
+            <button class="btn btn--ghost btn--sm active" id="layout-force" title="Force-directed">Force</button>
+            <button class="btn btn--ghost btn--sm" id="layout-timeline" title="Timeline (left=early, right=late)">Timeline</button>
+          </div>
+
+          <span class="chain-toolbar-label" style="margin-left:var(--space-2)">Show</span>
+          <label class="filter-pill filter-pill--all" style="font-size:var(--text-xs)">
+            <input type="checkbox" id="show-exposure-nodes" checked> Exposure events
+          </label>
+          <label class="filter-pill filter-pill--all" style="font-size:var(--text-xs)">
+            <input type="checkbox" id="show-flight-nodes" checked> Flights
+          </label>
+
+          <div style="margin-left:auto;display:flex;gap:var(--space-3);align-items:center">
+            <!-- Generation legend -->
+            <div class="gen-legend">
+              <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-gen-0)"></span>Gen 0</div>
+              <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-gen-1)"></span>Gen 1</div>
+              <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-gen-2)"></span>Gen 2</div>
+              <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-gen-3)"></span>Gen 3+</div>
+              <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-node-exposure);border-radius:2px;width:10px;height:10px"></span>Exposure</div>
+              <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-node-flight);clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);width:10px;height:10px;border-radius:0"></span>Flight</div>
+            </div>
+            <button class="btn btn--ghost btn--sm" id="chain-fit-btn">⊡ Fit</button>
+          </div>
+        </div>
+        <div id="chain-cy"></div>
+      </div>
+    </div>
+
+    <!-- Tab 3: Exposure Map -->
+    <div class="tab-pane" id="tab-exposure">
+      <div class="exposure-layout">
+        <!-- Left: Ship deck schematic -->
+        <div class="exposure-deck-panel">
+          <div class="panel-header">
+            <span class="panel-title">MV Atlantic Star — Deck Schematic</span>
+            <div class="panel-actions">
+              <span class="panel-badge" id="exposure-count-badge">— events</span>
+            </div>
+          </div>
+          <div class="deck-view" id="deck-view">
+            <!-- populated by JS -->
+          </div>
+        </div>
+        <!-- Right: Exposure events list -->
+        <div class="exposure-table-panel">
+          <div class="panel-header">
+            <span class="panel-title">Exposure Events</span>
+            <div class="panel-actions">
+              <button class="btn btn--ghost btn--xs" id="exposure-sort-risk">Sort by risk ↓</button>
+            </div>
+          </div>
+          <div class="exposure-table" id="exposure-table">
+            <!-- populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 4: Flight Risk -->
+    <div class="tab-pane" id="tab-flights">
+      <div class="flights-layout">
+        <!-- Left: Flight selector -->
+        <div class="flights-selector-panel">
+          <div class="panel-header"><span class="panel-title">Flights</span></div>
+          <div id="flight-list" style="overflow-y:auto;flex:1">
+            <!-- populated by JS -->
+          </div>
+        </div>
+        <!-- Right: Seat map + manifest -->
+        <div class="flights-main-panel">
+          <div class="panel-header">
+            <span class="panel-title" id="flight-panel-title">Select a flight</span>
+            <div class="panel-actions">
+              <button class="btn btn--ghost btn--xs" id="btn-export-manifest" style="display:none">↓ Export manifest CSV</button>
+            </div>
+          </div>
+          <div class="flights-main-inner">
+            <!-- Seat map -->
+            <div class="seat-map-container" id="seat-map-container">
+              <div id="seat-map-placeholder" style="color:var(--color-text-faint);font-size:var(--text-sm);padding:var(--space-4)">
+                Select a flight from the left panel to view the seat risk map.
+              </div>
+              <div id="seat-map" style="display:none">
+                <div class="seat-map-title">
+                  <span id="seat-map-flight-label">—</span>
+                  <div class="seat-map-legend" id="seat-map-legend"></div>
+                </div>
+                <div class="seat-map-grid" id="seat-grid"></div>
+              </div>
+            </div>
+            <!-- Manifest table -->
+            <div class="manifest-table-wrap">
+              <table class="manifest-table" id="manifest-table">
+                <thead>
+                  <tr>
+                    <th>Seat</th>
+                    <th>Passenger / ID</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Risk Score</th>
+                    <th>Risk Level</th>
+                  </tr>
+                </thead>
+                <tbody id="manifest-tbody">
+                  <tr><td colspan="6" style="text-align:center;color:var(--color-text-faint);padding:var(--space-6)">Select a flight to view the passenger manifest.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 5: Timeline -->
+    <div class="tab-pane" id="tab-timeline">
+      <div class="timeline-layout">
+        <div class="timeline-toolbar">
+          <span class="chain-toolbar-label">Sort by</span>
+          <div class="btn-group">
+            <button class="btn btn--ghost btn--sm active" id="tl-sort-onset">Onset date</button>
+            <button class="btn btn--ghost btn--sm" id="tl-sort-gen">Generation</button>
+          </div>
+          <div style="margin-left:auto;display:flex;gap:var(--space-4);align-items:center;font-size:var(--text-xs)">
+            <div style="display:flex;align-items:center;gap:6px;color:var(--color-text-muted)">
+              <div style="width:20px;height:10px;background:rgba(255,255,255,0.06);border:1px dashed rgba(255,255,255,0.2);border-radius:2px"></div>
+              Incubation window (14 days)
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;color:var(--color-text-muted)">
+              <div style="width:20px;height:10px;background:rgba(79,142,247,0.4);border-radius:2px"></div>
+              Infectious period
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;color:var(--color-text-muted)">
+              <span style="font-size:14px">✈</span> Flight event
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;color:var(--color-text-muted)">
+              <span style="font-size:12px">●</span> Onset
+            </div>
+          </div>
+        </div>
+        <div class="gantt-wrapper">
+          <svg id="gantt-svg"></svg>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- .tab-content -->
+
+  <!-- ===== CONTROLS BAR ===== -->
+  <div class="controls-bar">
+    <span class="controls-label">Filter</span>
+    <div class="controls-date-group">
+      <input type="date" id="ctrl-start" class="date-input" title="Start date">
+      <span class="controls-sep">→</span>
+      <input type="date" id="ctrl-end"   class="date-input" title="End date">
+      <span class="date-range-label" id="ctrl-range-label">All dates</span>
+      <button class="btn btn--ghost btn--sm" id="ctrl-reset">Reset</button>
+    </div>
+    <div class="controls-spacer"></div>
+    <div class="export-group">
+      <button class="btn btn--ghost btn--sm" id="btn-export-cases">↓ Cases CSV</button>
+      <button class="btn btn--ghost btn--sm" id="btn-export-chain">↓ Chain JSON</button>
+    </div>
+  </div>
+
+</div><!-- .app-layout -->
+
+
+<!-- ===== CASE DETAIL PANEL ===== -->
+<div class="case-detail" id="case-detail">
+  <div class="case-detail-header">
+    <div>
+      <div style="font-size:var(--text-xs);color:var(--color-text-faint);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1px">Case</div>
+      <div class="case-detail-id" id="detail-id">—</div>
+    </div>
+    <button class="case-detail-close" id="case-detail-close">✕</button>
+  </div>
+  <div class="case-detail-body" id="detail-body"></div>
+</div>
+
+
+<!-- ===== ADD CASE MODAL ===== -->
+<div class="modal" id="case-modal">
+  <div class="modal-overlay"></div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <span style="font-size:18px">➕</span>
+      <span class="modal-title">Add New Case</span>
+      <button class="modal-close" id="modal-close">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="case-form" novalidate>
+        <div class="form-grid">
+          <div class="form-section-title">Patient Information</div>
+          <div class="form-group"><label class="form-label">Name / Identifier</label><input type="text" id="f-name" class="form-input" placeholder="Patient P011"></div>
+          <div class="form-group"><label class="form-label">Status <span class="required">*</span></label>
+            <select id="f-status" class="form-select" required>
+              <option value="suspected">Suspected</option><option value="confirmed">Confirmed</option>
+              <option value="recovered">Recovered</option><option value="deceased">Deceased</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label">Age</label><input type="number" id="f-age" class="form-input" placeholder="35" min="0"></div>
+          <div class="form-group"><label class="form-label">Sex</label>
+            <select id="f-sex" class="form-select">
+              <option value="">Unknown</option><option value="M">Male</option><option value="F">Female</option><option value="O">Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label">Report Date <span class="required">*</span></label><input type="date" id="f-date" class="form-input" required></div>
+          <div class="form-group"><label class="form-label">Onset Date</label><input type="date" id="f-onset" class="form-input"></div>
+          <div class="form-group"><label class="form-label">Generation</label>
+            <select id="f-generation" class="form-select">
+              <option value="0">0 — Patient zero</option><option value="1">1 — Primary</option>
+              <option value="2">2 — Secondary</option><option value="3">3 — Tertiary</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label">Infected by (Case ID)</label><input type="text" id="f-infected-by" class="form-input" placeholder="P001"></div>
+
+          <div class="form-section-title">Location <span style="font-weight:400;text-transform:none;font-size:var(--text-xs)">(required for map placement)</span></div>
+          <div class="form-group"><label class="form-label">Latitude <span class="required">*</span></label><input type="number" id="f-lat" class="form-input" placeholder="40.7128" step="any" required></div>
+          <div class="form-group"><label class="form-label">Longitude <span class="required">*</span></label><input type="number" id="f-lng" class="form-input" placeholder="-74.0060" step="any" required></div>
+          <div class="form-group"><label class="form-label">City</label><input type="text" id="f-city" class="form-input" placeholder="New York"></div>
+          <div class="form-group"><label class="form-label">Country</label><input type="text" id="f-country" class="form-input" placeholder="USA"></div>
+          <div class="form-group form-group--full"><label class="form-label">Venue / Exposure site</label><input type="text" id="f-venue" class="form-input" placeholder="Hospital, ship cabin, airport…"></div>
+
+          <div class="form-section-title">Transport</div>
+          <div class="form-group"><label class="form-label">Type</label>
+            <select id="f-transport-type" class="form-select">
+              <option value="none">None</option><option value="flight">Flight</option>
+              <option value="ship">Ship</option><option value="train">Train</option><option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label">Flight / Vessel ID</label><input type="text" id="f-transport-id" class="form-input" placeholder="KL902"></div>
+
+          <div class="form-section-title">Clinical Notes</div>
+          <div class="form-group form-group--full"><label class="form-label">Notes</label><textarea id="f-notes" class="form-textarea" placeholder="Symptoms, timeline, exposure history…"></textarea></div>
+          <div class="form-group form-group--full"><label class="form-label">Reporting Authority</label><input type="text" id="f-reporter" class="form-input" placeholder="CDC / Regional Health Dept…"></div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn--ghost" id="modal-cancel">Cancel</button>
+      <button class="btn btn--primary" id="form-submit" form="case-form" type="submit">Add Case</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== SEAT TOOLTIP ===== -->
+<div class="seat-tooltip" id="seat-tooltip"></div>
+
+<!-- ===== TOASTS ===== -->
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+
+<!-- ===== DISCLAIMER MODAL ===== -->
+<div class="disclaimer-modal" id="disclaimer-modal">
+  <div class="disclaimer-modal-overlay" onclick="DisclaimerSystem.closeModal()"></div>
+  <div class="disclaimer-modal-content">
+    <div class="disclaimer-modal-header">
+      <span style="font-size:18px;flex-shrink:0">⚠</span>
+      <div class="disclaimer-modal-title">OUTBREAK TRACKER — DATA DISCLAIMER</div>
+    </div>
+    <div class="disclaimer-modal-body">
+      <p>This tracker is a visualization tool for monitoring disease transmission chains and is <strong>NOT an official public health resource</strong>.</p>
+
+      <div class="disclaimer-section-title">DATA SOURCES &amp; LIMITATIONS</div>
+      <ul>
+        <li>Case data is manually entered from public sources (news reports, WHO briefings, official announcements)</li>
+        <li>Data may be incomplete, outdated, or contain errors from source reporting</li>
+        <li>Case status (suspected/confirmed) reflects information available at time of entry and may change</li>
+        <li>Laboratory-confirmed vs suspected cases are based on publicly reported information only</li>
+        <li>This tracker is NOT connected to official health authority databases or real-time reporting systems</li>
+      </ul>
+
+      <div class="disclaimer-section-title">TRANSMISSION CHAIN ACCURACY</div>
+      <ul>
+        <li>Transmission connections are based on available contact tracing data from public sources</li>
+        <li>Person-to-person transmission is inferred from reported exposure, not epidemiological investigation</li>
+        <li>Exposure timelines, flight manifests, and cabin assignments may be incomplete or approximate</li>
+        <li>Secondary transmission risk calculations are estimates only, not epidemiological predictions</li>
+      </ul>
+
+      <div class="disclaimer-section-title">OFFICIAL INFORMATION SOURCES</div>
+      <ul>
+        <li>WHO Emergency Response: <a href="https://www.who.int/emergencies" target="_blank" rel="noopener">who.int/emergencies</a></li>
+        <li>CDC Outbreak Tracking: <a href="https://www.cdc.gov/" target="_blank" rel="noopener">cdc.gov</a></li>
+        <li>ECDC (Europe): <a href="https://www.ecdc.europa.eu/" target="_blank" rel="noopener">ecdc.europa.eu</a></li>
+        <li>Local public health authorities in your region</li>
+      </ul>
+
+      <div class="disclaimer-section-title">INTENDED USE</div>
+      <p>Designed for personal research, situational awareness, and understanding transmission patterns.</p>
+      <div class="disclaimer-warning-box">
+        ⛔ DO NOT USE FOR: official contact tracing &nbsp;·&nbsp; public health decision-making &nbsp;·&nbsp; travel or quarantine decisions &nbsp;·&nbsp; medical advice
+      </div>
+
+      <div class="disclaimer-section-title">ACCURACY RESPONSIBILITY</div>
+      <p>Data entry and visualization are subject to human error. Always verify critical information with official health sources before making any decisions based on this tracker.</p>
+
+      <div class="disclaimer-meta">
+        <span>LAST UPDATED: <span id="disclaimer-date" style="color:rgba(255,215,0,0.6)">—</span></span>
+        <span>SYSTEM: EPITRACE v2.0 · RETRO BUILD</span>
+      </div>
+    </div>
+    <div class="disclaimer-modal-footer">
+      <label>
+        <input type="checkbox" id="disclaimer-no-show"> DO NOT SHOW ON STARTUP
+      </label>
+      <button class="disclaimer-close-btn" onclick="DisclaimerSystem.closeModal()">[ ACKNOWLEDGE &amp; CLOSE ]</button>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
+<script src="/static/js/app.js"></script>
+<script>
+const DisclaimerSystem = {
+  init() {
+    const el = document.getElementById('disclaimer-date');
+    if (el) el.textContent = new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+
+    // Show banner
+    const banner = document.getElementById('disclaimer-banner');
+    const bannerDismissed = sessionStorage.getItem('epitrace_banner_dismissed');
+    if (banner && !bannerDismissed) {
+      document.body.classList.add('banner-visible');
+    } else if (banner) {
+      banner.style.display = 'none';
+    }
+
+    // Auto-open modal on first ever visit
+    const seen = localStorage.getItem('epitrace_disclaimer_v2');
+    if (!seen) this.openModal();
+  },
+
+  openModal() {
+    document.getElementById('disclaimer-modal')?.classList.add('open');
+  },
+
+  closeModal() {
+    document.getElementById('disclaimer-modal')?.classList.remove('open');
+    const cb = document.getElementById('disclaimer-no-show');
+    if (cb?.checked) localStorage.setItem('epitrace_disclaimer_v2', '1');
+  },
+
+  dismissBanner() {
+    const banner = document.getElementById('disclaimer-banner');
+    if (banner) banner.style.display = 'none';
+    document.body.classList.remove('banner-visible');
+    sessionStorage.setItem('epitrace_banner_dismissed', '1');
+  }
+};
+document.addEventListener('DOMContentLoaded', () => DisclaimerSystem.init());
+</script>
+</body>
+</html>

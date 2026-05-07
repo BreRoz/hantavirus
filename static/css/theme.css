@@ -1329,3 +1329,33 @@ body {
 }
 .reader-footer a { color: #3b82f6; text-decoration: none; }
 .reader-footer a:hover { text-decoration: underline; }
+
+/* ==========================================================================
+   Latte Button
+   ========================================================================== */
+.sidebar-latte {
+  padding: var(--space-3) var(--space-3) var(--space-2);
+  display: flex;
+  justify-content: center;
+}
+.latte-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 20px;
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.6);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3), 0 0 20px rgba(255,255,255,0.15), 0 0 40px rgba(255,255,255,0.08);
+  transition: box-shadow 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.latte-btn:hover {
+  box-shadow: 0 0 16px rgba(255,255,255,0.55), 0 0 32px rgba(255,255,255,0.3), 0 0 60px rgba(255,255,255,0.15);
+  border-color: #fff;
+}

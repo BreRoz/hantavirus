@@ -35,7 +35,7 @@
       ],
       "source_url": "https://www.manilatimes.net/2026/05/06/world/who-tracing-over-80-people-on-flight-taken-by-hantavirus-victim/2336441",
       "source_notes": null,
-      "clinical_notes": "Index case. Dutch female passenger (age 69) aboard MV Hondius. Before boarding in Ushuaia on April 1, she and her husband traveled in Argentina and Chile. Argentine authorities' leading hypothesis (per AP, May 7 2026): couple contracted hantavirus during a bird-watching outing in Ushuaia; investigators also tracing their route through Patagonian forested hillsides. Province of Tierra del Fuego \u2014 where ship docked \u2014 had never previously recorded a hantavirus case. Disembarked at Saint Helena on April 24 with gastrointestinal symptoms. Boarded Airlink flight 4Z 301 (SHN\u2192JNB) on April 25 \u2014 condition deteriorated in-flight. Died April 26 at Johannesburg hospital; tested positive for Andes-strain hantavirus. WHO initiated contact tracing for all 82 passengers and 6 crew on that flight. KLM confirmed she also traveled on a KLM flight from Johannesburg. Husband (P002) died on the ship April 11. [Note: P34866 in database is likely a duplicate of this case \u2014 same person described as '69-year-old woman who disembarked at St Helena and died in South Africa'.]",
+      "clinical_notes": "Index case. Dutch female passenger (age 69) aboard MV Hondius. Before boarding in Ushuaia on April 1, she and her husband traveled in Argentina, Chile, and Uruguay (Al Jazeera / WHO, May 7 2026). Argentine authorities' leading hypothesis (per AP, May 7 2026): couple contracted hantavirus during a bird-watching outing in Ushuaia; investigators also tracing their route through Patagonian forested hillsides. Province of Tierra del Fuego \u2014 where ship docked \u2014 had never previously recorded a hantavirus case. Disembarked at Saint Helena on April 24 with gastrointestinal symptoms. Boarded Airlink flight 4Z 301 (SHN\u2192JNB) on April 25 \u2014 condition deteriorated in-flight. Died April 26 at Johannesburg hospital; tested positive for Andes-strain hantavirus. WHO initiated contact tracing for all 82 passengers and 6 crew on that flight. KLM confirmed she also traveled on a KLM flight from Johannesburg. Husband (P002) died on the ship April 11. [Note: P34866 in database is likely a duplicate of this case \u2014 same person described as '69-year-old woman who disembarked at St Helena and died in South Africa'.]",
       "reporter": "WHO / Manila Times / AFP"
     },
     {
@@ -74,7 +74,7 @@
       "flights": [],
       "source_url": null,
       "source_notes": "Manually entered \u2014 search ProMED or WHO DON for 'Hondius hantavirus 2026'",
-      "clinical_notes": "Dutch male passenger (age 70), husband of index case PEDB43, sharing Cabin 406. Per WHO/USA Today May 7 official summary: developed fever, headache, and mild diarrhea on April 6; died aboard MV Hondius on April 11 \u2014 the first death in the outbreak. Argentine authorities' leading hypothesis (AP, May 7 2026): couple contracted hantavirus during a bird-watching outing in Ushuaia before boarding on April 1; investigators also tracing their route through forested hillsides of Patagonia. WHO confirmed the couple traveled Argentina and Chile prior to boarding. Tierra del Fuego province (embarkation region) had never previously recorded a hantavirus case. Body removed to St. Helena on April 24. Early reporting erroneously described him as evacuated to Punta Arenas \u2014 corrected to 'died on the ship' per WHO/AFP/Manila Times.",
+      "clinical_notes": "Dutch male passenger (age 70), husband of index case PEDB43, sharing Cabin 406. Per WHO/USA Today May 7 official summary: developed fever, headache, and mild diarrhea on April 6; died aboard MV Hondius on April 11 \u2014 the first death in the outbreak (5 days after symptom onset). Important: no samples were taken at time of death and hantavirus was not initially identified. Argentine authorities' leading hypothesis (AP, May 7 2026): couple contracted hantavirus during a bird-watching outing in Ushuaia before boarding on April 1. WHO confirmed couple traveled Argentina, Chile, AND Uruguay prior to boarding (Al Jazeera, May 7 2026). Investigators also tracing their route through forested hillsides of Patagonia. Tierra del Fuego province had never previously recorded a hantavirus case. Body removed to St. Helena on April 24. Early reporting erroneously described him as evacuated to Punta Arenas \u2014 corrected to 'died on the ship' per WHO/AFP/Manila Times.",
       "reporter": "WHO / Manila Times / AFP"
     },
     {
@@ -338,7 +338,7 @@
       "status": "deceased",
       "generation": 1,
       "infected_by": null,
-      "onset_date": "2026-04-28",
+      "onset_date": "2026-04-25",
       "date": "2026-05-02",
       "incubation_start": null,
       "location": {
@@ -355,7 +355,7 @@
       "flights": [],
       "source_url": "https://www.kcra.com/article/hantavirus-cruise-ship-california/71244285",
       "source_notes": null,
-      "clinical_notes": "Third death in the MV Hondius outbreak. Woman presented with pneumonia, first symptoms April 28. Died May 2, 2026. Nationality reported as German in early coverage. Confirmed by WHO as third fatality.",
+      "clinical_notes": "Third death in the MV Hondius outbreak. Symptom onset April 25 (per WHO via Al Jazeera, May 7 2026 — earlier reports said April 28). Died May 2, 2026 — 7 days after symptom onset. Nationality reported as German. Confirmed by WHO as third fatality.",
       "reporter": "Manually entered \u2014 CBC/public reporting"
     },
     {
@@ -732,7 +732,7 @@
       "flights": [],
       "source_url": "https://www.kcra.com/article/hantavirus-cruise-ship-california/71244285",
       "source_notes": "AP / KCRA May 7 2026",
-      "clinical_notes": "30 passengers from multiple countries disembarked MV Hondius at Saint Helena on April 24 \u2014 two weeks after the first passenger death on board \u2014 without contact tracing being completed (People.com, May 7 2026). Health officials across at least 5 US states (California, Arizona, Texas, Georgia, Virginia) are monitoring returned residents. WHO confirmed 5 cases + 3 suspected as of May 7. None confirmed ill in the US as of May 7. This group represents a significant untraced exposure risk across multiple countries.",
+      "clinical_notes": "30 passengers from 12 countries disembarked MV Hondius at Saint Helena on April 24 \u2014 without contact tracing completed. Countries: UK, Canada, Denmark, Germany, Netherlands, New Zealand, Saint Kitts and Nevis, Singapore, Sweden, Switzerland, Turkey, USA (Al Jazeera / WHO, May 7 2026). Health officials across 5 US states (CA, AZ, TX, GA, VA) monitoring returned residents. WHO confirmed 5 cases + 3 suspected as of May 7. None confirmed ill in the US as of May 7. Ship subsequently traveled Cape Verde \u2192 Tenerife. Argentina distributing 2,500 diagnostic kits to a 5-country laboratory network in response to outbreak.",
       "reporter": "AP / KCRA / CDPH"
     }
   ],

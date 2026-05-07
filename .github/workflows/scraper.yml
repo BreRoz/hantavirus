@@ -34,27 +34,33 @@ jobs:
 
       - name: Commit and push if data changed
         run: |
+          set +e
           git config user.name  "EpiTrace Scraper"
           git config user.email "scraper@epitrace.bot"
           git add data/cases.json data/scraper_log.json data/scraper_seen.json
-          if git diff --cached --quiet; then
+          git diff --cached --quiet
+          DIFF_EXIT=$?
+          if [ $DIFF_EXIT -eq 0 ]; then
             echo "No new cases found — nothing to commit"
             exit 0
           fi
           git commit -m "Auto-update: scraper found new case data $(date -u '+%Y-%m-%d %H:%M UTC')"
+          echo "--- Remote state before push ---"
+          git log --oneline origin/main -3
+          echo "--- Local state ---"
+          git log --oneline -3
           for i in 1 2 3 4 5; do
-            echo "Push attempt $i..."
+            echo "=== Push attempt $i ==="
             git fetch origin main
-            if git rebase origin/main; then
-              if git push origin main; then
-                echo "Push succeeded on attempt $i!"
-                exit 0
-              fi
-            else
-              git rebase --abort || true
+            git rebase origin/main
+            git push origin main
+            PUSH_EXIT=$?
+            if [ $PUSH_EXIT -eq 0 ]; then
+              echo "Push succeeded on attempt $i!"
+              exit 0
             fi
-            echo "Attempt $i failed, waiting 10s..."
+            echo "Attempt $i failed (exit $PUSH_EXIT), waiting 10s..."
             sleep 10
           done
-          echo "All push attempts failed"
+          echo "All 5 push attempts failed"
           exit 1

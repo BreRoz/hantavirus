@@ -40,8 +40,16 @@ jobs:
           git add data/cases.json data/scraper_log.json data/scraper_seen.json
           if git diff --cached --quiet; then
             echo "No new cases found — nothing to commit"
-          else
-            git commit -m "Auto-update: scraper found new case data $(date -u '+%Y-%m-%d %H:%M UTC')"
-            git pull --rebase origin main
-            git push
+            exit 0
           fi
+          git commit -m "Auto-update: scraper found new case data $(date -u '+%Y-%m-%d %H:%M UTC')"
+          for i in 1 2 3 4 5; do
+            echo "Push attempt $i..."
+            git fetch origin main
+            git rebase origin/main
+            git push origin main && echo "Push succeeded!" && exit 0
+            echo "Push failed, waiting 10s before retry..."
+            sleep 10
+          done
+          echo "All push attempts failed"
+          exit 1

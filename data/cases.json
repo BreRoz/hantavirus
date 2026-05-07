@@ -113,7 +113,7 @@
       "flights": [],
       "source_url": null,
       "source_notes": "Manually entered \u2014 search MRCC Cape Town / SA health authorities for April 2026 evacuation records",
-      "clinical_notes": "Adult male passenger or crew. Per WHO/USA Today May 7 official summary (Case 3): reported fever, shortness of breath, and signs of pneumonia to the ship's doctor on April 24. Condition worsened; medically evacuated to South Africa on April 27. Currently hospitalized in intensive care unit in South Africa. Testing confirmed hantavirus infection on May 2. WHO update (May 6): patient reportedly improving.",
+      "clinical_notes": "British male crew member. Reported fever, shortness of breath, and signs of pneumonia to the ship's doctor on April 24. Condition worsened; medically evacuated to South Africa on April 27. Tested positive for hantavirus on May 2 in South Africa — making him the FIRST laboratory-confirmed case in the outbreak (AP, May 7 2026). Currently hospitalized in intensive care in South Africa. WHO update (May 6): patient reportedly improving.",
       "reporter": "MRCC Cape Town / SA Medical Services"
     },
     {
@@ -239,7 +239,7 @@
       "flights": [],
       "source_url": "https://www.nbcnews.com/health/health-news/hantavirus-cruise-ship-stranded-crew-evacuation-human-transmission-rcna343606",
       "source_notes": null,
-      "clinical_notes": "A doctor on board reportedly in serious condition, to be airlifted to the Canary Islands at the Netherlands' request.",
+      "clinical_notes": "Ship's doctor aboard MV Hondius. Confirmed by AP (May 7 2026) as one of three people evacuated Wednesday May 6 while ship was near Cape Verde — taken to specialized hospital in Europe for treatment. Was reportedly in serious condition prior to evacuation.",
       "reporter": "Auto-scraped \u2014 verify before publishing"
     },
     {
@@ -558,7 +558,7 @@
       "flights": [],
       "source_url": "https://www.kcra.com/article/hantavirus-cruise-ship-california/71244285",
       "source_notes": "USA Today May 7 / dutchnews.nl / Dutch Health Ministry",
-      "clinical_notes": "Flight attendant potentially the first person-to-person transmission case off the ship. Was on Airlink flight 4Z 301 (SHN\u2192JNB) with index case PEDB43 who died in Johannesburg. Showing hantavirus symptoms as of May 7. If confirmed, represents Gen 2 transmission \u2014 ship passenger to airline crew. AP reported as potentially the first off-ship infection. Dutch Health Ministry also separately noted a KLM flight attendant being tested \u2014 may be a second distinct case.",
+      "clinical_notes": "Dutch flight attendant on Airlink flight 4Z 301 (SHN\u2192JNB, April 25). Index case PEDB43 was on this flight but was too ill to take her onward international flight to Europe and was taken off the plane in Johannesburg, where she died. The flight attendant is now showing hantavirus symptoms and being tested in an isolation ward at Amsterdam hospital (Dutch Health Ministry via AP, May 7 2026). If confirmed positive, would be the FIRST known person not aboard MV Hondius to be infected \u2014 representing Gen 2 transmission (ship passenger \u2192 airline crew). 88 people total were on the April 25 SHN\u2192JNB flight.",
       "reporter": "Dutch Health Ministry / USA Today / dutchnews.nl"
     },
     {
@@ -589,6 +589,64 @@
       "source_notes": "Jerusalem Post, May 7 2026",
       "clinical_notes": "Israeli patient confirmed with European strain hantavirus (separate from MV Hondius Andes strain). Infected in Eastern Europe several months before diagnosis in May 2026. Confirmed by antibody and PCR tests. Stable \u2014 not requiring ICU or strict isolation, under medical observation. Identity withheld by Health Ministry. Unrelated to MV Hondius cruise ship cluster.",
       "reporter": "Israeli Ministry of Health / Jerusalem Post"
+    },
+    {
+      "id": "PUSSG01",
+      "name": "Singapore Men — Isolated & Tested (2)",
+      "age": null,
+      "sex": "male",
+      "nationality": "Singaporean",
+      "status": "suspected",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-07",
+      "incubation_start": null,
+      "location": {
+        "city": "Singapore",
+        "state": "",
+        "country": "Singapore",
+        "venue": "Isolation — under testing",
+        "lat": 1.3521,
+        "lng": 103.8198
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://apnews.com/article/hantavirus-cruise-ship-st-helena-9c70878b2ff59d187f1e34c12627cea7",
+      "source_notes": "AP, May 7 2026 — Singapore Ministry of Health",
+      "clinical_notes": "Two Singaporean men who disembarked MV Hondius at Saint Helena on April 24, flew to South Africa, then returned home to Singapore at different times. Singapore health authorities confirmed both are being isolated and tested as of May 7. Part of the 30–40 untraced St Helena departures (PGRP01).",
+      "reporter": "Singapore Ministry of Health / AP"
+    },
+    {
+      "id": "PFRCE01",
+      "name": "French Citizen — Contact Case, Benign Symptoms",
+      "age": null,
+      "sex": null,
+      "nationality": "French",
+      "status": "suspected",
+      "generation": 2,
+      "infected_by": "PEDB43",
+      "onset_date": null,
+      "date": "2026-05-07",
+      "incubation_start": null,
+      "location": {
+        "city": "France",
+        "state": "",
+        "country": "France",
+        "venue": "Isolation — under medical testing",
+        "lat": 46.2276,
+        "lng": 2.2137
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://apnews.com/article/hantavirus-cruise-ship-st-helena-9c70878b2ff59d187f1e34c12627cea7",
+      "source_notes": "AP, May 7 2026 — French Health Ministry statement",
+      "clinical_notes": "French citizen with 'benign symptoms', in isolation and undergoing medical tests as of May 7. Identified as a contact case linked to index case PEDB43 (Dutch woman) who flew Airlink 4Z 301 from St Helena to Johannesburg on April 25. Not aboard MV Hondius — represents potential Gen 2 off-ship transmission. French Health Ministry confirmed the case in a statement.",
+      "reporter": "French Ministry of Health / AP"
     },
     {
       "id": "PUSVA01",
@@ -708,7 +766,7 @@
     },
     {
       "id": "PGRP01",
-      "name": "Saint Helena Departures \u2014 Untraced (30 passengers)",
+      "name": "Saint Helena Departures \u2014 Untraced (30\u201340 passengers)",
       "age": null,
       "sex": null,
       "nationality": "Multiple (12+ countries)",
@@ -732,7 +790,7 @@
       "flights": [],
       "source_url": "https://www.kcra.com/article/hantavirus-cruise-ship-california/71244285",
       "source_notes": "AP / KCRA May 7 2026",
-      "clinical_notes": "30 passengers from 12 countries disembarked MV Hondius at Saint Helena on April 24 \u2014 without contact tracing completed. Countries: UK, Canada, Denmark, Germany, Netherlands, New Zealand, Saint Kitts and Nevis, Singapore, Sweden, Switzerland, Turkey, USA (Al Jazeera / WHO, May 7 2026). Health officials across 5 US states (CA, AZ, TX, GA, VA) monitoring returned residents. WHO confirmed 5 cases + 3 suspected as of May 7. None confirmed ill in the US as of May 7. Ship subsequently traveled Cape Verde \u2192 Tenerife. Argentina distributing 2,500 diagnostic kits to a 5-country laboratory network in response to outbreak.",
+      "clinical_notes": "30\u201340 passengers from 12 countries disembarked MV Hondius at Saint Helena on April 24 \u2014 without contact tracing completed. Ship operator (Oceanwide Expeditions) says 30 (including the deceased Dutch couple); Dutch Foreign Ministry puts figure at ~40 (AP, May 7 2026). Countries: UK, Canada, Denmark, Germany, Netherlands, New Zealand, Saint Kitts and Nevis, Singapore, Sweden, Switzerland, Turkey, USA. St. Helena authorities monitoring a 'small number' of higher-risk contacts, ordered to isolate for 45 days. Singapore monitoring 2 men who flew St Helena \u2192 South Africa \u2192 Singapore (see PUSSG01). Health officials across 5 US states (CA, AZ, TX, GA, VA) monitoring returned residents. WHO confirmed 5 cases + 3 suspected as of May 7. None confirmed ill in the US as of May 7. Argentina distributing 2,500 diagnostic kits to a 5-country laboratory network.",
       "reporter": "AP / KCRA / CDPH"
     }
   ],

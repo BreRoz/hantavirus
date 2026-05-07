@@ -74,6 +74,10 @@
     </div>
 
     <div class="header-actions">
+      <button class="reader-toggle-btn" id="btn-reader-toggle" title="Switch to simple, mobile-friendly view">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Simple View
+      </button>
       <button class="disclaimer-info-btn" onclick="DisclaimerSystem.openModal()">⚠ DATA DISCLAIMER</button>
       <button class="btn btn--ghost btn--sm" id="btn-import-csv">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -496,6 +500,60 @@
   </div>
 </div>
 
+<!-- ===== READER MODE PANEL ===== -->
+<div id="reader-panel" class="reader-panel" aria-hidden="true">
+
+  <div class="reader-header">
+    <div class="reader-header-left">
+      <div class="reader-logo">📡</div>
+      <div>
+        <div class="reader-title">EpiTrace</div>
+        <div class="reader-sub">MV Hondius Hantavirus Outbreak · Live Updates</div>
+      </div>
+    </div>
+    <button class="reader-back-btn" id="btn-reader-back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      Dashboard
+    </button>
+  </div>
+
+  <div class="reader-stats-bar" id="reader-stats-bar">
+    <div class="reader-stat reader-stat--total"><div class="reader-stat-num" id="rs-total">—</div><div class="reader-stat-label">Total Cases</div></div>
+    <div class="reader-stat reader-stat--deaths"><div class="reader-stat-num" id="rs-deaths">—</div><div class="reader-stat-label">Deaths</div></div>
+    <div class="reader-stat reader-stat--confirmed"><div class="reader-stat-num" id="rs-confirmed">—</div><div class="reader-stat-label">Confirmed</div></div>
+    <div class="reader-stat reader-stat--suspected"><div class="reader-stat-num" id="rs-suspected">—</div><div class="reader-stat-label">Suspected</div></div>
+    <div class="reader-stat reader-stat--recovered"><div class="reader-stat-num" id="rs-recovered">—</div><div class="reader-stat-label">Recovered</div></div>
+  </div>
+
+  <div class="reader-disclaimer">
+    ⚠️ <strong>Unofficial tracker.</strong> Data compiled from public news sources and WHO briefings. Not an official public health resource.
+  </div>
+
+  <div class="reader-controls">
+    <div class="reader-search-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="reader-search" class="reader-search" placeholder="Search by name, country, location…" autocomplete="off">
+    </div>
+    <div class="reader-filter-row">
+      <button class="reader-filter-btn active" data-status="all">All</button>
+      <button class="reader-filter-btn" data-status="deceased">Deaths</button>
+      <button class="reader-filter-btn" data-status="confirmed">Confirmed</button>
+      <button class="reader-filter-btn" data-status="suspected">Suspected</button>
+      <button class="reader-filter-btn" data-status="recovered">Recovered</button>
+    </div>
+  </div>
+
+  <div class="reader-cards" id="reader-cards">
+    <div class="reader-loading">Loading cases…</div>
+  </div>
+
+  <div class="reader-footer">
+    <p>Data updated from public sources including WHO, AP, and regional health authorities. <a href="https://www.who.int/emergencies" target="_blank" rel="noopener">WHO Emergency Response ↗</a></p>
+    <p style="margin-top:4px;opacity:0.6;font-size:12px">EpiTrace · Unofficial · Not for medical use</p>
+  </div>
+
+</div>
+
 <!-- Scripts -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
@@ -538,6 +596,165 @@ const DisclaimerSystem = {
   }
 };
 document.addEventListener('DOMContentLoaded', () => DisclaimerSystem.init());
+
+// ============================================================================
+// READER MODE
+// ============================================================================
+const ReaderMode = {
+  _active: false,
+  _cases: [],
+  _filter: 'all',
+  _search: '',
+
+  STATUS_LABEL: { confirmed:'Confirmed', suspected:'Suspected', recovered:'Recovered', deceased:'Deceased' },
+  STATUS_COLOR:  { confirmed:'#dc2626', suspected:'#d97706', recovered:'#16a34a', deceased:'#6b7280' },
+  STATUS_BG:     { confirmed:'#fef2f2', suspected:'#fffbeb', recovered:'#f0fdf4', deceased:'#f9fafb' },
+
+  init() {
+    document.getElementById('btn-reader-toggle')?.addEventListener('click', () => this.open());
+    document.getElementById('btn-reader-back')?.addEventListener('click',   () => this.close());
+
+    document.getElementById('reader-search')?.addEventListener('input', e => {
+      this._search = e.target.value.toLowerCase();
+      this.render();
+    });
+
+    document.querySelectorAll('.reader-filter-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        document.querySelectorAll('.reader-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        this._filter = btn.dataset.status;
+        this.render();
+      });
+    });
+
+    if (localStorage.getItem('epitrace_reader_mode') === '1') this.open();
+  },
+
+  async open() {
+    this._active = true;
+    localStorage.setItem('epitrace_reader_mode', '1');
+    const panel = document.getElementById('reader-panel');
+    panel.classList.add('open');
+    panel.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    // Load cases if not yet loaded
+    if (this._cases.length === 0) await this.load();
+    this.render();
+  },
+
+  close() {
+    this._active = false;
+    localStorage.removeItem('epitrace_reader_mode');
+    const panel = document.getElementById('reader-panel');
+    panel.classList.remove('open');
+    panel.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  },
+
+  async load() {
+    try {
+      const [casesData, statsData] = await Promise.all([
+        fetch('/api/cases').then(r => r.json()),
+        fetch('/api/stats').then(r => r.json()),
+      ]);
+      this._cases = casesData.cases || [];
+      this._updateStats(statsData);
+    } catch(e) {
+      document.getElementById('reader-cards').innerHTML = '<div class="reader-loading">Failed to load cases. Please refresh.</div>';
+    }
+  },
+
+  _updateStats(s) {
+    const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val ?? '—'; };
+    set('rs-total',     s.total);
+    set('rs-deaths',    s.deceased);
+    set('rs-confirmed', s.confirmed);
+    set('rs-suspected', s.suspected);
+    set('rs-recovered', s.recovered);
+  },
+
+  _flag(nationality) {
+    const map = {
+      'Dutch':'🇳🇱','Netherlands':'🇳🇱','British':'🇬🇧','UK':'🇬🇧',
+      'German':'🇩🇪','Germany':'🇩🇪','Swiss':'🇨🇭','Switzerland':'🇨🇭',
+      'Argentine':'🇦🇷','Argentina':'🇦🇷','Israeli':'🇮🇱','Israel':'🇮🇱',
+      'American':'🇺🇸','USA':'🇺🇸','South African':'🇿🇦','South Africa':'🇿🇦',
+    };
+    return map[nationality] || '🌐';
+  },
+
+  render() {
+    const container = document.getElementById('reader-cards');
+    if (!container) return;
+
+    let cases = this._cases;
+
+    // Filter by status
+    if (this._filter !== 'all') cases = cases.filter(c => c.status === this._filter);
+
+    // Filter by search
+    if (this._search) {
+      const q = this._search;
+      cases = cases.filter(c =>
+        (c.name||'').toLowerCase().includes(q) ||
+        (c.nationality||'').toLowerCase().includes(q) ||
+        (c.location?.city||'').toLowerCase().includes(q) ||
+        (c.location?.country||'').toLowerCase().includes(q) ||
+        (c.id||'').toLowerCase().includes(q)
+      );
+    }
+
+    if (cases.length === 0) {
+      container.innerHTML = '<div class="reader-loading">No cases match your search.</div>';
+      return;
+    }
+
+    container.innerHTML = cases.map(c => {
+      const status    = c.status || 'suspected';
+      const color     = this.STATUS_COLOR[status] || '#6b7280';
+      const bg        = this.STATUS_BG[status]    || '#f9fafb';
+      const label     = this.STATUS_LABEL[status] || status;
+      const flag      = this._flag(c.nationality);
+      const loc       = [c.location?.city, c.location?.country].filter(Boolean).join(', ') || '—';
+      const date      = c.onset_date || c.date || null;
+      const dateStr   = date ? new Date(date + 'T00:00:00').toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'}) : '—';
+      const notes     = c.clinical_notes || '';
+      const shortNote = notes.length > 160 ? notes.slice(0, 160).replace(/\s+\S*$/, '') + '…' : notes;
+      const isDupe    = notes.startsWith('⚠️ LIKELY DUPLICATE');
+      const isGroup   = (c.name || '').includes('—') || c.id === 'PGRP01';
+
+      return `<div class="reader-card${isDupe ? ' reader-card--dupe' : ''}" style="border-left-color:${color}">
+        <div class="reader-card-top">
+          <span class="reader-status-badge" style="background:${bg};color:${color}">${label}</span>
+          ${isDupe ? '<span class="reader-dupe-badge">Possible duplicate</span>' : ''}
+          ${isGroup ? '<span class="reader-group-badge">Group</span>' : ''}
+          <span class="reader-card-id">${this._esc(c.id)}</span>
+        </div>
+        <div class="reader-card-name">${flag} ${this._esc(c.name || 'Unknown')}</div>
+        <div class="reader-card-meta">
+          ${c.age ? `<span>${c.age}yo</span>` : ''}
+          ${c.sex ? `<span>${c.sex === 'M' || c.sex === 'male' ? 'Male' : c.sex === 'F' || c.sex === 'female' ? 'Female' : c.sex}</span>` : ''}
+          ${c.nationality ? `<span>${this._esc(c.nationality)}</span>` : ''}
+          ${c.generation !== null && c.generation !== undefined ? `<span>Gen ${c.generation}</span>` : ''}
+        </div>
+        <div class="reader-card-loc">📍 ${this._esc(loc)} &nbsp;·&nbsp; 📅 ${dateStr}</div>
+        ${shortNote ? `<div class="reader-card-notes">${this._esc(shortNote)}</div>` : ''}
+        ${c.source_url ? `<a href="${this._esc(c.source_url)}" target="_blank" rel="noopener" class="reader-card-source">↗ Source</a>` : ''}
+      </div>`;
+    }).join('');
+  },
+
+  _esc(s) {
+    if (!s) return '';
+    const d = document.createElement('div');
+    d.textContent = String(s);
+    return d.innerHTML;
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => ReaderMode.init());
 </script>
 </body>
 </html>

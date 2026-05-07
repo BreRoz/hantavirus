@@ -1,0 +1,39 @@
+name: Daily Outbreak Scraper
+
+on:
+  schedule:
+    - cron: "0 7 * * *"   # 7am UTC daily
+  workflow_dispatch:        # also allows manual trigger from GitHub UI
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install anthropic feedparser requests
+
+      - name: Run scraper
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 scraper.py
+
+      - name: Commit and push if data changed
+        run: |
+          git config user.name  "EpiTrace Scraper"
+          git config user.email "scraper@epitrace.bot"
+          git add data/cases.json data/scraper_log.json
+          if git diff --cached --quiet; then
+            echo "No new cases found — nothing to commit"
+          else
+            git commit -m "Auto-update: scraper found new case data $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push
+          fi

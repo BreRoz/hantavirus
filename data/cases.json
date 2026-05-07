@@ -333,12 +333,12 @@
       "id": "PD2B7C",
       "name": "German Passenger (Deceased, May 2)",
       "age": null,
-      "sex": null,
+      "sex": "female",
       "nationality": "German",
       "status": "deceased",
       "generation": 1,
       "infected_by": null,
-      "onset_date": null,
+      "onset_date": "2026-04-28",
       "date": "2026-05-02",
       "incubation_start": null,
       "location": {
@@ -353,9 +353,9 @@
       "transport": {},
       "exposures": [],
       "flights": [],
-      "source_url": "https://www.cbc.ca/news/health/hondius-ship-hantavirus-andes-strain-9.7189281",
+      "source_url": "https://www.kcra.com/article/hantavirus-cruise-ship-california/71244285",
       "source_notes": null,
-      "clinical_notes": "German passenger aboard MV Hondius who died May 2, 2026 \u2014 the second passenger death after index case PEDB43. P2B82F (65-year-old German, suspected) was evacuated as a close contact of this individual.",
+      "clinical_notes": "Third death in the MV Hondius outbreak. Woman presented with pneumonia, first symptoms April 28. Died May 2, 2026. Nationality reported as German in early coverage. Confirmed by WHO as third fatality.",
       "reporter": "Manually entered \u2014 CBC/public reporting"
     },
     {
@@ -534,7 +534,7 @@
     },
     {
       "id": "PKLM01",
-      "name": "KLM Flight Attendant (Suspected)",
+      "name": "Airlink Flight Attendant (Suspected)",
       "age": null,
       "sex": "F",
       "nationality": "Dutch",
@@ -556,9 +556,9 @@
       "transport": {},
       "exposures": [],
       "flights": [],
-      "source_url": "https://www.dutchnews.nl/2026/05/klm-flight-attendant-hospitalised-with-suspected-hantavirus/",
+      "source_url": "https://www.kcra.com/article/hantavirus-cruise-ship-california/71244285",
       "source_notes": "USA Today May 7 / dutchnews.nl / Dutch Health Ministry",
-      "clinical_notes": "KLM flight attendant hospitalized in the Netherlands and being tested for hantavirus as of May 7. Dutch Health Ministry spokesperson Mischa Stubenitsky confirmed the testing. KLM confirmed that index case PEDB43 (who died April 26) traveled on one of their flights from Johannesburg; this flight attendant may have been exposed during that flight. If confirmed, would represent a Gen 2 case \u2014 person-to-person transmission from a cruise passenger to airline staff, with no direct ship connection.",
+      "clinical_notes": "Flight attendant potentially the first person-to-person transmission case off the ship. Was on Airlink flight 4Z 301 (SHN\u2192JNB) with index case PEDB43 who died in Johannesburg. Showing hantavirus symptoms as of May 7. If confirmed, represents Gen 2 transmission \u2014 ship passenger to airline crew. AP reported as potentially the first off-ship infection. Dutch Health Ministry also separately noted a KLM flight attendant being tested \u2014 may be a second distinct case.",
       "reporter": "Dutch Health Ministry / USA Today / dutchnews.nl"
     },
     {
@@ -589,6 +589,35 @@
       "source_notes": "Jerusalem Post, May 7 2026",
       "clinical_notes": "Israeli patient confirmed with European strain hantavirus (separate from MV Hondius Andes strain). Infected in Eastern Europe several months before diagnosis in May 2026. Confirmed by antibody and PCR tests. Stable \u2014 not requiring ICU or strict isolation, under medical observation. Identity withheld by Health Ministry. Unrelated to MV Hondius cruise ship cluster.",
       "reporter": "Israeli Ministry of Health / Jerusalem Post"
+    },
+    {
+      "id": "PGRP01",
+      "name": "Saint Helena Departures \u2014 Untraced (23+ passengers)",
+      "age": null,
+      "sex": null,
+      "nationality": "Multiple (12+ countries)",
+      "status": "suspected",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-04-24",
+      "incubation_start": null,
+      "location": {
+        "city": "Saint Helena",
+        "state": "",
+        "country": "Saint Helena",
+        "venue": "Jamestown Port \u2014 Disembarkation",
+        "lat": -15.9644,
+        "lng": -5.7089
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.kcra.com/article/hantavirus-cruise-ship-california/71244285",
+      "source_notes": "AP / KCRA May 7 2026",
+      "clinical_notes": "More than 23 passengers from at least 12 countries disembarked MV Hondius at Saint Helena on April 24 \u2014 two weeks after the first passenger death on board \u2014 without contact tracing being completed. Health officials are now attempting to trace their contacts. California residents are confirmed among passengers being monitored by CDPH; none confirmed ill as of May 7. This group represents a significant untraced exposure risk.",
+      "reporter": "AP / KCRA / CDPH"
     }
   ],
   "edges": [

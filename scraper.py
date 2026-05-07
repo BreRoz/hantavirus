@@ -33,16 +33,49 @@ LOG_F    = os.path.join(DATA_DIR, "scraper_log.json")
 
 # Keywords that must appear in an article for it to be processed
 KEYWORDS = [
-    "hantavirus", "hondius", "cruise ship outbreak",
-    "shipboard outbreak", "vessel outbreak", "ship disease",
+    "hantavirus", "hondius", "andes virus", "hantaviral",
+    "cruise ship outbreak", "shipboard outbreak",
 ]
 
-# RSS sources — add more here as needed
+# RSS sources
 SOURCES = [
-    {"name": "WHO Disease Outbreak News", "url": "https://www.who.int/feeds/entity/csr/don/en/rss.xml"},
-    {"name": "ProMED",                    "url": "https://promedmail.org/feed/"},
-    {"name": "ECDC",                      "url": "https://www.ecdc.europa.eu/en/rss.xml"},
+    # Google News — catches everything from every outlet, updated constantly
+    {
+        "name": "Google News — hantavirus",
+        "url":  "https://news.google.com/rss/search?q=hantavirus&hl=en-US&gl=US&ceid=US:en",
+    },
+    {
+        "name": "Google News — MV Hondius",
+        "url":  "https://news.google.com/rss/search?q=hondius+hantavirus&hl=en-US&gl=US&ceid=US:en",
+    },
+    # WHO official outbreak news
+    {
+        "name": "WHO Disease Outbreak News",
+        "url":  "https://www.who.int/feeds/entity/csr/don/en/rss.xml",
+    },
+    # ProMED — gold-standard expert outbreak alerts
+    {
+        "name": "ProMED",
+        "url":  "https://promedmail.org/feed/",
+    },
+    # Outbreak News Today — small independent site, never blocks scrapers
+    {
+        "name": "Outbreak News Today",
+        "url":  "http://outbreaknewstoday.com/feed/",
+    },
 ]
+
+# Seen-URL cache file — prevents reprocessing the same article on future runs
+SEEN_F = os.path.join(DATA_DIR, "scraper_seen.json")
+
+# HTTP headers — avoids 403 on feeds that check User-Agent
+_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (compatible; EpiTrace-Scraper/1.0; "
+        "+https://github.com/BreRoz/hantavirus)"
+    ),
+    "Accept": "application/rss+xml, application/xml, text/xml, */*",
+}
 
 # Prompt sent to Claude for each matching article
 _EXTRACT_PROMPT = """\
@@ -109,35 +142,109 @@ def _save(path, data):
 
 
 # ---------------------------------------------------------------------------
+# Seen-URL cache
+
+def _load_seen():
+    try:
+        with open(SEEN_F) as f:
+            return set(json.load(f))
+    except Exception:
+        return set()
+
+def _save_seen(seen):
+    with open(SEEN_F, "w") as f:
+        json.dump(sorted(seen), f, indent=2)
+
+
+# ---------------------------------------------------------------------------
 # Fetch
 
+def _fetch_feed(src):
+    """Fetch an RSS feed with proper headers. Returns feedparser result."""
+    url = src["url"]
+    if _requests:
+        try:
+            resp = _requests.get(url, headers=_HEADERS, timeout=15)
+            resp.raise_for_status()
+            return feedparser.parse(resp.content)
+        except Exception:
+            pass  # fall back to feedparser direct fetch
+    return feedparser.parse(url)
+
+
+def _try_fetch_full_text(url):
+    """Best-effort fetch of article full text (for better Claude extraction).
+    Returns plain text up to 6000 chars, or empty string on failure."""
+    if not _requests:
+        return ""
+    try:
+        resp = _requests.get(url, headers=_HEADERS, timeout=10)
+        resp.raise_for_status()
+        html = resp.text
+        # Very lightweight: strip tags, collapse whitespace
+        import re
+        text = re.sub(r"<[^>]+>", " ", html)
+        text = re.sub(r"&[a-z]+;", " ", text)
+        text = re.sub(r"\s+", " ", text).strip()
+        return text[:6000]
+    except Exception:
+        return ""
+
+
 def fetch_articles():
-    """Pull all RSS sources, return articles matching KEYWORDS."""
+    """Pull all RSS sources, return new articles matching KEYWORDS."""
     articles = []
     if not feedparser:
         print("[Scraper] feedparser not installed — install it via requirements.txt")
         return articles
 
+    seen = _load_seen()
+    new_seen = set()
+
     for src in SOURCES:
         try:
-            feed = feedparser.parse(src["url"])
+            feed = _fetch_feed(src)
             for entry in feed.entries:
+                url = entry.get("link", "")
+
+                # Skip already-processed URLs
+                if url in seen:
+                    continue
+
                 combined = " ".join([
                     entry.get("title", ""),
                     entry.get("summary", ""),
                     entry.get("description", ""),
                 ]).lower()
-                if any(kw in combined for kw in KEYWORDS):
-                    articles.append({
-                        "source_name": src["name"],
-                        "title":       entry.get("title", ""),
-                        "url":         entry.get("link", ""),
-                        "text":        entry.get("summary", entry.get("description", ""))[:4000],
-                        "published":   entry.get("published", ""),
-                    })
+
+                if not any(kw in combined for kw in KEYWORDS):
+                    continue
+
+                # Try to get full text; fall back to RSS summary
+                summary = entry.get("summary", entry.get("description", ""))
+                full_text = _try_fetch_full_text(url) if url else ""
+                text = full_text if len(full_text) > len(summary) else summary
+                text = text[:6000]
+
+                articles.append({
+                    "source_name": src["name"],
+                    "title":       entry.get("title", ""),
+                    "url":         url,
+                    "text":        text,
+                    "published":   entry.get("published", ""),
+                })
+                new_seen.add(url)
+
         except Exception as e:
             print(f"[Scraper] Error fetching {src['name']}: {e}")
 
+    # Persist seen URLs (cap at 2000 to avoid unbounded growth)
+    combined_seen = seen | new_seen
+    if len(combined_seen) > 2000:
+        combined_seen = set(sorted(combined_seen)[-2000:])
+    _save_seen(combined_seen)
+
+    print(f"[Scraper] {len(articles)} new matching article(s) found")
     return articles
 
 

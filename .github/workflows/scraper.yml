@@ -12,13 +12,12 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repo (full history)
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Pull latest commits
-        run: git pull origin main
+          fetch-depth: 0      # full history — required for rebase to work
+          ref: main           # always use latest main
 
       - name: Set up Python
         uses: actions/setup-python@v5

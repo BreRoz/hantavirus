@@ -37,11 +37,12 @@ jobs:
           set +e
           git config user.name  "EpiTrace Scraper"
           git config user.email "scraper@epitrace.bot"
-          git add data/cases.json data/scraper_log.json data/scraper_seen.json
-          git diff --cached --quiet
+          git add data/scraper_seen.json data/scraper_log.json || true
+          git add data/cases.json
+          git diff --cached -- data/cases.json --quiet
           DIFF_EXIT=$?
           if [ $DIFF_EXIT -eq 0 ]; then
-            echo "No new cases found — nothing to commit"
+            echo "No new cases — skipping commit"
             exit 0
           fi
           git commit -m "Auto-update: scraper found new case data $(date -u '+%Y-%m-%d %H:%M UTC')"

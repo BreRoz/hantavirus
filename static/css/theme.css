@@ -1331,6 +1331,85 @@ body {
 .reader-footer a:hover { text-decoration: underline; }
 
 /* ==========================================================================
+   Info Tab
+   ========================================================================== */
+.info-layout {
+  padding: var(--space-4) var(--space-5);
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  overflow-y: auto;
+  height: 100%;
+}
+.info-section {
+  background: var(--color-surface-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+}
+.info-section p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+.info-section-title {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-brand);
+  margin-bottom: var(--space-3);
+}
+.info-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.info-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: border-color 0.15s, background 0.15s;
+}
+.info-link:hover { border-color: var(--color-brand); background: var(--color-bg-elevated); }
+.info-link--primary { border-color: var(--color-brand); background: rgba(79,142,247,0.06); }
+.info-link-icon { font-size: 20px; flex-shrink: 0; }
+.info-link-name { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); }
+.info-link-desc { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 2px; }
+.info-link-arrow { margin-left: auto; color: var(--color-brand); font-size: var(--text-sm); flex-shrink: 0; }
+.info-facts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.info-fact {
+  display: flex;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+.info-fact-label {
+  flex-shrink: 0;
+  width: 110px;
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-top: 2px;
+}
+.info-section--credit { text-align: left; }
+
+/* ==========================================================================
    Latte Button
    ========================================================================== */
 .sidebar-latte {

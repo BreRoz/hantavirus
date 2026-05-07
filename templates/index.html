@@ -103,6 +103,9 @@
     <button class="tab-btn" data-tab="timeline" role="tab">
       <span class="tab-icon">📅</span> Timeline
     </button>
+    <button class="tab-btn" data-tab="info" role="tab">
+      <span class="tab-icon">ℹ</span> Info
+    </button>
   </nav>
 
   <!-- ===== SIDEBAR ===== -->
@@ -320,6 +323,87 @@
         <div class="gantt-wrapper">
           <svg id="gantt-svg"></svg>
         </div>
+      </div>
+    </div>
+
+    <!-- Tab 6: Info -->
+    <div class="tab-pane" id="tab-info">
+      <div class="info-layout">
+
+        <div class="info-section">
+          <div class="info-section-title">📡 About This Tracker</div>
+          <p>EpiTrace is an unofficial real-time surveillance dashboard tracking the 2026 MV Hondius hantavirus outbreak, which has killed three cruise ship passengers and spread across multiple countries. It maps confirmed and suspected cases, transmission chains, and flight exposure risks using data compiled from WHO briefings, AP, and regional health authorities.</p>
+          <p style="margin-top:8px;color:var(--color-text-muted);font-size:var(--text-xs)">⚠️ This is NOT an official public health resource. Data is manually compiled from public sources and may be incomplete or inaccurate. Always verify critical information with official health authorities.</p>
+        </div>
+
+        <div class="info-section">
+          <div class="info-section-title">🏥 Official Sources</div>
+          <div class="info-links">
+            <a href="https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON599" target="_blank" rel="noopener" class="info-link info-link--primary">
+              <div class="info-link-icon">🌐</div>
+              <div>
+                <div class="info-link-name">WHO Disease Outbreak News — DON599</div>
+                <div class="info-link-desc">Official WHO situation report on the MV Hondius hantavirus outbreak</div>
+              </div>
+              <span class="info-link-arrow">↗</span>
+            </a>
+            <a href="https://www.who.int/emergencies" target="_blank" rel="noopener" class="info-link">
+              <div class="info-link-icon">🌐</div>
+              <div>
+                <div class="info-link-name">WHO Emergency Response</div>
+                <div class="info-link-desc">who.int/emergencies</div>
+              </div>
+              <span class="info-link-arrow">↗</span>
+            </a>
+            <a href="https://www.cdc.gov/hantavirus" target="_blank" rel="noopener" class="info-link">
+              <div class="info-link-icon">🇺🇸</div>
+              <div>
+                <div class="info-link-name">CDC — Hantavirus</div>
+                <div class="info-link-desc">US Centers for Disease Control hantavirus information</div>
+              </div>
+              <span class="info-link-arrow">↗</span>
+            </a>
+            <a href="https://www.ecdc.europa.eu" target="_blank" rel="noopener" class="info-link">
+              <div class="info-link-icon">🇪🇺</div>
+              <div>
+                <div class="info-link-name">ECDC — European Centre for Disease Prevention</div>
+                <div class="info-link-desc">ecdc.europa.eu</div>
+              </div>
+              <span class="info-link-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <div class="info-section-title">🦠 About Hantavirus (Andes Strain)</div>
+          <div class="info-facts">
+            <div class="info-fact"><span class="info-fact-label">Virus</span><span>Andes virus — a strain of hantavirus found in South America</span></div>
+            <div class="info-fact"><span class="info-fact-label">Transmission</span><span>Primarily rodent-borne (droppings, urine, saliva). Andes strain is the only hantavirus known to spread human-to-human, though rarely.</span></div>
+            <div class="info-fact"><span class="info-fact-label">Incubation</span><span>1–8 weeks</span></div>
+            <div class="info-fact"><span class="info-fact-label">Symptoms</span><span>Fever, headache, muscle aches, fatigue — can progress to severe respiratory distress (Hantavirus Pulmonary Syndrome)</span></div>
+            <div class="info-fact"><span class="info-fact-label">Mortality</span><span>~15–35% in confirmed cases. Argentina reported nearly 1 in 3 deaths in 2025–26.</span></div>
+            <div class="info-fact"><span class="info-fact-label">Treatment</span><span>No specific antiviral. Supportive care in ICU. Early intervention critical.</span></div>
+            <div class="info-fact"><span class="info-fact-label">Public risk</span><span>WHO considers risk to the general public LOW. "This is not SARS-CoV-2." — Dr. Maria Van Kerkhove, WHO</span></div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <div class="info-section-title">🚢 MV Hondius — Voyage Summary</div>
+          <div class="info-facts">
+            <div class="info-fact"><span class="info-fact-label">Vessel</span><span>MV Hondius — Dutch-flagged expedition cruise ship operated by Oceanwide Expeditions</span></div>
+            <div class="info-fact"><span class="info-fact-label">Voyage</span><span>HDS2526 — Departed Ushuaia, Argentina on April 1, 2026 bound for Antarctica</span></div>
+            <div class="info-fact"><span class="info-fact-label">Exposure origin</span><span>Dutch index couple believed infected during wildlife/bird-watching excursion in Ushuaia before boarding</span></div>
+            <div class="info-fact"><span class="info-fact-label">Current location</span><span>Moored at Praia, Cape Verde as of May 6, 2026</span></div>
+            <div class="info-fact"><span class="info-fact-label">Deaths</span><span>3 — Dutch male (Apr 11), Dutch female (Apr 26), German female (May 2)</span></div>
+          </div>
+        </div>
+
+        <div class="info-section info-section--credit">
+          <div class="info-section-title">👤 Tracker</div>
+          <p>Built and maintained by an independent researcher. Data updated daily from public sources. If this tracker has been useful to you:</p>
+          <a href="https://venmo.com/BreRoz" target="_blank" rel="noopener" class="latte-btn" style="margin-top:12px;display:inline-block">☕ Buy me a Latte!</a>
+        </div>
+
       </div>
     </div>
 

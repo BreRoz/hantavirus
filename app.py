@@ -392,8 +392,8 @@ def get_timeline():
 
     rows = []
     for c in cases_data["cases"]:
-        onset   = c.get("onset_date", c.get("date", ""))
-        inc_start = c.get("incubation_start", "")
+        onset   = c.get("onset_date") or c.get("date") or ""
+        inc_start = c.get("incubation_start") or ""
         if not inc_start and onset:
             try:
                 dt = datetime.strptime(onset, "%Y-%m-%d") - timedelta(days=14)
@@ -429,7 +429,7 @@ def get_timeline():
             "exposures":      c.get("exposures", []),
         })
 
-    rows.sort(key=lambda r: r.get("onset_date", ""))
+    rows.sort(key=lambda r: r.get("onset_date") or r.get("date") or "")
     return jsonify({"timeline": rows})
 
 

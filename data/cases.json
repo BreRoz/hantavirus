@@ -113,7 +113,7 @@
       "flights": [],
       "source_url": null,
       "source_notes": "Manually entered — search MRCC Cape Town / SA health authorities for April 2026 evacuation records",
-      "clinical_notes": "British male crew member. Reported fever, shortness of breath, and signs of pneumonia to the ship's doctor on April 24. Condition worsened; medically evacuated to South Africa on April 27. Tested positive for hantavirus on May 2 in South Africa — making him the FIRST laboratory-confirmed case in the outbreak (AP, May 7 2026). Currently hospitalized in intensive care in South Africa. WHO update (May 6): patient reportedly improving.",
+      "clinical_notes": "British male crew member. Reported fever, shortness of breath, and signs of pneumonia to the ship's doctor on April 24. Condition worsened; medically evacuated to South Africa on April 27. Tested positive for hantavirus on May 2 in South Africa — making him the FIRST laboratory-confirmed case in the outbreak (AP, May 7 2026). Currently hospitalized in intensive care in South Africa. WHO update (May 8 via Dr. Maria Van Kerkhove briefing): patient was reported as 'doing better.'",
       "reporter": "MRCC Cape Town / SA Medical Services"
     },
     {
@@ -157,7 +157,7 @@
     },
     {
       "id": "P90118",
-      "name": "Crew Member with Mild Symptoms",
+      "name": "Cape Verde Evacuee — Mild Symptoms (possible duplicate)",
       "age": null,
       "sex": null,
       "nationality": null,
@@ -181,12 +181,12 @@
       "flights": [],
       "source_url": "https://www.nbcnews.com/health/health-news/hantavirus-cruise-ship-stranded-crew-evacuation-human-transmission-rcna343606",
       "source_notes": null,
-      "clinical_notes": "Ill crew member with mild symptoms requiring urgent medical evacuation from the stranded cruise ship.",
+      "clinical_notes": "⚠️ POSSIBLE DUPLICATE — May be same person as PA1B22, P872E8, or PDB8D5 (the three officially listed May 6 evacuees to the Netherlands per WHO/Oceanwide). Auto-scraped entry for ill crew member with mild symptoms requiring urgent medical evacuation from the stranded cruise ship near Cape Verde. Retain pending confirmation of distinct identity.",
       "reporter": "Auto-scraped — verify before publishing"
     },
     {
       "id": "P087BA",
-      "name": "Crew Member with Severe Symptoms",
+      "name": "Cape Verde Evacuee — Severe Symptoms (possible duplicate)",
       "age": null,
       "sex": null,
       "nationality": null,
@@ -210,7 +210,7 @@
       "flights": [],
       "source_url": "https://www.nbcnews.com/health/health-news/hantavirus-cruise-ship-stranded-crew-evacuation-human-transmission-rcna343606",
       "source_notes": null,
-      "clinical_notes": "Ill crew member with severe symptoms requiring urgent medical evacuation from the stranded cruise ship.",
+      "clinical_notes": "⚠️ POSSIBLE DUPLICATE — May be same person as PA1B22, P872E8, or PDB8D5 (the three officially listed May 6 evacuees to the Netherlands per WHO/Oceanwide). Auto-scraped entry for ill crew member with severe symptoms requiring urgent medical evacuation from the stranded cruise ship near Cape Verde. Retain pending confirmation of distinct identity.",
       "reporter": "Auto-scraped — verify before publishing"
     },
     {
@@ -355,7 +355,7 @@
       "flights": [],
       "source_url": "https://www.kcra.com/article/hantavirus-cruise-ship-california/71244285",
       "source_notes": null,
-      "clinical_notes": "Third death in the MV Hondius outbreak. Symptom onset April 25 (per WHO via Al Jazeera, May 7 2026 — earlier reports said April 28). Died May 2, 2026 — 7 days after symptom onset. Nationality reported as German. Confirmed by WHO as third fatality.",
+      "clinical_notes": "Third death in the MV Hondius outbreak. Official WHO/Oceanwide listing (USA Today, May 8 2026) confirms symptom onset April 28 — fever and signs of pneumonia. Died May 2, 2026 — 4 days after symptom onset. Earlier Al Jazeera/WHO May 7 report of April 25 onset appears to have been a reporting error; official source is April 28. Nationality reported as German. Confirmed by WHO as third fatality.",
       "reporter": "Manually entered — CBC/public reporting"
     },
     {
@@ -418,7 +418,7 @@
     },
     {
       "id": "PF6529",
-      "name": "Evacuee 2, MV Hondius",
+      "name": "May 6 Evacuee — Possible Duplicate",
       "age": null,
       "sex": null,
       "nationality": null,
@@ -442,7 +442,7 @@
       "flights": [],
       "source_url": "https://www.bbc.com/news/articles/c5y093d5n9ko",
       "source_notes": null,
-      "clinical_notes": "One of three evacuees sent to the Netherlands after displaying symptoms aboard the MV Hondius.",
+      "clinical_notes": "⚠️ POSSIBLE DUPLICATE — Auto-scraped. WHO/Oceanwide official listing accounts for exactly 3 May 6 evacuees to the Netherlands, already tracked as PA1B22 (ship's doctor), P872E8 (British man), and PDB8D5 (Dutch 41yo). This entry may be redundant. Retain pending confirmation.",
       "reporter": "Auto-scraped — verify before publishing"
     },
     {
@@ -476,7 +476,7 @@
     },
     {
       "id": "PC87A6",
-      "name": "British Man Evacuee (2)",
+      "name": "May 7 British Evacuee — Possible Duplicate",
       "age": null,
       "sex": "male",
       "nationality": "British",
@@ -500,7 +500,7 @@
       "flights": [],
       "source_url": "https://www.bbc.com/news/articles/c5y093d5n9ko",
       "source_notes": null,
-      "clinical_notes": "British man evacuated from MV Hondius to the Netherlands after displaying symptoms.",
+      "clinical_notes": "⚠️ POSSIBLE DUPLICATE — Auto-scraped. Not included in official WHO/Oceanwide listing of 8 cases. May overlap with one of the 3 confirmed May 6 Netherlands evacuees. Retain pending confirmation of distinct identity.",
       "reporter": "Auto-scraped — verify before publishing"
     },
     {

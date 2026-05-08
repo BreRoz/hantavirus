@@ -204,7 +204,7 @@ const Sidebar = {
       }
     });
 
-    document.getElementById("sidebar-search").addEventListener("input", e => {
+    document.getElementById("sidebar-search")?.addEventListener("input", e => {
       this._search = e.target.value.toLowerCase();
       this._render();
     });
@@ -1543,7 +1543,88 @@ const CaseForm = {
 };
 
 // ============================================================================
-// 15. App — main controller
+// 15. NewCasesPopup — "new since last visit" modal
+// ============================================================================
+
+const NewCasesPopup = {
+  _KEY: "epitrace_seen_ids_v1",
+  _checked: false,
+
+  _getSeenIds() {
+    try { return new Set(JSON.parse(localStorage.getItem(this._KEY)) || []); }
+    catch { return new Set(); }
+  },
+
+  _saveSeenIds(cases) {
+    localStorage.setItem(this._KEY, JSON.stringify(cases.map(c => c.id)));
+  },
+
+  check(cases) {
+    if (this._checked) return;        // only fire once per page load
+    this._checked = true;
+
+    const seen = this._getSeenIds();
+    const isFirstVisit = seen.size === 0;
+    const newCases = isFirstVisit ? [] : cases.filter(c => !seen.has(c.id));
+
+    this._saveSeenIds(cases);         // update storage with current full list
+
+    if (!isFirstVisit && newCases.length > 0) this._show(newCases);
+  },
+
+  _show(newCases) {
+    const popup   = document.getElementById("new-cases-popup");
+    const countEl = document.getElementById("ncp-count");
+    const listEl  = document.getElementById("ncp-list");
+    if (!popup || !listEl) return;
+
+    countEl.textContent = `${newCases.length} new case${newCases.length !== 1 ? "s" : ""} added`;
+
+    listEl.innerHTML = newCases.map(c => {
+      const isAuto = (c.reporter || "").includes("Auto-scraped");
+      const srcBadge = isAuto
+        ? `<span class="source-badge source-badge--unverified">⚠ unverified</span>`
+        : `<span class="source-badge source-badge--verified">✓ verified</span>`;
+
+      const statusLabel = { confirmed:"CONFIRMED", suspected:"SUSPECTED", recovered:"RECOVERED", deceased:"DECEASED" }[c.status] || c.status?.toUpperCase();
+      const loc  = [c.location?.city, c.location?.country].filter(Boolean).join(", ") || "—";
+      const date = c.date ? new Date(c.date + "T00:00:00").toLocaleDateString("en-GB", { day:"numeric", month:"short", year:"numeric" }) : "—";
+      const meta = [
+        c.age  ? `${c.age}yo`       : null,
+        c.sex  ? (c.sex === "M" || c.sex === "male" ? "Male" : c.sex === "F" || c.sex === "female" ? "Female" : c.sex) : null,
+        c.nationality || null,
+        c.generation != null ? `Gen ${c.generation}` : null,
+      ].filter(Boolean).join(" · ");
+
+      return `<div class="ncp-case" data-id="${c.id}" onclick="NewCasesPopup._clickCase('${c.id}')">
+        <div class="ncp-case-top">
+          <span class="ncp-dot ncp-dot--${c.status || "suspected"}"></span>
+          <span class="ncp-case-status">${statusLabel}</span>
+          ${srcBadge}
+          <span class="ncp-case-id">${c.id}</span>
+        </div>
+        <div class="ncp-case-name">${c.name || "Unknown"}</div>
+        <div class="ncp-case-meta">📍 ${loc} &nbsp;·&nbsp; 📅 ${date}</div>
+        ${meta ? `<div class="ncp-case-meta">${meta}</div>` : ""}
+      </div>`;
+    }).join("");
+
+    popup.classList.add("open");
+    popup.focus();
+  },
+
+  _clickCase(id) {
+    this.close();
+    App.selectCase(id);
+  },
+
+  close() {
+    document.getElementById("new-cases-popup")?.classList.remove("open");
+  },
+};
+
+// ============================================================================
+// 16. App — main controller
 // ============================================================================
 
 const App = {
@@ -1670,6 +1751,7 @@ const App = {
 
       this._cases = casesData.cases || [];
       MapSlider.setRange(this._cases);
+      NewCasesPopup.check(this._cases);   // show "new since last visit" popup once
       this._chainData = chainData;
 
       // Last updated timestamp

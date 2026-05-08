@@ -133,15 +133,6 @@
   <!-- ===== SIDEBAR ===== -->
   <aside class="sidebar">
     <div class="sidebar-section">
-      <div class="search-input-wrap">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-        </svg>
-        <input type="text" id="sidebar-search" class="search-input" placeholder="Search ID, name, city…" autocomplete="off">
-      </div>
-    </div>
-
-    <div class="sidebar-section">
       <div class="sidebar-label">Status</div>
       <div class="filter-pills">
         <label class="filter-pill filter-pill--confirmed"><input type="checkbox" value="confirmed" checked> Confirmed</label>
@@ -755,6 +746,26 @@
     <p style="margin-top:4px;opacity:0.6;font-size:12px">EpiTrace · Unofficial · Not for medical use</p>
   </div>
 
+</div>
+
+<!-- ===== NEW CASES POPUP ===== -->
+<div class="ncp-overlay" id="new-cases-popup" aria-modal="true" role="dialog" aria-labelledby="ncp-title">
+  <div class="ncp-modal">
+    <div class="ncp-header">
+      <div class="ncp-header-left">
+        <span class="ncp-icon">🆕</span>
+        <div>
+          <div class="ncp-title" id="ncp-title">NEW SINCE YOUR LAST VISIT</div>
+          <div class="ncp-subtitle" id="ncp-count">— cases added</div>
+        </div>
+      </div>
+      <button class="ncp-close" onclick="NewCasesPopup.close()" title="Close">✕</button>
+    </div>
+    <div class="ncp-list" id="ncp-list"></div>
+    <div class="ncp-footer">
+      <button class="ncp-btn-view" onclick="NewCasesPopup.close()">✓ Got it — Show me the map</button>
+    </div>
+  </div>
 </div>
 
 <!-- Scripts -->

@@ -509,8 +509,8 @@ const OverviewTab = {
   },
 
   _addShipLayer() {
-    // Estimated position — MV Hondius en route Cape Verde → Tenerife
-    const shipPos    = [19.0, -21.0];
+    // Pinned position — MV Hondius ~200 miles west of Nouadhibou, Mauritania (LiveScience/AP, May 8)
+    const shipPos    = [20.9, -20.5];
     const tenerifePos = [28.2916, -16.6291];
 
     // Glowing ship SVG (teal)
@@ -562,10 +562,11 @@ const OverviewTab = {
       .bindPopup(`
         <div style="font-family:Inter,sans-serif;min-width:180px">
           <div style="font-weight:700;font-size:12px;color:#2dd4bf;margin-bottom:4px">🚢 MV Hondius</div>
-          <div style="font-size:11px;color:#ccc">Estimated position · May 7, 2026</div>
-          <div style="font-size:11px;color:#aaa;margin-top:4px">En route Cape Verde → Tenerife</div>
-          <div style="font-size:11px;color:#f97316;margin-top:4px">Expected arrival: May 9–10</div>
-          <div style="font-size:10px;color:#666;margin-top:6px;font-style:italic">Position is estimated — not real-time</div>
+          <div style="font-size:11px;color:#ccc">~200 miles west of Nouadhibou, Mauritania · May 8, 2026</div>
+          <div style="font-size:11px;color:#aaa;margin-top:4px">Sailing northwest → Tenerife</div>
+          <div style="font-size:11px;color:#f97316;margin-top:4px">Expected arrival: Sunday May 10</div>
+          <div style="font-size:11px;color:#aaa;margin-top:4px">147 aboard · 23 nationalities · 17 Americans</div>
+          <div style="font-size:10px;color:#666;margin-top:6px;font-style:italic">Source: AP / LiveScience, May 8 2026</div>
         </div>`, { className: "dark-popup" })
       .addTo(this._map);
 
@@ -574,9 +575,11 @@ const OverviewTab = {
       .bindPopup(`
         <div style="font-family:Inter,sans-serif;min-width:180px">
           <div style="font-weight:700;font-size:12px;color:#f97316;margin-bottom:4px">⚓ Tenerife, Canary Islands</div>
-          <div style="font-size:11px;color:#ccc">MV Hondius destination</div>
-          <div style="font-size:11px;color:#f97316;margin-top:4px">Expected arrival: May 9–10, 2026</div>
-          <div style="font-size:11px;color:#aaa;margin-top:4px">Passengers to disembark under IHR health protocols</div>
+          <div style="font-size:11px;color:#ccc">MV Hondius destination — Sunday May 10, 2026</div>
+          <div style="font-size:11px;color:#aaa;margin-top:4px">Fully cordoned arrival: isolated area, guarded vehicles, sealed airport section</div>
+          <div style="font-size:11px;color:#aaa;margin-top:2px">14 Spanish passengers → military hospital</div>
+          <div style="font-size:11px;color:#aaa;margin-top:2px">17 Americans repatriated by US government plane</div>
+          <div style="font-size:11px;color:#aaa;margin-top:2px">All others repatriated per Spain Health Minister</div>
         </div>`, { className: "dark-popup" })
       .addTo(this._map);
   },

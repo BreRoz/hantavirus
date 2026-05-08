@@ -51,12 +51,12 @@
       "date": "2026-04-11",
       "incubation_start": "2026-04-01",
       "location": {
-        "city": "Antarctic Peninsula",
+        "city": "South Atlantic Ocean",
         "state": "",
         "country": "International Waters",
-        "venue": "MV Hondius — Cabin 406, Deck 4",
-        "lat": -63.2,
-        "lng": -58.1
+        "venue": "MV Hondius — underway between South Georgia and Tristan da Cunha",
+        "lat": -42.8,
+        "lng": -20.5
       },
       "ship_info": {
         "vessel": "MV Hondius",

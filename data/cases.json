@@ -79,7 +79,7 @@
     },
     {
       "id": "P003",
-      "name": "British Crew Member",
+      "name": "British Guest — Symptomatic Evacuee (April 27)",
       "age": 34,
       "sex": "M",
       "nationality": "British",
@@ -102,7 +102,7 @@
         "voyage": "HDS2526",
         "cabin": "C12",
         "deck": 2,
-        "role": "crew",
+        "role": "passenger",
         "embarkation_port": "Ushuaia",
         "embarkation_date": "2026-04-01"
       },
@@ -113,7 +113,7 @@
       "flights": [],
       "source_url": null,
       "source_notes": "Manually entered — search MRCC Cape Town / SA health authorities for April 2026 evacuation records",
-      "clinical_notes": "British male crew member. Reported fever, shortness of breath, and signs of pneumonia to the ship's doctor on April 24. Condition worsened; medically evacuated to South Africa on April 27. Tested positive for hantavirus on May 2 in South Africa — making him the FIRST laboratory-confirmed case in the outbreak (AP, May 7 2026). Currently hospitalized in intensive care in South Africa. WHO update (May 8 via Dr. Maria Van Kerkhove briefing): patient was reported as 'doing better.'",
+      "clinical_notes": "British male GUEST (not crew — corrected per Oceanwide Expeditions official timeline, USA Today May 8 2026). Reported fever, shortness of breath, and signs of pneumonia to the ship's doctor on April 24. Condition worsened; medically evacuated April 27 via Ascension Island alongside his American partner (see PUSPAR01) — both removed from the ship together as the total was reduced from 149 to 147. Tested positive for hantavirus on May 2 in South Africa — making him the FIRST laboratory-confirmed case in the outbreak (AP, May 7 2026). Currently hospitalized in intensive care in South Africa. WHO update (May 8 via Dr. Maria Van Kerkhove briefing): patient was reported as 'doing better.'",
       "reporter": "MRCC Cape Town / SA Medical Services"
     },
     {
@@ -761,7 +761,7 @@
       "flights": [],
       "source_url": "https://www.kcra.com/article/hantavirus-cruise-ship-california/71244285",
       "source_notes": "AP / KCRA May 7 2026",
-      "clinical_notes": "147 people aboard total (88 passengers, 59 crew, 23 nationalities including 17 Americans) per WHO May 8. 30–40 passengers from 12 countries disembarked MV Hondius at Saint Helena on April 24 — without contact tracing completed. Ship operator (Oceanwide Expeditions) says 30 (including the deceased Dutch couple); Dutch Foreign Ministry puts figure at ~40 (AP, May 7 2026). Countries: UK, Canada, Denmark, Germany, Netherlands, New Zealand, Saint Kitts and Nevis, Singapore, Sweden, Switzerland, Turkey, USA. St. Helena authorities monitoring a 'small number' of higher-risk contacts, ordered to isolate for 45 days. Singapore monitoring 2 men who flew St Helena → South Africa → Singapore (see PUSSG01). 7 Americans across 6 US states (AZ, CA, GA, NJ, TX, VA) being monitored — NONE experiencing symptoms as of May 8 (CNN). New Jersey monitoring 2 people exposed post-disembarkation (see PUSNJ01). US REPATRIATION PLAN (CNN, May 8 2026): CDC staffers dispatched to Canary Islands to escort 17 American passengers on a specialized biocontainment charter aircraft (similar to Covid-19 evacuations) back to the US. A second CDC team dispatched to Nebraska to receive passengers at the National Quarantine Unit and Nebraska Biocontainment Unit (Nebraska Medicine / UNMC). State Dept coordinating with CDC, HHS, and government of Spain. Ship expected at Granadilla port, Tenerife. Argentina distributing 2,500 diagnostic kits to a 5-country laboratory network. Ship departed Cape Verde 7:15pm local May 6 — ~200 miles west of Nouadhibou, Mauritania as of May 8, expected Tenerife Sunday May 10. 8 hantavirus cases identified among passengers per CNN sources, 3 deaths. Canada update (Calgary CityNews, May 8 2026): 6 Canadians were aboard MV Hondius. 2 Canadians returned to Canada April 26-27 (before outbreak identified) along with a third person — 2 are isolating in Ontario, 1 in Quebec. 4 Canadians remain on ship, all symptom-free. Canada coordinating with Spain for disembarkation. Canadian consular officials assisting. Canada working with each province: each has identified a specific hospital capable of managing complex viruses.",
+      "clinical_notes": "VOYAGE TIMELINE (Oceanwide Expeditions official, via USA Today May 8 2026):\nApr 1: Departed Ushuaia — 175 aboard (114 guests, 61 crew).\nApr 4-7: Stop at South Georgia Island.\nApr 13-16: Stop at Tristan da Cunha/Inaccessible/Nightingale Islands — 6 guests embark (islanders), 1 crew disembarks → 180 total (120 guests, 60 crew).\nApr 17: Stop at Gough Island.\nApr 21-24: Stop at St. Helena — 1 crew embarks, 32 guests disembark (including Dutch couple P002/PEDB43) → 149 total (88 guests, 61 crew).\nApr 27: 2 guests medevaced via Ascension Island — British national P003 (symptomatic) and American partner PUSPAR01 (precautionary) → 147 total (86 guests, 61 crew).\n\nCURRENT SHIP MANIFEST (Oceanwide, USA Today May 8) by nationality: Argentina 1g, Australia 4g, Belgium 2g, Canada 4g, France 5g, Germany 5g+1c, Greece 1g, Guatemala 1c, India 2c, Ireland 2g, Italy 1g, Japan 1g, Montenegro 1c, Netherlands 8g+5c, New Zealand 1g, Philippines 38c, Poland 1c, Portugal 1c, Russia 1c, Spain 13g+1c, Turkey 3g, UK 19g+3c, Ukraine 5c, USA 17g. (g=guest, c=crew)\n\nCountries notified by WHO (May 7): Canada, Denmark, Germany, Netherlands, New Zealand, Saint Kitts and Nevis, Singapore, Sweden, Switzerland, Turkey, UK, USA. Also South Africa and Spain.\n\nSt. Helena authorities monitoring a 'small number' of higher-risk contacts ordered to isolate 45 days. Singapore monitoring 2 men (PUSSG01). 7 Americans across 6 US states (AZ, CA, GA, NJ, TX, VA) monitored — none symptomatic. New Jersey monitoring 2 (PUSNJ01). US biocontainment charter to Nebraska planned for 17 Americans. Ship docking Granadilla port, Tenerife, Sunday May 10.",
       "reporter": "AP / KCRA / CDPH / CNN / WHO / NBC News / Calgary CityNews"
     },
     {
@@ -827,7 +827,7 @@
       "flights": [],
       "source_url": "https://www.livescience.com/health/live/hantivirus-cruise-friday-may-8",
       "source_notes": "UK Health Security Agency statement, May 8 2026",
-      "clinical_notes": "British male passenger/islander-resident who disembarked MV Hondius at its scheduled stop at Tristan da Cunha on April 15 — well before the outbreak was identified. He is a resident of Tristan da Cunha (not a tourist). Currently hospitalised on the island. Spouse is isolating as a precaution and has not reported symptoms. Additionally, 4 other Tristan islanders who had been off-island hitched a ride back home on MV Hondius to St Helena, then onward — their status is being monitored. Tristan da Cunha is one of the most remote permanently inhabited islands on Earth, with a population of just over 200 people. Identified as a new suspected case by UK Health Security Agency on May 8, 2026.",
+      "clinical_notes": "British male passenger — Tristan da Cunha islander/resident. The ship stopped at Tristan da Cunha (including Inaccessible Island and Nightingale Island) April 13-16. Per Oceanwide official timeline: 6 guests embarked at Tristan da Cunha (islanders hitching a ride), and 1 crew member disembarked. PTRISTAN01 is one of those 6 who boarded at Tristan. He is currently hospitalised on the island after developing symptoms. Spouse is isolating as a precaution. Tristan da Cunha has a population of just over 200 people and is one of the most remote permanently inhabited islands on Earth. Identified as a new suspected case by UK Health Security Agency on May 8, 2026. Additionally, 4 other Tristan islanders who had been off-island hitched a ride back home on MV Hondius to St Helena, then onward — their status is being monitored.",
       "reporter": "UK Health Security Agency / LiveScience / NBC News"
     },
     {
@@ -1011,6 +1011,43 @@
       "source_notes": "Calgary CityNews, May 8 2026",
       "clinical_notes": "Three people who disembarked MV Hondius early and returned to Canada on April 26-27 — before the hantavirus outbreak was identified. Two are Canadian nationals; a third person (nationality unconfirmed) returned with them. Two are isolating in Ontario, one in Quebec. No symptoms reported as of May 8. 4 additional Canadians remain aboard the ship, all symptom-free. Canadian consular officials coordinating support. Each province has identified a specific hospital capable of managing complex viruses. Incubation period 1–6 weeks per Canada Chief Medical Officer Dr. Joss Reimer.",
       "reporter": "Calgary CityNews / Canada Chief Medical Officer Dr. Joss Reimer"
+    },
+    {
+      "id": "PUSPAR01",
+      "name": "American Passenger — Partner of British Evacuee (P003)",
+      "age": null,
+      "sex": null,
+      "nationality": "American",
+      "status": "suspected",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-04-27",
+      "incubation_start": null,
+      "location": {
+        "city": "Unknown",
+        "state": "",
+        "country": "Unknown",
+        "venue": "Evacuated via Ascension Island — current location unknown",
+        "lat": -7.9467,
+        "lng": -14.3558
+      },
+      "ship_info": {
+        "vessel": "MV Hondius",
+        "voyage": "HDS2526",
+        "cabin": null,
+        "deck": null,
+        "role": "passenger",
+        "embarkation_port": "Ushuaia",
+        "embarkation_date": "2026-04-01"
+      },
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.usatoday.com/story/news/health/2026/05/07/hantavirus-updates-us-cases-deaths-outbreak--live/89975553007/",
+      "source_notes": "Oceanwide Expeditions official timeline via USA Today, May 8 2026",
+      "clinical_notes": "American passenger aboard MV Hondius — partner of British national P003. Per Oceanwide Expeditions official timeline: on April 27 \"two guests are medevaced via Ascension Island: a symptomatic British national [P003] and the patient's American partner.\" This reduces ship total from 149 to 147. Evacuation appears precautionary for the American partner (P003 described as the symptomatic one). Current location and health status unknown — may be in South Africa with P003, or may have returned to the US (possibly one of the 7 Americans under state monitoring). NEW CASE — not previously in database. Not to be confused with the 17 Americans still aboard the ship.",
+      "reporter": "Oceanwide Expeditions / USA Today"
     }
   ],
   "edges": [

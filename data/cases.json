@@ -504,35 +504,6 @@
       "reporter": "Auto-scraped \u2014 verify before publishing"
     },
     {
-      "id": "P34866",
-      "name": "69-year-old woman, St Helena disembarkation",
-      "age": 69,
-      "sex": "female",
-      "nationality": "Dutch",
-      "status": "deceased",
-      "generation": 0,
-      "infected_by": null,
-      "onset_date": "2026-04-24",
-      "date": "2026-04-26",
-      "incubation_start": null,
-      "location": {
-        "city": "Johannesburg",
-        "state": "Gauteng",
-        "country": "South Africa",
-        "venue": "Johannesburg hospital",
-        "lat": -26.2041,
-        "lng": 28.0473
-      },
-      "ship_info": null,
-      "transport": {},
-      "exposures": [],
-      "flights": [],
-      "source_url": "https://www.bbc.com/news/articles/cnvpzgn26edo",
-      "source_notes": "\u26a0\ufe0f LIKELY DUPLICATE of PEDB43 \u2014 same person: 69-year-old Dutch female, disembarked MV Hondius at St Helena April 24, died in South Africa April 26. Retain pending deduplication review.",
-      "clinical_notes": "\u26a0\ufe0f LIKELY DUPLICATE of PEDB43. A 69-year-old woman who disembarked from MV Hondius at St Helena April 24 and died in South Africa April 26. Per WHO and AP reporting, this matches the index case (PEDB43): Dutch female, age 69, disembarked Saint Helena April 24, died Johannesburg April 26. Both entries kept until confirmed.",
-      "reporter": "Auto-scraped \u2014 verify before publishing"
-    },
-    {
       "id": "PKLM01",
       "name": "Airlink Flight Attendant (Suspected)",
       "age": null,

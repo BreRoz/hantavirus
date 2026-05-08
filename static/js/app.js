@@ -471,8 +471,8 @@ const OverviewTab = {
       const popupRows = group.map(c => {
         const isAuto = (c.reporter || "").includes("Auto-scraped");
         const srcTag = isAuto
-          ? `<span style="font-size:10px;color:#f59e0b">⚠</span>`
-          : `<span style="font-size:10px;color:#10b981">✓</span>`;
+          ? `<span style="font-size:9px;color:#f59e0b;background:rgba(245,158,11,0.12);padding:1px 5px;border-radius:3px;border:1px solid rgba(245,158,11,0.25)">⚠ unverified</span>`
+          : `<span style="font-size:9px;color:#10b981;background:rgba(16,185,129,0.15);padding:1px 5px;border-radius:3px;border:1px solid rgba(16,185,129,0.3)">✓ verified</span>`;
         return `<div style="padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.07);cursor:pointer" class="popup-case-row" data-id="${c.id}">
           <span style="font-size:11px;font-weight:600">${Utils.esc(c.id)}</span>
           <span style="font-size:10px;color:#aaa;margin-left:4px">${c.status}</span>

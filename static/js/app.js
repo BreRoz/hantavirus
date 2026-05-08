@@ -248,11 +248,16 @@ const Sidebar = {
       const gen = c.generation ?? 0;
       const dot = `<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${genColor(gen)};flex-shrink:0"></span>`;
       const role = c.ship_info?.role ? `<span style="opacity:.6;font-size:10px"> · ${Utils.esc(c.ship_info.role)}</span>` : "";
+      const isAuto = (c.reporter || "").includes("Auto-scraped");
+      const srcBadge = isAuto
+        ? `<span class="source-badge source-badge--unverified" title="Auto-scraped — verify before publishing">⚠ unverified</span>`
+        : `<span class="source-badge source-badge--verified" title="${Utils.esc(c.reporter || "Verified source")}">✓ verified</span>`;
       return `<div class="case-item${c.id === this._selectedId ? " selected" : ""}" data-id="${c.id}">
-        <div style="display:flex;align-items:center;gap:6px">
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
           ${dot}
           <span class="case-item-id">${Utils.esc(c.id)}</span>
           <span class="case-item-status case-item-status--${c.status}">${c.status}</span>
+          ${srcBadge}
         </div>
         <div class="case-item-name">${Utils.esc(c.name || "—")}${role}</div>
         <div class="case-item-meta">Gen ${gen} · ${Utils.esc(this._locStr(c) || "—")}</div>
@@ -315,6 +320,13 @@ const DetailPanel = {
     const gen = c.generation ?? 0;
     const infectedBy = c.infected_by ? `<span style="font-size:var(--text-xs);color:var(--color-text-muted)">← ${Utils.esc(c.infected_by)}</span>` : "";
     const genBadge = `<span style="padding:2px 8px;border-radius:20px;font-size:var(--text-xs);font-weight:600;background:${genColor(gen)}22;color:${genColor(gen)}">Gen ${gen}</span>`;
+    const isAuto = (c.reporter || "").includes("Auto-scraped");
+    const srcBadge = isAuto
+      ? `<span class="source-badge source-badge--unverified">⚠ UNVERIFIED</span>`
+      : `<span class="source-badge source-badge--verified">✓ VERIFIED</span>`;
+    const reporterLine = !isAuto && c.reporter
+      ? `<span style="font-size:10px;color:var(--color-text-muted);margin-left:6px">${Utils.esc(c.reporter)}</span>`
+      : "";
 
     let html = `
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-2)">
@@ -323,9 +335,10 @@ const DetailPanel = {
       </div>
       ${infectedBy ? `<div style="margin-bottom:var(--space-2)">${infectedBy}</div>` : ""}
       <div class="detail-row"><span class="detail-label">Status</span><span class="detail-value case-item-status case-item-status--${c.status}">${c.status}</span></div>
+      <div class="detail-row"><span class="detail-label">Source</span><span class="detail-value" style="display:flex;align-items:center;flex-wrap:wrap;gap:4px">${srcBadge}${reporterLine}</span></div>
       <div class="detail-row"><span class="detail-label">Location</span><span class="detail-value">${Utils.esc(c.location && typeof c.location === "object" ? [c.location.city, c.location.country].filter(Boolean).join(", ") : c.location || "—")}</span></div>
       <div class="detail-row"><span class="detail-label">Onset</span><span class="detail-value">${Utils.toDisplay(c.onset_date)}</span></div>
-      <div class="detail-row"><span class="detail-label">Reported</span><span class="detail-value">${Utils.toDisplay(c.report_date)}</span></div>
+      <div class="detail-row"><span class="detail-label">Reported</span><span class="detail-value">${Utils.toDisplay(c.date)}</span></div>
     `;
 
     if (c.ship_info) {
@@ -433,6 +446,7 @@ const OverviewTab = {
         iconSize: [14, 14],
         iconAnchor: [7, 7],
       });
+      const isAuto = (c.reporter || "").includes("Auto-scraped");
       const m = L.marker([loc.lat, loc.lng], { icon });
       m.bindPopup(`
         <div style="font-family:Inter,sans-serif;min-width:180px">
@@ -440,6 +454,10 @@ const OverviewTab = {
           <div style="font-size:12px;color:#aaa">Gen ${gen} · ${c.status}</div>
           <div style="font-size:12px">${Utils.esc([loc.city, loc.country].filter(Boolean).join(", ") || "—")}</div>
           ${c.onset_date ? `<div style="font-size:12px;margin-top:4px">Onset: ${Utils.toDisplay(c.onset_date)}</div>` : ""}
+          <div style="margin-top:6px">${isAuto
+            ? `<span style="font-size:10px;color:#f59e0b;background:rgba(245,158,11,0.12);padding:1px 6px;border-radius:4px">⚠ unverified</span>`
+            : `<span style="font-size:10px;color:#10b981;background:rgba(16,185,129,0.12);padding:1px 6px;border-radius:4px">✓ verified</span>`
+          }</div>
         </div>
       `, { className: "dark-popup" });
       m.on("click", () => App.selectCase(c.id));
@@ -464,6 +482,118 @@ const OverviewTab = {
 
   invalidate() {
     setTimeout(() => this._map?.invalidateSize(), 50);
+  },
+};
+
+// ============================================================================
+// 9b. MapSlider — animated day-by-day outbreak playback
+// ============================================================================
+
+const MapSlider = {
+  _min: null,
+  _max: null,
+  _current: null,
+  _playing: false,
+  _timer: null,
+  _SPEED: 650, // ms per day-step
+
+  initUI() {
+    const slider  = document.getElementById("map-date-slider");
+    const playBtn = document.getElementById("slider-play-btn");
+    const resetBtn = document.getElementById("slider-reset-btn");
+    if (!slider) return;
+
+    slider.addEventListener("input", () => {
+      if (this._min === null) return;
+      this._current = Utils.addDays(this._min, parseInt(slider.value, 10));
+      this._updateLabel();
+      this._applyFilter();
+    });
+
+    playBtn?.addEventListener("click", () => {
+      if (this._playing) { this._pause(); return; }
+      // Rewind if already at end
+      if (parseInt(slider.value, 10) >= parseInt(slider.max, 10)) {
+        slider.value = 0;
+        this._current = new Date(this._min);
+        this._updateLabel();
+        this._applyFilter();
+      }
+      this._play();
+    });
+
+    resetBtn?.addEventListener("click", () => {
+      this._pause();
+      const s = document.getElementById("map-date-slider");
+      if (s && this._max) {
+        s.value = s.max;
+        this._current = new Date(this._max);
+        this._updateLabel();
+        this._applyFilter();
+      }
+    });
+  },
+
+  setRange(cases) {
+    const slider = document.getElementById("map-date-slider");
+    if (!slider) return;
+    const dates = cases.map(c => c.onset_date || c.date).filter(Boolean).sort();
+    if (!dates.length) return;
+    this._min = Utils.parseDate(dates[0]);
+    this._max = Utils.parseDate(dates[dates.length - 1]);
+    const totalDays = Utils.daysBetween(this._min, this._max);
+    slider.min = 0;
+    slider.max = totalDays;
+    slider.value = totalDays;
+    this._current = new Date(this._max);
+    this._updateLabel();
+  },
+
+  _play() {
+    const slider = document.getElementById("map-date-slider");
+    if (!slider || this._min === null) return;
+    this._playing = true;
+    const btn = document.getElementById("slider-play-btn");
+    if (btn) btn.textContent = "⏸ Pause";
+    this._timer = setInterval(() => {
+      const next = parseInt(slider.value, 10) + 1;
+      if (next > parseInt(slider.max, 10)) { this._pause(); return; }
+      slider.value = next;
+      this._current = Utils.addDays(this._min, next);
+      this._updateLabel();
+      this._applyFilter();
+    }, this._SPEED);
+  },
+
+  _pause() {
+    this._playing = false;
+    clearInterval(this._timer);
+    const btn = document.getElementById("slider-play-btn");
+    if (btn) btn.textContent = "▶ Play";
+  },
+
+  _updateLabel() {
+    const label = document.getElementById("slider-date-label");
+    if (!label || !this._current || !this._max) return;
+    const atMax = Utils.toDateStr(this._current) >= Utils.toDateStr(this._max);
+    label.textContent = atMax
+      ? "All dates"
+      : this._current.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+  },
+
+  _applyFilter() {
+    if (!this._current) return;
+    const cutoff = Utils.toDateStr(this._current);
+    const f = Sidebar.getFilter();
+    const filtered = App._cases.filter(c => {
+      if (!f.status.has(c.status)) return false;
+      const g = Math.min(c.generation ?? 0, 3);
+      if (!f.gen.has(g)) return false;
+      const d = c.onset_date || c.date;
+      if (d && d > cutoff) return false;
+      return true;
+    });
+    OverviewTab.render(filtered);
   },
 };
 
@@ -1313,6 +1443,7 @@ const App = {
     DateFilter.init();
     DetailPanel.init();
     OverviewTab.init();
+    MapSlider.initUI();
     ChainTab.init();
     ExposureTab.init();
     FlightRiskTab.init();
@@ -1372,6 +1503,7 @@ const App = {
       ]);
 
       this._cases = casesData.cases || [];
+      MapSlider.setRange(this._cases);
       this._chainData = chainData;
       this._exposureEvents = exposureData.exposure_events || [];
       this._flights = flightsData.flights || [];

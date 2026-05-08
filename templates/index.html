@@ -168,6 +168,12 @@
               <button class="btn btn--ghost btn--sm" id="btn-map-fit" title="Fit all markers">⊡ Fit</button>
             </div>
           </div>
+          <div class="map-slider-bar">
+            <button class="btn btn--ghost btn--sm" id="slider-play-btn" title="Animate outbreak spread day by day">▶ Play</button>
+            <input type="range" id="map-date-slider" class="map-date-slider" min="0" max="100" value="100">
+            <span class="slider-date-label" id="slider-date-label">All dates</span>
+            <button class="btn btn--ghost btn--sm" id="slider-reset-btn" title="Show all dates">⊙ Reset</button>
+          </div>
           <div id="map"></div>
         </div>
       </div>

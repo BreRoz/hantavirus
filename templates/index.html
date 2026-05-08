@@ -121,6 +121,10 @@
     <button class="tab-btn" data-tab="timeline" role="tab">
       <span class="tab-icon">📅</span> Timeline
     </button>
+    <button class="tab-btn" data-tab="tracking" role="tab">
+      <span class="tab-icon">🛳</span> Live Tracking
+      <span class="tab-badge tab-badge--live">LIVE</span>
+    </button>
     <button class="tab-btn" data-tab="info" role="tab">
       <span class="tab-icon">ℹ</span> Info
     </button>
@@ -370,7 +374,71 @@
       </div>
     </div>
 
-    <!-- Tab 6: Info -->
+    <!-- Tab 6: Live Tracking -->
+    <div class="tab-pane" id="tab-tracking">
+      <div class="tracking-layout">
+
+        <!-- Ship info bar -->
+        <div class="tracking-info-bar">
+          <div class="tracking-ship-block">
+            <span class="tracking-ship-name">🛳 MV Hondius</span>
+            <span class="tracking-ship-meta">MMSI: 244327000 &nbsp;·&nbsp; IMO: 9818709 &nbsp;·&nbsp; 🇳🇱 Netherlands &nbsp;·&nbsp; Operator: Oceanwide Expeditions</span>
+          </div>
+          <div class="tracking-live-pill">
+            <span class="tracking-live-dot"></span>
+            AIS LIVE via VesselFinder
+          </div>
+        </div>
+
+        <!-- Status strip -->
+        <div class="tracking-status-strip">
+          <div class="tracking-status-item">
+            <span class="tracking-status-label">STATUS</span>
+            <span class="tracking-status-value tracking-status-value--enroute">⚓ EN ROUTE → TENERIFE</span>
+          </div>
+          <div class="tracking-status-item">
+            <span class="tracking-status-label">ETA</span>
+            <span class="tracking-status-value">Sunday, May 10, 2026</span>
+          </div>
+          <div class="tracking-status-item">
+            <span class="tracking-status-label">PASSENGERS</span>
+            <span class="tracking-status-value">147 aboard (88 pax · 59 crew)</span>
+          </div>
+          <div class="tracking-status-item">
+            <span class="tracking-status-label">US NATIONALS</span>
+            <span class="tracking-status-value">17 — repatriation flight arranged</span>
+          </div>
+        </div>
+
+        <!-- Vessel map embed -->
+        <div class="tracking-map-wrap">
+          <iframe
+            id="vessel-finder-frame"
+            src="https://www.vesselfinder.com/aismap?zoom=5&lat=26&lon=-16&mmsi=244327000&names=true&track=true&fleet=false&clicktoact=true"
+            width="100%"
+            height="100%"
+            frameborder="0"
+            allowfullscreen
+            loading="lazy"
+            title="MV Hondius live AIS position — VesselFinder"
+          ></iframe>
+        </div>
+
+        <!-- Footer / flight teaser -->
+        <div class="tracking-footer">
+          <div class="tracking-footer-left">
+            <span class="tracking-flight-teaser">🛫 US repatriation charter departing Tenerife ~May 10 — flight number tracker coming Sunday once confirmed</span>
+          </div>
+          <div class="tracking-footer-right">
+            <a href="https://www.vesselfinder.com/vessels/details/9818709" target="_blank" rel="noopener" class="tracking-ext-link">Open in VesselFinder ↗</a>
+            <a href="https://www.cruisemapper.com/?imo=9818709" target="_blank" rel="noopener" class="tracking-ext-link">CruiseMapper ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Tab 7: Info -->
     <div class="tab-pane" id="tab-info">
       <div class="info-layout">
 

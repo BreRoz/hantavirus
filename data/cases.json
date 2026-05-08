@@ -30,12 +30,12 @@
         {
           "flight_id": "FL001",
           "seat": null,
-          "notes": "Seat unconfirmed \u2014 boarded SHN symptomatic, deteriorated in-flight"
+          "notes": "Seat unconfirmed — boarded SHN symptomatic, deteriorated in-flight"
         }
       ],
       "source_url": "https://www.manilatimes.net/2026/05/06/world/who-tracing-over-80-people-on-flight-taken-by-hantavirus-victim/2336441",
       "source_notes": null,
-      "clinical_notes": "Index case. Dutch female passenger (age 69) aboard MV Hondius. Before boarding in Ushuaia on April 1, she and her husband traveled in Argentina, Chile, and Uruguay (Al Jazeera / WHO, May 7 2026). Argentine authorities' leading hypothesis (per AP, May 7 2026): couple contracted hantavirus during a bird-watching outing in Ushuaia; investigators also tracing their route through Patagonian forested hillsides. Province of Tierra del Fuego \u2014 where ship docked \u2014 had never previously recorded a hantavirus case. Disembarked at Saint Helena on April 24 with gastrointestinal symptoms. Boarded Airlink flight 4Z 301 (SHN\u2192JNB) on April 25 \u2014 condition deteriorated in-flight. Died April 26 at Johannesburg hospital; tested positive for Andes-strain hantavirus. WHO initiated contact tracing for all 82 passengers and 6 crew on that flight. KLM confirmed she also traveled on a KLM flight from Johannesburg. Husband (P002) died on the ship April 11. [Note: P34866 in database is likely a duplicate of this case \u2014 same person described as '69-year-old woman who disembarked at St Helena and died in South Africa'.]",
+      "clinical_notes": "Index case. Dutch female passenger (age 69) aboard MV Hondius. Before boarding in Ushuaia on April 1, she and her husband traveled in Argentina, Chile, and Uruguay (Al Jazeera / WHO, May 7 2026). Argentine authorities' leading hypothesis (per AP, May 7 2026): couple contracted hantavirus during a bird-watching outing in Ushuaia; investigators also tracing their route through Patagonian forested hillsides. Province of Tierra del Fuego — where ship docked — had never previously recorded a hantavirus case. Disembarked at Saint Helena on April 24 with gastrointestinal symptoms. Boarded Airlink flight 4Z 301 (SHN→JNB) on April 25 — condition deteriorated in-flight. Died April 26 at Johannesburg hospital; tested positive for Andes-strain hantavirus. WHO initiated contact tracing for all 82 passengers and 6 crew on that flight. KLM confirmed she also traveled on a KLM flight from Johannesburg. Husband (P002) died on the ship April 11. [Note: P34866 in database is likely a duplicate of this case — same person described as '69-year-old woman who disembarked at St Helena and died in South Africa'.]",
       "reporter": "WHO / Manila Times / AFP"
     },
     {
@@ -54,7 +54,7 @@
         "city": "Antarctic Peninsula",
         "state": "",
         "country": "International Waters",
-        "venue": "MV Hondius \u2014 Cabin 406, Deck 4",
+        "venue": "MV Hondius — Cabin 406, Deck 4",
         "lat": -63.2,
         "lng": -58.1
       },
@@ -73,8 +73,8 @@
       ],
       "flights": [],
       "source_url": null,
-      "source_notes": "Manually entered \u2014 search ProMED or WHO DON for 'Hondius hantavirus 2026'",
-      "clinical_notes": "Dutch male passenger (age 70), husband of index case PEDB43, sharing Cabin 406. Per WHO/USA Today May 7 official summary: developed fever, headache, and mild diarrhea on April 6; died aboard MV Hondius on April 11 \u2014 the first death in the outbreak (5 days after symptom onset). Important: no samples were taken at time of death and hantavirus was not initially identified. Argentine authorities' leading hypothesis (AP, May 7 2026): couple contracted hantavirus during a bird-watching outing in Ushuaia before boarding on April 1. WHO confirmed couple traveled Argentina, Chile, AND Uruguay prior to boarding (Al Jazeera, May 7 2026). Investigators also tracing their route through forested hillsides of Patagonia. Tierra del Fuego province had never previously recorded a hantavirus case. Body removed to St. Helena on April 24. Early reporting erroneously described him as evacuated to Punta Arenas \u2014 corrected to 'died on the ship' per WHO/AFP/Manila Times.",
+      "source_notes": "Manually entered — search ProMED or WHO DON for 'Hondius hantavirus 2026'",
+      "clinical_notes": "Dutch male passenger (age 70), husband of index case PEDB43, sharing Cabin 406. Per WHO/USA Today May 7 official summary: developed fever, headache, and mild diarrhea on April 6; died aboard MV Hondius on April 11 — the first death in the outbreak (5 days after symptom onset). Important: no samples were taken at time of death and hantavirus was not initially identified. Argentine authorities' leading hypothesis (AP, May 7 2026): couple contracted hantavirus during a bird-watching outing in Ushuaia before boarding on April 1. WHO confirmed couple traveled Argentina, Chile, AND Uruguay prior to boarding (Al Jazeera, May 7 2026). Investigators also tracing their route through forested hillsides of Patagonia. Tierra del Fuego province had never previously recorded a hantavirus case. Body removed to St. Helena on April 24. Early reporting erroneously described him as evacuated to Punta Arenas — corrected to 'died on the ship' per WHO/AFP/Manila Times.",
       "reporter": "WHO / Manila Times / AFP"
     },
     {
@@ -93,7 +93,7 @@
         "city": "South Atlantic",
         "state": "",
         "country": "International Waters",
-        "venue": "MV Hondius \u2014 Crew Quarters, Deck 2",
+        "venue": "MV Hondius — Crew Quarters, Deck 2",
         "lat": -45.0,
         "lng": -38.0
       },
@@ -112,7 +112,7 @@
       ],
       "flights": [],
       "source_url": null,
-      "source_notes": "Manually entered \u2014 search MRCC Cape Town / SA health authorities for April 2026 evacuation records",
+      "source_notes": "Manually entered — search MRCC Cape Town / SA health authorities for April 2026 evacuation records",
       "clinical_notes": "British male crew member. Reported fever, shortness of breath, and signs of pneumonia to the ship's doctor on April 24. Condition worsened; medically evacuated to South Africa on April 27. Tested positive for hantavirus on May 2 in South Africa — making him the FIRST laboratory-confirmed case in the outbreak (AP, May 7 2026). Currently hospitalized in intensive care in South Africa. WHO update (May 6): patient reportedly improving.",
       "reporter": "MRCC Cape Town / SA Medical Services"
     },
@@ -132,7 +132,7 @@
         "city": "South Atlantic",
         "state": "",
         "country": "International Waters",
-        "venue": "MV Hondius \u2014 Crew Deck 2 / Engine Room",
+        "venue": "MV Hondius — Crew Deck 2 / Engine Room",
         "lat": -40.2,
         "lng": -25.8
       },
@@ -152,7 +152,7 @@
       "flights": [],
       "source_url": "https://nypost.com/2026/05/06/world-news/23-hantavirus-cruise-passengers-already-returned-home-including-to-the-us/",
       "source_notes": "Serology pending as of May 5 2026",
-      "clinical_notes": "Crew member sharing workspace and common ventilation zones with P003 during P003's prodromal phase. Fever, myalgia, early respiratory symptoms. Serology pending. Vessel stranded near Cape Verde \u2014 under shipboard medical monitoring awaiting evacuation. [Note: PDB8D5 is also Dutch age 41 \u2014 possible same person; retain both pending confirmation.]",
+      "clinical_notes": "Crew member sharing workspace and common ventilation zones with P003 during P003's prodromal phase. Fever, myalgia, early respiratory symptoms. Serology pending. Vessel stranded near Cape Verde — under shipboard medical monitoring awaiting evacuation. [Note: PDB8D5 is also Dutch age 41 — possible same person; retain both pending confirmation.]",
       "reporter": "MV Hondius Ship Physician"
     },
     {
@@ -182,7 +182,7 @@
       "source_url": "https://www.nbcnews.com/health/health-news/hantavirus-cruise-ship-stranded-crew-evacuation-human-transmission-rcna343606",
       "source_notes": null,
       "clinical_notes": "Ill crew member with mild symptoms requiring urgent medical evacuation from the stranded cruise ship.",
-      "reporter": "Auto-scraped \u2014 verify before publishing"
+      "reporter": "Auto-scraped — verify before publishing"
     },
     {
       "id": "P087BA",
@@ -211,11 +211,11 @@
       "source_url": "https://www.nbcnews.com/health/health-news/hantavirus-cruise-ship-stranded-crew-evacuation-human-transmission-rcna343606",
       "source_notes": null,
       "clinical_notes": "Ill crew member with severe symptoms requiring urgent medical evacuation from the stranded cruise ship.",
-      "reporter": "Auto-scraped \u2014 verify before publishing"
+      "reporter": "Auto-scraped — verify before publishing"
     },
     {
       "id": "PA1B22",
-      "name": "Dutch Doctor Patient, Serious Condition",
+      "name": "MV Hondius Ship's Doctor (Evacuated, Serious)",
       "age": null,
       "sex": null,
       "nationality": "Dutch",
@@ -226,21 +226,21 @@
       "date": "2026-05-05",
       "incubation_start": null,
       "location": {
-        "city": "Praia",
+        "city": "Europe",
         "state": "",
-        "country": "Cape Verde",
-        "venue": "Hondius cruise ship / Praia port",
-        "lat": 14.933,
-        "lng": -23.5133
+        "country": "Netherlands",
+        "venue": "Specialized hospital — Europe (evacuated from ship)",
+        "lat": 52.3676,
+        "lng": 4.9041
       },
       "ship_info": null,
       "transport": {},
       "exposures": [],
       "flights": [],
       "source_url": "https://www.nbcnews.com/health/health-news/hantavirus-cruise-ship-stranded-crew-evacuation-human-transmission-rcna343606",
-      "source_notes": null,
-      "clinical_notes": "Ship's doctor aboard MV Hondius. Confirmed by AP (May 7 2026) as one of three people evacuated Wednesday May 6 while ship was near Cape Verde — taken to specialized hospital in Europe for treatment. Was reportedly in serious condition prior to evacuation.",
-      "reporter": "Auto-scraped \u2014 verify before publishing"
+      "source_notes": "Oceanwide Expeditions statement / NBC News May 8 2026",
+      "clinical_notes": "Ship's doctor aboard MV Hondius. Identity and role confirmed by Oceanwide Expeditions (ship operator) via NBC News (May 8 2026). Evacuated May 6 from ship near Cape Verde — one of three people evacuated that day — taken to specialized hospital in Europe for treatment. Was in serious condition at time of evacuation. Oceanwide Expeditions confirmed the ship's doctor is among those being treated.",
+      "reporter": "Oceanwide Expeditions / NBC News"
     },
     {
       "id": "P3BE87",
@@ -269,11 +269,11 @@
       "source_url": "https://m.aa.com.tr/en/europe/switzerland-confirms-hantavirus-case-in-former-atlantic-cruise-passenger/3928814",
       "source_notes": null,
       "clinical_notes": "Man previously aboard MV Hondius cruise ship, returned from South Africa in late April with his wife, now receiving treatment at a hospital in Zurich after being notified by the ship's operator.",
-      "reporter": "Auto-scraped \u2014 verify before publishing"
+      "reporter": "Auto-scraped — verify before publishing"
     },
     {
       "id": "P649AB",
-      "name": "Suspected Case \u2014 Fever Resolved",
+      "name": "Suspected Case — Fever Resolved",
       "age": null,
       "sex": null,
       "nationality": null,
@@ -298,7 +298,7 @@
       "source_url": "https://www.npr.org/2026/05/05/g-s1-120234/cruise-ship-hantavirus",
       "source_notes": null,
       "clinical_notes": "Passenger aboard MV Hondius who developed fever (key hantavirus symptom) which subsequently resolved; retained as suspected case pending PCR confirmation.",
-      "reporter": "Auto-scraped \u2014 verify before publishing"
+      "reporter": "Auto-scraped — verify before publishing"
     },
     {
       "id": "PDB8D5",
@@ -326,8 +326,8 @@
       "flights": [],
       "source_url": "https://www.cbc.ca/news/health/hondius-ship-hantavirus-andes-strain-9.7189281",
       "source_notes": null,
-      "clinical_notes": "41-year-old Dutch national evacuated from MV Hondius and flown to Amsterdam for specialized hospital treatment. [Note: P004 is also Dutch age 41, labeled crew with Apr 18 onset \u2014 possible same person; retain both pending confirmation.]",
-      "reporter": "Auto-scraped \u2014 verify before publishing"
+      "clinical_notes": "41-year-old Dutch national evacuated from MV Hondius and flown to Amsterdam for specialized hospital treatment. [Note: P004 is also Dutch age 41, labeled crew with Apr 18 onset — possible same person; retain both pending confirmation.]",
+      "reporter": "Auto-scraped — verify before publishing"
     },
     {
       "id": "PD2B7C",
@@ -356,7 +356,7 @@
       "source_url": "https://www.kcra.com/article/hantavirus-cruise-ship-california/71244285",
       "source_notes": null,
       "clinical_notes": "Third death in the MV Hondius outbreak. Symptom onset April 25 (per WHO via Al Jazeera, May 7 2026 — earlier reports said April 28). Died May 2, 2026 — 7 days after symptom onset. Nationality reported as German. Confirmed by WHO as third fatality.",
-      "reporter": "Manually entered \u2014 CBC/public reporting"
+      "reporter": "Manually entered — CBC/public reporting"
     },
     {
       "id": "P2B82F",
@@ -385,7 +385,7 @@
       "source_url": "https://www.cbc.ca/news/health/hondius-ship-hantavirus-andes-strain-9.7189281",
       "source_notes": null,
       "clinical_notes": "65-year-old German evacuated as suspected case; asymptomatic but closely associated with a German passenger who died on May 2.",
-      "reporter": "Auto-scraped \u2014 verify before publishing"
+      "reporter": "Auto-scraped — verify before publishing"
     },
     {
       "id": "P872E8",
@@ -414,7 +414,7 @@
       "source_url": "https://www.bbc.com/news/articles/c5y093d5n9ko",
       "source_notes": null,
       "clinical_notes": "British man evacuated from MV Hondius cruise ship to the Netherlands after displaying hantavirus symptoms.",
-      "reporter": "Auto-scraped \u2014 verify before publishing"
+      "reporter": "Auto-scraped — verify before publishing"
     },
     {
       "id": "PF6529",
@@ -443,7 +443,7 @@
       "source_url": "https://www.bbc.com/news/articles/c5y093d5n9ko",
       "source_notes": null,
       "clinical_notes": "One of three evacuees sent to the Netherlands after displaying symptoms aboard the MV Hondius.",
-      "reporter": "Auto-scraped \u2014 verify before publishing"
+      "reporter": "Auto-scraped — verify before publishing"
     },
     {
       "id": "PD2A72",
@@ -472,7 +472,7 @@
       "source_url": "https://www.bbc.com/news/articles/ce8pypvjx1ko",
       "source_notes": null,
       "clinical_notes": "Confirmed case of Andes strain hantavirus linked to cruise ship outbreak.",
-      "reporter": "Auto-scraped \u2014 verify before publishing"
+      "reporter": "Auto-scraped — verify before publishing"
     },
     {
       "id": "PC87A6",
@@ -501,7 +501,7 @@
       "source_url": "https://www.bbc.com/news/articles/c5y093d5n9ko",
       "source_notes": null,
       "clinical_notes": "British man evacuated from MV Hondius to the Netherlands after displaying symptoms.",
-      "reporter": "Auto-scraped \u2014 verify before publishing"
+      "reporter": "Auto-scraped — verify before publishing"
     },
     {
       "id": "PKLM01",
@@ -519,7 +519,7 @@
         "city": "Amsterdam",
         "state": "",
         "country": "Netherlands",
-        "venue": "Hospital \u2014 Netherlands",
+        "venue": "Hospital — Netherlands",
         "lat": 52.3676,
         "lng": 4.9041
       },
@@ -529,8 +529,8 @@
       "flights": [],
       "source_url": "https://www.kcra.com/article/hantavirus-cruise-ship-california/71244285",
       "source_notes": "USA Today May 7 / dutchnews.nl / Dutch Health Ministry",
-      "clinical_notes": "Dutch flight attendant on Airlink flight 4Z 301 (SHN\u2192JNB, April 25). Index case PEDB43 was on this flight but was too ill to take her onward international flight to Europe and was taken off the plane in Johannesburg, where she died. The flight attendant is now showing hantavirus symptoms and being tested in an isolation ward at Amsterdam hospital (Dutch Health Ministry via AP, May 7 2026). If confirmed positive, would be the FIRST known person not aboard MV Hondius to be infected \u2014 representing Gen 2 transmission (ship passenger \u2192 airline crew). 88 people total were on the April 25 SHN\u2192JNB flight.",
-      "reporter": "Dutch Health Ministry / USA Today / dutchnews.nl"
+      "clinical_notes": "Dutch flight attendant on Airlink flight 4Z 301 (SHN→JNB, April 25). Index case PEDB43 was on this flight but was too ill to take her onward international flight to Europe and was taken off the plane in Johannesburg, where she died. The Airlink attendant is now showing hantavirus symptoms and being tested in an isolation ward at Amsterdam hospital (Dutch Health Ministry via AP, May 7 2026). If confirmed positive, would be the FIRST known person not aboard MV Hondius to be infected — representing Gen 2 transmission (ship passenger → airline crew). 88 people total were on the April 25 SHN→JNB flight. IMPORTANT DISTINCTION (NBC News, May 8 2026): A separate KLM flight attendant who was NOT on flight 4Z 301 tested NEGATIVE for hantavirus — this does NOT apply to PKLM01 (the Airlink attendant). The KLM negative result is a different person on a different flight.",
+      "reporter": "Dutch Health Ministry / USA Today / dutchnews.nl / NBC News"
     },
     {
       "id": "PIL001",
@@ -558,7 +558,7 @@
       "flights": [],
       "source_url": "https://www.jpost.com/israel-news/article-895478",
       "source_notes": "Jerusalem Post, May 7 2026",
-      "clinical_notes": "Israeli patient confirmed with European strain hantavirus (separate from MV Hondius Andes strain). Infected in Eastern Europe several months before diagnosis in May 2026. Confirmed by antibody and PCR tests. Stable \u2014 not requiring ICU or strict isolation, under medical observation. Identity withheld by Health Ministry. Unrelated to MV Hondius cruise ship cluster.",
+      "clinical_notes": "Israeli patient confirmed with European strain hantavirus (separate from MV Hondius Andes strain). Infected in Eastern Europe several months before diagnosis in May 2026. Confirmed by antibody and PCR tests. Stable — not requiring ICU or strict isolation, under medical observation. Identity withheld by Health Ministry. Unrelated to MV Hondius cruise ship cluster.",
       "reporter": "Israeli Ministry of Health / Jerusalem Post"
     },
     {
@@ -737,7 +737,7 @@
     },
     {
       "id": "PGRP01",
-      "name": "Saint Helena Departures \u2014 Untraced (30\u201340 passengers)",
+      "name": "Saint Helena Departures — Untraced (30–40 passengers)",
       "age": null,
       "sex": null,
       "nationality": "Multiple (12+ countries)",
@@ -751,7 +751,7 @@
         "city": "Saint Helena",
         "state": "",
         "country": "Saint Helena",
-        "venue": "Jamestown Port \u2014 Disembarkation",
+        "venue": "Jamestown Port — Disembarkation",
         "lat": -15.9644,
         "lng": -5.7089
       },
@@ -761,13 +761,13 @@
       "flights": [],
       "source_url": "https://www.kcra.com/article/hantavirus-cruise-ship-california/71244285",
       "source_notes": "AP / KCRA May 7 2026",
-      "clinical_notes": "147 people aboard total (88 passengers, 59 crew, 23 nationalities including 17 Americans) per WHO May 8. 30\u201340 passengers from 12 countries disembarked MV Hondius at Saint Helena on April 24 \u2014 without contact tracing completed. Ship operator (Oceanwide Expeditions) says 30 (including the deceased Dutch couple); Dutch Foreign Ministry puts figure at ~40 (AP, May 7 2026). Countries: UK, Canada, Denmark, Germany, Netherlands, New Zealand, Saint Kitts and Nevis, Singapore, Sweden, Switzerland, Turkey, USA. St. Helena authorities monitoring a 'small number' of higher-risk contacts, ordered to isolate for 45 days. Singapore monitoring 2 men who flew St Helena \u2192 South Africa \u2192 Singapore (see PUSSG01). Health officials across 5 US states (CA, AZ, TX, GA, VA) monitoring returned residents. WHO confirmed 5 cases + 3 suspected as of May 7. None confirmed ill in the US as of May 7. Argentina distributing 2,500 diagnostic kits to a 5-country laboratory network. Ship departed Cape Verde 7:15pm local May 6 \u2014 ~200 miles west of Nouadhibou, Mauritania as of May 8, expected Tenerife Sunday May 10.",
+      "clinical_notes": "147 people aboard total (88 passengers, 59 crew, 23 nationalities including 17 Americans) per WHO May 8. 30–40 passengers from 12 countries disembarked MV Hondius at Saint Helena on April 24 — without contact tracing completed. Ship operator (Oceanwide Expeditions) says 30 (including the deceased Dutch couple); Dutch Foreign Ministry puts figure at ~40 (AP, May 7 2026). Countries: UK, Canada, Denmark, Germany, Netherlands, New Zealand, Saint Kitts and Nevis, Singapore, Sweden, Switzerland, Turkey, USA. St. Helena authorities monitoring a 'small number' of higher-risk contacts, ordered to isolate for 45 days. Singapore monitoring 2 men who flew St Helena → South Africa → Singapore (see PUSSG01). 7 Americans across 5 US states (CA, AZ, TX, GA, VA) being monitored per NBC News May 8 (supersedes ABC figure of 9/6 states). WHO confirmed 5 cases + 3 suspected as of May 7. None confirmed ill in the US as of May 7. Argentina distributing 2,500 diagnostic kits to a 5-country laboratory network. Ship departed Cape Verde 7:15pm local May 6 — ~200 miles west of Nouadhibou, Mauritania as of May 8, expected Tenerife Sunday May 10.",
       "reporter": "AP / KCRA / CDPH / CNN / WHO"
     },
     {
       "id": "PESP02",
       "name": "Alicante Woman — Flight Contact (Gen 2)",
-      "age": null,
+      "age": 32,
       "sex": "female",
       "nationality": "Spanish",
       "status": "suspected",
@@ -780,7 +780,7 @@
         "city": "Alicante",
         "state": "Valencia",
         "country": "Spain",
-        "venue": "Self-isolating at home — samples sent to National Microbiology Center",
+        "venue": "Hospital — Alicante (admitted; samples sent to National Microbiology Center)",
         "lat": 38.3452,
         "lng": -0.4815
       },
@@ -789,13 +789,13 @@
       "exposures": [],
       "flights": [],
       "source_url": "https://www.livescience.com/health/live/hantivirus-cruise-friday-may-8",
-      "source_notes": "Spain Health Minister Mónica García via X / LiveScience, May 8 2026",
-      "clinical_notes": "Woman self-isolating in Alicante after travelling on a flight 'close to' the Dutch woman (PEDB43) who died of hantavirus on April 26. Reporting mild symptoms compatible with hantavirus. Preventively isolated while National Microbiology Center analyzes diagnostic samples. Gen 2 case — flight contact with index case, not aboard MV Hondius. Same transmission pathway as PFRCE01 (French citizen) and PKLM01 (Airlink flight attendant). Spain health minister: 'risk for the general population remains very low.'",
-      "reporter": "Spain Health Minister Mónica García / LiveScience"
+      "source_notes": "Spain Health Minister Mónica García via X / LiveScience, May 8 2026; NBC News May 8 2026",
+      "clinical_notes": "32-year-old Spanish woman hospitalised in Alicante (NOT home-isolating) after travelling on a flight 'close to' the Dutch woman (PEDB43) who died of hantavirus. Seated two rows behind PEDB43 on the flight. Reporting mild symptoms compatible with hantavirus. Admitted to hospital; National Microbiology Center test results expected within 24–48 hours. Status remains SUSPECTED — NOT confirmed (ABC reporting of 'tested positive' is incorrect per NBC, May 8 2026). Gen 2 case — flight contact with index case, not aboard MV Hondius. Same transmission pathway as PFRCE01 (French citizen) and PKLM01 (Airlink flight attendant). Spain health minister: 'risk for the general population remains very low.'",
+      "reporter": "Spain Health Minister Mónica García / LiveScience / NBC News"
     },
     {
       "id": "PTRISTAN01",
-      "name": "British Male \u2014 Tristan da Cunha Disembarkation",
+      "name": "British Male — Tristan da Cunha Disembarkation",
       "age": null,
       "sex": "male",
       "nationality": "British",
@@ -809,7 +809,7 @@
         "city": "Tristan da Cunha",
         "state": "",
         "country": "Saint Helena, Ascension and Tristan da Cunha",
-        "venue": "Hospital \u2014 Tristan da Cunha",
+        "venue": "Hospital — Tristan da Cunha",
         "lat": -37.0685,
         "lng": -12.3114
       },
@@ -827,12 +827,12 @@
       "flights": [],
       "source_url": "https://www.livescience.com/health/live/hantivirus-cruise-friday-may-8",
       "source_notes": "UK Health Security Agency statement, May 8 2026",
-      "clinical_notes": "British male passenger who disembarked MV Hondius at its scheduled stop at Tristan da Cunha on April 15 \u2014 well before the outbreak was identified. Currently hospitalised on the island. Spouse is isolating as a precaution and has not reported symptoms. Tristan da Cunha is one of the most remote permanently inhabited islands on Earth, with a population of just over 200 people. Identified as a new suspected case by UK Health Security Agency on May 8, 2026.",
-      "reporter": "UK Health Security Agency / LiveScience"
+      "clinical_notes": "British male passenger/islander-resident who disembarked MV Hondius at its scheduled stop at Tristan da Cunha on April 15 — well before the outbreak was identified. He is a resident of Tristan da Cunha (not a tourist). Currently hospitalised on the island. Spouse is isolating as a precaution and has not reported symptoms. Additionally, 4 other Tristan islanders who had been off-island hitched a ride back home on MV Hondius to St Helena, then onward — their status is being monitored. Tristan da Cunha is one of the most remote permanently inhabited islands on Earth, with a population of just over 200 people. Identified as a new suspected case by UK Health Security Agency on May 8, 2026.",
+      "reporter": "UK Health Security Agency / LiveScience / NBC News"
     },
     {
       "id": "PUSAZ01",
-      "name": "Arizona Resident \u2014 MV Hondius Passenger",
+      "name": "Arizona Resident — MV Hondius Passenger",
       "age": null,
       "sex": null,
       "nationality": "American",
@@ -861,7 +861,7 @@
     },
     {
       "id": "PESP14",
-      "name": "Spanish Passengers Group (14) \u2014 Military Hospital",
+      "name": "Spanish Passengers Group (14) — Military Hospital",
       "age": null,
       "sex": null,
       "nationality": "Spanish",
@@ -872,20 +872,20 @@
       "date": "2026-05-10",
       "incubation_start": null,
       "location": {
-        "city": "Tenerife",
-        "state": "Canary Islands",
+        "city": "Madrid",
+        "state": "Community of Madrid",
         "country": "Spain",
-        "venue": "Military hospital \u2014 Tenerife",
-        "lat": 28.2916,
-        "lng": -16.6291
+        "venue": "Gómez Ulla Military Hospital — Madrid",
+        "lat": 40.4168,
+        "lng": -3.7038
       },
       "ship_info": null,
       "transport": {},
       "exposures": [],
       "flights": [],
       "source_url": "https://www.cnn.com/2026/05/08/health/hantavirus-by-the-numbers",
-      "source_notes": "CNN / Spain Health Minister M\u00f3nica Garc\u00eda, May 8 2026",
-      "clinical_notes": "14 Spanish passengers aboard MV Hondius to be transported to a military hospital in Tenerife after examination upon disembarkation (expected Sunday May 10). All other remaining passengers to be repatriated per Spain's health minister M\u00f3nica Garc\u00eda. Arrival under strict protocol: completely isolated cordoned-off area, guarded vehicles, sealed airport section with no contact with local residents (Virginia Barcones, Spain head of emergency services). 17 US citizens to be repatriated by US government plane.",
+      "source_notes": "CNN / Spain Health Minister Mónica García, May 8 2026",
+      "clinical_notes": "14 Spanish passengers aboard MV Hondius to be transported to Gómez Ulla Military Hospital in Madrid (NOT Tenerife) after disembarkation at Tenerife (expected Sunday May 10). Full protocol per Spain head of emergency services Virginia Barcones: PCR test on arrival + repeat PCR on day 7; if positive → UATAN unit; single rooms, no visitor contact. All other remaining passengers to be repatriated per Spain health minister Mónica García. Arrival under strict protocol: completely isolated cordoned-off area, guarded vehicles, sealed airport section with no contact with local residents. 17 US citizens to be repatriated by US government plane (NBC News / CNN, May 8 2026).",
       "reporter": "CNN / Spain Health Ministry"
     }
   ],
@@ -895,7 +895,7 @@
       "source": "PEDB43",
       "target": "P002",
       "type": "cabin_contact",
-      "event": "Shared Cabin 406 \u2014 Full Voyage Duration",
+      "event": "Shared Cabin 406 — Full Voyage Duration",
       "exposure_event_id": "EV001",
       "flight_id": null,
       "date": "2026-04-01",
@@ -906,7 +906,7 @@
       "source": "PEDB43",
       "target": "P003",
       "type": "prolonged_contact",
-      "event": "Medical Assistance \u2014 Cabin 406 / Medical Bay",
+      "event": "Medical Assistance — Cabin 406 / Medical Bay",
       "exposure_event_id": "EV002",
       "flight_id": null,
       "date": "2026-04-06",
@@ -917,7 +917,7 @@
       "source": "PEDB43",
       "target": "P004",
       "type": "shared_workspace",
-      "event": "Crew Common Areas / Shared Ventilation \u2014 Deck 2",
+      "event": "Crew Common Areas / Shared Ventilation — Deck 2",
       "exposure_event_id": "EV003",
       "flight_id": null,
       "date": "2026-04-08",

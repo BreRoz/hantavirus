@@ -1505,6 +1505,14 @@ const App = {
       this._cases = casesData.cases || [];
       MapSlider.setRange(this._cases);
       this._chainData = chainData;
+
+      // Last updated timestamp
+      const tsEl = document.getElementById("header-last-updated");
+      if (tsEl) {
+        tsEl.textContent = "Updated " + new Date().toLocaleTimeString("en-US", {
+          hour: "numeric", minute: "2-digit", timeZoneName: "short"
+        });
+      }
       this._exposureEvents = exposureData.exposure_events || [];
       this._flights = flightsData.flights || [];
       this._timelineData = timelineData.timeline || [];

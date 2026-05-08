@@ -765,6 +765,35 @@
       "reporter": "AP / KCRA / CDPH / CNN / WHO"
     },
     {
+      "id": "PESP02",
+      "name": "Alicante Woman — Flight Contact (Gen 2)",
+      "age": null,
+      "sex": "female",
+      "nationality": "Spanish",
+      "status": "suspected",
+      "generation": 2,
+      "infected_by": "PEDB43",
+      "onset_date": null,
+      "date": "2026-05-08",
+      "incubation_start": null,
+      "location": {
+        "city": "Alicante",
+        "state": "Valencia",
+        "country": "Spain",
+        "venue": "Self-isolating at home — samples sent to National Microbiology Center",
+        "lat": 38.3452,
+        "lng": -0.4815
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.livescience.com/health/live/hantivirus-cruise-friday-may-8",
+      "source_notes": "Spain Health Minister Mónica García via X / LiveScience, May 8 2026",
+      "clinical_notes": "Woman self-isolating in Alicante after travelling on a flight 'close to' the Dutch woman (PEDB43) who died of hantavirus on April 26. Reporting mild symptoms compatible with hantavirus. Preventively isolated while National Microbiology Center analyzes diagnostic samples. Gen 2 case — flight contact with index case, not aboard MV Hondius. Same transmission pathway as PFRCE01 (French citizen) and PKLM01 (Airlink flight attendant). Spain health minister: 'risk for the general population remains very low.'",
+      "reporter": "Spain Health Minister Mónica García / LiveScience"
+    },
+    {
       "id": "PTRISTAN01",
       "name": "British Male \u2014 Tristan da Cunha Disembarkation",
       "age": null,

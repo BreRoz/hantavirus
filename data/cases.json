@@ -736,35 +736,6 @@
       "reporter": "WTOC / Georgia Dept of Public Health"
     },
     {
-      "id": "PAR001",
-      "name": "Rodrigo Morinigo (Argentina Domestic)",
-      "age": 14,
-      "sex": "male",
-      "nationality": "Argentine",
-      "status": "deceased",
-      "generation": 0,
-      "infected_by": null,
-      "onset_date": "2025-12-29",
-      "date": "2026-01-01",
-      "incubation_start": null,
-      "location": {
-        "city": "San Andrés de Giles",
-        "state": "Buenos Aires Province",
-        "country": "Argentina",
-        "venue": "Rural family home / Local hospital ICU",
-        "lat": -34.4431,
-        "lng": -59.4481
-      },
-      "ship_info": null,
-      "transport": {},
-      "exposures": [],
-      "flights": [],
-      "source_url": "https://apnews.com/article/hantavirus-argentina-cruise-ship-climate-change",
-      "source_notes": "AP / Isabel Debre, May 7 2026 — San Andrés de Giles, Buenos Aires Province, Argentina",
-      "clinical_notes": "14-year-old Argentine boy. Presented with fever and body aches — initially misdiagnosed as flu by local doctors in San Andrés de Giles and sent home with ibuprofen. Breathing worsened; rushed to intensive care on January 1. Died just two hours after hantavirus test came back positive. Case part of Argentina's January 2026 outbreak alert — 101 hantavirus infections recorded nationally since June 2025, roughly double the prior-year caseload. Death rate in Argentina in 2025–26 reached nearly one-third of confirmed cases, up from the 5-year average of ~15%. Andes virus (rodent-borne, not ship-related). UNRELATED to MV Hondius cruise ship cluster. Parents: Daisy Morinigo and David Delgado.",
-      "reporter": "AP / Isabel Debre"
-    },
-    {
       "id": "PAR002",
       "name": "Bariloche Male Patient (Argentina Domestic, 2026)",
       "age": null,

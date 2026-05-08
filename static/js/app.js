@@ -436,31 +436,72 @@ const OverviewTab = {
     const visible = cases.filter(c => locOf(c).lat && locOf(c).lng);
     document.getElementById("map-case-count").textContent = `${visible.length} case${visible.length !== 1 ? "s" : ""}`;
 
+    // Group cases by exact coordinate so stacked pins become a cluster dot
+    const clusters = {};
     visible.forEach(c => {
       const loc = locOf(c);
-      const gen = c.generation ?? 0;
+      const key = `${loc.lat},${loc.lng}`;
+      if (!clusters[key]) clusters[key] = [];
+      clusters[key].push(c);
+    });
+
+    Object.values(clusters).forEach(group => {
+      const loc = locOf(group[0]);
+      const isSingle = group.length === 1;
+
+      // Pick colour from the most severe status in the group
+      const severity = { deceased: 0, confirmed: 1, suspected: 2, recovered: 3 };
+      const worst = group.slice().sort((a, b) => (severity[a.status] ?? 9) - (severity[b.status] ?? 9))[0];
+      const gen   = worst.generation ?? 0;
       const color = genColor(gen);
+      const size  = isSingle ? 14 : Math.min(14 + group.length * 3, 30);
+
       const icon = L.divIcon({
-        html: `<div style="width:14px;height:14px;border-radius:50%;background:${color};border:2px solid rgba(255,255,255,0.5);box-shadow:0 0 6px ${color}88"></div>`,
+        html: isSingle
+          ? `<div style="width:${size}px;height:${size}px;border-radius:50%;background:${color};border:2px solid rgba(255,255,255,0.5);box-shadow:0 0 6px ${color}88"></div>`
+          : `<div style="width:${size}px;height:${size}px;border-radius:50%;background:${color};border:2px solid rgba(255,255,255,0.7);box-shadow:0 0 8px ${color}99;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;font-family:Inter,sans-serif">${group.length}</div>`,
         className: "",
-        iconSize: [14, 14],
-        iconAnchor: [7, 7],
+        iconSize: [size, size],
+        iconAnchor: [size / 2, size / 2],
       });
-      const isAuto = (c.reporter || "").includes("Auto-scraped");
+
       const m = L.marker([loc.lat, loc.lng], { icon });
+
+      // Popup lists all cases in the group
+      const popupRows = group.map(c => {
+        const isAuto = (c.reporter || "").includes("Auto-scraped");
+        const srcTag = isAuto
+          ? `<span style="font-size:10px;color:#f59e0b">⚠</span>`
+          : `<span style="font-size:10px;color:#10b981">✓</span>`;
+        return `<div style="padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.07);cursor:pointer" class="popup-case-row" data-id="${c.id}">
+          <span style="font-size:11px;font-weight:600">${Utils.esc(c.id)}</span>
+          <span style="font-size:10px;color:#aaa;margin-left:4px">${c.status}</span>
+          ${srcTag}
+          <div style="font-size:10px;color:#ccc;margin-top:1px">${Utils.esc(c.name || "—")}</div>
+          ${c.onset_date ? `<div style="font-size:10px;color:#888">Onset: ${Utils.toDisplay(c.onset_date)}</div>` : ""}
+        </div>`;
+      }).join("");
+
+      const locLabel = [loc.city, loc.country].filter(Boolean).join(", ") || "—";
       m.bindPopup(`
-        <div style="font-family:Inter,sans-serif;min-width:180px">
-          <div style="font-weight:600;margin-bottom:4px">${Utils.esc(c.id)} · ${Utils.esc(c.name || "—")}</div>
-          <div style="font-size:12px;color:#aaa">Gen ${gen} · ${c.status}</div>
-          <div style="font-size:12px">${Utils.esc([loc.city, loc.country].filter(Boolean).join(", ") || "—")}</div>
-          ${c.onset_date ? `<div style="font-size:12px;margin-top:4px">Onset: ${Utils.toDisplay(c.onset_date)}</div>` : ""}
-          <div style="margin-top:6px">${isAuto
-            ? `<span style="font-size:10px;color:#f59e0b;background:rgba(245,158,11,0.12);padding:1px 6px;border-radius:4px">⚠ unverified</span>`
-            : `<span style="font-size:10px;color:#10b981;background:rgba(16,185,129,0.12);padding:1px 6px;border-radius:4px">✓ verified</span>`
-          }</div>
+        <div style="font-family:Inter,sans-serif;min-width:200px;max-height:260px;overflow-y:auto">
+          <div style="font-weight:700;font-size:12px;margin-bottom:6px;color:#fff">${Utils.esc(locLabel)}
+            ${group.length > 1 ? `<span style="font-size:10px;color:#aaa;font-weight:400"> · ${group.length} cases</span>` : ""}
+          </div>
+          ${popupRows}
         </div>
-      `, { className: "dark-popup" });
-      m.on("click", () => App.selectCase(c.id));
+      `, { className: "dark-popup", maxWidth: 260 });
+
+      // Clicking a row in the popup opens that case's detail panel
+      m.on("popupopen", () => {
+        document.querySelectorAll(".popup-case-row").forEach(row => {
+          row.addEventListener("click", () => App.selectCase(row.dataset.id));
+        });
+      });
+
+      // Single case: clicking the dot opens detail directly
+      if (isSingle) m.on("click", () => App.selectCase(group[0].id));
+
       m.addTo(this._map);
       this._markers.push(m);
     });

@@ -926,7 +926,7 @@ body {
   display: flex; flex-direction: column;
   transform: translateX(100%);
   transition: transform var(--duration-slow) var(--ease-out);
-  z-index: 200;
+  z-index: 800;
   box-shadow: var(--shadow-xl);
 }
 .case-detail.open { transform: translateX(0); }

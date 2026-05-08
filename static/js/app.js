@@ -1529,6 +1529,22 @@ const App = {
     // Map fit
     document.getElementById("btn-map-fit")?.addEventListener("click", () => {});
 
+    // Share button
+    document.getElementById("btn-share")?.addEventListener("click", async () => {
+      const shareData = {
+        title: "Hantavirus Outbreak Tracker — MV Hondius",
+        text: "Happy Mother's Day 💐 — thought you'd want to see this live hantavirus outbreak tracker following the cruise ship story you've probably been hearing about. Case by case, verified sources, updated daily.",
+        url: "https://hantavirus-production.up.railway.app/",
+      };
+      if (navigator.share) {
+        try { await navigator.share(shareData); } catch (e) { /* user cancelled */ }
+      } else {
+        const text = `${shareData.text}\n\n${shareData.url}`;
+        await navigator.clipboard.writeText(text);
+        Toast.show("Copied to clipboard — paste it to share! 💐", "success", 4000);
+      }
+    });
+
     await this.refresh();
   },
 

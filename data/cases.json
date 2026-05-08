@@ -761,8 +761,8 @@
       "flights": [],
       "source_url": "https://www.kcra.com/article/hantavirus-cruise-ship-california/71244285",
       "source_notes": "AP / KCRA May 7 2026",
-      "clinical_notes": "147 people aboard total (88 passengers, 59 crew, 23 nationalities including 17 Americans) per WHO May 8. 30–40 passengers from 12 countries disembarked MV Hondius at Saint Helena on April 24 — without contact tracing completed. Ship operator (Oceanwide Expeditions) says 30 (including the deceased Dutch couple); Dutch Foreign Ministry puts figure at ~40 (AP, May 7 2026). Countries: UK, Canada, Denmark, Germany, Netherlands, New Zealand, Saint Kitts and Nevis, Singapore, Sweden, Switzerland, Turkey, USA. St. Helena authorities monitoring a 'small number' of higher-risk contacts, ordered to isolate for 45 days. Singapore monitoring 2 men who flew St Helena → South Africa → Singapore (see PUSSG01). 7 Americans across 5 US states (CA, AZ, TX, GA, VA) being monitored per NBC News May 8 (supersedes ABC figure of 9/6 states). WHO confirmed 5 cases + 3 suspected as of May 7. None confirmed ill in the US as of May 7. Argentina distributing 2,500 diagnostic kits to a 5-country laboratory network. Ship departed Cape Verde 7:15pm local May 6 — ~200 miles west of Nouadhibou, Mauritania as of May 8, expected Tenerife Sunday May 10.",
-      "reporter": "AP / KCRA / CDPH / CNN / WHO"
+      "clinical_notes": "147 people aboard total (88 passengers, 59 crew, 23 nationalities including 17 Americans) per WHO May 8. 30–40 passengers from 12 countries disembarked MV Hondius at Saint Helena on April 24 — without contact tracing completed. Ship operator (Oceanwide Expeditions) says 30 (including the deceased Dutch couple); Dutch Foreign Ministry puts figure at ~40 (AP, May 7 2026). Countries: UK, Canada, Denmark, Germany, Netherlands, New Zealand, Saint Kitts and Nevis, Singapore, Sweden, Switzerland, Turkey, USA. St. Helena authorities monitoring a 'small number' of higher-risk contacts, ordered to isolate for 45 days. Singapore monitoring 2 men who flew St Helena → South Africa → Singapore (see PUSSG01). 7 Americans across 6 US states (AZ, CA, GA, NJ, TX, VA) being monitored — NONE experiencing symptoms as of May 8 (CNN). New Jersey monitoring 2 people exposed post-disembarkation (see PUSNJ01). US REPATRIATION PLAN (CNN, May 8 2026): CDC staffers dispatched to Canary Islands to escort 17 American passengers on a specialized biocontainment charter aircraft (similar to Covid-19 evacuations) back to the US. A second CDC team dispatched to Nebraska to receive passengers at the National Quarantine Unit and Nebraska Biocontainment Unit (Nebraska Medicine / UNMC). State Dept coordinating with CDC, HHS, and government of Spain. Ship expected at Granadilla port, Tenerife. Argentina distributing 2,500 diagnostic kits to a 5-country laboratory network. Ship departed Cape Verde 7:15pm local May 6 — ~200 miles west of Nouadhibou, Mauritania as of May 8, expected Tenerife Sunday May 10. 8 hantavirus cases identified among passengers per CNN sources, 3 deaths.",
+      "reporter": "AP / KCRA / CDPH / CNN / WHO / NBC News"
     },
     {
       "id": "PESP02",
@@ -887,6 +887,35 @@
       "source_notes": "CNN / Spain Health Minister Mónica García, May 8 2026",
       "clinical_notes": "14 Spanish passengers aboard MV Hondius to be transported to Gómez Ulla Military Hospital in Madrid (NOT Tenerife) after disembarkation at Tenerife (expected Sunday May 10). Full protocol per Spain head of emergency services Virginia Barcones: PCR test on arrival + repeat PCR on day 7; if positive → UATAN unit; single rooms, no visitor contact. All other remaining passengers to be repatriated per Spain health minister Mónica García. Arrival under strict protocol: completely isolated cordoned-off area, guarded vehicles, sealed airport section with no contact with local residents. 17 US citizens to be repatriated by US government plane (NBC News / CNN, May 8 2026).",
       "reporter": "CNN / Spain Health Ministry"
+    },
+    {
+      "id": "PUSNJ01",
+      "name": "New Jersey Residents — Post-Disembarkation Exposure (2)",
+      "age": null,
+      "sex": null,
+      "nationality": "American",
+      "status": "suspected",
+      "generation": 2,
+      "infected_by": "PEDB43",
+      "onset_date": null,
+      "date": "2026-05-08",
+      "incubation_start": null,
+      "location": {
+        "city": "New Jersey",
+        "state": "New Jersey",
+        "country": "USA",
+        "venue": "Home monitoring",
+        "lat": 40.0583,
+        "lng": -74.4057
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.cnn.com/2026/05/08/health/cdc-hantavirus-nebraska-quarantine",
+      "source_notes": "CNN, May 8 2026",
+      "clinical_notes": "Two New Jersey residents potentially exposed to a person infected with hantavirus after that person departed MV Hondius. NOT aboard the ship — represents post-disembarkation contact exposure. Not experiencing hantavirus symptoms as of May 8. New Jersey is the 6th US state (alongside AZ, CA, GA, TX, VA) to report cases under monitoring. Generation listed as 2 (contact with a ship passenger, not the ship itself).",
+      "reporter": "CNN / New Jersey Department of Health"
     }
   ],
   "edges": [

@@ -426,6 +426,7 @@ const OverviewTab = {
     }).addTo(this._map);
 
     document.getElementById("btn-map-fit")?.addEventListener("click", () => this._fit());
+    this._addShipLayer();
   },
 
   render(cases) {
@@ -505,6 +506,79 @@ const OverviewTab = {
       m.addTo(this._map);
       this._markers.push(m);
     });
+  },
+
+  _addShipLayer() {
+    // Estimated position — MV Hondius en route Cape Verde → Tenerife
+    const shipPos    = [19.0, -21.0];
+    const tenerifePos = [28.2916, -16.6291];
+
+    // Glowing ship SVG (teal)
+    const shipIcon = L.divIcon({
+      html: `
+        <div style="filter:drop-shadow(0 0 5px #2dd4bf) drop-shadow(0 0 12px #2dd4bf88)">
+          <svg width="36" height="32" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4 L18 14" stroke="#2dd4bf" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M18 4 L26 10 L18 10 Z" stroke="#2dd4bf" stroke-width="1.4" fill="rgba(45,212,191,0.08)"/>
+            <rect x="11" y="14" width="14" height="5" rx="1" stroke="#2dd4bf" stroke-width="1.6" fill="rgba(45,212,191,0.08)"/>
+            <path d="M4 19 L7 26 L29 26 L32 19 Z" stroke="#2dd4bf" stroke-width="1.6" fill="rgba(45,212,191,0.08)"/>
+            <path d="M2 28 Q9 25 18 28 Q27 31 34 28" stroke="#2dd4bf" stroke-width="1.2" opacity="0.5" stroke-linecap="round"/>
+          </svg>
+        </div>`,
+      className: "",
+      iconSize: [36, 32],
+      iconAnchor: [18, 28],
+    });
+
+    // Glowing anchor SVG (amber)
+    const anchorIcon = L.divIcon({
+      html: `
+        <div style="filter:drop-shadow(0 0 5px #f97316) drop-shadow(0 0 12px #f9731688)">
+          <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14" cy="5" r="3.5" stroke="#f97316" stroke-width="1.6"/>
+            <line x1="14" y1="8.5" x2="14" y2="26" stroke="#f97316" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="7" y1="13" x2="21" y2="13" stroke="#f97316" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M6 26 Q14 31 22 26" stroke="#f97316" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+            <line x1="6" y1="22" x2="6" y2="26" stroke="#f97316" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="22" y1="22" x2="22" y2="26" stroke="#f97316" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>`,
+      className: "",
+      iconSize: [28, 32],
+      iconAnchor: [14, 32],
+    });
+
+    // Dashed route line Cape Verde → Tenerife
+    const capeVerdePos = [14.933, -23.513];
+    L.polyline([capeVerdePos, shipPos, tenerifePos], {
+      color: "#2dd4bf",
+      weight: 1.5,
+      opacity: 0.4,
+      dashArray: "6 8",
+    }).addTo(this._map);
+
+    // Ship marker
+    L.marker(shipPos, { icon: shipIcon, zIndexOffset: 1000 })
+      .bindPopup(`
+        <div style="font-family:Inter,sans-serif;min-width:180px">
+          <div style="font-weight:700;font-size:12px;color:#2dd4bf;margin-bottom:4px">🚢 MV Hondius</div>
+          <div style="font-size:11px;color:#ccc">Estimated position · May 7, 2026</div>
+          <div style="font-size:11px;color:#aaa;margin-top:4px">En route Cape Verde → Tenerife</div>
+          <div style="font-size:11px;color:#f97316;margin-top:4px">Expected arrival: May 9–10</div>
+          <div style="font-size:10px;color:#666;margin-top:6px;font-style:italic">Position is estimated — not real-time</div>
+        </div>`, { className: "dark-popup" })
+      .addTo(this._map);
+
+    // Tenerife anchor marker
+    L.marker(tenerifePos, { icon: anchorIcon, zIndexOffset: 999 })
+      .bindPopup(`
+        <div style="font-family:Inter,sans-serif;min-width:180px">
+          <div style="font-weight:700;font-size:12px;color:#f97316;margin-bottom:4px">⚓ Tenerife, Canary Islands</div>
+          <div style="font-size:11px;color:#ccc">MV Hondius destination</div>
+          <div style="font-size:11px;color:#f97316;margin-top:4px">Expected arrival: May 9–10, 2026</div>
+          <div style="font-size:11px;color:#aaa;margin-top:4px">Passengers to disembark under IHR health protocols</div>
+        </div>`, { className: "dark-popup" })
+      .addTo(this._map);
   },
 
   _fit() {

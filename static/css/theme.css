@@ -482,6 +482,36 @@ body {
 .btn--ghost { background: transparent; color: var(--color-text-muted); border-color: var(--color-border-mid); }
 .btn--ghost:hover { background: var(--color-bg-elevated); color: var(--color-text); border-color: rgba(255,255,255,0.18); }
 .btn--sm { padding: var(--space-1) var(--space-3); font-size: var(--text-xs); }
+.btn--social {
+  background: rgba(99,102,241,0.15);
+  color: #818cf8;
+  border-color: rgba(99,102,241,0.35);
+  font-weight: 600;
+}
+.btn--social:hover {
+  background: rgba(99,102,241,0.25);
+  border-color: rgba(99,102,241,0.6);
+  color: #a5b4fc;
+}
+.social-share-wrap { position: relative; }
+.social-dropdown {
+  display: none; position: absolute; top: calc(100% + 6px); right: 0;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-mid);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  min-width: 160px; z-index: 900;
+  overflow: hidden;
+}
+.social-dropdown.open { display: block; }
+.social-option {
+  display: block; padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs); color: var(--color-text-muted);
+  cursor: pointer; white-space: nowrap;
+  transition: background var(--duration-fast);
+}
+.social-option:hover { background: var(--color-bg-elevated); color: var(--color-text); }
+
 .btn--share {
   background: rgba(244,114,182,0.15);
   color: #f472b6;

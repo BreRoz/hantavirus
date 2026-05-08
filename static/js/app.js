@@ -1529,6 +1529,38 @@ const App = {
     // Map fit
     document.getElementById("btn-map-fit")?.addEventListener("click", () => {});
 
+    // Social share dropdown
+    const socialBtn      = document.getElementById("btn-social-share");
+    const socialDropdown = document.getElementById("social-dropdown");
+    const SITE_URL  = "https://hantavirus-production.up.railway.app/";
+    const SITE_TEXT = "Live hantavirus outbreak tracker for the 2026 MV Hondius cruise ship cluster — 3 deaths, transmission chains mapped case by case. #hantavirus #MVHondius";
+
+    socialBtn?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      socialDropdown?.classList.toggle("open");
+    });
+    document.addEventListener("click", () => socialDropdown?.classList.remove("open"));
+
+    document.getElementById("share-twitter")?.addEventListener("click", () => {
+      const tweet = encodeURIComponent(`${SITE_TEXT}\n\n${SITE_URL}`);
+      window.open(`https://twitter.com/intent/tweet?text=${tweet}`, "_blank", "noopener");
+      socialDropdown?.classList.remove("open");
+    });
+    document.getElementById("share-reddit")?.addEventListener("click", () => {
+      const title = encodeURIComponent("Live Hantavirus Outbreak Tracker — MV Hondius cruise ship cluster (3 deaths, transmission chains, case by case)");
+      window.open(`https://www.reddit.com/submit?url=${encodeURIComponent(SITE_URL)}&title=${title}`, "_blank", "noopener");
+      socialDropdown?.classList.remove("open");
+    });
+    document.getElementById("share-facebook")?.addEventListener("click", () => {
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SITE_URL)}`, "_blank", "noopener");
+      socialDropdown?.classList.remove("open");
+    });
+    document.getElementById("share-copy")?.addEventListener("click", async () => {
+      await navigator.clipboard.writeText(SITE_URL);
+      Toast.show("Link copied to clipboard!", "success", 3000);
+      socialDropdown?.classList.remove("open");
+    });
+
     // Share button
     document.getElementById("btn-share")?.addEventListener("click", async () => {
       const shareData = {

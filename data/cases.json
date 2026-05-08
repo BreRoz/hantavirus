@@ -761,8 +761,8 @@
       "flights": [],
       "source_url": "https://www.kcra.com/article/hantavirus-cruise-ship-california/71244285",
       "source_notes": "AP / KCRA May 7 2026",
-      "clinical_notes": "147 people aboard total (88 passengers, 59 crew, 23 nationalities including 17 Americans) per WHO May 8. 30–40 passengers from 12 countries disembarked MV Hondius at Saint Helena on April 24 — without contact tracing completed. Ship operator (Oceanwide Expeditions) says 30 (including the deceased Dutch couple); Dutch Foreign Ministry puts figure at ~40 (AP, May 7 2026). Countries: UK, Canada, Denmark, Germany, Netherlands, New Zealand, Saint Kitts and Nevis, Singapore, Sweden, Switzerland, Turkey, USA. St. Helena authorities monitoring a 'small number' of higher-risk contacts, ordered to isolate for 45 days. Singapore monitoring 2 men who flew St Helena → South Africa → Singapore (see PUSSG01). 7 Americans across 6 US states (AZ, CA, GA, NJ, TX, VA) being monitored — NONE experiencing symptoms as of May 8 (CNN). New Jersey monitoring 2 people exposed post-disembarkation (see PUSNJ01). US REPATRIATION PLAN (CNN, May 8 2026): CDC staffers dispatched to Canary Islands to escort 17 American passengers on a specialized biocontainment charter aircraft (similar to Covid-19 evacuations) back to the US. A second CDC team dispatched to Nebraska to receive passengers at the National Quarantine Unit and Nebraska Biocontainment Unit (Nebraska Medicine / UNMC). State Dept coordinating with CDC, HHS, and government of Spain. Ship expected at Granadilla port, Tenerife. Argentina distributing 2,500 diagnostic kits to a 5-country laboratory network. Ship departed Cape Verde 7:15pm local May 6 — ~200 miles west of Nouadhibou, Mauritania as of May 8, expected Tenerife Sunday May 10. 8 hantavirus cases identified among passengers per CNN sources, 3 deaths.",
-      "reporter": "AP / KCRA / CDPH / CNN / WHO / NBC News"
+      "clinical_notes": "147 people aboard total (88 passengers, 59 crew, 23 nationalities including 17 Americans) per WHO May 8. 30–40 passengers from 12 countries disembarked MV Hondius at Saint Helena on April 24 — without contact tracing completed. Ship operator (Oceanwide Expeditions) says 30 (including the deceased Dutch couple); Dutch Foreign Ministry puts figure at ~40 (AP, May 7 2026). Countries: UK, Canada, Denmark, Germany, Netherlands, New Zealand, Saint Kitts and Nevis, Singapore, Sweden, Switzerland, Turkey, USA. St. Helena authorities monitoring a 'small number' of higher-risk contacts, ordered to isolate for 45 days. Singapore monitoring 2 men who flew St Helena → South Africa → Singapore (see PUSSG01). 7 Americans across 6 US states (AZ, CA, GA, NJ, TX, VA) being monitored — NONE experiencing symptoms as of May 8 (CNN). New Jersey monitoring 2 people exposed post-disembarkation (see PUSNJ01). US REPATRIATION PLAN (CNN, May 8 2026): CDC staffers dispatched to Canary Islands to escort 17 American passengers on a specialized biocontainment charter aircraft (similar to Covid-19 evacuations) back to the US. A second CDC team dispatched to Nebraska to receive passengers at the National Quarantine Unit and Nebraska Biocontainment Unit (Nebraska Medicine / UNMC). State Dept coordinating with CDC, HHS, and government of Spain. Ship expected at Granadilla port, Tenerife. Argentina distributing 2,500 diagnostic kits to a 5-country laboratory network. Ship departed Cape Verde 7:15pm local May 6 — ~200 miles west of Nouadhibou, Mauritania as of May 8, expected Tenerife Sunday May 10. 8 hantavirus cases identified among passengers per CNN sources, 3 deaths. Canada update (Calgary CityNews, May 8 2026): 6 Canadians were aboard MV Hondius. 2 Canadians returned to Canada April 26-27 (before outbreak identified) along with a third person — 2 are isolating in Ontario, 1 in Quebec. 4 Canadians remain on ship, all symptom-free. Canada coordinating with Spain for disembarkation. Canadian consular officials assisting. Canada working with each province: each has identified a specific hospital capable of managing complex viruses.",
+      "reporter": "AP / KCRA / CDPH / CNN / WHO / NBC News / Calgary CityNews"
     },
     {
       "id": "PESP02",
@@ -916,6 +916,101 @@
       "source_notes": "CNN, May 8 2026",
       "clinical_notes": "Two New Jersey residents potentially exposed to a person infected with hantavirus after that person departed MV Hondius. NOT aboard the ship — represents post-disembarkation contact exposure. Not experiencing hantavirus symptoms as of May 8. New Jersey is the 6th US state (alongside AZ, CA, GA, TX, VA) to report cases under monitoring. Generation listed as 2 (contact with a ship passenger, not the ship itself).",
       "reporter": "CNN / New Jersey Department of Health"
+    },
+    {
+      "id": "PCAN01",
+      "name": "Alberta Residents — Flight Contacts (2)",
+      "age": null,
+      "sex": null,
+      "nationality": "Canadian",
+      "status": "suspected",
+      "generation": 2,
+      "infected_by": "PEDB43",
+      "onset_date": null,
+      "date": "2026-05-08",
+      "incubation_start": null,
+      "location": {
+        "city": "Alberta",
+        "state": "Alberta",
+        "country": "Canada",
+        "venue": "Home monitoring",
+        "lat": 53.9333,
+        "lng": -116.5765
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://calgary.citynews.ca/2026/05/08/alberta-hantavirus-monitoring",
+      "source_notes": "Calgary CityNews / Alberta Ministry of Primary and Preventative Health Services, May 8 2026",
+      "clinical_notes": "Two Alberta residents who had brief contact with an infected MV Hondius passenger on separate flights — NOT aboard the ship themselves. Contacted and at home monitoring for symptoms. Health zone not disclosed per patient confidentiality. Assessed as part of Canada Chief Medical Officer Dr. Joss Reimer's review of 3 total flight contacts (2 Alberta + 1 Ontario). No symptoms as of May 8. Gen 2 case — post-disembarkation flight contact. Alberta Ministry confirmed: \"both people have been contacted and are at home monitoring for symptoms.\" Hantavirus incubation 1–6 weeks per Reimer, occasionally longer.",
+      "reporter": "Calgary CityNews / Alberta Ministry of Health / Dr. Joss Reimer"
+    },
+    {
+      "id": "PCAN02",
+      "name": "Ontario Resident — Flight Contact",
+      "age": null,
+      "sex": null,
+      "nationality": "Canadian",
+      "status": "suspected",
+      "generation": 2,
+      "infected_by": "PEDB43",
+      "onset_date": null,
+      "date": "2026-05-08",
+      "incubation_start": null,
+      "location": {
+        "city": "Ontario",
+        "state": "Ontario",
+        "country": "Canada",
+        "venue": "Home monitoring",
+        "lat": 51.2538,
+        "lng": -85.3232
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://calgary.citynews.ca/2026/05/08/alberta-hantavirus-monitoring",
+      "source_notes": "Calgary CityNews / Canada Chief Medical Officer, May 8 2026",
+      "clinical_notes": "One Ontario resident who had brief contact with an infected MV Hondius passenger on a separate flight — NOT aboard the ship. Part of 3 total flight contacts identified by Canada Chief Medical Officer Dr. Joss Reimer (2 Alberta + 1 Ontario). No symptoms as of May 8. Gen 2 — post-disembarkation flight contact, same pathway as PFRCE01 (France), PESP02 (Spain), PKLM01 (Airlink attendant). Incubation 1–6 weeks per Reimer.",
+      "reporter": "Calgary CityNews / Canada Chief Medical Officer Dr. Joss Reimer"
+    },
+    {
+      "id": "PCAN03",
+      "name": "Canadian Early Returnees — Isolating (3)",
+      "age": null,
+      "sex": null,
+      "nationality": "Canadian",
+      "status": "suspected",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-04-27",
+      "incubation_start": "2026-04-01",
+      "location": {
+        "city": "Ontario / Quebec",
+        "state": "Ontario",
+        "country": "Canada",
+        "venue": "Isolating at home — Ontario (2) and Quebec (1)",
+        "lat": 45.5017,
+        "lng": -73.5673
+      },
+      "ship_info": {
+        "vessel": "MV Hondius",
+        "voyage": "HDS2526",
+        "cabin": null,
+        "deck": null,
+        "role": "passenger",
+        "embarkation_port": "Ushuaia",
+        "embarkation_date": "2026-04-01"
+      },
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://calgary.citynews.ca/2026/05/08/alberta-hantavirus-monitoring",
+      "source_notes": "Calgary CityNews, May 8 2026",
+      "clinical_notes": "Three people who disembarked MV Hondius early and returned to Canada on April 26-27 — before the hantavirus outbreak was identified. Two are Canadian nationals; a third person (nationality unconfirmed) returned with them. Two are isolating in Ontario, one in Quebec. No symptoms reported as of May 8. 4 additional Canadians remain aboard the ship, all symptom-free. Canadian consular officials coordinating support. Each province has identified a specific hospital capable of managing complex viruses. Incubation period 1–6 weeks per Canada Chief Medical Officer Dr. Joss Reimer.",
+      "reporter": "Calgary CityNews / Canada Chief Medical Officer Dr. Joss Reimer"
     }
   ],
   "edges": [

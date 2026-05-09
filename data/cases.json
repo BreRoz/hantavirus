@@ -268,8 +268,8 @@
       "flights": [],
       "source_url": "https://m.aa.com.tr/en/europe/switzerland-confirms-hantavirus-case-in-former-atlantic-cruise-passenger/3928814",
       "source_notes": null,
-      "clinical_notes": "Man previously aboard MV Hondius cruise ship, returned from South Africa in late April with his wife, now receiving treatment at a hospital in Zurich after being notified by the ship's operator.",
-      "reporter": "Auto-scraped — verify before publishing"
+      "clinical_notes": "Swiss man aboard MV Hondius, disembarked April 24-25 and took the April 25 Airlink flight from St Helena to Johannesburg (~80 passengers). Returned from South Africa with his wife in late April. Now confirmed positive and receiving treatment at hospital in Zurich. Per El País, he is the confirmed positive case on the South Africa flight that prompted France to trace 8 French citizens also aboard.",
+      "reporter": "AA.com.tr / El País"
     },
     {
       "id": "P649AB",
@@ -616,7 +616,7 @@
       "flights": [],
       "source_url": "https://apnews.com/article/hantavirus-cruise-ship-st-helena-9c70878b2ff59d187f1e34c12627cea7",
       "source_notes": "AP, May 7 2026 — French Health Ministry statement",
-      "clinical_notes": "French citizen with 'benign symptoms', in isolation and undergoing medical tests as of May 7. Identified as a contact case linked to index case PEDB43 (Dutch woman) who flew Airlink 4Z 301 from St Helena to Johannesburg on April 25. Not aboard MV Hondius — represents potential Gen 2 off-ship transmission. French Health Ministry confirmed the case in a statement.",
+      "clinical_notes": "One of 8 French citizens identified by French authorities as having been on the April 25 Airlink flight (St Helena → Johannesburg, ~80 passengers) with confirmed Swiss case P3BE87. This individual has benign symptoms and is in isolation undergoing medical tests. The other 7 French citizens are being monitored as asymptomatic contacts.",
       "reporter": "French Ministry of Health / AP"
     },
     {
@@ -1077,6 +1077,64 @@
       "source_notes": "California Department of Public Health news release, May 8 2026",
       "clinical_notes": "One California resident returned from MV Hondius, under monitoring by local health officials. Protocol: daily temperature checks, assessment for hantavirus-consistent symptoms, and direction to modify activities. No symptoms reported as of May 8. A second California resident remains aboard the ship (not yet disembarked). California is one of 6 US states (AZ, CA, GA, NJ, TX, VA) monitoring returned passengers — 9 US residents total across all states, none ill.",
       "reporter": "California Department of Public Health"
+    },
+    {
+      "id": "PFRCE02",
+      "name": "French Contacts — South Africa Flight (7)",
+      "age": null,
+      "sex": null,
+      "nationality": "French",
+      "status": "asymptomatic",
+      "generation": 2,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-09",
+      "incubation_start": null,
+      "location": {
+        "city": "France",
+        "state": "",
+        "country": "France",
+        "venue": "Under monitoring",
+        "lat": 46.2276,
+        "lng": 2.2137
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://elpais.com/ciencia/2026-05-09/como-se-cerca-el-brote-de-hantavirus-una-carrera-internacional-para-encontrar-contactos.html",
+      "source_notes": "El País, May 9 2026",
+      "clinical_notes": "Seven additional French citizens (beyond symptomatic PFRCE01) identified by French health authorities as having been on the April 25 Airlink flight from St Helena to Johannesburg alongside confirmed Swiss case P3BE87. Being traced and monitored as asymptomatic contacts. No symptoms reported.",
+      "reporter": "El País / French Health Ministry"
+    },
+    {
+      "id": "PESB01",
+      "name": "Barcelona Passenger — Hospital Clínic (Asymptomatic)",
+      "age": null,
+      "sex": null,
+      "nationality": "Unknown",
+      "status": "asymptomatic",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-09",
+      "incubation_start": null,
+      "location": {
+        "city": "Barcelona",
+        "state": "Catalonia",
+        "country": "Spain",
+        "venue": "Hospital Clínic de Barcelona",
+        "lat": 41.3879,
+        "lng": 2.1499
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://elpais.com/ciencia/2026-05-09/como-se-cerca-el-brote-de-hantavirus-una-carrera-internacional-para-encontrar-contactos.html",
+      "source_notes": "El País, May 9 2026",
+      "clinical_notes": "MV Hondius passenger admitted to Hospital Clínic de Barcelona, asymptomatic. Traveling to Barcelona after disembarkation. Identified via El País contact tracing graphic. No symptoms reported.",
+      "reporter": "El País"
     }
   ],
   "edges": [

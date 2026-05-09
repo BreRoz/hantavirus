@@ -22,7 +22,9 @@ NEW_URL  = "https://hantavirus.up.railway.app"
 @app.before_request
 def redirect_old_domain():
     if request.host == OLD_HOST:
-        return redirect(NEW_URL + request.full_path.rstrip("?"), code=301)
+        path = request.path
+        qs = ("?" + request.query_string.decode()) if request.query_string else ""
+        return redirect(NEW_URL + path + qs, code=301)
 
 BASE_DIR  = os.path.dirname(__file__)
 DATA_DIR  = os.path.join(BASE_DIR, "data")

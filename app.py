@@ -12,9 +12,17 @@ import time
 import uuid
 from datetime import datetime, timedelta
 
-from flask import Flask, jsonify, render_template, request, Response
+from flask import Flask, jsonify, render_template, request, Response, redirect
 
 app = Flask(__name__)
+
+OLD_HOST = "hantavirus-production.up.railway.app"
+NEW_URL  = "https://hantavirus.up.railway.app"
+
+@app.before_request
+def redirect_old_domain():
+    if request.host == OLD_HOST:
+        return redirect(NEW_URL + request.full_path.rstrip("?"), code=301)
 
 BASE_DIR  = os.path.dirname(__file__)
 DATA_DIR  = os.path.join(BASE_DIR, "data")

@@ -111,6 +111,26 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/sitemap.xml")
+def sitemap():
+    xml = '''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://hantavirus.up.railway.app/</loc>
+    <lastmod>{}</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>'''.format(datetime.utcnow().strftime("%Y-%m-%d"))
+    return Response(xml, mimetype="application/xml")
+
+
+@app.route("/robots.txt")
+def robots():
+    txt = "User-agent: *\nAllow: /\nSitemap: https://hantavirus.up.railway.app/sitemap.xml\n"
+    return Response(txt, mimetype="text/plain")
+
+
 # ---------------------------------------------------------------------------
 # Routes — Cases
 # ---------------------------------------------------------------------------

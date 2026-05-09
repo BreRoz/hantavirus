@@ -131,6 +131,11 @@ def robots():
     return Response(txt, mimetype="text/plain")
 
 
+@app.route("/google50678cea329390e7.html")
+def google_verify():
+    return Response("google-site-verification: google50678cea329390e7.html", mimetype="text/html")
+
+
 # ---------------------------------------------------------------------------
 # Routes — Cases
 # ---------------------------------------------------------------------------

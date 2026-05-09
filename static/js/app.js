@@ -1664,6 +1664,12 @@ const App = {
     TabNav.onActivate("timeline", () => {
       TimelineTab.load(this._timelineData, this._cases);
     });
+    TabNav.onActivate("tracking", () => {
+      const iframe = document.getElementById("vessel-finder-frame");
+      if (iframe && !iframe.src && iframe.dataset.src) {
+        iframe.src = iframe.dataset.src;
+      }
+    });
 
     // Controls bar exports
     document.getElementById("btn-export-cases")?.addEventListener("click", () => API.exportCases());

@@ -13,8 +13,10 @@ import uuid
 from datetime import datetime, timedelta
 
 from flask import Flask, jsonify, render_template, request, Response, redirect
+from flask_compress import Compress
 
 app = Flask(__name__)
+Compress(app)
 
 OLD_HOST = "hantavirus-production.up.railway.app"
 NEW_URL  = "https://hantavirus.up.railway.app"
@@ -161,7 +163,9 @@ def get_cases():
 
     ids    = {c["id"] for c in cases}
     edges  = [e for e in data["edges"] if e["source"] in ids and e["target"] in ids]
-    return jsonify({"cases": cases, "edges": edges})
+    resp = jsonify({"cases": cases, "edges": edges})
+    resp.headers["Cache-Control"] = "public, max-age=60"
+    return resp
 
 
 @app.route("/api/cases", methods=["POST"])

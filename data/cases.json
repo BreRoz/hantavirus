@@ -1048,6 +1048,35 @@
       "source_notes": "Oceanwide Expeditions official timeline via USA Today, May 8 2026",
       "clinical_notes": "American passenger aboard MV Hondius — partner of British national P003. Per Oceanwide Expeditions official timeline: on April 27 \"two guests are medevaced via Ascension Island: a symptomatic British national [P003] and the patient's American partner.\" This reduces ship total from 149 to 147. Evacuation appears precautionary for the American partner (P003 described as the symptomatic one). Current location and health status unknown — may be in South Africa with P003, or may have returned to the US (possibly one of the 7 Americans under state monitoring). NEW CASE — not previously in database. Not to be confused with the 17 Americans still aboard the ship.",
       "reporter": "Oceanwide Expeditions / USA Today"
+    },
+    {
+      "id": "PUSCA01",
+      "name": "California Resident — Returned MV Hondius Passenger",
+      "age": null,
+      "sex": null,
+      "nationality": "American",
+      "status": "suspected",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-08",
+      "incubation_start": null,
+      "location": {
+        "city": "California",
+        "state": "California",
+        "country": "USA",
+        "venue": "Home monitoring",
+        "lat": 36.7783,
+        "lng": -119.4179
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": null,
+      "source_notes": "California Department of Public Health news release, May 8 2026",
+      "clinical_notes": "One California resident returned from MV Hondius, under monitoring by local health officials. Protocol: daily temperature checks, assessment for hantavirus-consistent symptoms, and direction to modify activities. No symptoms reported as of May 8. A second California resident remains aboard the ship (not yet disembarked). California is one of 6 US states (AZ, CA, GA, NJ, TX, VA) monitoring returned passengers — 9 US residents total across all states, none ill.",
+      "reporter": "California Department of Public Health"
     }
   ],
   "edges": [

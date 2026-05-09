@@ -744,7 +744,7 @@ const ChainTab = {
           style: {
             shape: "rectangle",
             width: 28, height: 18,
-            "background-color": "var(--color-node-exposure, #7c3aed)",
+            "background-color": "#7c3aed",
             "border-width": 1,
             "border-color": "rgba(255,255,255,0.3)",
             label: "data(label)",
@@ -759,7 +759,7 @@ const ChainTab = {
           style: {
             shape: "diamond",
             width: 28, height: 28,
-            "background-color": "var(--color-node-flight, #0ea5e9)",
+            "background-color": "#0ea5e9",
             "border-width": 1,
             "border-color": "rgba(255,255,255,0.3)",
             label: "data(label)",

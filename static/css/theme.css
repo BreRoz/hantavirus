@@ -275,7 +275,9 @@ body {
 }
 .stat-chip--total     { background: var(--color-bg-elevated); color: var(--color-text); border-color: var(--color-border-mid); }
 .stat-chip--confirmed { background: var(--color-confirmed-bg); color: var(--color-confirmed); border-color: rgba(239,68,68,0.4); }
-.stat-chip--suspected { background: var(--color-suspected-bg); color: var(--color-suspected); border-color: rgba(245,158,11,0.4); }
+.stat-chip--suspected    { background: var(--color-suspected-bg); color: var(--color-suspected); border-color: rgba(245,158,11,0.4); }
+.stat-chip--symptomatic  { background: #fff7ed; color: #f97316; border-color: rgba(249,115,22,0.4); }
+.stat-chip--asymptomatic { background: #fffbeb; color: #d97706; border-color: rgba(245,158,11,0.4); }
 .stat-chip--recovered { background: var(--color-recovered-bg); color: var(--color-recovered); border-color: rgba(16,185,129,0.4); }
 .stat-chip-count { font-weight: var(--weight-bold); font-variant-numeric: tabular-nums; }
 
@@ -411,7 +413,9 @@ body {
 }
 .filter-pill input[type="checkbox"] { display: none; }
 .filter-pill--confirmed { background: var(--color-confirmed-bg); color: var(--color-confirmed); border-color: rgba(239,68,68,0.4); }
-.filter-pill--suspected { background: var(--color-suspected-bg); color: var(--color-suspected); border-color: rgba(245,158,11,0.4); }
+.filter-pill--suspected    { background: var(--color-suspected-bg); color: var(--color-suspected); border-color: rgba(245,158,11,0.4); }
+.filter-pill--symptomatic  { background: #fff7ed; color: #f97316; border-color: rgba(249,115,22,0.4); }
+.filter-pill--asymptomatic { background: #fffbeb; color: #d97706; border-color: rgba(245,158,11,0.4); }
 .filter-pill--recovered { background: var(--color-recovered-bg); color: var(--color-recovered); border-color: rgba(16,185,129,0.4); }
 .filter-pill--all       { background: var(--color-bg-elevated); color: var(--color-text-muted); border-color: var(--color-border-mid); }
 .filter-pill.inactive   { opacity: 0.35; }
@@ -1242,7 +1246,9 @@ body {
 .reader-stat--total    .reader-stat-num { color: #1e293b; }
 .reader-stat--deaths   .reader-stat-num { color: #dc2626; }
 .reader-stat--confirmed .reader-stat-num { color: #b45309; }
-.reader-stat--suspected .reader-stat-num { color: #d97706; }
+.reader-stat--suspected    .reader-stat-num { color: #d97706; }
+.reader-stat--symptomatic  .reader-stat-num { color: #f97316; }
+.reader-stat--asymptomatic .reader-stat-num { color: #d97706; }
 .reader-stat--recovered .reader-stat-num { color: #16a34a; }
 
 /* Disclaimer strip */

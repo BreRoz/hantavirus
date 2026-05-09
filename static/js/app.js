@@ -14,7 +14,8 @@ const GEN_COLORS = {
 
 const STATUS_COLORS = {
   confirmed: "#ef4444",
-  suspected: "#f59e0b",
+  symptomatic:  "#f97316",
+  asymptomatic: "#f59e0b",
   recovered: "#10b981",
   deceased:  "#6b7280",
 };
@@ -36,7 +37,7 @@ const RISK_LABELS = {
 };
 
 function genColor(gen) { return GEN_COLORS[Math.min(gen, 4)] || GEN_COLORS[4]; }
-function statusColor(s) { return STATUS_COLORS[s] || STATUS_COLORS.suspected; }
+function statusColor(s) { return STATUS_COLORS[s] || STATUS_COLORS.asymptomatic; }
 function edgeColor(t)   { return EDGE_COLORS[t]   || EDGE_COLORS.close_contact; }
 
 // ============================================================================
@@ -172,7 +173,7 @@ const TabNav = {
 const Sidebar = {
   _cases: [],
   _selectedId: null,
-  _statusFilter: new Set(["confirmed", "suspected", "recovered", "deceased"]),
+  _statusFilter: new Set(["confirmed", "symptomatic", "asymptomatic", "recovered", "deceased"]),
   _genFilter: new Set([0, 1, 2, 3]),
   _search: "",
   _onSelect: null,
@@ -444,7 +445,7 @@ const OverviewTab = {
       const isSingle = group.length === 1;
 
       // Pick colour from the most severe status in the group
-      const severity = { deceased: 0, confirmed: 1, suspected: 2, recovered: 3 };
+      const severity = { deceased: 0, confirmed: 1, symptomatic: 2, asymptomatic: 3, recovered: 4 };
       const worst = group.slice().sort((a, b) => (severity[a.status] ?? 9) - (severity[b.status] ?? 9))[0];
       const gen   = worst.generation ?? 0;
       const color = genColor(gen);
@@ -1500,7 +1501,7 @@ const CaseForm = {
 
     const data = {
       name:       val("f-name"),
-      status:     val("f-status") || "suspected",
+      status:     val("f-status") || "asymptomatic",
       age:        parseInt(val("f-age"), 10) || undefined,
       sex:        val("f-sex") || undefined,
       date:       val("f-date"),
@@ -1579,7 +1580,7 @@ const NewCasesPopup = {
         ? `<span class="source-badge source-badge--unverified">⚠ unverified</span>`
         : `<span class="source-badge source-badge--verified">✓ verified</span>`;
 
-      const statusLabel = { confirmed:"CONFIRMED", suspected:"SUSPECTED", recovered:"RECOVERED", deceased:"DECEASED" }[c.status] || c.status?.toUpperCase();
+      const statusLabel = { confirmed:"CONFIRMED", symptomatic:"SYMPTOMATIC", asymptomatic:"ASYMPTOMATIC", recovered:"RECOVERED", deceased:"DECEASED" }[c.status] || c.status?.toUpperCase();
       const loc  = [c.location?.city, c.location?.country].filter(Boolean).join(", ") || "—";
       const date = c.date ? new Date(c.date + "T00:00:00").toLocaleDateString("en-GB", { day:"numeric", month:"short", year:"numeric" }) : "—";
       const meta = [
@@ -1782,11 +1783,12 @@ const App = {
 
   _updateStats(stats) {
     const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v ?? "—"; };
-    set("stat-total",     stats.total);
-    set("stat-confirmed", stats.confirmed);
-    set("stat-suspected", stats.suspected);
-    set("stat-recovered", stats.recovered);
-    set("stat-deceased",  stats.deceased);
+    set("stat-total",        stats.total);
+    set("stat-confirmed",    stats.confirmed);
+    set("stat-symptomatic",  stats.symptomatic);
+    set("stat-asymptomatic", stats.asymptomatic);
+    set("stat-recovered",    stats.recovered);
+    set("stat-deceased",     stats.deceased);
 
     const gens = stats.generations || {};
     set("stat-gen-0", gens["0"] ?? 0);

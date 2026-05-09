@@ -459,7 +459,7 @@ def get_stats():
     cases   = load_cases()["cases"]
     expose  = load_exposures()["exposure_events"]
     flights = load_flights()["flights"]
-    statuses = ["confirmed", "suspected", "recovered", "deceased"]
+    statuses = ["confirmed", "symptomatic", "asymptomatic", "recovered", "deceased"]
     stats = {s: sum(1 for c in cases if c.get("status") == s) for s in statuses}
     stats["total"]             = len(cases)
     stats["exposure_events"]   = len(expose)

@@ -104,8 +104,11 @@
       <div class="stat-chip stat-chip--confirmed">
         <span>Confirmed</span><span class="stat-chip-count" id="stat-confirmed">—</span>
       </div>
-      <div class="stat-chip stat-chip--suspected">
-        <span>Suspected</span><span class="stat-chip-count" id="stat-suspected">—</span>
+      <div class="stat-chip stat-chip--symptomatic">
+        <span>Symptomatic</span><span class="stat-chip-count" id="stat-symptomatic">—</span>
+      </div>
+      <div class="stat-chip stat-chip--asymptomatic">
+        <span>Asymptomatic</span><span class="stat-chip-count" id="stat-asymptomatic">—</span>
       </div>
       <div class="stat-chip stat-chip--recovered">
         <span>Recovered</span><span class="stat-chip-count" id="stat-recovered">—</span>
@@ -174,7 +177,8 @@
       <div class="sidebar-label">Status</div>
       <div class="filter-pills">
         <label class="filter-pill filter-pill--confirmed"><input type="checkbox" value="confirmed" checked> Confirmed</label>
-        <label class="filter-pill filter-pill--suspected"><input type="checkbox" value="suspected" checked> Suspected</label>
+        <label class="filter-pill filter-pill--symptomatic"><input type="checkbox" value="symptomatic" checked> Monitoring — Symptomatic</label>
+        <label class="filter-pill filter-pill--asymptomatic"><input type="checkbox" value="asymptomatic" checked> Monitoring — Asymptomatic</label>
         <label class="filter-pill filter-pill--recovered"><input type="checkbox" value="recovered" checked> Recovered</label>
         <label class="filter-pill filter-pill--all"><input type="checkbox" value="deceased" checked> Deceased</label>
       </div>
@@ -213,7 +217,8 @@
             <span class="panel-title">Geographic Distribution</span>
             <div class="map-legend">
               <div class="legend-item"><span class="legend-dot" style="background:var(--color-confirmed)"></span>Confirmed</div>
-              <div class="legend-item"><span class="legend-dot" style="background:var(--color-suspected)"></span>Suspected</div>
+              <div class="legend-item"><span class="legend-dot" style="background:#f97316"></span>Monitoring — Symptomatic</div>
+              <div class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span>Monitoring — Asymptomatic</div>
               <div class="legend-item"><span class="legend-dot" style="background:var(--color-recovered)"></span>Recovered</div>
             </div>
             <div class="panel-actions">
@@ -659,7 +664,7 @@
           <div class="form-group"><label class="form-label">Name / Identifier</label><input type="text" id="f-name" class="form-input" placeholder="Patient P011"></div>
           <div class="form-group"><label class="form-label">Status <span class="required">*</span></label>
             <select id="f-status" class="form-select" required>
-              <option value="suspected">Suspected</option><option value="confirmed">Confirmed</option>
+              <option value="symptomatic">Monitoring — Symptomatic</option><option value="asymptomatic">Monitoring — Asymptomatic</option><option value="confirmed">Confirmed</option>
               <option value="recovered">Recovered</option><option value="deceased">Deceased</option>
             </select>
           </div>
@@ -796,7 +801,8 @@
     <div class="reader-stat reader-stat--total"><div class="reader-stat-num" id="rs-total">—</div><div class="reader-stat-label">Total Cases</div></div>
     <div class="reader-stat reader-stat--deaths"><div class="reader-stat-num" id="rs-deaths">—</div><div class="reader-stat-label">Deaths</div></div>
     <div class="reader-stat reader-stat--confirmed"><div class="reader-stat-num" id="rs-confirmed">—</div><div class="reader-stat-label">Confirmed</div></div>
-    <div class="reader-stat reader-stat--suspected"><div class="reader-stat-num" id="rs-suspected">—</div><div class="reader-stat-label">Suspected</div></div>
+    <div class="reader-stat reader-stat--symptomatic"><div class="reader-stat-num" id="rs-symptomatic">—</div><div class="reader-stat-label">Symptomatic</div></div>
+    <div class="reader-stat reader-stat--asymptomatic"><div class="reader-stat-num" id="rs-asymptomatic">—</div><div class="reader-stat-label">Asymptomatic</div></div>
     <div class="reader-stat reader-stat--recovered"><div class="reader-stat-num" id="rs-recovered">—</div><div class="reader-stat-label">Recovered</div></div>
   </div>
 
@@ -813,7 +819,8 @@
       <button class="reader-filter-btn active" data-status="all">All</button>
       <button class="reader-filter-btn" data-status="deceased">Deaths</button>
       <button class="reader-filter-btn" data-status="confirmed">Confirmed</button>
-      <button class="reader-filter-btn" data-status="suspected">Suspected</button>
+      <button class="reader-filter-btn" data-status="symptomatic">Symptomatic</button>
+      <button class="reader-filter-btn" data-status="asymptomatic">Asymptomatic</button>
       <button class="reader-filter-btn" data-status="recovered">Recovered</button>
     </div>
   </div>

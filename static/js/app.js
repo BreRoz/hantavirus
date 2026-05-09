@@ -1690,7 +1690,7 @@ const App = {
     // Social share dropdown
     const socialBtn      = document.getElementById("btn-social-share");
     const socialDropdown = document.getElementById("social-dropdown");
-    const SITE_URL  = "https://hantavirus-production.up.railway.app/";
+    const SITE_URL  = "https://hantavirus.up.railway.app/";
     const SITE_TEXT = "Live hantavirus outbreak tracker for the 2026 MV Hondius cruise ship cluster — 3 deaths, transmission chains mapped case by case. #hantavirus #MVHondius";
 
     socialBtn?.addEventListener("click", (e) => {
@@ -1724,7 +1724,7 @@ const App = {
       const shareData = {
         title: "Hantavirus Outbreak Tracker — MV Hondius",
         text: "Happy Mother's Day 💐 — thought you'd want to see this live hantavirus outbreak tracker following the cruise ship story you've probably been hearing about. Case by case, verified sources, updated daily.",
-        url: "https://hantavirus-production.up.railway.app/",
+        url: "https://hantavirus.up.railway.app/",
       };
       if (navigator.share) {
         try { await navigator.share(shareData); } catch (e) { /* user cancelled */ }

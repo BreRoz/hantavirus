@@ -7,8 +7,6 @@ import csv
 import io
 import json
 import os
-import threading
-import time
 import uuid
 from datetime import datetime, timedelta
 
@@ -227,26 +225,6 @@ def delete_case(cid):
     return jsonify({"deleted": cid})
 
 
-# ---------------------------------------------------------------------------
-# Routes — Edges
-# ---------------------------------------------------------------------------
-
-@app.route("/api/edges", methods=["POST"])
-def add_edge():
-    data = load_cases()
-    edge = request.get_json(force=True)
-    for f in ("source", "target", "type"):
-        if f not in edge:
-            return jsonify({"error": f"Missing: {f}"}), 400
-    edge["id"] = f"E{uuid.uuid4().hex[:6].upper()}"
-    edge.setdefault("event",            "")
-    edge.setdefault("date",             datetime.now().strftime("%Y-%m-%d"))
-    edge.setdefault("notes",            "")
-    edge.setdefault("exposure_event_id", None)
-    edge.setdefault("flight_id",        None)
-    data["edges"].append(edge)
-    _save(CASES_F, data)
-    return jsonify(edge), 201
 
 
 # ---------------------------------------------------------------------------
@@ -672,84 +650,7 @@ def export_flight_manifest(fid):
 
 
 # ---------------------------------------------------------------------------
-# Routes — Folium Map Export
-# ---------------------------------------------------------------------------
-
-@app.route("/api/map/export", methods=["GET"])
-def export_map():
-    try:
-        import folium
-    except ImportError:
-        return jsonify({"error": "folium not installed"}), 501
-
-    data   = load_cases()
-    colors = {"confirmed": "red", "suspected": "orange",
-              "recovered": "green", "deceased": "gray"}
-
-    m = folium.Map(location=[30, 0], zoom_start=2, tiles="CartoDB dark_matter")
-    for c in data["cases"]:
-        loc = c.get("location", {})
-        if not loc.get("lat") or not loc.get("lng"):
-            continue
-        folium.CircleMarker(
-            location=[loc["lat"], loc["lng"]], radius=8,
-            color=colors.get(c.get("status","suspected"), "gray"),
-            fill=True, fill_opacity=0.8,
-            popup=folium.Popup(
-                f"<b>{c['id']}</b> Gen {c.get('generation',0)}<br>"
-                f"{loc.get('city','')} · {c.get('onset_date','')}", max_width=220
-            ),
-        ).add_to(m)
-
-    return m._repr_html_(), 200, {"Content-Type": "text/html"}
-
-
-# ---------------------------------------------------------------------------
-# Routes — Scraper
-
-@app.route("/api/scraper/run", methods=["POST"])
-def scraper_run():
-    """Trigger a manual scrape cycle."""
-    try:
-        from scraper import run as _run
-        result = _run()
-        return jsonify(result)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-
-@app.route("/api/scraper/log", methods=["GET"])
-def scraper_log():
-    log_path = os.path.join(DATA_DIR, "scraper_log.json")
-    try:
-        with open(log_path) as f:
-            return jsonify(json.load(f))
-    except Exception:
-        return jsonify({"runs": []})
-
-
-# ---------------------------------------------------------------------------
-# Background scheduler — runs scraper once every 24 hours
-
-def _scraper_loop():
-    time.sleep(30)  # give Flask a moment to finish starting up
-    while True:
-        try:
-            from scraper import run as _run
-            _run()
-        except Exception as e:
-            print(f"[Scheduler] Scraper error: {e}")
-        time.sleep(86400)  # 24 hours
-
-
-def _start_scheduler():
-    t = threading.Thread(target=_scraper_loop, daemon=True, name="scraper")
-    t.start()
-
-
-# ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    _start_scheduler()
     port = int(os.environ.get("PORT", 5001))
     app.run(debug=False, host="0.0.0.0", port=port)

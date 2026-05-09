@@ -80,13 +80,6 @@ const API = {
   exportTransmission() { window.open("/api/export/transmission", "_blank"); },
   exportFlight(id)     { window.open(`/api/export/flight/${id}`, "_blank"); },
 
-  async importCSV(file) {
-    const fd = new FormData();
-    fd.append("file", file);
-    const r = await fetch("/api/import/csv", { method: "POST", body: fd });
-    if (!r.ok) throw new Error(`CSV import → ${r.status}`);
-    return r.json();
-  },
 };
 
 // ============================================================================
@@ -1675,20 +1668,6 @@ const App = {
     document.getElementById("btn-export-cases")?.addEventListener("click", () => API.exportCases());
     document.getElementById("btn-export-chain")?.addEventListener("click", () => API.exportTransmission());
 
-    // CSV import
-    const csvInput = document.getElementById("csv-file-input");
-    document.getElementById("btn-import-csv")?.addEventListener("click", () => csvInput?.click());
-    csvInput?.addEventListener("change", async () => {
-      if (!csvInput.files[0]) return;
-      try {
-        const result = await API.importCSV(csvInput.files[0]);
-        Toast.show(`Imported ${result.imported} cases`, "success");
-        await this.refresh();
-      } catch (err) {
-        Toast.show("Import failed: " + err.message, "error");
-      }
-      csvInput.value = "";
-    });
 
     // Map fit
     document.getElementById("btn-map-fit")?.addEventListener("click", () => {});

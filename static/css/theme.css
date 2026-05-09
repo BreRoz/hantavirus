@@ -1551,16 +1551,25 @@ body {
    ========================================================================== */
 
 .bookmark-banner {
+  position: fixed;
+  top: 30px;
+  left: 0; right: 0;
+  z-index: 9998;
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  padding: 8px var(--space-4);
-  background: rgba(245,158,11,0.2) !important;
-  border-bottom: 2px solid rgba(245,158,11,0.5) !important;
+  padding: 6px var(--space-4);
+  background: #1a1000 !important;
+  border-bottom: 1px solid rgba(245,158,11,0.5) !important;
   font-size: var(--text-xs);
   color: #fbbf24 !important;
   flex-wrap: wrap;
+  font-family: var(--font-mono);
 }
+/* Shift app down when bookmark banner is visible (adds 28px on top of disclaimer's 30px) */
+body.bookmark-visible .app-layout { margin-top: 28px; height: calc(100vh - 28px); }
+body.banner-visible.bookmark-visible .app-layout { margin-top: 58px; height: calc(100vh - 58px); }
+
 .bookmark-banner-icon { font-size: 15px; flex-shrink: 0; }
 .bookmark-banner-text { flex: 1; min-width: 200px; }
 .bookmark-banner-text strong { color: #fbbf24; }

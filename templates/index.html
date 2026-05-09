@@ -44,7 +44,7 @@
     <strong>NEW PERMANENT LINK!</strong> The old Replit link is going away — please bookmark this page's new address so you don't lose access.
   </div>
   <button class="bookmark-banner-btn" onclick="navigator.clipboard.writeText(window.location.href).then(()=>this.textContent='✓ Copied!')">📋 Copy link</button>
-  <button class="bookmark-banner-close" onclick="document.getElementById('bookmark-banner').style.display='none';sessionStorage.setItem('epitrace_bookmark_dismissed','1')" title="Dismiss">✕</button>
+  <button class="bookmark-banner-close" onclick="document.getElementById('bookmark-banner').style.display='none';document.body.classList.remove('bookmark-visible');sessionStorage.setItem('epitrace_bookmark_dismissed','1')" title="Dismiss">✕</button>
 </div>
 
 <!-- ===== DISCLAIMER BANNER ===== -->
@@ -870,7 +870,13 @@ document.addEventListener('DOMContentLoaded', () => {
   DisclaimerSystem.init();
   // Bookmark banner
   const bb = document.getElementById('bookmark-banner');
-  if (bb && sessionStorage.getItem('epitrace_bookmark_dismissed')) bb.style.display = 'none';
+  if (bb) {
+    if (sessionStorage.getItem('epitrace_bookmark_dismissed')) {
+      bb.style.display = 'none';
+    } else {
+      document.body.classList.add('bookmark-visible');
+    }
+  }
 });
 
 // ============================================================================

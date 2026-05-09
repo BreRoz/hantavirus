@@ -45,8 +45,4 @@ Transmission edges are stored in the `edges` array of `cases.json`.
 
 ## Data Disclaimer
 
-This dashboard uses **unofficial, reconstructed data** for educational and situational-awareness purposes only. It is not affiliated with the WHO, CDC, ECDC, or any official public health authority.
-
-- WHO: https://www.who.int
-- CDC: https://www.cdc.gov
-- ECDC: https://www.ecdc.europa.eu
+This dashboard uses **unofficial, reconstructed data** for educational and situational-awareness purposes only.

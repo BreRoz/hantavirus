@@ -414,8 +414,8 @@ body {
 .filter-pill input[type="checkbox"] { display: none; }
 .filter-pill--confirmed { background: var(--color-confirmed-bg); color: var(--color-confirmed); border-color: rgba(239,68,68,0.4); }
 .filter-pill--suspected    { background: var(--color-suspected-bg); color: var(--color-suspected); border-color: rgba(245,158,11,0.4); }
-.filter-pill--symptomatic  { background: #fff7ed; color: #f97316; border-color: rgba(249,115,22,0.4); }
-.filter-pill--asymptomatic { background: #fffbeb; color: #d97706; border-color: rgba(245,158,11,0.4); }
+.filter-pill--symptomatic  { background: transparent; color: #f97316; border-color: #f97316; }
+.filter-pill--asymptomatic { background: transparent; color: #f97316; border-color: #f97316; }
 .filter-pill--recovered { background: var(--color-recovered-bg); color: var(--color-recovered); border-color: rgba(16,185,129,0.4); }
 .filter-pill--all       { background: var(--color-bg-elevated); color: var(--color-text-muted); border-color: var(--color-border-mid); }
 .filter-pill.inactive   { opacity: 0.35; }

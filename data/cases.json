@@ -1109,21 +1109,21 @@
     },
     {
       "id": "PNLKLM01",
-      "name": "KLM Flight Attendant — Amsterdam UMC (Symptomatic)",
+      "name": "KLM Flight Attendant — Amsterdam UMC (NEGATIVE — Ruled Out)",
       "age": null,
       "sex": null,
       "nationality": "Dutch",
-      "status": "symptomatic",
+      "status": "recovered",
       "generation": 2,
       "infected_by": null,
-      "onset_date": "2026-05-10",
-      "date": "2026-05-10",
+      "onset_date": "2026-05-08",
+      "date": "2026-05-08",
       "incubation_start": null,
       "location": {
         "city": "Amsterdam",
         "state": "North Holland",
         "country": "Netherlands",
-        "venue": "Amsterdam UMC — isolation ward",
+        "venue": "Amsterdam UMC — discharged from isolation",
         "lat": 52.3321,
         "lng": 4.9586
       },
@@ -1138,10 +1138,10 @@
         }
       ],
       "flights": [],
-      "source_url": null,
-      "source_notes": "Blondes Packing Heat / Veras Intelligence, May 10 2026",
-      "clinical_notes": "KLM Royal Dutch Airlines flight attendant hospitalized at Amsterdam UMC in isolation with suspected Andes hantavirus. CRITICAL: she was NOT a passenger on the MV Hondius. Exposure was brief cabin contact with a passenger at Johannesburg O.R. Tambo International Airport. KLM official reports confirm the interaction lasted 'a matter of minutes.' 88 people on a connected flight are now being traced. First documented potential Gen-2 case from aircraft cabin contact — not ship-linked. If confirmed, would represent first human-to-human or fomite transmission outside the vessel. Status: awaiting test results.",
-      "reporter": "Blondes Packing Heat / Veras Intelligence"
+      "source_url": "https://www.reuters.com",
+      "source_notes": "Reuters / WHO, May 8 2026",
+      "clinical_notes": "⚠️ RULED OUT — TESTED NEGATIVE. KLM Royal Dutch Airlines flight attendant admitted to Amsterdam UMC on May 8 with suspected hantavirus after brief cabin contact with a passenger at Johannesburg O.R. Tambo Airport. WHO confirmed negative test result on May 8 (Reuters). Was NOT aboard MV Hondius. Contact lasted 'a matter of minutes' per KLM. Kept in database as an epidemiologically significant ruled-out case: demonstrates brief aircraft cabin contact did NOT result in transmission in this instance. Provides reassurance on transmission risk from incidental passenger contact.",
+      "reporter": "Reuters / WHO"
     },
     {
       "id": "PESB01",

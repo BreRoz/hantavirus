@@ -141,11 +141,8 @@
     <button class="tab-btn active" data-tab="overview" role="tab">
       World Map
     </button>
-    <button class="tab-btn" data-tab="chains" role="tab">
-      Transmission Chains
-    </button>
-    <button class="tab-btn" data-tab="timeline" role="tab">
-      Transmission Timeline
+    <button class="tab-btn" data-tab="transmission" role="tab">
+      Transmission
     </button>
     <button class="tab-btn" data-tab="flights" role="tab">
       Travel Exposure
@@ -153,6 +150,9 @@
     <button class="tab-btn" data-tab="tracking" role="tab">
       <span class="tab-icon">✈️</span> Live Tracking
       <span class="tab-badge tab-badge--live">LIVE</span>
+    </button>
+    <button class="tab-btn" data-tab="quarantine" role="tab">
+      Quarantine Countdown
     </button>
     <button class="tab-btn" data-tab="info" role="tab">
       <span class="tab-icon">ℹ</span> Info
@@ -234,38 +234,87 @@
       </div>
     </div>
 
-    <!-- Tab 2: Transmission Chains -->
-    <div class="tab-pane" id="tab-chains">
-      <div class="chain-layout">
-        <div class="chain-toolbar">
-          <span class="chain-toolbar-label">Layout</span>
-          <div class="btn-group">
-            <button class="btn btn--ghost btn--sm active" id="layout-force" title="Force-directed">Force</button>
-            <button class="btn btn--ghost btn--sm" id="layout-timeline" title="Timeline (left=early, right=late)">Timeline</button>
-          </div>
+    <!-- Tab 2: Transmission (merged Chains + Timeline) -->
+    <div class="tab-pane" id="tab-transmission">
+      <div class="travel-layout">
 
-          <span class="chain-toolbar-label" style="margin-left:var(--space-2)">Show</span>
-          <label class="filter-pill filter-pill--all" style="font-size:var(--text-xs)">
-            <input type="checkbox" id="show-exposure-nodes" checked> Exposure events
-          </label>
-          <label class="filter-pill filter-pill--all" style="font-size:var(--text-xs)">
-            <input type="checkbox" id="show-flight-nodes" checked> Flights
-          </label>
-
-          <div style="margin-left:auto;display:flex;gap:var(--space-3);align-items:center">
-            <!-- Generation legend -->
-            <div class="gen-legend">
-              <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-gen-0)"></span>Gen 0</div>
-              <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-gen-1)"></span>Gen 1</div>
-              <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-gen-2)"></span>Gen 2</div>
-              <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-gen-3)"></span>Gen 3+</div>
-              <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-node-exposure);border-radius:2px;width:10px;height:10px"></span>Exposure</div>
-              <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-node-flight);clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);width:10px;height:10px;border-radius:0"></span>Flight</div>
-            </div>
-            <button class="btn btn--ghost btn--sm" id="chain-fit-btn">⊡ Fit</button>
-          </div>
+        <!-- Left: sub-nav -->
+        <div class="travel-left-panel">
+          <div class="travel-nav-item selected" data-trans="chains" onclick="TransNav.select('chains')" style="padding:14px 16px;font-weight:600">Transmission Chains</div>
+          <div class="travel-nav-item" data-trans="timeline" onclick="TransNav.select('timeline')" style="padding:14px 16px;font-weight:600">Transmission Timeline</div>
         </div>
-        <div id="chain-cy"></div>
+
+        <!-- Right: content panes -->
+        <div class="travel-right-panel">
+
+          <!-- Chains pane -->
+          <div id="trans-content-chains" class="travel-content-pane" style="display:flex;flex-direction:column;height:100%;width:100%">
+            <div class="chain-layout" style="display:flex;flex-direction:column;height:100%;width:100%">
+              <div class="chain-toolbar">
+                <span class="chain-toolbar-label">Layout</span>
+                <div class="btn-group">
+                  <button class="btn btn--ghost btn--sm active" id="layout-force" title="Force-directed">Force</button>
+                  <button class="btn btn--ghost btn--sm" id="layout-timeline" title="Timeline (left=early, right=late)">Timeline</button>
+                </div>
+
+                <span class="chain-toolbar-label" style="margin-left:var(--space-2)">Show</span>
+                <label class="filter-pill filter-pill--all" style="font-size:var(--text-xs)">
+                  <input type="checkbox" id="show-exposure-nodes" checked> Exposure events
+                </label>
+                <label class="filter-pill filter-pill--all" style="font-size:var(--text-xs)">
+                  <input type="checkbox" id="show-flight-nodes" checked> Flights
+                </label>
+
+                <div style="margin-left:auto;display:flex;gap:var(--space-3);align-items:center">
+                  <!-- Generation legend -->
+                  <div class="gen-legend">
+                    <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-gen-0)"></span>Gen 0</div>
+                    <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-gen-1)"></span>Gen 1</div>
+                    <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-gen-2)"></span>Gen 2</div>
+                    <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-gen-3)"></span>Gen 3+</div>
+                    <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-node-exposure);border-radius:2px;width:10px;height:10px"></span>Exposure</div>
+                    <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-node-flight);clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);width:10px;height:10px;border-radius:0"></span>Flight</div>
+                  </div>
+                  <button class="btn btn--ghost btn--sm" id="chain-fit-btn">⊡ Fit</button>
+                </div>
+              </div>
+              <div id="chain-cy"></div>
+            </div>
+          </div>
+
+          <!-- Timeline pane -->
+          <div id="trans-content-timeline" class="travel-content-pane" style="display:none;flex-direction:column;height:100%;width:100%">
+            <div class="timeline-layout" style="display:flex;flex-direction:column;height:100%;width:100%">
+              <div class="timeline-toolbar">
+                <span class="chain-toolbar-label">Sort by</span>
+                <div class="btn-group">
+                  <button class="btn btn--ghost btn--sm active" id="tl-sort-onset">Onset date</button>
+                  <button class="btn btn--ghost btn--sm" id="tl-sort-gen">Generation</button>
+                </div>
+                <div style="margin-left:auto;display:flex;gap:var(--space-4);align-items:center;font-size:var(--text-xs)">
+                  <div style="display:flex;align-items:center;gap:6px;color:var(--color-text-muted)">
+                    <div style="width:20px;height:10px;background:rgba(255,255,255,0.06);border:1px dashed rgba(255,255,255,0.2);border-radius:2px"></div>
+                    Incubation window (14 days)
+                  </div>
+                  <div style="display:flex;align-items:center;gap:6px;color:var(--color-text-muted)">
+                    <div style="width:20px;height:10px;background:rgba(79,142,247,0.4);border-radius:2px"></div>
+                    Infectious period
+                  </div>
+                  <div style="display:flex;align-items:center;gap:6px;color:var(--color-text-muted)">
+                    <span style="font-size:14px">✈</span> Flight event
+                  </div>
+                  <div style="display:flex;align-items:center;gap:6px;color:var(--color-text-muted)">
+                    <span style="font-size:12px">●</span> Onset
+                  </div>
+                </div>
+              </div>
+              <div class="gantt-wrapper">
+                <svg id="gantt-svg"></svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
 
@@ -438,38 +487,6 @@
             </div>
           </div>
 
-        </div>
-      </div>
-    </div>
-
-    <!-- Tab 5: Timeline -->
-    <div class="tab-pane" id="tab-timeline">
-      <div class="timeline-layout">
-        <div class="timeline-toolbar">
-          <span class="chain-toolbar-label">Sort by</span>
-          <div class="btn-group">
-            <button class="btn btn--ghost btn--sm active" id="tl-sort-onset">Onset date</button>
-            <button class="btn btn--ghost btn--sm" id="tl-sort-gen">Generation</button>
-          </div>
-          <div style="margin-left:auto;display:flex;gap:var(--space-4);align-items:center;font-size:var(--text-xs)">
-            <div style="display:flex;align-items:center;gap:6px;color:var(--color-text-muted)">
-              <div style="width:20px;height:10px;background:rgba(255,255,255,0.06);border:1px dashed rgba(255,255,255,0.2);border-radius:2px"></div>
-              Incubation window (14 days)
-            </div>
-            <div style="display:flex;align-items:center;gap:6px;color:var(--color-text-muted)">
-              <div style="width:20px;height:10px;background:rgba(79,142,247,0.4);border-radius:2px"></div>
-              Infectious period
-            </div>
-            <div style="display:flex;align-items:center;gap:6px;color:var(--color-text-muted)">
-              <span style="font-size:14px">✈</span> Flight event
-            </div>
-            <div style="display:flex;align-items:center;gap:6px;color:var(--color-text-muted)">
-              <span style="font-size:12px">●</span> Onset
-            </div>
-          </div>
-        </div>
-        <div class="gantt-wrapper">
-          <svg id="gantt-svg"></svg>
         </div>
       </div>
     </div>
@@ -714,6 +731,300 @@
           </div>
 
         </div>
+      </div>
+    </div>
+
+    <!-- Tab: Quarantine Countdown -->
+    <div class="tab-pane" id="tab-quarantine">
+      <div class="quar-header-row">
+        <div>
+          <h2>Quarantine Countdown</h2>
+          <p>Isolation status for all repatriated groups — updated daily</p>
+        </div>
+      </div>
+      <p class="quar-subtitle">All groups arrived May 10–11, 2026 from Tenerife South Airport (TFS). Quarantine periods run from arrival date.</p>
+      <div class="quar-grid">
+
+        <!-- Spain -->
+        <div class="quar-card" data-arrival="2026-05-10" data-duration="21">
+          <div class="quar-header">
+            <div class="quar-flag">🇪🇸</div>
+            <div class="quar-icon">
+              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="quar-title">
+              <h3>Spain</h3>
+              <p>Gómez Ulla Central Defense Hospital, Madrid</p>
+            </div>
+            <span class="quar-status quar-status--clear">All clear</span>
+          </div>
+          <div class="quar-people">14 passengers · Hospital quarantine</div>
+          <div class="quar-progress-wrap">
+            <div class="quar-progress-label">
+              <span class="quar-day-label">Day 1 of 21</span>
+              <span>21-day isolation</span>
+            </div>
+            <div class="quar-progress-bar">
+              <div class="quar-progress-fill" style="width:5%"></div>
+            </div>
+          </div>
+          <button class="quar-flight-toggle">
+            <span class="toggle-arrow">▼</span> Flight details
+          </button>
+          <div class="quar-flight-details">
+            Spanish Air Force A310 "Reino de España" (T.22-2) · TFS → Torrejón Air Base · 14 Spanish nationals · First group to leave the ship
+          </div>
+        </div>
+
+        <!-- France -->
+        <div class="quar-card quar-card--symptomatic" data-arrival="2026-05-10" data-duration="21">
+          <div class="quar-header">
+            <div class="quar-flag">🇫🇷</div>
+            <div class="quar-icon">
+              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="quar-title">
+              <h3>France</h3>
+              <p>Strict isolation, Paris Le Bourget area</p>
+            </div>
+            <span class="quar-status quar-status--symptomatic">⚠ Symptomatic</span>
+          </div>
+          <div class="quar-people">5 passengers · Strict isolation · 1 symptomatic in-flight</div>
+          <div class="quar-progress-wrap">
+            <div class="quar-progress-label">
+              <span class="quar-day-label">Day 1 of 21</span>
+              <span>21-day isolation</span>
+            </div>
+            <div class="quar-progress-bar">
+              <div class="quar-progress-fill quar-progress-fill--red" style="width:5%"></div>
+            </div>
+          </div>
+          <button class="quar-flight-toggle">
+            <span class="toggle-arrow">▼</span> Flight details
+          </button>
+          <div class="quar-flight-details">
+            Dassault Falcon 900EX F-HREG (ARL120E) · TFS → Paris Le Bourget (LBG) · 5 passengers · 1 symptomatic in-flight · Landed 4:27 PM local
+          </div>
+        </div>
+
+        <!-- United Kingdom -->
+        <div class="quar-card quar-card--monitoring" data-arrival="2026-05-10" data-duration="21">
+          <div class="quar-header">
+            <div class="quar-flag">🇬🇧</div>
+            <div class="quar-icon">
+              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="quar-title">
+              <h3>United Kingdom</h3>
+              <p>Hospitalized, Manchester</p>
+            </div>
+            <span class="quar-status quar-status--monitoring">Monitoring</span>
+          </div>
+          <div class="quar-people">22 passengers · Hospital isolation</div>
+          <div class="quar-progress-wrap">
+            <div class="quar-progress-label">
+              <span class="quar-day-label">Day 1 of 21</span>
+              <span>21-day isolation</span>
+            </div>
+            <div class="quar-progress-bar">
+              <div class="quar-progress-fill quar-progress-fill--amber" style="width:5%"></div>
+            </div>
+          </div>
+          <button class="quar-flight-toggle">
+            <span class="toggle-arrow">▼</span> Flight details
+          </button>
+          <div class="quar-flight-details">
+            ZT791 / AWC7791 · Airbus A320 · Titan Airways · TFS → Manchester (MAN) · 22 passengers
+          </div>
+        </div>
+
+        <!-- Netherlands -->
+        <div class="quar-card" data-arrival="2026-05-10" data-duration="21">
+          <div class="quar-header">
+            <div class="quar-flag">🇳🇱</div>
+            <div class="quar-icon">
+              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="quar-title">
+              <h3>Netherlands</h3>
+              <p>Eindhoven</p>
+            </div>
+            <span class="quar-status quar-status--clear">All clear</span>
+          </div>
+          <div class="quar-people">26 passengers · incl. 2 Indian crew members</div>
+          <div class="quar-progress-wrap">
+            <div class="quar-progress-label">
+              <span class="quar-day-label">Day 1 of 21</span>
+              <span>21-day isolation</span>
+            </div>
+            <div class="quar-progress-bar">
+              <div class="quar-progress-fill" style="width:5%"></div>
+            </div>
+          </div>
+          <button class="quar-flight-toggle">
+            <span class="toggle-arrow">▼</span> Flight details
+          </button>
+          <div class="quar-flight-details">
+            Charter · TFS → Eindhoven (EIN) · 26 passengers incl. 2 Indian crew members
+          </div>
+        </div>
+
+        <!-- Canada -->
+        <div class="quar-card" data-arrival="2026-05-10" data-duration="42">
+          <div class="quar-header">
+            <div class="quar-flag">🇨🇦</div>
+            <div class="quar-icon">
+              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="quar-title">
+              <h3>Canada</h3>
+              <p>British Columbia (unspecified airport)</p>
+            </div>
+            <span class="quar-status quar-status--clear">All clear</span>
+          </div>
+          <div class="quar-people">4 passengers · 42-day extended quarantine · arriving May 10/11</div>
+          <div class="quar-progress-wrap">
+            <div class="quar-progress-label">
+              <span class="quar-day-label">Day 1 of 42</span>
+              <span>42-day isolation</span>
+            </div>
+            <div class="quar-progress-bar">
+              <div class="quar-progress-fill" style="width:2%"></div>
+            </div>
+          </div>
+          <button class="quar-flight-toggle">
+            <span class="toggle-arrow">▼</span> Flight details
+          </button>
+          <div class="quar-flight-details">
+            Charter · TFS → Bagotville, QC (3 Wing CFB, transfer) → B.C. · 4 passengers · PHAC officer aboard · 2-leg flight
+          </div>
+        </div>
+
+        <!-- United States -->
+        <div class="quar-card" data-arrival="2026-05-11" data-duration="21">
+          <div class="quar-header">
+            <div class="quar-flag">🇺🇸</div>
+            <div class="quar-icon">
+              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="quar-title">
+              <h3>United States</h3>
+              <p>UNMC Nebraska + home monitoring</p>
+            </div>
+            <span class="quar-status quar-status--clear">All clear</span>
+          </div>
+          <div class="quar-people">18 passengers (17 Americans + 1 British/US resident) · flight just departed</div>
+          <div class="quar-progress-wrap">
+            <div class="quar-progress-label">
+              <span class="quar-day-label">Day 1 of 21</span>
+              <span>21-day isolation</span>
+            </div>
+            <div class="quar-progress-bar">
+              <div class="quar-progress-fill" style="width:5%"></div>
+            </div>
+          </div>
+          <button class="quar-flight-toggle">
+            <span class="toggle-arrow">▼</span> Flight details
+          </button>
+          <div class="quar-flight-details">
+            Charter · TFS → USA · 18 passengers (17 Americans + 1 British/US resident) · CDC escorting · arriving May 11
+          </div>
+        </div>
+
+        <!-- Turkey -->
+        <div class="quar-card" data-arrival="2026-05-10" data-duration="21">
+          <div class="quar-header">
+            <div class="quar-flag">🇹🇷</div>
+            <div class="quar-icon">
+              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="quar-title">
+              <h3>Turkey</h3>
+              <p>Location TBD</p>
+            </div>
+            <span class="quar-status quar-status--clear">All clear</span>
+          </div>
+          <div class="quar-people">3 passengers · Confirmed by Spanish Health Ministry</div>
+          <div class="quar-progress-wrap">
+            <div class="quar-progress-label">
+              <span class="quar-day-label">Day 1 of 21</span>
+              <span>21-day isolation</span>
+            </div>
+            <div class="quar-progress-bar">
+              <div class="quar-progress-fill" style="width:5%"></div>
+            </div>
+          </div>
+          <button class="quar-flight-toggle">
+            <span class="toggle-arrow">▼</span> Flight details
+          </button>
+          <div class="quar-flight-details">
+            Charter · TFS → Turkey · 3 passengers · Confirmed by Spanish Health Ministry
+          </div>
+        </div>
+
+        <!-- Ireland -->
+        <div class="quar-card" data-arrival="2026-05-10" data-duration="21">
+          <div class="quar-header">
+            <div class="quar-flag">🇮🇪</div>
+            <div class="quar-icon">
+              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="quar-title">
+              <h3>Ireland</h3>
+              <p>Location TBD</p>
+            </div>
+            <span class="quar-status quar-status--clear">All clear</span>
+          </div>
+          <div class="quar-people">2 passengers</div>
+          <div class="quar-progress-wrap">
+            <div class="quar-progress-label">
+              <span class="quar-day-label">Day 1 of 21</span>
+              <span>21-day isolation</span>
+            </div>
+            <div class="quar-progress-bar">
+              <div class="quar-progress-fill" style="width:5%"></div>
+            </div>
+          </div>
+          <button class="quar-flight-toggle">
+            <span class="toggle-arrow">▼</span> Flight details
+          </button>
+          <div class="quar-flight-details">
+            IRL290 · Irish Air Corps · TFS → Ireland · 2 passengers
+          </div>
+        </div>
+
       </div>
     </div>
 

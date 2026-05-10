@@ -1061,6 +1061,49 @@ const RepatNav = {
   },
 };
 
+const TransNav = {
+  _current: "chains",
+  select(id) {
+    this._current = id;
+    document.querySelectorAll("#tab-transmission .travel-nav-item").forEach(el =>
+      el.classList.toggle("selected", el.dataset.trans === id));
+    document.querySelectorAll("#tab-transmission .travel-content-pane").forEach(el =>
+      el.style.display = "none");
+    const pane = document.getElementById(`trans-content-${id}`);
+    if (pane) pane.style.display = "flex";
+    if (id === "chains") { ChainTab.invalidate(); if (App._chainData) ChainTab.render(App._chainData, Sidebar.getFilter()); }
+    if (id === "timeline") { TimelineTab.load(App._timelineData, App._cases); }
+  },
+};
+
+const QuarantineTab = {
+  _initialized: false,
+  render() {
+    const today = new Date();
+    const cards = document.querySelectorAll(".quar-card[data-arrival]");
+    cards.forEach(card => {
+      const arrival = new Date(card.dataset.arrival);
+      const duration = parseInt(card.dataset.duration, 10);
+      const elapsed = Math.max(1, Math.floor((today - arrival) / 86400000) + 1);
+      const pct = Math.min(100, (elapsed / duration) * 100);
+      const fill = card.querySelector(".quar-progress-fill");
+      const label = card.querySelector(".quar-day-label");
+      if (fill) fill.style.width = pct + "%";
+      if (label) label.textContent = `Day ${elapsed} of ${duration}`;
+    });
+    if (!this._initialized) {
+      this._initialized = true;
+      document.querySelectorAll(".quar-flight-toggle").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const details = btn.nextElementSibling;
+          const isOpen = details.classList.toggle("open");
+          btn.querySelector(".toggle-arrow").textContent = isOpen ? "▲" : "▼";
+        });
+      });
+    }
+  }
+};
+
 // ============================================================================
 // 11. ExposureTab
 // ============================================================================
@@ -1773,18 +1816,13 @@ const App = {
 
     // Tab activation handlers
     TabNav.onActivate("overview", () => OverviewTab.invalidate());
-    TabNav.onActivate("chains", () => {
-      ChainTab.invalidate();
-      if (this._chainData) ChainTab.render(this._chainData, Sidebar.getFilter());
-    });
+    TabNav.onActivate("transmission", () => { TransNav.select(TransNav._current || "chains"); });
     TabNav.onActivate("flights", () => {
       FlightRiskTab.render(this._flights);
       ExposureTab.render(this._exposureEvents, this._cases);
     });
-    TabNav.onActivate("timeline", () => {
-      TimelineTab.load(this._timelineData, this._cases);
-    });
     TabNav.onActivate("tracking", () => {});
+    TabNav.onActivate("quarantine", () => { QuarantineTab.render(); });
 
     // Controls bar exports
     document.getElementById("btn-export-cases")?.addEventListener("click", () => API.exportCases());
@@ -1891,10 +1929,10 @@ const App = {
       }));
 
       const tab = TabNav.current();
-      if (tab === "chains" && this._chainData) ChainTab.render(this._chainData, filter);
+      if (tab === "transmission" && TransNav._current === "chains" && this._chainData) ChainTab.render(this._chainData, filter);
+      if (tab === "transmission" && TransNav._current === "timeline") TimelineTab.load(this._timelineData, this._cases);
       if (tab === "flights") ExposureTab.render(this._exposureEvents, this._cases);
       if (tab === "flights") FlightRiskTab.render(this._flights);
-      if (tab === "timeline") TimelineTab.load(this._timelineData, this._cases);
 
     } catch (err) {
       Toast.show("Failed to load data: " + err.message, "error");

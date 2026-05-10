@@ -660,11 +660,12 @@ const OverviewTab = {
       .bindPopup(`
         <div style="font-family:Inter,sans-serif;min-width:210px">
           <div style="font-weight:700;font-size:12px;color:#ef4444;margin-bottom:4px">🪂 TRISTAN DA CUNHA — SUSPECTED CASE</div>
-          <div style="font-size:11px;color:#ccc">British Overseas Territory · Population: 221 · No airstrip</div>
-          <div style="font-size:11px;color:#f97316;margin-top:4px;font-weight:600">MV Hondius passenger — disembarked St. Helena Apr 21–24</div>
-          <div style="font-size:11px;color:#10b981;margin-top:4px">🪖 UK Response: 6 paratroopers + 2 medics parachuted from RAF transport</div>
-          <div style="font-size:11px;color:#aaa;margin-top:2px">Oxygen + medical equipment also airdropped · May 10, 2026</div>
-          <div style="font-size:10px;color:#666;margin-top:4px;font-style:italic">Nearest inhabited island: St. Helena — 1,500 miles away · Source: AP / UK MoD</div>
+          <div style="font-size:11px;color:#ccc">British Overseas Territory · Pop. ~200 · World's most remote inhabited island · No airstrip</div>
+          <div style="font-size:11px;color:#f97316;margin-top:4px;font-weight:600">British man — MV Hondius passenger · Ship docked Apr 13–15 · Symptoms reported Apr 28 · Stable, in isolation</div>
+          <div style="font-size:11px;color:#10b981;margin-top:4px;font-weight:600">🪖 16 Air Assault Brigade: 6 paratroopers + 2 clinicians jumped from RAF A400M</div>
+          <div style="font-size:11px;color:#aaa;margin-top:2px">RAF Brize Norton → Ascension Is. (6,788 km) → Tristan da Cunha (3,000 km) · Refuelled by RAF Voyager</div>
+          <div style="font-size:11px;color:#aaa;margin-top:2px">Oxygen at critical level on island · First-ever UK humanitarian parachute medical deployment</div>
+          <div style="font-size:10px;color:#666;margin-top:4px;font-style:italic">Source: Reuters / UK MoD · May 10, 2026</div>
         </div>`, { className: "dark-popup" })
       .addTo(this._map);
   },

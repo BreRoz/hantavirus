@@ -1174,9 +1174,9 @@
     },
     {
       "id": "PTRDC01",
-      "name": "Tristan da Cunha Resident — Suspected Hantavirus",
+      "name": "Tristan da Cunha Resident — Suspected Hantavirus (Stable)",
       "age": null,
-      "sex": null,
+      "sex": "M",
       "nationality": "British (Tristan da Cunha)",
       "status": "symptomatic",
       "generation": 1,
@@ -1201,10 +1201,10 @@
       "transport": {},
       "exposures": [],
       "flights": [],
-      "source_url": null,
-      "source_notes": "AP News / Source 2 News Nevada, May 10 2026",
-      "clinical_notes": "MV Hondius passenger who disembarked at St. Helena (Apr 21–24) and returned to their home on Tristan da Cunha, Britain's most remote inhabited overseas territory — population 221. Island has no airstrip; normally accessible only by 6-day boat voyage from Cape Town. Suspected hantavirus. UK response: 6 British Army paratroopers + 2 medical clinicians parachuted from a Royal Air Force transport plane on Saturday May 10. Oxygen and medical equipment also airdropped. UK Defense Ministry confirmed the operation. Patient status unknown pending assessment by the parachuted medical team.",
-      "reporter": "AP News"
+      "source_url": "https://www.reuters.com/business/healthcare-pharmaceuticals/british-paratroopers-lead-airdrop-onto-tristan-da-cunha-suspected-hantavirus-2026-05-10/",
+      "source_notes": "Reuters / UK MoD, May 10 2026",
+      "clinical_notes": "British man — MV Hondius passenger. Ship docked at Tristan da Cunha April 13–15; patient is one of 6 islanders who boarded. Reported symptoms April 28 per WHO. Stable and in isolation. Oxygen supplies on island at critical level. UK response May 10: 6 paratroopers + 2 military clinicians from 16 Air Assault Brigade parachuted from RAF A400M — flew 6,788 km RAF Brize Norton (Oxfordshire) → Ascension Island, then 3,000 km south to Tristan da Cunha; mid-air refuelled by RAF Voyager tanker. Oxygen + medical equipment airdropped. UK MoD: first time British military has deployed medical personnel via parachute for humanitarian support. Tristan da Cunha pop. ~200 — world's most remote inhabited island; normally 6-day boat from St Helena, nearest inhabited neighbour. Usual medical provision: 2-person team. Separate note: PCR tests delivered to Ascension Island by military plane May 7 for another British man (P003) who disembarked there and was medevaced to South Africa.",
+      "reporter": "Reuters / UK MoD"
     }
   ],
   "edges": [

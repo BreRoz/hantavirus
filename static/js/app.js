@@ -578,6 +578,7 @@ const OverviewTab = {
     // confirmed=true: flight officially confirmed | crew=true: crew-only nationality
     const flightDestinations = [
       // ── Confirmed repatriation flights ──────────────────────────────────────
+      { pos: [40.42, -3.70],  flag: "🇪🇸", label: "Madrid hospital — FIRST FLIGHT DEPARTED (AP News)", count: 13, confirmed: true  },
       { pos: [51.44,  5.47],  flag: "🇳🇱", label: "Netherlands · 8 guests, 5 crew", count: 13, confirmed: true  },
       { pos: [41.12, -95.91], flag: "🇺🇸", label: "United States · 17 guests → Offutt AFB", count: 17, confirmed: true  },
       { pos: [51.50, -0.12],  flag: "🇬🇧", label: "United Kingdom · 19 guests, 3 crew", count: 22, confirmed: true  },

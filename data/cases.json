@@ -1108,6 +1108,42 @@
       "reporter": "El País / French Health Ministry"
     },
     {
+      "id": "PNLKLM01",
+      "name": "KLM Flight Attendant — Amsterdam UMC (Symptomatic)",
+      "age": null,
+      "sex": null,
+      "nationality": "Dutch",
+      "status": "symptomatic",
+      "generation": 2,
+      "infected_by": null,
+      "onset_date": "2026-05-10",
+      "date": "2026-05-10",
+      "incubation_start": null,
+      "location": {
+        "city": "Amsterdam",
+        "state": "North Holland",
+        "country": "Netherlands",
+        "venue": "Amsterdam UMC — isolation ward",
+        "lat": 52.3321,
+        "lng": 4.9586
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [
+        {
+          "type": "aircraft_cabin_contact",
+          "venue": "Johannesburg O.R. Tambo International Airport — aircraft cabin",
+          "date": null,
+          "notes": "Brief cabin interaction with a passenger (duration: minutes). Passenger connection to MV Hondius under investigation."
+        }
+      ],
+      "flights": [],
+      "source_url": null,
+      "source_notes": "Blondes Packing Heat / Veras Intelligence, May 10 2026",
+      "clinical_notes": "KLM Royal Dutch Airlines flight attendant hospitalized at Amsterdam UMC in isolation with suspected Andes hantavirus. CRITICAL: she was NOT a passenger on the MV Hondius. Exposure was brief cabin contact with a passenger at Johannesburg O.R. Tambo International Airport. KLM official reports confirm the interaction lasted 'a matter of minutes.' 88 people on a connected flight are now being traced. First documented potential Gen-2 case from aircraft cabin contact — not ship-linked. If confirmed, would represent first human-to-human or fomite transmission outside the vessel. Status: awaiting test results.",
+      "reporter": "Blondes Packing Heat / Veras Intelligence"
+    },
+    {
       "id": "PESB01",
       "name": "Barcelona Passenger — Hospital Clínic (Asymptomatic)",
       "age": null,

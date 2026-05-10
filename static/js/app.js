@@ -600,7 +600,7 @@ const OverviewTab = {
       { pos: [28.61, 77.21],  flag: "🇮🇳", label: "India · 2 crew",                 count: 2,  confirmed: false, crew: true },
       { pos: [55.75, 37.62],  flag: "🇷🇺", label: "Russia · 1 crew",                count: 1,  confirmed: false, crew: true },
       { pos: [52.23, 21.01],  flag: "🇵🇱", label: "Poland · 1 crew",                count: 1,  confirmed: false, crew: true },
-      { pos: [38.72, -9.14],  flag: "🇵🇹", label: "Portugal · 1 crew",              count: 1,  confirmed: false, crew: true },
+      { pos: [38.72, -9.14],  flag: "🇵🇹", label: "Portugal · 1 crew (→ Netherlands with ship)",count: 1,  confirmed: false, crew: true },
       { pos: [42.44, 19.26],  flag: "🇲🇪", label: "Montenegro · 1 crew",            count: 1,  confirmed: false, crew: true },
       { pos: [14.64,-90.51],  flag: "🇬🇹", label: "Guatemala · 1 crew",             count: 1,  confirmed: false, crew: true },
     ];

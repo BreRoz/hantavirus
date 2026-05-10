@@ -69,14 +69,6 @@
 <body>
 
 <!-- ===== BOOKMARK BANNER ===== -->
-<div class="bookmark-banner" id="bookmark-banner">
-  <span class="bookmark-banner-icon">📌</span>
-  <div class="bookmark-banner-text">
-    <strong>NEW PERMANENT LINK!</strong> Bookmark <strong>hantavirus.up.railway.app</strong> — the old Replit link is going away so you don't lose access.
-  </div>
-  <button class="bookmark-banner-btn" onclick="navigator.clipboard.writeText(window.location.href).then(()=>this.textContent='✓ Copied!')">📋 Copy link</button>
-  <button class="bookmark-banner-close" onclick="document.getElementById('bookmark-banner').style.display='none';document.body.classList.remove('bookmark-visible');sessionStorage.setItem('epitrace_bookmark_dismissed','1')" title="Dismiss">✕</button>
-</div>
 
 <!-- ===== DISCLAIMER BANNER ===== -->
 <div class="disclaimer-banner" id="disclaimer-banner">
@@ -427,27 +419,19 @@
         <div class="tracking-status-strip">
           <div class="tracking-status-item">
             <span class="tracking-status-label">STATUS</span>
-            <span class="tracking-status-value" style="color:#10b981">⚓ ANCHORED — PORT OF GRANADILLA, TENERIFE</span>
-          </div>
-          <div class="tracking-status-item">
-            <span class="tracking-status-label">DISEMBARKATION</span>
-            <span class="tracking-status-value" style="color:#10b981">✈️ UNDERWAY — Multiple flights departed TFS · May 10, 2026</span>
+            <span class="tracking-status-value" style="color:#10b981">⚓ DOCKED — PORT OF GRANADILLA, TENERIFE · DISEMBARKATION UNDERWAY</span>
           </div>
           <div class="tracking-status-item">
             <span class="tracking-status-label">🇪🇸 SPAIN</span>
-            <span class="tracking-status-value" style="color:#10b981">Small group → Gómez Ulla Central Defense Hospital, Madrid · Departed ~13:00 local · Spanish Air Force A310 "Reino de España" T.22-2 · ~2h flight · Arriving Torrejón ~15:00 local · Under quarantine</span>
+            <span class="tracking-status-value" style="color:#10b981">✈️ DEPARTED ~13:00 local → Gómez Ulla Defense Hospital, Madrid · Air Force A310 "Reino de España" T.22-2 · Under quarantine</span>
           </div>
           <div class="tracking-status-item">
             <span class="tracking-status-label">🇫🇷 FRANCE</span>
-            <span class="tracking-status-value" style="color:#10b981">5 passengers → Paris area airport · Departed ~12:00 local · Special medical flight with staff aboard · 72h hospital then 45-day home isolation · French PM called emergency ministerial meeting</span>
-          </div>
-          <div class="tracking-status-item">
-            <span class="tracking-status-label">PASSENGERS</span>
-            <span class="tracking-status-value">147 aboard · 23 nationalities · All treated as high-risk contacts</span>
+            <span class="tracking-status-value" style="color:#10b981">✈️ DEPARTED ~12:00 local → Paris area · 5 pax · Medical flight with staff · 72h hospital + 45-day home isolation · French PM emergency ministerial meeting</span>
           </div>
           <div class="tracking-status-item">
             <span class="tracking-status-label">OTHER FLIGHTS</span>
-            <span class="tracking-status-value" style="color:#fbbf24">⚠️ NL · US · UK · others — coordination ongoing</span>
+            <span class="tracking-status-value" style="color:#fbbf24">⚠️ 🇳🇱 🇺🇸 🇬🇧 🇩🇪 + others — coordination ongoing · 147 aboard · 23 nationalities</span>
           </div>
         </div>
 
@@ -553,12 +537,12 @@
             <div class="info-fact"><span class="info-fact-label">Vessel</span><span>MV Hondius — Dutch-flagged expedition cruise ship operated by Oceanwide Expeditions</span></div>
             <div class="info-fact"><span class="info-fact-label">Voyage</span><span>HDS2526 — Departed Ushuaia, Argentina on April 1, 2026 bound for Antarctica</span></div>
             <div class="info-fact"><span class="info-fact-label">Exposure origin</span><span>Dutch index couple believed infected during wildlife/bird-watching excursion in Ushuaia; traveled Argentina, Chile, and Uruguay before boarding</span></div>
-            <div class="info-fact"><span class="info-fact-label">Current location</span><span>En route → Granadilla port, Tenerife, Canary Islands. ETA Sunday May 10, 2026.</span></div>
+            <div class="info-fact"><span class="info-fact-label">Current location</span><span>⚓ Docked — Port of Granadilla, Tenerife, Canary Islands. Disembarkation underway May 10, 2026.</span></div>
             <div class="info-fact"><span class="info-fact-label">Deaths</span><span>3 — Dutch male (Apr 11), Dutch female (Apr 26), German female (May 2)</span></div>
             <div class="info-fact"><span class="info-fact-label">WHO notified</span><span>May 2, 2026</span></div>
             <div class="info-fact"><span class="info-fact-label">WHO response</span><span>Deployed onboard expert for medical assessment; shipped 2,500 diagnostic kits from Argentina to 5-country lab network; developing disembarkation guidance under International Health Regulations</span></div>
             <div class="info-fact"><span class="info-fact-label">Investigation</span><span>Argentina's Malbrán Institute scientists traveling to Ushuaia to analyze rodents at local trash heap for Andes virus presence. Dutch couple visited sites where Andes-virus-carrying rats are known to be present.</span></div>
-            <div class="info-fact"><span class="info-fact-label">Ship status</span><span>147 aboard (86 guests, 61 crew); docking at Granadilla port, Tenerife, expected Sunday May 10. 17 Americans to be escorted by CDC staffers on a specialized biocontainment charter to Nebraska for quarantine at the National Quarantine Unit / Nebraska Biocontainment Unit. German woman's body remains on board.</span></div>
+            <div class="info-fact"><span class="info-fact-label">Ship status</span><span>⚓ Docked Granadilla, Tenerife — May 10. 147 aboard (23 nationalities). Repatriation flights underway. 🇪🇸 Spanish pax → Gómez Ulla Defense Hospital. 🇫🇷 5 French pax → Paris. 🇳🇱🇺🇸🇬🇧 + others coordinating. 17 Americans → Nebraska Biocontainment Unit via CDC charter.</span></div>
           </div>
 
           <div class="info-section-title" style="margin-top:var(--space-4)">📅 Official Voyage Timeline (Oceanwide Expeditions)</div>
@@ -571,7 +555,7 @@
             <div class="info-fact"><span class="info-fact-label">Apr 27</span><span>2 guests medevaced via Ascension Island — symptomatic British national (P003) + American partner (PUSPAR01) → <strong>147 aboard</strong> (86 guests, 61 crew)</span></div>
             <div class="info-fact"><span class="info-fact-label">May 4</span><span>Original planned end of voyage at Praia, Cape Verde — ship detained</span></div>
             <div class="info-fact"><span class="info-fact-label">May 6</span><span>3 more evacuated to Netherlands. Ship departs Cape Verde 7:15pm</span></div>
-            <div class="info-fact"><span class="info-fact-label">May 10</span><span>Expected docking at Granadilla port, Tenerife — disembarkation and repatriation</span></div>
+            <div class="info-fact"><span class="info-fact-label">May 10</span><span>⚓ Docked Granadilla port, Tenerife — disembarkation underway. 🇪🇸 Air Force A310 "Reino de España" → Madrid. 🇫🇷 Medical charter → Paris. Other nationalities coordinating.</span></div>
           </div>
 
           <div class="info-section-title" style="margin-top:var(--space-4)">🌍 Current Passenger Manifest by Nationality</div>

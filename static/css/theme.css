@@ -1111,6 +1111,8 @@ body {
 .leaflet-popup-content-wrapper { background: var(--color-bg-elevated) !important; color: var(--color-text) !important; border: 1px solid var(--color-border-mid) !important; border-radius: var(--radius-md) !important; box-shadow: var(--shadow-lg) !important; }
 .leaflet-popup-tip { background: var(--color-bg-elevated) !important; }
 .leaflet-popup-content { font-family: var(--font-sans) !important; font-size: 12px !important; line-height: 1.5 !important; }
+.leaflet-tooltip.dark-tooltip { background: var(--color-bg-elevated); color: var(--color-text); border: 1px solid var(--color-border-mid); border-radius: 6px; font-size: 11px; font-family: var(--font-sans); padding: 4px 8px; box-shadow: var(--shadow-md); white-space: nowrap; }
+.leaflet-tooltip.dark-tooltip::before { border-top-color: var(--color-border-mid); }
 
 /* ==========================================================================
    Utilities

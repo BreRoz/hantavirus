@@ -572,6 +572,45 @@ const OverviewTab = {
           <div style="font-size:10px;color:#666;margin-top:6px;font-style:italic">European Civil Protection Mechanism · 2 EU aircraft provided</div>
         </div>`, { className: "dark-popup" })
       .addTo(this._map);
+
+    // Flight routes from TFS Airport → destination countries
+    const flightDestinations = [
+      { pos: [51.44,  5.47],  flag: "🇳🇱", label: "Eindhoven, Netherlands",     confirmed: true  },
+      { pos: [41.12, -95.91], flag: "🇺🇸", label: "Offutt AFB, Nebraska (UNMC)", confirmed: true  },
+      { pos: [51.50, -0.12],  flag: "🇬🇧", label: "United Kingdom",              confirmed: false },
+      { pos: [48.85,  2.35],  flag: "🇫🇷", label: "France",                      confirmed: false },
+      { pos: [52.52, 13.40],  flag: "🇩🇪", label: "Germany",                      confirmed: false },
+      { pos: [50.85,  4.35],  flag: "🇧🇪", label: "Belgium",                      confirmed: false },
+      { pos: [53.33, -6.25],  flag: "🇮🇪", label: "Ireland",                      confirmed: false },
+    ];
+
+    flightDestinations.forEach(dest => {
+      // Arc line: interpolate a mid-point slightly above to give a curve feel
+      const mid = [
+        (flightsPos[0] + dest.pos[0]) / 2 + 4,
+        (flightsPos[1] + dest.pos[1]) / 2,
+      ];
+      L.polyline([flightsPos, mid, dest.pos], {
+        color: dest.confirmed ? "#f59e0b" : "#fbbf24",
+        weight: dest.confirmed ? 1.8 : 1.2,
+        opacity: dest.confirmed ? 0.65 : 0.4,
+        dashArray: dest.confirmed ? "5 6" : "3 8",
+        smoothFactor: 1,
+      }).addTo(this._map);
+
+      // Destination dot
+      L.circleMarker(dest.pos, {
+        radius: dest.confirmed ? 5 : 4,
+        color: dest.confirmed ? "#f59e0b" : "#fbbf24",
+        fillColor: dest.confirmed ? "#f59e0b" : "#1a1a2e",
+        fillOpacity: dest.confirmed ? 0.85 : 0.4,
+        weight: 1.5,
+      }).bindTooltip(`${dest.flag} ${dest.label}${dest.confirmed ? " ✓" : " (monitoring)"}`, {
+        permanent: false,
+        className: "dark-tooltip",
+        direction: "top",
+      }).addTo(this._map);
+    });
   },
 
   _fit() {

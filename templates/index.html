@@ -319,7 +319,7 @@
               <div class="travel-status-row green">🇨🇦 DEPARTED — 4 passengers en route to Saguenay-Bagotville Airport, QC (~2 hrs outside Quebec City) · Protective gear worn boarding · WHO screened at port</div>
               <div class="travel-status-row green">🇳🇴 Norwegian air ambulance on standby at TFS · deployed in case passengers deteriorate during disembarkation · EU-owned, Norway-operated</div>
               <div class="travel-status-row green">🇳🇱 DEPARTED · 29 aboard · dark-livery narrow-body charter · Menzies Aviation ground handling · TFS</div>
-              <div class="travel-status-row amber">🇺🇸 Biocontainment charter · 17 guests → National Quarantine Center, University of Nebraska Medical Center (UNMC) · CDC escort</div>
+              <div class="travel-status-row amber">🇺🇸 Charter pending · 17 guests · Nebraska OPTIONAL per NIH Director Bhattacharya (CNN) · Low-risk passengers may return home · CDC interviewing each passenger</div>
               <div class="travel-status-row green">🇬🇧 DEPARTED · 20 passengers · TFS → UK · Hospitalization on arrival · Source: BPI News</div>
               <div class="travel-status-row amber">🇦🇺 Plane arrives Monday — last flight out · also evacuating 🇳🇿 + nearby nationalities</div>
               <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-faint);margin:12px 0 6px">After Disembarkation</div>
@@ -513,7 +513,15 @@
           </div>
           <div class="travel-nav-item" data-repat="us" onclick="RepatNav.select('us')">
             <div style="font-weight:700">🇺🇸 United States — PENDING</div>
-            <div style="font-size:10px;color:#fbbf24;margin-top:2px">Biocontainment charter → National Quarantine Center, UNMC</div>
+            <div style="font-size:10px;color:#fbbf24;margin-top:2px">Charter pending · Nebraska now optional · home quarantine allowed</div>
+          </div>
+          <div class="travel-nav-item" data-repat="tr" onclick="RepatNav.select('tr')">
+            <div style="font-weight:700">🇹🇷 Turkey — PENDING</div>
+            <div style="font-size:10px;color:#fbbf24;margin-top:2px">Flight planned today · 3 guests · USA Today</div>
+          </div>
+          <div class="travel-nav-item" data-repat="ie" onclick="RepatNav.select('ie')">
+            <div style="font-weight:700">🇮🇪 Ireland — PENDING</div>
+            <div style="font-size:10px;color:#fbbf24;margin-top:2px">Flight planned today · 2 guests · USA Today</div>
           </div>
           <div class="travel-nav-item" data-repat="au" onclick="RepatNav.select('au')">
             <div style="font-weight:700">🇦🇺 Australia — MONDAY</div>
@@ -548,10 +556,10 @@
               <div class="travel-status-row green">Aircraft: Dassault Falcon 900EX · Reg: F-HREG · Callsign: ARL120E · Mode S: 39C486</div>
               <div class="travel-status-row green">Operator: Airlec Air Espace (ARL) — French medical air transport, Bordeaux · Le Bourget chosen to avoid commercial terminals</div>
               <div class="travel-status-row green">5 passengers + medical staff aboard · Special medical charter by French Foreign Office crisis centre</div>
-              <div class="travel-status-row amber">WARNING: 1 of 5 French passengers showed symptoms during the repatriation flight · Per French PM on X</div>
-              <div class="travel-status-row muted">Protocol on arrival: 72h hospitalization → 45-day home isolation with strict monitoring</div>
+              <div class="travel-status-row amber">WARNING: 1 of 5 French passengers showed symptoms during the repatriation flight · Could be confirmed as 9th case globally</div>
+              <div class="travel-status-row amber">All 5 French passengers "immediately placed in strict isolation until further notice" — PM Lecornu on X · "Receiving medical care and will undergo testing and a full health assessment"</div>
               <div class="travel-status-row muted">French PM Sébastien Lecornu called emergency ministerial meeting · Nicolas Pillerel (French embassy) oversaw TFS logistics</div>
-              <div class="travel-acc-note" style="margin-top:16px">The symptomatic passenger on the flight is significant — medical staff and fellow passengers on board may have been exposed in-flight. Hospitalization on arrival expected.</div>
+              <div class="travel-acc-note" style="margin-top:16px">Medical staff and fellow passengers on board may have been exposed in-flight. All 5 now in strict isolation on arrival at Paris Le Bourget — testing underway.</div>
               <div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.07);font-size:10px;color:var(--color-text-faint)">
                 <div style="font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px">Sources</div>
                 <div>· French PM on X (via CGTN) — symptomatic passenger during repatriation flight</div>
@@ -610,15 +618,18 @@
           </div>
 
           <div id="repat-content-us" class="travel-content-pane" style="display:none">
-            <div class="panel-header"><span class="panel-title">🇺🇸 United States — TFS → National Quarantine Center, UNMC</span></div>
+            <div class="panel-header"><span class="panel-title">🇺🇸 United States — TFS → Home or UNMC</span></div>
             <div style="padding:var(--space-4);overflow-y:auto;flex:1">
-              <div class="travel-status-row amber">⏳ Biocontainment charter pending</div>
-              <div class="travel-status-row amber">17 guests → National Quarantine Center, University of Nebraska Medical Center (UNMC) · Escorted by CDC staff</div>
-              <div class="travel-status-row muted">UNMC hosts the only federally designated National Quarantine Center in the US — purpose-built for high-consequence infectious disease containment</div>
-              <div class="travel-acc-note" style="margin-top:16px">🗺 Flight map available once flight number is confirmed — check back for updates</div>
+              <div class="travel-status-row amber">⏳ Charter flight pending · Disembarkation planned by end of day</div>
+              <div class="travel-status-row amber">17 passengers remaining on ship · CDC escorting</div>
+              <div class="travel-status-row green">Policy update: Nebraska OPTIONAL — Dr. Jay Bhattacharya (NIH Director, CNN) says passengers deemed low-risk may return home instead of going to UNMC</div>
+              <div class="travel-status-row muted">CDC will interview each passenger · Low risk (no contact with symptomatic person) = return home, report to state/local health authority · Higher risk = National Quarantine Center, UNMC, Omaha</div>
+              <div class="travel-status-row muted">7 Americans already home — returned pre-outbreak declaration to California, Texas, Virginia and Georgia · Being monitored by state health departments</div>
+              <div class="travel-acc-note" style="margin-top:16px">UNMC hosts the only federally designated National Quarantine Center in the US. Nebraska option remains available for any passenger who wants it, or is deemed higher risk.</div>
               <div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.07);font-size:10px;color:var(--color-text-faint)">
                 <div style="font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px">Sources</div>
-                <div>· <a href="https://www.2news.com/news/national/plane-carrying-spanish-passengers-from-hantavirus-stricken-mv-hondius-cruise-ship-leaves-for-madrid/article_648fe8ee-e26e-545f-ac46-632d081b948d.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">AP — MV Hondius evacuation coverage (2News / Nevada)</a></div>
+                <div>· <a href="https://www.usatoday.com/story/news/health/2026/05/10/hantavirus-live-updates-cruise-ship-quarantine--live/90020238007/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">USA Today — Live updates: MV Hondius disembarkation (May 10, 2026)</a></div>
+                <div style="margin-top:3px">· Dr. Jay Bhattacharya, NIH Director — CNN "State of the Union," May 10, 2026</div>
               </div>
             </div>
           </div>
@@ -633,6 +644,32 @@
                 <div style="font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px">Sources</div>
                 <div>· BPI News via Twitter — UK repatriation flight departed TFS, 20 passengers</div>
                 <div style="margin-top:3px">· <a href="https://www.2news.com/news/national/plane-carrying-spanish-passengers-from-hantavirus-stricken-mv-hondius-cruise-ship-leaves-for-madrid/article_648fe8ee-e26e-545f-ac46-632d081b948d.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">AP — MV Hondius evacuation coverage (2News / Nevada)</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="repat-content-tr" class="travel-content-pane" style="display:none">
+            <div class="panel-header"><span class="panel-title">🇹🇷 Turkey — TFS → Turkey</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="travel-status-row amber">⏳ Flight planned today · disembarkations continuing until 7–8pm local</div>
+              <div class="travel-status-row muted">3 Turkish guests aboard MV Hondius · Flight confirmed by WHO (USA Today, May 10)</div>
+              <div class="travel-acc-note" style="margin-top:16px">Flight map available once flight number confirmed — check back for updates</div>
+              <div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.07);font-size:10px;color:var(--color-text-faint)">
+                <div style="font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px">Sources</div>
+                <div>· <a href="https://www.usatoday.com/story/news/health/2026/05/10/hantavirus-live-updates-cruise-ship-quarantine--live/90020238007/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">USA Today — Live updates: MV Hondius disembarkation (May 10, 2026)</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="repat-content-ie" class="travel-content-pane" style="display:none">
+            <div class="panel-header"><span class="panel-title">🇮🇪 Ireland — TFS → Ireland</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="travel-status-row amber">⏳ Flight planned today · disembarkations continuing until 7–8pm local</div>
+              <div class="travel-status-row muted">2 Irish guests aboard MV Hondius · Flight confirmed by WHO (USA Today, May 10)</div>
+              <div class="travel-acc-note" style="margin-top:16px">Flight map available once flight number confirmed — check back for updates</div>
+              <div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.07);font-size:10px;color:var(--color-text-faint)">
+                <div style="font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px">Sources</div>
+                <div>· <a href="https://www.usatoday.com/story/news/health/2026/05/10/hantavirus-live-updates-cruise-ship-quarantine--live/90020238007/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">USA Today — Live updates: MV Hondius disembarkation (May 10, 2026)</a></div>
               </div>
             </div>
           </div>

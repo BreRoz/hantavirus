@@ -552,10 +552,10 @@ const OverviewTab = {
         <div style="font-family:Inter,sans-serif;min-width:200px">
           <div style="font-weight:700;font-size:12px;color:#2dd4bf;margin-bottom:4px">⚓ MV Hondius — ANCHORED</div>
           <div style="font-size:11px;color:#ccc">Port of Granadilla, Tenerife · May 10, 2026</div>
-          <div style="font-size:11px;color:#10b981;margin-top:4px;font-weight:600">Disembarkation underway from 07:30 local</div>
-          <div style="font-size:11px;color:#aaa;margin-top:4px">Passengers tested → transferred by boat → bused to airport</div>
-          <div style="font-size:11px;color:#aaa;margin-top:2px">None currently symptomatic · All treated as high-risk contacts</div>
-          <div style="font-size:11px;color:#aaa;margin-top:2px">147 aboard · 23 nationalities</div>
+          <div style="font-size:11px;color:#fbbf24;margin-top:4px;font-weight:600">⏳ Disembarkation pending — Spanish medics testing all passengers</div>
+          <div style="font-size:11px;color:#aaa;margin-top:4px">Planned ~09:00 Kyiv / 07:00 local · Transfer by boat → bus → airport</div>
+          <div style="font-size:11px;color:#f97316;margin-top:2px">⚠️ Flights delayed — not all repatriation routes secured</div>
+          <div style="font-size:11px;color:#aaa;margin-top:2px">147 aboard · 23 nationalities · Dutch carriers rerouting</div>
         </div>`, { className: "dark-popup" })
       .addTo(this._map);
 

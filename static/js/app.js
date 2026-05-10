@@ -633,7 +633,6 @@ const OverviewTab = {
         { permanent: false, className: "dark-tooltip", direction: "top" }
       ).addTo(this._map);
     });
-  },
 
     // Ship's next voyage: Tenerife → Rotterdam for disinfection (~5 days)
     const rotterdamPos = [51.9225, 4.4792];

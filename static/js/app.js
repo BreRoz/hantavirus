@@ -581,7 +581,7 @@ const OverviewTab = {
       { pos: [40.42, -3.70],  flag: "🇪🇸", label: "Spain · A310 'Reino de España' IN FLIGHT → Gómez Ulla, Madrid", count: 14, confirmed: true, inflight: true },
       { pos: [48.97,  2.44],  flag: "🇫🇷", label: "France · LANDED Paris Le Bourget (LBG) 4:27PM · Falcon 900EX F-HREG ARL120E · 5 pax · WARNING: 1 pax symptomatic in-flight", count: 5,  confirmed: true, inflight: true },
       { pos: [49.25, -123.12], flag: "🇨🇦", label: "Canada · 4 pax · TFS → Bagotville (transfer) → B.C. (final) · 21-42 day isolation · all asymptomatic · PHAC aboard", count: 4, confirmed: true, inflight: true },
-      { pos: [51.44,  5.47],  flag: "🇳🇱", label: "Netherlands · 26 aboard IN FLIGHT → Netherlands · dark-livery charter (A220 type) · AFP/Getty photo confirmed", count: 26, confirmed: true, inflight: true },
+      { pos: [51.45,  5.37],  flag: "🇳🇱", label: "Netherlands · 26 passengers · LANDED Eindhoven Airport (EIN) · A220-type charter", count: 26, confirmed: true },
       { pos: [41.12, -95.91], flag: "🇺🇸", label: "United States · 17 guests → Nebraska Biocontainment Unit · CDC escort", count: 17, confirmed: true  },
       { pos: [53.35, -2.27],  flag: "🇬🇧", label: "United Kingdom · 22 passengers · LANDED Manchester Airport (MAN) · ZT791 / Titan Airways A320", count: 22, confirmed: true },
       { pos: [-33.87,151.21], flag: "🇦🇺", label: "Australia · plane arrives Monday (last flight) · also evacuating NZ + nearby", count: 4,  confirmed: true  },

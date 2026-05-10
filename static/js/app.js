@@ -1041,11 +1041,22 @@ const ChainTab = {
 
 const TravelNav = {
   select(section) {
-    document.querySelectorAll(".travel-nav-item").forEach(el =>
+    document.querySelectorAll("#tab-flights .travel-nav-item").forEach(el =>
       el.classList.toggle("selected", el.dataset.section === section));
-    document.querySelectorAll(".travel-content-pane").forEach(el =>
+    document.querySelectorAll("#tab-flights .travel-content-pane").forEach(el =>
       el.style.display = "none");
     const pane = document.getElementById(`travel-content-${section}`);
+    if (pane) pane.style.display = "flex";
+  },
+};
+
+const RepatNav = {
+  select(id) {
+    document.querySelectorAll("#tab-tracking .travel-nav-item").forEach(el =>
+      el.classList.toggle("selected", el.dataset.repat === id));
+    document.querySelectorAll("#tab-tracking .travel-content-pane").forEach(el =>
+      el.style.display = "none");
+    const pane = document.getElementById(`repat-content-${id}`);
     if (pane) pane.style.display = "flex";
   },
 };
@@ -1773,12 +1784,7 @@ const App = {
     TabNav.onActivate("timeline", () => {
       TimelineTab.load(this._timelineData, this._cases);
     });
-    TabNav.onActivate("tracking", () => {
-      const iframe = document.getElementById("flightradar-frame");
-      if (iframe && !iframe.src && iframe.dataset.src) {
-        iframe.src = iframe.dataset.src;
-      }
-    });
+    TabNav.onActivate("tracking", () => {});
 
     // Controls bar exports
     document.getElementById("btn-export-cases")?.addEventListener("click", () => API.exportCases());

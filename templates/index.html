@@ -399,80 +399,127 @@
 
     <!-- Tab 6: Live Tracking (repatriation flights) -->
     <div class="tab-pane" id="tab-tracking">
-      <div class="tracking-layout">
+      <div class="travel-layout">
 
-        <!-- Info bar -->
-        <div class="tracking-info-bar">
-          <div class="tracking-ship-block">
-            <span class="tracking-ship-name">✈️ Repatriation Flights — MV Hondius · Tenerife Sur (TFS)</span>
-            <span class="tracking-ship-meta">Live air traffic · Tenerife South Airport · Evacuation underway May 10–11, 2026</span>
+        <!-- Left: flight selector -->
+        <div class="travel-left-panel">
+          <div class="travel-flights-divider">Repatriation Flights</div>
+
+          <div class="travel-nav-item selected" data-repat="es" onclick="RepatNav.select('es')">
+            <div style="font-weight:700">🇪🇸 Spain — DEPARTED</div>
+            <div style="font-size:10px;color:#10b981;margin-top:2px">TFS → Madrid · A310 "Reino de España"</div>
           </div>
-          <div class="tracking-live-pill">
-            <span class="tracking-live-dot"></span>
-            LIVE via Flightradar24
+          <div class="travel-nav-item" data-repat="fr" onclick="RepatNav.select('fr')">
+            <div style="font-weight:700">🇫🇷 France — DEPARTED</div>
+            <div style="font-size:10px;color:#10b981;margin-top:2px">TFS → Paris area · Medical charter</div>
+          </div>
+          <div class="travel-nav-item" data-repat="ca" onclick="RepatNav.select('ca')">
+            <div style="font-weight:700">🇨🇦 Canada — CONFIRMED</div>
+            <div style="font-size:10px;color:#10b981;margin-top:2px">TFS → Canada · type unknown</div>
+          </div>
+          <div class="travel-nav-item" data-repat="no" onclick="RepatNav.select('no')">
+            <div style="font-weight:700">🇳🇴 Norway — ON-SITE</div>
+            <div style="font-size:10px;color:#10b981;margin-top:2px">EU ambulance plane · TFS</div>
+          </div>
+          <div class="travel-nav-item" data-repat="nl" onclick="RepatNav.select('nl')">
+            <div style="font-weight:700">🇳🇱 Netherlands — PENDING</div>
+            <div style="font-size:10px;color:#fbbf24;margin-top:2px">29-person charter · TFS → Eindhoven</div>
+          </div>
+          <div class="travel-nav-item" data-repat="us" onclick="RepatNav.select('us')">
+            <div style="font-weight:700">🇺🇸 United States — PENDING</div>
+            <div style="font-size:10px;color:#fbbf24;margin-top:2px">Biocontainment charter → Offutt AFB / UNMC</div>
+          </div>
+          <div class="travel-nav-item" data-repat="gb" onclick="RepatNav.select('gb')">
+            <div style="font-weight:700">🇬🇧 United Kingdom — PENDING</div>
+            <div style="font-size:10px;color:#fbbf24;margin-top:2px">19 guests + 3 crew → hospitalization</div>
+          </div>
+          <div class="travel-nav-item" data-repat="au" onclick="RepatNav.select('au')">
+            <div style="font-weight:700">🇦🇺 Australia — MONDAY</div>
+            <div style="font-size:10px;color:#fbbf24;margin-top:2px">Last flight · also 🇳🇿 + nearby nationalities</div>
           </div>
         </div>
 
-        <!-- Confirmed flights strip -->
-        <div class="tracking-status-strip">
-          <div class="tracking-status-item">
-            <span class="tracking-status-label">🇪🇸 DEPARTED</span>
-            <span class="tracking-status-value" style="color:#10b981">A310 "Reino de España" T.22-2 · TFS → Torrejón/Madrid · ~13:00 local · 14 Spanish nationals → Gómez Ulla Defense Hospital</span>
-          </div>
-          <div class="tracking-status-item">
-            <span class="tracking-status-label">🇫🇷 DEPARTED</span>
-            <span class="tracking-status-value" style="color:#10b981">Medical charter · TFS → Paris area · ~12:00 local · 5 pax + medical staff · 72h hospital + 45-day home isolation</span>
-          </div>
-          <div class="tracking-status-item">
-            <span class="tracking-status-label">🇨🇦 CONFIRMED</span>
-            <span class="tracking-status-value" style="color:#10b981">Plane confirmed TFS · 4 passengers · type unknown · Per Spain Health Secretary Padilla</span>
-          </div>
-          <div class="tracking-status-item">
-            <span class="tracking-status-label">🇳🇱 PENDING</span>
-            <span class="tracking-status-value" style="color:#fbbf24">Charter · 29 aboard (Dutch + other nationalities) · Dutch Foreign Ministry confirmed</span>
-          </div>
-          <div class="tracking-status-item">
-            <span class="tracking-status-label">🇺🇸 PENDING</span>
-            <span class="tracking-status-value" style="color:#fbbf24">Biocontainment charter · 17 guests → Nebraska Biocontainment Unit (UNMC) · CDC escort</span>
-          </div>
-          <div class="tracking-status-item">
-            <span class="tracking-status-label">🇬🇧 PENDING</span>
-            <span class="tracking-status-value" style="color:#fbbf24">19 guests + 3 crew · hospitalization on arrival</span>
-          </div>
-          <div class="tracking-status-item">
-            <span class="tracking-status-label">🇦🇺 MONDAY</span>
-            <span class="tracking-status-value" style="color:#fbbf24">Last flight out · also evacuating 🇳🇿 + nearby nationalities · Per Spain Health Minister García</span>
-          </div>
-          <div class="tracking-status-item">
-            <span class="tracking-status-label">🇳🇴 ON-SITE</span>
-            <span class="tracking-status-value" style="color:#10b981">EU ambulance plane · high-risk infection transport personnel · EU-owned, Norway-operated</span>
-          </div>
-        </div>
+        <!-- Right: flight detail + map placeholder -->
+        <div class="travel-right-panel">
 
-        <!-- Flightradar24 live embed -->
-        <div class="tracking-map-wrap">
-          <iframe
-            id="flightradar-frame"
-            data-src="https://www.flightradar24.com/simple_360deg/?lat=28.04&lng=-16.63&z=7"
-            width="100%"
-            height="100%"
-            frameborder="0"
-            allowfullscreen
-            title="Live air traffic — Tenerife Sur"
-          ></iframe>
-        </div>
-
-        <!-- Footer -->
-        <div class="tracking-footer">
-          <div class="tracking-footer-left">
-            <span class="tracking-flight-teaser">✈️ REPATRIATION UNDERWAY — ES + FR departed · NL 29-person charter · US biocontainment charter · AU Monday (last) · 🪂 Tristan da Cunha: British paratroopers airdropped for suspected case · Ship → Rotterdam for disinfection · Source: AP / CBC / The Guardian</span>
+          <div id="repat-content-es" class="travel-content-pane">
+            <div class="panel-header"><span class="panel-title">🇪🇸 Spain — TFS → Madrid</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="travel-status-row green">✈️ DEPARTED ~13:00 local · Arrived Torrejón Air Base, Madrid</div>
+              <div class="travel-status-row green">Aircraft: Spanish Air Force Airbus A310 "Reino de España" · Serial 45-102 · Tail T.22-2 · Ala 45, Torrejón</div>
+              <div class="travel-status-row green">14 Spanish nationals · Under quarantine → Gómez Ulla Central Defense Hospital</div>
+              <div class="travel-status-row muted">Military flight — not trackable on public flight trackers</div>
+              <div class="travel-acc-note" style="margin-top:16px">🗺 Flight map not available — Spanish Air Force flights are not broadcast on public ADS-B networks. <a href="https://www.adsbexchange.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">ADS-B Exchange ↗</a> may show military traffic.</div>
+            </div>
           </div>
-          <div class="tracking-footer-right">
-            <a href="https://www.flightradar24.com/airport/tfs/departures" target="_blank" rel="noopener" class="tracking-ext-link">TFS Departures ↗</a>
-            <a href="https://www.cruisemapper.com/?imo=9818709" target="_blank" rel="noopener" class="tracking-ext-link">MV Hondius (CruiseMapper) ↗</a>
-          </div>
-        </div>
 
+          <div id="repat-content-fr" class="travel-content-pane" style="display:none">
+            <div class="panel-header"><span class="panel-title">🇫🇷 France — TFS → Paris</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="travel-status-row green">✈️ DEPARTED ~12:00 local · En route to Paris area airport</div>
+              <div class="travel-status-row green">5 passengers + medical staff aboard · Special medical flight organised by French Foreign Office crisis centre</div>
+              <div class="travel-status-row green">Protocol: 72h hospitalization → 45-day home isolation with strict monitoring</div>
+              <div class="travel-status-row green">French PM Sébastien Lecornu called emergency ministerial meeting · Nicolas Pillerel (French embassy) oversaw TFS logistics</div>
+              <div class="travel-acc-note" style="margin-top:16px">🗺 Flight map available once flight number is confirmed — check back for updates</div>
+            </div>
+          </div>
+
+          <div id="repat-content-ca" class="travel-content-pane" style="display:none">
+            <div class="panel-header"><span class="panel-title">🇨🇦 Canada — TFS → Canada</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="travel-status-row green">✈️ Plane confirmed at TFS · 4 passengers disembarking</div>
+              <div class="travel-status-row green">Process: ~10 min assessment on shore → passport check → direct to aircraft</div>
+              <div class="travel-status-row amber">Aircraft type unknown — charter or military unconfirmed · CBC asked Public Health Agency of Canada + Global Affairs Canada</div>
+              <div class="travel-acc-note" style="margin-top:16px">🗺 Flight map available once flight number is confirmed — check back for updates</div>
+            </div>
+          </div>
+
+          <div id="repat-content-no" class="travel-content-pane" style="display:none">
+            <div class="panel-header"><span class="panel-title">🇳🇴 Norway — EU Ambulance Plane · TFS</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="travel-status-row green">✈️ On-site at TFS · High-risk infection transport personnel</div>
+              <div class="travel-status-row green">EU-owned aircraft · Operated by Norway · Directorate for Civil Protection confirmed to NRK</div>
+              <div class="travel-acc-note" style="margin-top:16px">🗺 Flight map available once flight number is confirmed — check back for updates</div>
+            </div>
+          </div>
+
+          <div id="repat-content-nl" class="travel-content-pane" style="display:none">
+            <div class="panel-header"><span class="panel-title">🇳🇱 Netherlands — TFS → Eindhoven</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="travel-status-row amber">⏳ Charter flight pending departure</div>
+              <div class="travel-status-row amber">29 people aboard — Dutch nationals + other nationalities · Dutch Foreign Ministry confirmed</div>
+              <div class="travel-acc-note" style="margin-top:16px">🗺 Flight map available once flight number is confirmed — check back for updates</div>
+            </div>
+          </div>
+
+          <div id="repat-content-us" class="travel-content-pane" style="display:none">
+            <div class="panel-header"><span class="panel-title">🇺🇸 United States — TFS → Offutt AFB / UNMC</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="travel-status-row amber">⏳ Biocontainment charter pending</div>
+              <div class="travel-status-row amber">17 guests → Nebraska Biocontainment Unit (UNMC) · Escorted by CDC staff</div>
+              <div class="travel-acc-note" style="margin-top:16px">🗺 Flight map available once flight number is confirmed — check back for updates</div>
+            </div>
+          </div>
+
+          <div id="repat-content-gb" class="travel-content-pane" style="display:none">
+            <div class="panel-header"><span class="panel-title">🇬🇧 United Kingdom — TFS → UK</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="travel-status-row amber">⏳ Flight pending</div>
+              <div class="travel-status-row amber">19 guests + 3 crew · Hospitalization on arrival per UK authorities</div>
+              <div class="travel-acc-note" style="margin-top:16px">🗺 Flight map available once flight number is confirmed — check back for updates</div>
+            </div>
+          </div>
+
+          <div id="repat-content-au" class="travel-content-pane" style="display:none">
+            <div class="panel-header"><span class="panel-title">🇦🇺 Australia — TFS → Australia (Monday)</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="travel-status-row amber">⏳ Plane arriving Monday — last flight out of TFS</div>
+              <div class="travel-status-row amber">Also evacuating 🇳🇿 New Zealand + nearby nationalities · Per Spain Health Minister García</div>
+              <div class="travel-acc-note" style="margin-top:16px">🗺 Flight map available once flight number is confirmed — check back for updates</div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
 

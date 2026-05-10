@@ -110,6 +110,10 @@ def calculate_seat_risk(case_seat: str, contact_seat: str,
 def index():
     return render_template("index.html", now=datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"))
 
+@app.route("/support")
+def support():
+    return render_template("support.html")
+
 
 @app.route("/sitemap.xml")
 def sitemap():

@@ -586,7 +586,7 @@ const OverviewTab = {
       { pos: [-33.87,151.21], flag: "🇦🇺", label: "Australia · plane arrives Monday (last flight) · also evacuating NZ + nearby", count: 4,  confirmed: true  },
       // ── Passenger nationalities ──────────────────────────────────────────────
       { pos: [52.52, 13.40],  flag: "🇩🇪", label: "Germany · 5 guests, 1 crew",    count: 6,  confirmed: false },
-      { pos: [43.65, -79.38], flag: "🇨🇦", label: "Canada · 4 guests",              count: 4,  confirmed: false },
+      { pos: [43.65, -79.38], flag: "🇨🇦", label: "Canada · 4 guests · plane confirmed, type unknown (charter or military)", count: 4, confirmed: true },
       { pos: [41.00, 28.98],  flag: "🇹🇷", label: "Turkey · 3 guests",              count: 3,  confirmed: false },
       { pos: [50.85,  4.35],  flag: "🇧🇪", label: "Belgium · 2 guests",             count: 2,  confirmed: false },
       { pos: [53.33, -6.25],  flag: "🇮🇪", label: "Ireland · 2 guests",             count: 2,  confirmed: false },

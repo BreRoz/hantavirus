@@ -565,51 +565,71 @@ const OverviewTab = {
       .bindPopup(`
         <div style="font-family:Inter,sans-serif;min-width:200px">
           <div style="font-weight:700;font-size:12px;color:#f59e0b;margin-bottom:4px">✈️ Repatriation Flights — TFS Airport</div>
-          <div style="font-size:11px;color:#10b981;font-weight:600">DEPARTING TODAY — May 10, 2026</div>
-          <div style="font-size:11px;color:#ccc;margin-top:6px">🇳🇱 → Eindhoven (confirmed, aircraft on ground)</div>
-          <div style="font-size:11px;color:#ccc;margin-top:2px">🇺🇸 → Offutt AFB, Nebraska (UNMC quarantine)</div>
-          <div style="font-size:11px;color:#ccc;margin-top:2px">🇬🇧 🇫🇷 🇩🇪 🇧🇪 🇮🇪 → home countries</div>
-          <div style="font-size:10px;color:#666;margin-top:6px;font-style:italic">European Civil Protection Mechanism · 2 EU aircraft provided</div>
+          <div style="font-size:11px;color:#10b981;font-weight:600">DISEMBARKATION UNDERWAY — May 10, 2026</div>
+          <div style="font-size:11px;color:#ccc;margin-top:6px">🇳🇱 → Eindhoven · 13 aboard (confirmed)</div>
+          <div style="font-size:11px;color:#ccc;margin-top:2px">🇺🇸 → Offutt AFB, NE · 17 guests (confirmed)</div>
+          <div style="font-size:11px;color:#ccc;margin-top:2px">🇬🇧 → UK · 22 aboard (confirmed)</div>
+          <div style="font-size:11px;color:#aaa;margin-top:4px">+ 🇩🇪🇫🇷🇨🇦🇦🇺🇹🇷🇧🇪🇮🇪🇳🇿🇮🇹🇬🇷🇯🇵🇦🇷 → home countries</div>
+          <div style="font-size:10px;color:#666;margin-top:2px">147 aboard · 23 nationalities · lines show monitoring</div>
         </div>`, { className: "dark-popup" })
       .addTo(this._map);
 
-    // Flight routes from TFS Airport → destination countries
+    // Flight routes from TFS Airport → destination countries (full manifest)
+    // confirmed=true: flight officially confirmed | crew=true: crew-only nationality
     const flightDestinations = [
-      { pos: [51.44,  5.47],  flag: "🇳🇱", label: "Eindhoven, Netherlands",     confirmed: true  },
-      { pos: [41.12, -95.91], flag: "🇺🇸", label: "Offutt AFB, Nebraska (UNMC)", confirmed: true  },
-      { pos: [51.50, -0.12],  flag: "🇬🇧", label: "United Kingdom",              confirmed: false },
-      { pos: [48.85,  2.35],  flag: "🇫🇷", label: "France",                      confirmed: false },
-      { pos: [52.52, 13.40],  flag: "🇩🇪", label: "Germany",                      confirmed: false },
-      { pos: [50.85,  4.35],  flag: "🇧🇪", label: "Belgium",                      confirmed: false },
-      { pos: [53.33, -6.25],  flag: "🇮🇪", label: "Ireland",                      confirmed: false },
+      // ── Confirmed repatriation flights ──────────────────────────────────────
+      { pos: [51.44,  5.47],  flag: "🇳🇱", label: "Netherlands · 8 guests, 5 crew", count: 13, confirmed: true  },
+      { pos: [41.12, -95.91], flag: "🇺🇸", label: "United States · 17 guests → Offutt AFB", count: 17, confirmed: true  },
+      { pos: [51.50, -0.12],  flag: "🇬🇧", label: "United Kingdom · 19 guests, 3 crew", count: 22, confirmed: true  },
+      // ── Passenger nationalities ──────────────────────────────────────────────
+      { pos: [52.52, 13.40],  flag: "🇩🇪", label: "Germany · 5 guests, 1 crew",    count: 6,  confirmed: false },
+      { pos: [48.85,  2.35],  flag: "🇫🇷", label: "France · 5 guests",              count: 5,  confirmed: false },
+      { pos: [43.65, -79.38], flag: "🇨🇦", label: "Canada · 4 guests",              count: 4,  confirmed: false },
+      { pos: [-33.87,151.21], flag: "🇦🇺", label: "Australia · 4 guests",           count: 4,  confirmed: false },
+      { pos: [41.00, 28.98],  flag: "🇹🇷", label: "Turkey · 3 guests",              count: 3,  confirmed: false },
+      { pos: [50.85,  4.35],  flag: "🇧🇪", label: "Belgium · 2 guests",             count: 2,  confirmed: false },
+      { pos: [53.33, -6.25],  flag: "🇮🇪", label: "Ireland · 2 guests",             count: 2,  confirmed: false },
+      { pos: [-36.86,174.77], flag: "🇳🇿", label: "New Zealand · 1 guest",          count: 1,  confirmed: false },
+      { pos: [41.90, 12.49],  flag: "🇮🇹", label: "Italy · 1 guest",                count: 1,  confirmed: false },
+      { pos: [37.97, 23.73],  flag: "🇬🇷", label: "Greece · 1 guest",               count: 1,  confirmed: false },
+      { pos: [35.68,139.69],  flag: "🇯🇵", label: "Japan · 1 guest",                count: 1,  confirmed: false },
+      { pos: [-34.60,-58.40], flag: "🇦🇷", label: "Argentina · 1 guest",            count: 1,  confirmed: false },
+      // ── Crew nationalities ───────────────────────────────────────────────────
+      { pos: [14.60,121.00],  flag: "🇵🇭", label: "Philippines · 38 crew",          count: 38, confirmed: false, crew: true },
+      { pos: [50.45, 30.52],  flag: "🇺🇦", label: "Ukraine · 5 crew",               count: 5,  confirmed: false, crew: true },
+      { pos: [28.61, 77.21],  flag: "🇮🇳", label: "India · 2 crew",                 count: 2,  confirmed: false, crew: true },
+      { pos: [55.75, 37.62],  flag: "🇷🇺", label: "Russia · 1 crew",                count: 1,  confirmed: false, crew: true },
+      { pos: [52.23, 21.01],  flag: "🇵🇱", label: "Poland · 1 crew",                count: 1,  confirmed: false, crew: true },
+      { pos: [38.72, -9.14],  flag: "🇵🇹", label: "Portugal · 1 crew",              count: 1,  confirmed: false, crew: true },
+      { pos: [42.44, 19.26],  flag: "🇲🇪", label: "Montenegro · 1 crew",            count: 1,  confirmed: false, crew: true },
+      { pos: [14.64,-90.51],  flag: "🇬🇹", label: "Guatemala · 1 crew",             count: 1,  confirmed: false, crew: true },
     ];
 
     flightDestinations.forEach(dest => {
-      // Arc line: interpolate a mid-point slightly above to give a curve feel
-      const mid = [
-        (flightsPos[0] + dest.pos[0]) / 2 + 4,
-        (flightsPos[1] + dest.pos[1]) / 2,
-      ];
-      L.polyline([flightsPos, mid, dest.pos], {
-        color: dest.confirmed ? "#f59e0b" : "#fbbf24",
-        weight: dest.confirmed ? 1.8 : 1.2,
-        opacity: dest.confirmed ? 0.65 : 0.4,
-        dashArray: dest.confirmed ? "5 6" : "3 8",
-        smoothFactor: 1,
+      const isCrew = !!dest.crew;
+      // Arc: lift midpoint north for westward routes, south for eastward
+      const midLat = (flightsPos[0] + dest.pos[0]) / 2 + (dest.pos[1] > 0 ? -5 : 6);
+      const midLng = (flightsPos[1] + dest.pos[1]) / 2;
+      const color   = dest.confirmed ? "#f59e0b" : isCrew ? "#94a3b8" : "#fbbf24";
+      const weight  = dest.confirmed ? 1.8 : isCrew ? 0.9 : 1.2;
+      const opacity = dest.confirmed ? 0.70 : isCrew ? 0.25 : 0.40;
+      const dash    = dest.confirmed ? "5 5" : isCrew ? "2 10" : "3 8";
+      const radius  = dest.confirmed ? 5 : isCrew ? 3 : Math.max(3, Math.min(6, 2 + Math.round(dest.count / 5)));
+
+      L.polyline([flightsPos, [midLat, midLng], dest.pos], {
+        color, weight, opacity, dashArray: dash, smoothFactor: 1,
       }).addTo(this._map);
 
-      // Destination dot
       L.circleMarker(dest.pos, {
-        radius: dest.confirmed ? 5 : 4,
-        color: dest.confirmed ? "#f59e0b" : "#fbbf24",
-        fillColor: dest.confirmed ? "#f59e0b" : "#1a1a2e",
-        fillOpacity: dest.confirmed ? 0.85 : 0.4,
+        radius,
+        color,
+        fillColor: dest.confirmed ? color : isCrew ? "#1e293b" : "#1a1a2e",
+        fillOpacity: dest.confirmed ? 0.90 : isCrew ? 0.3 : 0.45,
         weight: 1.5,
-      }).bindTooltip(`${dest.flag} ${dest.label}${dest.confirmed ? " ✓" : " (monitoring)"}`, {
-        permanent: false,
-        className: "dark-tooltip",
-        direction: "top",
-      }).addTo(this._map);
+      }).bindTooltip(
+        `${dest.flag} ${dest.label}${dest.confirmed ? " ✓ confirmed" : isCrew ? " (crew)" : ""}`,
+        { permanent: false, className: "dark-tooltip", direction: "top" }
+      ).addTo(this._map);
     });
   },
 

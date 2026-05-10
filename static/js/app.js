@@ -1039,16 +1039,14 @@ const ChainTab = {
 // 10b. TravelAccordion — left-panel accordion for Travel Exposure tab
 // ============================================================================
 
-const TravelAccordion = {
-  toggle(id) {
-    const item = document.getElementById(`travel-acc-${id}`);
-    if (!item) return;
-    const body = item.querySelector(".travel-acc-body");
-    const chevron = item.querySelector(".travel-acc-chevron");
-    const isOpen = item.classList.contains("open");
-    item.classList.toggle("open", !isOpen);
-    body.style.display = isOpen ? "none" : "block";
-    chevron.textContent = isOpen ? "▶" : "▼";
+const TravelNav = {
+  select(section) {
+    document.querySelectorAll(".travel-nav-item").forEach(el =>
+      el.classList.toggle("selected", el.dataset.section === section));
+    document.querySelectorAll(".travel-content-pane").forEach(el =>
+      el.style.display = "none");
+    const pane = document.getElementById(`travel-content-${section}`);
+    if (pane) pane.style.display = "flex";
   },
 };
 
@@ -1203,7 +1201,10 @@ const FlightRiskTab = {
     `).join("");
 
     list.querySelectorAll(".flight-card").forEach(el => {
-      el.addEventListener("click", () => this._selectFlight(el.dataset.id));
+      el.addEventListener("click", () => {
+        TravelNav.select("flight");
+        this._selectFlight(el.dataset.id);
+      });
     });
 
     if (this._selectedFlight) {

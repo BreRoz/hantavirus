@@ -566,11 +566,11 @@ const OverviewTab = {
         <div style="font-family:Inter,sans-serif;min-width:200px">
           <div style="font-weight:700;font-size:12px;color:#f59e0b;margin-bottom:4px">✈️ Repatriation Flights — TFS Airport</div>
           <div style="font-size:11px;color:#10b981;font-weight:600">DISEMBARKATION UNDERWAY — May 10, 2026</div>
-          <div style="font-size:11px;color:#ccc;margin-top:6px">🇳🇱 → Eindhoven · 13 aboard (confirmed)</div>
-          <div style="font-size:11px;color:#ccc;margin-top:2px">🇺🇸 → Offutt AFB, NE · 17 guests (confirmed)</div>
-          <div style="font-size:11px;color:#ccc;margin-top:2px">🇬🇧 → UK · 22 aboard (confirmed)</div>
-          <div style="font-size:11px;color:#aaa;margin-top:4px">+ 🇩🇪🇫🇷🇨🇦🇦🇺🇹🇷🇧🇪🇮🇪🇳🇿🇮🇹🇬🇷🇯🇵🇦🇷 → home countries</div>
-          <div style="font-size:10px;color:#666;margin-top:2px">147 aboard · 23 nationalities · lines show monitoring</div>
+          <div style="font-size:11px;color:#10b981;margin-top:6px">🇪🇸 → Gómez Ulla Defense Hospital, Madrid ✓ DEPARTED</div>
+          <div style="font-size:11px;color:#10b981;margin-top:2px">🇫🇷 → Paris area · 5 pax · special medical flight ✓ DEPARTED ~12:00</div>
+          <div style="font-size:11px;color:#aaa;margin-top:4px">🇳🇱🇺🇸🇬🇧🇩🇪🇨🇦🇦🇺🇹🇷🇧🇪🇮🇪 → coordinating</div>
+          <div style="font-size:10px;color:#aaa;margin-top:4px;font-style:italic">French PM called emergency ministerial meeting · 72h hospital + 45-day home isolation protocol</div>
+          <div style="font-size:10px;color:#666;margin-top:2px">147 aboard · 23 nationalities · Source: The Guardian</div>
         </div>`, { className: "dark-popup" })
       .addTo(this._map);
 
@@ -578,13 +578,13 @@ const OverviewTab = {
     // confirmed=true: flight officially confirmed | crew=true: crew-only nationality
     const flightDestinations = [
       // ── Confirmed repatriation flights ──────────────────────────────────────
-      { pos: [40.42, -3.70],  flag: "🇪🇸", label: "Madrid hospital — FIRST FLIGHT DEPARTED (AP News)", count: 13, confirmed: true  },
+      { pos: [40.42, -3.70],  flag: "🇪🇸", label: "Spain · Gómez Ulla Defense Hospital, Madrid ✓ DEPARTED", count: 13, confirmed: true  },
+      { pos: [48.85,  2.35],  flag: "🇫🇷", label: "France · 5 pax · special medical flight ✓ DEPARTED ~12:00 local", count: 5,  confirmed: true  },
       { pos: [51.44,  5.47],  flag: "🇳🇱", label: "Netherlands · 8 guests, 5 crew", count: 13, confirmed: true  },
       { pos: [41.12, -95.91], flag: "🇺🇸", label: "United States · 17 guests → Offutt AFB", count: 17, confirmed: true  },
       { pos: [51.50, -0.12],  flag: "🇬🇧", label: "United Kingdom · 19 guests, 3 crew", count: 22, confirmed: true  },
       // ── Passenger nationalities ──────────────────────────────────────────────
       { pos: [52.52, 13.40],  flag: "🇩🇪", label: "Germany · 5 guests, 1 crew",    count: 6,  confirmed: false },
-      { pos: [48.85,  2.35],  flag: "🇫🇷", label: "France · 5 guests",              count: 5,  confirmed: false },
       { pos: [43.65, -79.38], flag: "🇨🇦", label: "Canada · 4 guests",              count: 4,  confirmed: false },
       { pos: [-33.87,151.21], flag: "🇦🇺", label: "Australia · 4 guests",           count: 4,  confirmed: false },
       { pos: [41.00, 28.98],  flag: "🇹🇷", label: "Turkey · 3 guests",              count: 3,  confirmed: false },

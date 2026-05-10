@@ -578,8 +578,8 @@ const OverviewTab = {
     // confirmed=true: flight officially confirmed | crew=true: crew-only nationality
     const flightDestinations = [
       // ── Confirmed repatriation flights ──────────────────────────────────────
-      { pos: [40.42, -3.70],  flag: "🇪🇸", label: "Spain · Gómez Ulla Defense Hospital, Madrid ✓ DEPARTED", count: 13, confirmed: true  },
-      { pos: [48.85,  2.35],  flag: "🇫🇷", label: "France · 5 pax · special medical flight ✓ DEPARTED ~12:00 local", count: 5,  confirmed: true  },
+      { pos: [40.42, -3.70],  flag: "🇪🇸", label: "Spain · A310 'Reino de España' IN FLIGHT → Gómez Ulla, Madrid", count: 13, confirmed: true, inflight: true },
+      { pos: [48.85,  2.35],  flag: "🇫🇷", label: "France · 5 pax · special medical flight ✓ DEPARTED ~12:00 local", count: 5,  confirmed: true, inflight: true },
       { pos: [51.44,  5.47],  flag: "🇳🇱", label: "Netherlands · 8 guests, 5 crew", count: 13, confirmed: true  },
       { pos: [41.12, -95.91], flag: "🇺🇸", label: "United States · 17 guests → Offutt AFB", count: 17, confirmed: true  },
       { pos: [51.50, -0.12],  flag: "🇬🇧", label: "United Kingdom · 19 guests, 3 crew", count: 22, confirmed: true  },
@@ -607,15 +607,16 @@ const OverviewTab = {
     ];
 
     flightDestinations.forEach(dest => {
-      const isCrew = !!dest.crew;
+      const isCrew    = !!dest.crew;
+      const isInflight = !!dest.inflight;
       // Arc: lift midpoint north for westward routes, south for eastward
       const midLat = (flightsPos[0] + dest.pos[0]) / 2 + (dest.pos[1] > 0 ? -5 : 6);
       const midLng = (flightsPos[1] + dest.pos[1]) / 2;
-      const color   = dest.confirmed ? "#f59e0b" : isCrew ? "#94a3b8" : "#fbbf24";
-      const weight  = dest.confirmed ? 1.8 : isCrew ? 0.9 : 1.2;
-      const opacity = dest.confirmed ? 0.70 : isCrew ? 0.25 : 0.40;
-      const dash    = dest.confirmed ? "5 5" : isCrew ? "2 10" : "3 8";
-      const radius  = dest.confirmed ? 5 : isCrew ? 3 : Math.max(3, Math.min(6, 2 + Math.round(dest.count / 5)));
+      const color   = isInflight ? "#ffffff" : dest.confirmed ? "#f59e0b" : isCrew ? "#94a3b8" : "#fbbf24";
+      const weight  = isInflight ? 2.5 : dest.confirmed ? 1.8 : isCrew ? 0.9 : 1.2;
+      const opacity = isInflight ? 0.90 : dest.confirmed ? 0.70 : isCrew ? 0.25 : 0.40;
+      const dash    = isInflight ? null : dest.confirmed ? "5 5" : isCrew ? "2 10" : "3 8";
+      const radius  = isInflight ? 6 : dest.confirmed ? 5 : isCrew ? 3 : Math.max(3, Math.min(6, 2 + Math.round(dest.count / 5)));
 
       L.polyline([flightsPos, [midLat, midLng], dest.pos], {
         color, weight, opacity, dashArray: dash, smoothFactor: 1,

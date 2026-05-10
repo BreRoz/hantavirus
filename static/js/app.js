@@ -504,76 +504,72 @@ const OverviewTab = {
 
   _addShipLayer() {
     // Pinned position — MV Hondius ~200 miles west of Nouadhibou, Mauritania (LiveScience/AP, May 8)
-    const shipPos    = [20.9, -20.5];
     const tenerifePos = [28.2916, -16.6291];
+    const capeVerdePos = [14.933, -23.513];
 
-    // Glowing ship SVG (teal)
-    const shipIcon = L.divIcon({
+    // Glowing anchor SVG (teal) — ship is now docked
+    const anchoredShipIcon = L.divIcon({
       html: `
-        <div style="filter:drop-shadow(0 0 5px #2dd4bf) drop-shadow(0 0 12px #2dd4bf88)">
-          <svg width="36" height="32" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 4 L18 14" stroke="#2dd4bf" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M18 4 L26 10 L18 10 Z" stroke="#2dd4bf" stroke-width="1.4" fill="rgba(45,212,191,0.08)"/>
-            <rect x="11" y="14" width="14" height="5" rx="1" stroke="#2dd4bf" stroke-width="1.6" fill="rgba(45,212,191,0.08)"/>
-            <path d="M4 19 L7 26 L29 26 L32 19 Z" stroke="#2dd4bf" stroke-width="1.6" fill="rgba(45,212,191,0.08)"/>
-            <path d="M2 28 Q9 25 18 28 Q27 31 34 28" stroke="#2dd4bf" stroke-width="1.2" opacity="0.5" stroke-linecap="round"/>
+        <div style="filter:drop-shadow(0 0 6px #2dd4bf) drop-shadow(0 0 14px #2dd4bf88)">
+          <svg width="32" height="36" viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="6" r="4" stroke="#2dd4bf" stroke-width="1.8"/>
+            <line x1="16" y1="10" x2="16" y2="30" stroke="#2dd4bf" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="8" y1="16" x2="24" y2="16" stroke="#2dd4bf" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M7 30 Q16 35 25 30" stroke="#2dd4bf" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <line x1="7" y1="26" x2="7" y2="30" stroke="#2dd4bf" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="25" y1="26" x2="25" y2="30" stroke="#2dd4bf" stroke-width="1.8" stroke-linecap="round"/>
           </svg>
         </div>`,
       className: "",
-      iconSize: [36, 32],
-      iconAnchor: [18, 28],
+      iconSize: [32, 36],
+      iconAnchor: [16, 36],
     });
 
-    // Glowing anchor SVG (amber)
-    const anchorIcon = L.divIcon({
+    // Glowing airplane SVG (amber) — repatriation flights departing
+    const planeIcon = L.divIcon({
       html: `
-        <div style="filter:drop-shadow(0 0 5px #f97316) drop-shadow(0 0 12px #f9731688)">
-          <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="14" cy="5" r="3.5" stroke="#f97316" stroke-width="1.6"/>
-            <line x1="14" y1="8.5" x2="14" y2="26" stroke="#f97316" stroke-width="1.6" stroke-linecap="round"/>
-            <line x1="7" y1="13" x2="21" y2="13" stroke="#f97316" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M6 26 Q14 31 22 26" stroke="#f97316" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-            <line x1="6" y1="22" x2="6" y2="26" stroke="#f97316" stroke-width="1.6" stroke-linecap="round"/>
-            <line x1="22" y1="22" x2="22" y2="26" stroke="#f97316" stroke-width="1.6" stroke-linecap="round"/>
+        <div style="filter:drop-shadow(0 0 6px #f59e0b) drop-shadow(0 0 14px #f59e0b88);animation:pulse-live 2s infinite">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 18 L24 8 L28 10 L18 18 L28 22 L26 26 L18 22 L14 28 L10 27 L14 20 L6 18Z" stroke="#f59e0b" stroke-width="1.6" fill="rgba(245,158,11,0.15)" stroke-linejoin="round"/>
           </svg>
         </div>`,
       className: "",
-      iconSize: [28, 32],
-      iconAnchor: [14, 32],
+      iconSize: [36, 36],
+      iconAnchor: [18, 18],
     });
 
     // Dashed route line Cape Verde → Tenerife
-    const capeVerdePos = [14.933, -23.513];
-    L.polyline([capeVerdePos, shipPos, tenerifePos], {
+    L.polyline([capeVerdePos, tenerifePos], {
       color: "#2dd4bf",
       weight: 1.5,
-      opacity: 0.4,
+      opacity: 0.3,
       dashArray: "6 8",
     }).addTo(this._map);
 
-    // Ship marker
-    L.marker(shipPos, { icon: shipIcon, zIndexOffset: 1000 })
+    // Ship anchored at Tenerife
+    L.marker(tenerifePos, { icon: anchoredShipIcon, zIndexOffset: 1000 })
       .bindPopup(`
-        <div style="font-family:Inter,sans-serif;min-width:180px">
-          <div style="font-weight:700;font-size:12px;color:#2dd4bf;margin-bottom:4px">🚢 MV Hondius</div>
-          <div style="font-size:11px;color:#ccc">~200 miles west of Nouadhibou, Mauritania · May 8, 2026</div>
-          <div style="font-size:11px;color:#aaa;margin-top:4px">Sailing northwest → Tenerife</div>
-          <div style="font-size:11px;color:#f97316;margin-top:4px">Expected arrival: Sunday May 10</div>
-          <div style="font-size:11px;color:#aaa;margin-top:4px">147 aboard · 23 nationalities · 17 Americans</div>
-          <div style="font-size:10px;color:#666;margin-top:6px;font-style:italic">Source: AP / LiveScience, May 8 2026</div>
+        <div style="font-family:Inter,sans-serif;min-width:200px">
+          <div style="font-weight:700;font-size:12px;color:#2dd4bf;margin-bottom:4px">⚓ MV Hondius — ANCHORED</div>
+          <div style="font-size:11px;color:#ccc">Port of Granadilla, Tenerife · May 10, 2026</div>
+          <div style="font-size:11px;color:#10b981;margin-top:4px;font-weight:600">Disembarkation underway from 07:30 local</div>
+          <div style="font-size:11px;color:#aaa;margin-top:4px">Passengers tested → transferred by boat → bused to airport</div>
+          <div style="font-size:11px;color:#aaa;margin-top:2px">None currently symptomatic · All treated as high-risk contacts</div>
+          <div style="font-size:11px;color:#aaa;margin-top:2px">147 aboard · 23 nationalities</div>
         </div>`, { className: "dark-popup" })
       .addTo(this._map);
 
-    // Tenerife anchor marker
-    L.marker(tenerifePos, { icon: anchorIcon, zIndexOffset: 999 })
+    // Repatriation flights marker (offset slightly from ship)
+    const flightsPos = [28.48, -16.25];
+    L.marker(flightsPos, { icon: planeIcon, zIndexOffset: 999 })
       .bindPopup(`
-        <div style="font-family:Inter,sans-serif;min-width:180px">
-          <div style="font-weight:700;font-size:12px;color:#f97316;margin-bottom:4px">⚓ Tenerife, Canary Islands</div>
-          <div style="font-size:11px;color:#ccc">MV Hondius destination — Sunday May 10, 2026</div>
-          <div style="font-size:11px;color:#aaa;margin-top:4px">Fully cordoned arrival: isolated area, guarded vehicles, sealed airport section</div>
-          <div style="font-size:11px;color:#aaa;margin-top:2px">14 Spanish passengers → military hospital</div>
-          <div style="font-size:11px;color:#aaa;margin-top:2px">17 Americans repatriated by US government plane</div>
-          <div style="font-size:11px;color:#aaa;margin-top:2px">All others repatriated per Spain Health Minister</div>
+        <div style="font-family:Inter,sans-serif;min-width:200px">
+          <div style="font-weight:700;font-size:12px;color:#f59e0b;margin-bottom:4px">✈️ Repatriation Flights — TFS Airport</div>
+          <div style="font-size:11px;color:#10b981;font-weight:600">DEPARTING TODAY — May 10, 2026</div>
+          <div style="font-size:11px;color:#ccc;margin-top:6px">🇳🇱 → Eindhoven (confirmed, aircraft on ground)</div>
+          <div style="font-size:11px;color:#ccc;margin-top:2px">🇺🇸 → Offutt AFB, Nebraska (UNMC quarantine)</div>
+          <div style="font-size:11px;color:#ccc;margin-top:2px">🇬🇧 🇫🇷 🇩🇪 🇧🇪 🇮🇪 → home countries</div>
+          <div style="font-size:10px;color:#666;margin-top:6px;font-style:italic">European Civil Protection Mechanism · 2 EU aircraft provided</div>
         </div>`, { className: "dark-popup" })
       .addTo(this._map);
   },

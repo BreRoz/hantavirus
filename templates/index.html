@@ -145,12 +145,8 @@
       <span class="tab-icon">🔗</span> Transmission Chains
       <span class="tab-badge" id="tab-badge-chains">—</span>
     </button>
-    <button class="tab-btn" data-tab="exposure" role="tab">
-      <span class="tab-icon">🚢</span> Exposure Map
-      <span class="tab-badge" id="tab-badge-exposure">—</span>
-    </button>
     <button class="tab-btn" data-tab="flights" role="tab">
-      <span class="tab-icon">✈</span> Flight Risk
+      Travel Exposure
       <span class="tab-badge" id="tab-badge-flights">—</span>
     </button>
     <button class="tab-btn" data-tab="timeline" role="tab">
@@ -272,57 +268,65 @@
       </div>
     </div>
 
-    <!-- Tab 3: Exposure Map -->
-    <div class="tab-pane" id="tab-exposure">
-      <div class="exposure-pending-banner">
-        <span class="exposure-pending-icon">🚢</span>
-        <div>
-          <strong>MANIFEST PENDING</strong> — MV Hondius is en route to Tenerife, Canary Islands.
-          Full passenger &amp; cabin manifest expected upon disembarkation
-          <strong>~May 9–10, 2026</strong>. Deck schematic will be populated once official
-          assignment data is released. Exposure events shown below are based on
-          currently confirmed crew contacts only.
-        </div>
-      </div>
-      <div class="exposure-layout">
-        <!-- Left: Ship deck schematic -->
-        <div class="exposure-deck-panel">
-          <div class="panel-header">
-            <span class="panel-title">MV Hondius — Deck Schematic</span>
-            <div class="panel-actions">
-              <span class="panel-badge" id="exposure-count-badge">— events</span>
-            </div>
-          </div>
-          <div class="deck-view" id="deck-view">
-            <!-- populated by JS -->
-          </div>
-        </div>
-        <!-- Right: Exposure events list -->
-        <div class="exposure-table-panel">
-          <div class="panel-header">
-            <span class="panel-title">Exposure Events</span>
-            <div class="panel-actions">
-              <button class="btn btn--ghost btn--xs" id="exposure-sort-risk">Sort by risk ↓</button>
-            </div>
-          </div>
-          <div class="exposure-table" id="exposure-table">
-            <!-- populated by JS -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tab 4: Flight Risk -->
+    <!-- Tab 3: Travel Exposure (merged) -->
     <div class="tab-pane" id="tab-flights">
-      <div class="flights-layout">
-        <!-- Left: Flight selector -->
-        <div class="flights-selector-panel">
-          <div class="panel-header"><span class="panel-title">Flights</span></div>
-          <div id="flight-list" style="overflow-y:auto;flex:1">
-            <!-- populated by JS -->
+      <div class="travel-layout">
+
+        <!-- Left: accordions + flight list -->
+        <div class="travel-left-panel">
+
+          <!-- Accordion 1: Live Tracking (open by default) -->
+          <div class="travel-acc open" id="travel-acc-tracking">
+            <button class="travel-acc-hdr" onclick="TravelAccordion.toggle('tracking')">
+              <span>MV Hondius — Live Tracking</span><span class="travel-acc-chevron">▼</span>
+            </button>
+            <div class="travel-acc-body">
+              <div class="travel-status-row green">⚓ DOCKED — Port of Granadilla, Tenerife · Evacuation Sun–Mon</div>
+              <div class="travel-status-row green">🇪🇸 Air Force A310 "Reino de España" → Gómez Ulla Defense Hospital, Madrid · Departed ~13:00</div>
+              <div class="travel-status-row green">🇫🇷 5 pax → Paris area · Medical flight departed ~12:00 · 72h hospital + 45-day isolation</div>
+              <div class="travel-status-row amber">🇳🇱 29-person charter pending · Dutch + other nationalities</div>
+              <div class="travel-status-row amber">🇺🇸 17 guests → Nebraska Biocontainment Unit · CDC escort</div>
+              <div class="travel-status-row amber">🇬🇧 19 guests + 3 crew · hospitalization on arrival</div>
+              <div class="travel-status-row green">🇨🇦 4 passengers · plane confirmed · ~10 min assessment → direct to aircraft</div>
+              <div class="travel-status-row amber">🇦🇺 Plane arrives Monday — last flight · also evacuating 🇳🇿 + nearby nationalities</div>
+              <div class="travel-status-row green">🇳🇴 EU ambulance plane on-site · high-risk infection transport personnel</div>
+              <div class="travel-status-row muted">After disembarkation: MV Hondius sails to Rotterdam ~5 days for disinfection</div>
+              <div class="travel-status-row muted">At port: hazmat suits · respirators · face masks · No luggage — small bag only</div>
+              <div class="travel-acc-note">✈ Confirmed repatriation flights listed below as they are confirmed — check back for updates</div>
+            </div>
           </div>
+
+          <!-- Accordion 2: Deck Schematic -->
+          <div class="travel-acc" id="travel-acc-deck">
+            <button class="travel-acc-hdr" onclick="TravelAccordion.toggle('deck')">
+              <span>MV Hondius — Deck Schematic</span><span class="travel-acc-chevron">▶</span>
+            </button>
+            <div class="travel-acc-body" style="display:none">
+              <div style="margin-bottom:6px"><span class="panel-badge" id="exposure-count-badge">— events</span></div>
+              <div class="deck-view" id="deck-view"><!-- populated by JS --></div>
+            </div>
+          </div>
+
+          <!-- Accordion 3: Exposure Events -->
+          <div class="travel-acc" id="travel-acc-exposure">
+            <button class="travel-acc-hdr" onclick="TravelAccordion.toggle('exposure')">
+              <span>MV Hondius — Exposure Events</span><span class="travel-acc-chevron">▶</span>
+            </button>
+            <div class="travel-acc-body" style="display:none">
+              <div style="margin-bottom:6px">
+                <button class="btn btn--ghost btn--xs" id="exposure-sort-risk">Sort by risk ↓</button>
+              </div>
+              <div class="exposure-table" id="exposure-table"><!-- populated by JS --></div>
+            </div>
+          </div>
+
+          <!-- Repatriation Flights -->
+          <div class="travel-flights-divider">Repatriation Flights</div>
+          <div id="flight-list" style="overflow-y:auto;flex:1"><!-- populated by JS --></div>
+
         </div>
-        <!-- Right: Seat map + manifest -->
+
+        <!-- Right: Seat map + manifest (activates on flight click) -->
         <div class="flights-main-panel">
           <div class="panel-header">
             <span class="panel-title" id="flight-panel-title">Select a flight</span>
@@ -331,10 +335,9 @@
             </div>
           </div>
           <div class="flights-main-inner">
-            <!-- Seat map -->
             <div class="seat-map-container" id="seat-map-container">
               <div id="seat-map-placeholder" style="color:var(--color-text-faint);font-size:var(--text-sm);padding:var(--space-4)">
-                Select a flight from the left panel to view the seat risk map.
+                Select a flight below to view the seat risk map and passenger manifest.
               </div>
               <div id="seat-map" style="display:none">
                 <div class="seat-map-title">
@@ -344,17 +347,11 @@
                 <div class="seat-map-grid" id="seat-grid"></div>
               </div>
             </div>
-            <!-- Manifest table -->
             <div class="manifest-table-wrap">
               <table class="manifest-table" id="manifest-table">
                 <thead>
                   <tr>
-                    <th>Seat</th>
-                    <th>Passenger / ID</th>
-                    <th>Type</th>
-                    <th>Status</th>
-                    <th>Risk Score</th>
-                    <th>Risk Level</th>
+                    <th>Seat</th><th>Passenger / ID</th><th>Type</th><th>Status</th><th>Risk Score</th><th>Risk Level</th>
                   </tr>
                 </thead>
                 <tbody id="manifest-tbody">
@@ -364,6 +361,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
 

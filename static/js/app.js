@@ -1036,6 +1036,23 @@ const ChainTab = {
 };
 
 // ============================================================================
+// 10b. TravelAccordion — left-panel accordion for Travel Exposure tab
+// ============================================================================
+
+const TravelAccordion = {
+  toggle(id) {
+    const item = document.getElementById(`travel-acc-${id}`);
+    if (!item) return;
+    const body = item.querySelector(".travel-acc-body");
+    const chevron = item.querySelector(".travel-acc-chevron");
+    const isOpen = item.classList.contains("open");
+    item.classList.toggle("open", !isOpen);
+    body.style.display = isOpen ? "none" : "block";
+    chevron.textContent = isOpen ? "▶" : "▼";
+  },
+};
+
+// ============================================================================
 // 11. ExposureTab
 // ============================================================================
 
@@ -1748,11 +1765,9 @@ const App = {
       ChainTab.invalidate();
       if (this._chainData) ChainTab.render(this._chainData, Sidebar.getFilter());
     });
-    TabNav.onActivate("exposure", () => {
-      ExposureTab.render(this._exposureEvents, this._cases);
-    });
     TabNav.onActivate("flights", () => {
       FlightRiskTab.render(this._flights);
+      ExposureTab.render(this._exposureEvents, this._cases);
     });
     TabNav.onActivate("timeline", () => {
       TimelineTab.load(this._timelineData, this._cases);
@@ -1870,7 +1885,7 @@ const App = {
 
       const tab = TabNav.current();
       if (tab === "chains" && this._chainData) ChainTab.render(this._chainData, filter);
-      if (tab === "exposure") ExposureTab.render(this._exposureEvents, this._cases);
+      if (tab === "flights") ExposureTab.render(this._exposureEvents, this._cases);
       if (tab === "flights") FlightRiskTab.render(this._flights);
       if (tab === "timeline") TimelineTab.load(this._timelineData, this._cases);
 

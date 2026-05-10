@@ -1774,7 +1774,7 @@ const App = {
       TimelineTab.load(this._timelineData, this._cases);
     });
     TabNav.onActivate("tracking", () => {
-      const iframe = document.getElementById("vessel-finder-frame");
+      const iframe = document.getElementById("flightradar-frame");
       if (iframe && !iframe.src && iframe.dataset.src) {
         iframe.src = iframe.dataset.src;
       }

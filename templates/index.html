@@ -153,7 +153,7 @@
       <span class="tab-icon">📅</span> Timeline
     </button>
     <button class="tab-btn" data-tab="tracking" role="tab">
-      <span class="tab-icon">🛳</span> Live Tracking
+      <span class="tab-icon">✈️</span> Live Tracking
       <span class="tab-badge tab-badge--live">LIVE</span>
     </button>
     <button class="tab-btn" data-tab="info" role="tab">
@@ -288,18 +288,24 @@
           <div id="travel-content-tracking" class="travel-content-pane">
             <div class="panel-header"><span class="panel-title">MV Hondius — Live Tracking</span></div>
             <div style="padding:var(--space-4);overflow-y:auto;flex:1">
-              <div class="travel-status-row green">⚓ DOCKED — Port of Granadilla, Tenerife · Evacuation Sun–Mon</div>
-              <div class="travel-status-row green">🇪🇸 Air Force A310 "Reino de España" → Gómez Ulla Defense Hospital, Madrid · Departed ~13:00</div>
-              <div class="travel-status-row green">🇫🇷 5 pax → Paris area · Medical flight departed ~12:00 · 72h hospital + 45-day isolation</div>
-              <div class="travel-status-row amber">🇳🇱 29-person charter pending · Dutch + other nationalities</div>
-              <div class="travel-status-row amber">🇺🇸 17 guests → Nebraska Biocontainment Unit · CDC escort</div>
-              <div class="travel-status-row amber">🇬🇧 19 guests + 3 crew · hospitalization on arrival</div>
-              <div class="travel-status-row green">🇨🇦 4 passengers · plane confirmed · ~10 min assessment → direct to aircraft</div>
-              <div class="travel-status-row amber">🇦🇺 Plane arrives Monday — last flight · also evacuating 🇳🇿 + nearby nationalities</div>
-              <div class="travel-status-row green">🇳🇴 EU ambulance plane on-site · high-risk infection transport personnel</div>
-              <div class="travel-status-row muted">After disembarkation: MV Hondius sails to Rotterdam ~5 days for disinfection</div>
-              <div class="travel-status-row muted">At port: hazmat suits · respirators · face masks · No luggage — small bag only</div>
-              <div class="travel-acc-note" style="margin-top:16px">✈ Confirmed repatriation flights listed at left as they are confirmed — check back for updates</div>
+              <div class="travel-status-row green">⚓ DOCKED — Port of Granadilla, Tenerife · May 10, 2026 · WHO Director-General Tedros + Spain ministers on-site</div>
+              <div class="travel-status-row muted">147 aboard · 23 nationalities · No symptoms among any passengers or crew</div>
+              <div class="travel-status-row muted">At port: hazmat suits · respirators · face masks · No luggage — small bag, phone, charger, documents only · No contact with local population</div>
+              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-faint);margin:12px 0 6px">Repatriation Flights</div>
+              <div class="travel-status-row green">🇪🇸 A310 "Reino de España" T.22-2 → Gómez Ulla Defense Hospital, Madrid · Departed ~13:00 · 14 Spanish nationals · Quarantine on arrival</div>
+              <div class="travel-status-row green">🇫🇷 Medical charter → Paris area · Departed ~12:00 · 5 pax + staff · 72h hospital then 45-day home isolation · French PM emergency ministerial meeting</div>
+              <div class="travel-status-row green">🇨🇦 Plane confirmed · 4 passengers · ~10 min assessment → passport check → direct to aircraft · Per Spain Health Secretary Padilla (CBC)</div>
+              <div class="travel-status-row green">🇳🇴 EU ambulance plane on-site · high-risk infection transport personnel · EU-owned, Norway-operated</div>
+              <div class="travel-status-row amber">🇳🇱 Charter pending · 29 aboard (Dutch + other nationalities) · Dutch Foreign Ministry confirmed</div>
+              <div class="travel-status-row amber">🇺🇸 Biocontainment charter · 17 guests → Nebraska Biocontainment Unit (UNMC) · CDC escort</div>
+              <div class="travel-status-row amber">🇬🇧 Flight pending · 19 guests + 3 crew · hospitalization on arrival</div>
+              <div class="travel-status-row amber">🇦🇺 Plane arrives Monday — last flight out · also evacuating 🇳🇿 + nearby nationalities</div>
+              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-faint);margin:12px 0 6px">After Disembarkation</div>
+              <div class="travel-status-row muted">MV Hondius sails to Rotterdam, Netherlands for full disinfection · ~5 days · Crew + body of deceased passenger remain aboard</div>
+              <div class="travel-acc-note" style="margin-top:12px">🪂 Tristan da Cunha: British paratroopers (16 Air Assault Brigade) airdropped for suspected case — pop. 221, no airstrip · RAF A400M from Brize Norton · Source: Reuters / UK MoD</div>
+              <div style="margin-top:12px;font-size:11px;color:var(--color-text-faint)">
+                <a href="https://www.cruisemapper.com/?imo=9818709" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">MV Hondius on CruiseMapper ↗</a>
+              </div>
             </div>
           </div>
 
@@ -391,91 +397,79 @@
       </div>
     </div>
 
-    <!-- Tab 6: Live Tracking -->
+    <!-- Tab 6: Live Tracking (repatriation flights) -->
     <div class="tab-pane" id="tab-tracking">
       <div class="tracking-layout">
 
-        <!-- Ship info bar -->
+        <!-- Info bar -->
         <div class="tracking-info-bar">
           <div class="tracking-ship-block">
-            <span class="tracking-ship-name">🛳 MV Hondius</span>
-            <span class="tracking-ship-meta">MMSI: 244327000 &nbsp;·&nbsp; IMO: 9818709 &nbsp;·&nbsp; 🇳🇱 Netherlands &nbsp;·&nbsp; Operator: Oceanwide Expeditions</span>
+            <span class="tracking-ship-name">✈️ Repatriation Flights — MV Hondius · Tenerife Sur (TFS)</span>
+            <span class="tracking-ship-meta">Live air traffic · Tenerife South Airport · Evacuation underway May 10–11, 2026</span>
           </div>
           <div class="tracking-live-pill">
             <span class="tracking-live-dot"></span>
-            AIS LIVE via VesselFinder
+            LIVE via Flightradar24
           </div>
         </div>
 
-        <!-- Status strip -->
+        <!-- Confirmed flights strip -->
         <div class="tracking-status-strip">
           <div class="tracking-status-item">
-            <span class="tracking-status-label">STATUS</span>
-            <span class="tracking-status-value" style="color:#10b981">⚓ DOCKED — PORT OF GRANADILLA · Evacuation Sunday → Monday · WHO Director-General Tedros + Spain ministers on-site · No symptoms among any aboard</span>
+            <span class="tracking-status-label">🇪🇸 DEPARTED</span>
+            <span class="tracking-status-value" style="color:#10b981">A310 "Reino de España" T.22-2 · TFS → Torrejón/Madrid · ~13:00 local · 14 Spanish nationals → Gómez Ulla Defense Hospital</span>
           </div>
           <div class="tracking-status-item">
-            <span class="tracking-status-label">🇪🇸 SPAIN</span>
-            <span class="tracking-status-value" style="color:#10b981">✈️ IN FLIGHT → Gómez Ulla Defense Hospital, Madrid · A310 "Reino de España" T.22-2 · 14 Spanish nationals · Quarantine on arrival</span>
+            <span class="tracking-status-label">🇫🇷 DEPARTED</span>
+            <span class="tracking-status-value" style="color:#10b981">Medical charter · TFS → Paris area · ~12:00 local · 5 pax + medical staff · 72h hospital + 45-day home isolation</span>
           </div>
           <div class="tracking-status-item">
-            <span class="tracking-status-label">🇫🇷 FRANCE</span>
-            <span class="tracking-status-value" style="color:#10b981">✈️ IN FLIGHT → Paris area · 5 pax · Medical flight with staff · 72h hospital + 45-day home isolation</span>
+            <span class="tracking-status-label">🇨🇦 CONFIRMED</span>
+            <span class="tracking-status-value" style="color:#10b981">Plane confirmed TFS · 4 passengers · type unknown · Per Spain Health Secretary Padilla</span>
           </div>
           <div class="tracking-status-item">
-            <span class="tracking-status-label">🇳🇱 NETHERLANDS</span>
-            <span class="tracking-status-value" style="color:#fbbf24">⏳ Charter flight pending · 29 aboard (Dutch + other nationalities) · Dutch Foreign Ministry confirmed</span>
+            <span class="tracking-status-label">🇳🇱 PENDING</span>
+            <span class="tracking-status-value" style="color:#fbbf24">Charter · 29 aboard (Dutch + other nationalities) · Dutch Foreign Ministry confirmed</span>
           </div>
           <div class="tracking-status-item">
-            <span class="tracking-status-label">🇺🇸 USA</span>
-            <span class="tracking-status-value" style="color:#fbbf24">⏳ Plane en route · 17 guests → Nebraska Biocontainment Unit (UNMC) · Escorted by CDC staff</span>
+            <span class="tracking-status-label">🇺🇸 PENDING</span>
+            <span class="tracking-status-value" style="color:#fbbf24">Biocontainment charter · 17 guests → Nebraska Biocontainment Unit (UNMC) · CDC escort</span>
           </div>
           <div class="tracking-status-item">
-            <span class="tracking-status-label">🇬🇧 UK</span>
-            <span class="tracking-status-value" style="color:#fbbf24">⏳ Flight pending · Hospitalization on arrival · 19 guests + 3 crew</span>
+            <span class="tracking-status-label">🇬🇧 PENDING</span>
+            <span class="tracking-status-value" style="color:#fbbf24">19 guests + 3 crew · hospitalization on arrival</span>
           </div>
           <div class="tracking-status-item">
-            <span class="tracking-status-label">🇨🇦 CANADA</span>
-            <span class="tracking-status-value" style="color:#10b981">✈️ Plane confirmed · 4 passengers disembarking now · ~10 min assessment on shore → passport check → direct to aircraft · Charter or military unknown · Per Spain Health Secretary Padilla (CBC)</span>
+            <span class="tracking-status-label">🇦🇺 MONDAY</span>
+            <span class="tracking-status-value" style="color:#fbbf24">Last flight out · also evacuating 🇳🇿 + nearby nationalities · Per Spain Health Minister García</span>
           </div>
           <div class="tracking-status-item">
-            <span class="tracking-status-label">🇦🇺 AUSTRALIA</span>
-            <span class="tracking-status-value" style="color:#fbbf24">⏳ Plane arrives Monday — last flight · Also evacuating 🇳🇿 New Zealand + nearby nationalities · Per Spain Health Minister García</span>
-          </div>
-          <div class="tracking-status-item">
-            <span class="tracking-status-label">🇳🇴 NORWAY</span>
-            <span class="tracking-status-value" style="color:#10b981">✈️ EU ambulance plane on-site · High-risk infection transport personnel · EU-owned, Norway-operated</span>
-          </div>
-          <div class="tracking-status-item">
-            <span class="tracking-status-label">NEXT — SHIP</span>
-            <span class="tracking-status-value">After disembarkation: MV Hondius sails to Rotterdam, Netherlands for full disinfection · ~5 days · Crew + body of deceased passenger remain aboard</span>
-          </div>
-          <div class="tracking-status-item">
-            <span class="tracking-status-label">AT PORT</span>
-            <span class="tracking-status-value">Hazmat suits · respirators · face masks · No luggage allowed — small bag, phone, charger, documents only · No contact with local population</span>
+            <span class="tracking-status-label">🇳🇴 ON-SITE</span>
+            <span class="tracking-status-value" style="color:#10b981">EU ambulance plane · high-risk infection transport personnel · EU-owned, Norway-operated</span>
           </div>
         </div>
 
-        <!-- Vessel map embed -->
+        <!-- Flightradar24 live embed -->
         <div class="tracking-map-wrap">
           <iframe
-            id="vessel-finder-frame"
-            data-src="https://www.vesselfinder.com/aismap?zoom=5&lat=26&lon=-16&mmsi=244327000&names=true&track=true&fleet=false&clicktoact=true"
+            id="flightradar-frame"
+            data-src="https://www.flightradar24.com/simple_360deg/?lat=28.04&lng=-16.63&z=7"
             width="100%"
             height="100%"
             frameborder="0"
             allowfullscreen
-            title="MV Hondius live AIS position — VesselFinder"
+            title="Live air traffic — Tenerife Sur"
           ></iframe>
         </div>
 
-        <!-- Footer / flight teaser -->
+        <!-- Footer -->
         <div class="tracking-footer">
           <div class="tracking-footer-left">
-            <span class="tracking-flight-teaser">🚨 TRISTAN DA CUNHA: British paratroopers parachuted onto remote island (pop. 221) — MV Hondius passenger suspected case, no airstrip · ✈️ ES + FR flights departed TFS · 🇳🇱 29-person charter pending · 🇦🇺 arrives Monday (last flight) · 🇳🇴 EU ambulance plane on-site · Ship → Rotterdam for disinfection after · WHO Tedros on-site · Source: AP</span>
+            <span class="tracking-flight-teaser">✈️ REPATRIATION UNDERWAY — ES + FR departed · NL 29-person charter · US biocontainment charter · AU Monday (last) · 🪂 Tristan da Cunha: British paratroopers airdropped for suspected case · Ship → Rotterdam for disinfection · Source: AP / CBC / The Guardian</span>
           </div>
           <div class="tracking-footer-right">
-            <a href="https://www.vesselfinder.com/vessels/details/9818709" target="_blank" rel="noopener" class="tracking-ext-link">Open in VesselFinder ↗</a>
-            <a href="https://www.cruisemapper.com/?imo=9818709" target="_blank" rel="noopener" class="tracking-ext-link">CruiseMapper ↗</a>
+            <a href="https://www.flightradar24.com/airport/tfs/departures" target="_blank" rel="noopener" class="tracking-ext-link">TFS Departures ↗</a>
+            <a href="https://www.cruisemapper.com/?imo=9818709" target="_blank" rel="noopener" class="tracking-ext-link">MV Hondius (CruiseMapper) ↗</a>
           </div>
         </div>
 

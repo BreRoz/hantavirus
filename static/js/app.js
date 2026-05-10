@@ -578,15 +578,15 @@ const OverviewTab = {
     // confirmed=true: flight officially confirmed | crew=true: crew-only nationality
     const flightDestinations = [
       // ── Confirmed repatriation flights ──────────────────────────────────────
-      { pos: [40.42, -3.70],  flag: "🇪🇸", label: "Spain · A310 'Reino de España' IN FLIGHT → Gómez Ulla, Madrid", count: 13, confirmed: true, inflight: true },
-      { pos: [48.85,  2.35],  flag: "🇫🇷", label: "France · 5 pax · special medical flight ✓ DEPARTED ~12:00 local", count: 5,  confirmed: true, inflight: true },
-      { pos: [51.44,  5.47],  flag: "🇳🇱", label: "Netherlands · 8 guests, 5 crew", count: 13, confirmed: true  },
-      { pos: [41.12, -95.91], flag: "🇺🇸", label: "United States · 17 guests → Offutt AFB", count: 17, confirmed: true  },
-      { pos: [51.50, -0.12],  flag: "🇬🇧", label: "United Kingdom · 19 guests, 3 crew", count: 22, confirmed: true  },
+      { pos: [40.42, -3.70],  flag: "🇪🇸", label: "Spain · A310 'Reino de España' IN FLIGHT → Gómez Ulla, Madrid", count: 14, confirmed: true, inflight: true },
+      { pos: [48.85,  2.35],  flag: "🇫🇷", label: "France · 5 pax · medical flight IN FLIGHT → Paris", count: 5,  confirmed: true, inflight: true },
+      { pos: [51.44,  5.47],  flag: "🇳🇱", label: "Netherlands · 29-person charter (Dutch + other nationalities) · pending", count: 29, confirmed: true  },
+      { pos: [41.12, -95.91], flag: "🇺🇸", label: "United States · 17 guests → Nebraska Biocontainment Unit · CDC escort", count: 17, confirmed: true  },
+      { pos: [51.50, -0.12],  flag: "🇬🇧", label: "United Kingdom · 19 guests, 3 crew · hospitalization on arrival", count: 22, confirmed: true  },
+      { pos: [-33.87,151.21], flag: "🇦🇺", label: "Australia · plane arrives Monday (last flight) · also evacuating NZ + nearby", count: 4,  confirmed: true  },
       // ── Passenger nationalities ──────────────────────────────────────────────
       { pos: [52.52, 13.40],  flag: "🇩🇪", label: "Germany · 5 guests, 1 crew",    count: 6,  confirmed: false },
       { pos: [43.65, -79.38], flag: "🇨🇦", label: "Canada · 4 guests",              count: 4,  confirmed: false },
-      { pos: [-33.87,151.21], flag: "🇦🇺", label: "Australia · 4 guests",           count: 4,  confirmed: false },
       { pos: [41.00, 28.98],  flag: "🇹🇷", label: "Turkey · 3 guests",              count: 3,  confirmed: false },
       { pos: [50.85,  4.35],  flag: "🇧🇪", label: "Belgium · 2 guests",             count: 2,  confirmed: false },
       { pos: [53.33, -6.25],  flag: "🇮🇪", label: "Ireland · 2 guests",             count: 2,  confirmed: false },
@@ -633,6 +633,40 @@ const OverviewTab = {
         { permanent: false, className: "dark-tooltip", direction: "top" }
       ).addTo(this._map);
     });
+  },
+
+    // Ship's next voyage: Tenerife → Rotterdam for disinfection (~5 days)
+    const rotterdamPos = [51.9225, 4.4792];
+    L.polyline([tenerifePos, [45.0, -5.0], rotterdamPos], {
+      color: "#2dd4bf", weight: 1.2, opacity: 0.25, dashArray: "4 10", smoothFactor: 1,
+    }).addTo(this._map);
+    L.circleMarker(rotterdamPos, {
+      radius: 5, color: "#2dd4bf", fillColor: "#2dd4bf", fillOpacity: 0.5, weight: 1.5,
+    }).bindTooltip("🇳🇱 Rotterdam — MV Hondius destination for disinfection (~5 days)", {
+      permanent: false, className: "dark-tooltip", direction: "top",
+    }).addTo(this._map);
+
+    // Tristan da Cunha — suspected case, British paratroopers airdropped
+    const tristanPos = [-37.067, -12.311];
+    const tristanIcon = L.divIcon({
+      html: `<div style="filter:drop-shadow(0 0 6px #ef4444) drop-shadow(0 0 12px #ef444488);animation:pulse-live 1.5s infinite">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="8" stroke="#ef4444" stroke-width="2" fill="rgba(239,68,68,0.2)"/>
+          <circle cx="11" cy="11" r="3" fill="#ef4444"/>
+        </svg></div>`,
+      className: "", iconSize: [22, 22], iconAnchor: [11, 11],
+    });
+    L.marker(tristanPos, { icon: tristanIcon, zIndexOffset: 1100 })
+      .bindPopup(`
+        <div style="font-family:Inter,sans-serif;min-width:210px">
+          <div style="font-weight:700;font-size:12px;color:#ef4444;margin-bottom:4px">🪂 TRISTAN DA CUNHA — SUSPECTED CASE</div>
+          <div style="font-size:11px;color:#ccc">British Overseas Territory · Population: 221 · No airstrip</div>
+          <div style="font-size:11px;color:#f97316;margin-top:4px;font-weight:600">MV Hondius passenger — disembarked St. Helena Apr 21–24</div>
+          <div style="font-size:11px;color:#10b981;margin-top:4px">🪖 UK Response: 6 paratroopers + 2 medics parachuted from RAF transport</div>
+          <div style="font-size:11px;color:#aaa;margin-top:2px">Oxygen + medical equipment also airdropped · May 10, 2026</div>
+          <div style="font-size:10px;color:#666;margin-top:4px;font-style:italic">Nearest inhabited island: St. Helena — 1,500 miles away · Source: AP / UK MoD</div>
+        </div>`, { className: "dark-popup" })
+      .addTo(this._map);
   },
 
   _fit() {

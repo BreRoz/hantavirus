@@ -1171,6 +1171,40 @@
       "source_notes": "El País, May 9 2026",
       "clinical_notes": "MV Hondius passenger admitted to Hospital Clínic de Barcelona, asymptomatic. Traveling to Barcelona after disembarkation. Identified via El País contact tracing graphic. No symptoms reported.",
       "reporter": "El País"
+    },
+    {
+      "id": "PTRDC01",
+      "name": "Tristan da Cunha Resident — Suspected Hantavirus",
+      "age": null,
+      "sex": null,
+      "nationality": "British (Tristan da Cunha)",
+      "status": "symptomatic",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-10",
+      "incubation_start": "2026-04-21",
+      "location": {
+        "city": "Edinburgh of the Seven Seas",
+        "state": null,
+        "country": "Tristan da Cunha (UK Overseas Territory)",
+        "venue": "Tristan da Cunha — remote island, no airstrip",
+        "lat": -37.067,
+        "lng": -12.311
+      },
+      "ship_info": {
+        "vessel": "MV Hondius",
+        "voyage": "HDS2526",
+        "disembark_port": "St. Helena",
+        "disembark_date": "2026-04-21"
+      },
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": null,
+      "source_notes": "AP News / Source 2 News Nevada, May 10 2026",
+      "clinical_notes": "MV Hondius passenger who disembarked at St. Helena (Apr 21–24) and returned to their home on Tristan da Cunha, Britain's most remote inhabited overseas territory — population 221. Island has no airstrip; normally accessible only by 6-day boat voyage from Cape Town. Suspected hantavirus. UK response: 6 British Army paratroopers + 2 medical clinicians parachuted from a Royal Air Force transport plane on Saturday May 10. Oxygen and medical equipment also airdropped. UK Defense Ministry confirmed the operation. Patient status unknown pending assessment by the parachuted medical team.",
+      "reporter": "AP News"
     }
   ],
   "edges": [

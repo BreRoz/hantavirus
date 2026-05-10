@@ -649,12 +649,20 @@ const OverviewTab = {
     // Tristan da Cunha — suspected case, British paratroopers airdropped
     const tristanPos = [-37.067, -12.311];
     const tristanIcon = L.divIcon({
-      html: `<div style="filter:drop-shadow(0 0 6px #ef4444) drop-shadow(0 0 12px #ef444488);animation:pulse-live 1.5s infinite">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="11" cy="11" r="8" stroke="#ef4444" stroke-width="2" fill="rgba(239,68,68,0.2)"/>
-          <circle cx="11" cy="11" r="3" fill="#ef4444"/>
-        </svg></div>`,
-      className: "", iconSize: [22, 22], iconAnchor: [11, 11],
+      html: `<div style="filter:drop-shadow(0 0 6px #ef4444) drop-shadow(0 0 14px #ef444499);animation:pulse-live 1.5s infinite">
+        <svg width="36" height="40" viewBox="0 0 36 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Parachute canopy -->
+          <path d="M4 16 Q4 4 18 4 Q32 4 32 16" stroke="#ef4444" stroke-width="1.8" fill="rgba(239,68,68,0.15)" stroke-linecap="round"/>
+          <!-- Suspension lines -->
+          <line x1="4"  y1="16" x2="18" y2="30" stroke="#ef4444" stroke-width="1.2" opacity="0.8"/>
+          <line x1="11" y1="10" x2="18" y2="30" stroke="#ef4444" stroke-width="1.2" opacity="0.8"/>
+          <line x1="25" y1="10" x2="18" y2="30" stroke="#ef4444" stroke-width="1.2" opacity="0.8"/>
+          <line x1="32" y1="16" x2="18" y2="30" stroke="#ef4444" stroke-width="1.2" opacity="0.8"/>
+          <!-- Person / harness -->
+          <rect x="15" y="29" width="6" height="7" rx="1.5" stroke="#ef4444" stroke-width="1.5" fill="rgba(239,68,68,0.3)"/>
+        </svg>
+      </div>`,
+      className: "", iconSize: [36, 40], iconAnchor: [18, 40],
     });
     L.marker(tristanPos, { icon: tristanIcon, zIndexOffset: 1100 })
       .bindPopup(`

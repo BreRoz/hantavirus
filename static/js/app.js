@@ -581,9 +581,9 @@ const OverviewTab = {
       { pos: [40.42, -3.70],  flag: "🇪🇸", label: "Spain · A310 'Reino de España' IN FLIGHT → Gómez Ulla, Madrid", count: 14, confirmed: true, inflight: true },
       { pos: [48.97,  2.44],  flag: "🇫🇷", label: "France · LANDED Paris Le Bourget (LBG) 4:27PM · Falcon 900EX F-HREG ARL120E · 5 pax · WARNING: 1 pax symptomatic in-flight", count: 5,  confirmed: true, inflight: true },
       { pos: [48.33, -70.99], flag: "🇨🇦", label: "Canada · 4 pax IN FLIGHT → Saguenay-Bagotville (3 Wing CFB) · govt/military charter likely", count: 4, confirmed: true, inflight: true },
-      { pos: [51.44,  5.47],  flag: "🇳🇱", label: "Netherlands · 29 aboard IN FLIGHT → Netherlands · dark-livery charter (A220 type) · AFP/Getty photo confirmed", count: 29, confirmed: true, inflight: true },
+      { pos: [51.44,  5.47],  flag: "🇳🇱", label: "Netherlands · 26 aboard IN FLIGHT → Netherlands · dark-livery charter (A220 type) · AFP/Getty photo confirmed", count: 26, confirmed: true, inflight: true },
       { pos: [41.12, -95.91], flag: "🇺🇸", label: "United States · 17 guests → Nebraska Biocontainment Unit · CDC escort", count: 17, confirmed: true  },
-      { pos: [51.50, -0.12],  flag: "🇬🇧", label: "United Kingdom · 20 passengers IN FLIGHT → UK · hospitalization on arrival", count: 20, confirmed: true, inflight: true },
+      { pos: [51.50, -0.12],  flag: "🇬🇧", label: "United Kingdom · 22 passengers IN FLIGHT → UK · hospitalization on arrival", count: 22, confirmed: true, inflight: true },
       { pos: [-33.87,151.21], flag: "🇦🇺", label: "Australia · plane arrives Monday (last flight) · also evacuating NZ + nearby", count: 4,  confirmed: true  },
       // ── Passenger nationalities ──────────────────────────────────────────────
       { pos: [52.52, 13.40],  flag: "🇩🇪", label: "Germany · 5 guests, 1 crew",    count: 6,  confirmed: false },

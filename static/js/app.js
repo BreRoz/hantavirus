@@ -579,11 +579,11 @@ const OverviewTab = {
     const flightDestinations = [
       // ── Confirmed repatriation flights ──────────────────────────────────────
       { pos: [40.42, -3.70],  flag: "🇪🇸", label: "Spain · A310 'Reino de España' IN FLIGHT → Gómez Ulla, Madrid", count: 14, confirmed: true, inflight: true },
-      { pos: [48.85,  2.35],  flag: "🇫🇷", label: "France · 5 pax · medical charter pending · TFS → Paris area", count: 5,  confirmed: true },
+      { pos: [48.85,  2.35],  flag: "🇫🇷", label: "France · 5 pax IN FLIGHT → Paris · WARNING: 1 passenger symptomatic in-flight (French PM on X)", count: 5,  confirmed: true, inflight: true },
       { pos: [48.33, -70.99], flag: "🇨🇦", label: "Canada · 4 pax IN FLIGHT → Saguenay-Bagotville (3 Wing CFB) · govt/military charter likely", count: 4, confirmed: true, inflight: true },
       { pos: [51.44,  5.47],  flag: "🇳🇱", label: "Netherlands · 29-person charter (Dutch + other nationalities) · pending", count: 29, confirmed: true  },
       { pos: [41.12, -95.91], flag: "🇺🇸", label: "United States · 17 guests → Nebraska Biocontainment Unit · CDC escort", count: 17, confirmed: true  },
-      { pos: [51.50, -0.12],  flag: "🇬🇧", label: "United Kingdom · 19 guests, 3 crew · hospitalization on arrival", count: 22, confirmed: true  },
+      { pos: [51.50, -0.12],  flag: "🇬🇧", label: "United Kingdom · 20 passengers IN FLIGHT → UK · hospitalization on arrival", count: 20, confirmed: true, inflight: true },
       { pos: [-33.87,151.21], flag: "🇦🇺", label: "Australia · plane arrives Monday (last flight) · also evacuating NZ + nearby", count: 4,  confirmed: true  },
       // ── Passenger nationalities ──────────────────────────────────────────────
       { pos: [52.52, 13.40],  flag: "🇩🇪", label: "Germany · 5 guests, 1 crew",    count: 6,  confirmed: false },

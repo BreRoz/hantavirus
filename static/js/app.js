@@ -578,26 +578,10 @@ const OverviewTab = {
       { pos: [51.45,  5.37],  flag: "🇳🇱", label: "Netherlands · 26 passengers · Quarantine: Eindhoven · incl. 2 Indian crew members · All asymptomatic", count: 26, confirmed: true, landed: true, quarStatus: "clear" },
       { pos: [41.12, -95.91], flag: "🇺🇸", label: "United States · 18 passengers · En route: TFS → D.C. → Nebraska (UNMC) · CDC escort", count: 18, confirmed: true, inflight: true },
       { pos: [53.35, -2.27],  flag: "🇬🇧", label: "United Kingdom · 22 passengers · Quarantine: Manchester · Hospitalized on arrival", count: 22, confirmed: true, landed: true, quarStatus: "monitoring" },
-      { pos: [-33.87,151.21], flag: "🇦🇺", label: "Australia · plane arrives Monday (last flight) · also evacuating NZ + nearby", count: 4,  confirmed: true  },
-      // ── Passenger nationalities ──────────────────────────────────────────────
-      { pos: [52.52, 13.40],  flag: "🇩🇪", label: "Germany · 5 guests, 1 crew",    count: 6,  confirmed: false },
-      { pos: [41.00, 28.98],  flag: "🇹🇷", label: "Turkey · 3 guests · flight planned today (USA Today)",  count: 3,  confirmed: true },
-      { pos: [50.85,  4.35],  flag: "🇧🇪", label: "Belgium · 2 guests",             count: 2,  confirmed: false },
-      { pos: [53.33, -6.25],  flag: "🇮🇪", label: "Ireland · 2 guests · flight planned today (USA Today)", count: 2,  confirmed: true },
-      { pos: [-36.86,174.77], flag: "🇳🇿", label: "New Zealand · 1 guest",          count: 1,  confirmed: false },
-      { pos: [41.90, 12.49],  flag: "🇮🇹", label: "Italy · 1 guest",                count: 1,  confirmed: false },
-      { pos: [37.97, 23.73],  flag: "🇬🇷", label: "Greece · 1 guest",               count: 1,  confirmed: false },
-      { pos: [35.68,139.69],  flag: "🇯🇵", label: "Japan · 1 guest",                count: 1,  confirmed: false },
-      { pos: [-34.60,-58.40], flag: "🇦🇷", label: "Argentina · 1 guest",            count: 1,  confirmed: false },
-      // ── Crew nationalities ───────────────────────────────────────────────────
-      { pos: [14.60,121.00],  flag: "🇵🇭", label: "Philippines · 38 crew",          count: 38, confirmed: false, crew: true },
-      { pos: [50.45, 30.52],  flag: "🇺🇦", label: "Ukraine · 5 crew",               count: 5,  confirmed: false, crew: true },
-      { pos: [28.61, 77.21],  flag: "🇮🇳", label: "India · 2 crew",                 count: 2,  confirmed: false, crew: true },
-      { pos: [55.75, 37.62],  flag: "🇷🇺", label: "Russia · 1 crew",                count: 1,  confirmed: false, crew: true },
-      { pos: [52.23, 21.01],  flag: "🇵🇱", label: "Poland · 1 crew",                count: 1,  confirmed: false, crew: true },
-      { pos: [38.72, -9.14],  flag: "🇵🇹", label: "Portugal · 1 crew (→ Netherlands with ship)",count: 1,  confirmed: false, crew: true },
-      { pos: [42.44, 19.26],  flag: "🇲🇪", label: "Montenegro · 1 crew",            count: 1,  confirmed: false, crew: true },
-      { pos: [14.64,-90.51],  flag: "🇬🇹", label: "Guatemala · 1 crew",             count: 1,  confirmed: false, crew: true },
+      // ── Other confirmed repatriation flights (no quarantine location confirmed yet) ──
+      { pos: [41.00, 28.98],  flag: "🇹🇷", label: "Turkey · 3 passengers · DEPARTED TFS", count: 3, confirmed: true },
+      { pos: [53.33, -6.25],  flag: "🇮🇪", label: "Ireland · 2 passengers · IRL290 · Irish Air Corps · DEPARTED TFS", count: 2, confirmed: true },
+      { pos: [-33.87,151.21], flag: "🇦🇺", label: "Australia · plane arriving Monday (last flight) · also evacuating NZ + nearby", count: 4, confirmed: true },
     ];
 
     const makeQuarantineIcon = (status) => {

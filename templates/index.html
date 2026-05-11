@@ -533,8 +533,8 @@
           <div class="travel-flights-divider">Standby / Pending</div>
 
           <div class="travel-nav-item" data-repat="au" onclick="RepatNav.select('au')">
-            <div style="font-weight:700">🇦🇺 Australia — MONDAY</div>
-            <div style="font-size:10px;color:#fbbf24;margin-top:2px">Last flight · also 🇳🇿 + nearby nationalities</div>
+            <div style="font-weight:700">🇦🇺 Australia — PENDING</div>
+            <div style="font-size:10px;color:#fbbf24;margin-top:2px">5 AU + 1 NZ · Flight "coming days" · Perth quarantine</div>
           </div>
         </div>
 
@@ -692,14 +692,21 @@
           </div>
 
           <div id="repat-content-au" class="travel-content-pane" style="display:none">
-            <div class="panel-header"><span class="panel-title">🇦🇺 Australia — TFS → Australia (Monday)</span></div>
+            <div class="panel-header"><span class="panel-title">🇦🇺 Australia — TFS → Perth (RAAF Pearce)</span></div>
             <div style="padding:var(--space-4);overflow-y:auto;flex:1">
-              <div class="travel-status-row amber">⏳ Plane arriving Monday — last flight out of TFS</div>
-              <div class="travel-status-row amber">Also evacuating 🇳🇿 New Zealand + nearby nationalities · Per Spain Health Minister García</div>
-              <div class="travel-acc-note" style="margin-top:16px">🗺 Flight map available once flight number is confirmed — check back for updates</div>
+              <div class="travel-status-row amber">⏳ PENDING — Australian government charter · Flight expected "coming days" from TFS</div>
+              <div class="travel-status-row amber">6 passengers total: 5 Australians + 1 New Zealand resident · Confirmed by Environment Minister Murray Watt</div>
+              <div class="travel-status-row green">Landing: RAAF Base Pearce, Western Australia · Immediate transfer to Bullsbrook Centre for National Resilience (northeast of Perth)</div>
+              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-faint);margin:14px 0 6px">Quarantine Details</div>
+              <div class="travel-status-row muted">Minimum 21 days · Potentially up to 42 days (full hantavirus incubation window) · Monitored by WA Health + federal government</div>
+              <div class="travel-status-row muted">Testing samples sent to Doherty Institute in Melbourne for analysis</div>
+              <div class="travel-status-row muted">Federal government enacted "national quarantine arrangements" — overriding state control · Health Minister Mark Butler</div>
+              <div class="travel-status-row muted">All 6 currently asymptomatic · Bullsbrook Centre is a COVID-era quarantine facility next to RAAF Base Pearce</div>
+              <div class="travel-acc-note" style="margin-top:16px">"This is one of the stronger responses you'll see around the world." — Health Minister Mark Butler</div>
               <div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.07);font-size:10px;color:var(--color-text-faint)">
                 <div style="font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px">Sources</div>
-                <div>· <a href="https://www.2news.com/news/national/plane-carrying-spanish-passengers-from-hantavirus-stricken-mv-hondius-cruise-ship-leaves-for-madrid/article_648fe8ee-e26e-545f-ac46-632d081b948d.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">AP — MV Hondius evacuation coverage (2News / Nevada)</a></div>
+                <div>· <a href="https://www.reuters.com/world/asia-pacific/australia-repatriate-passengers-hantavirus-hit-cruise-ship-2026-05-11/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Reuters — "Australia to fly citizens home, plans quarantine" (May 11, 2026)</a></div>
+                <div style="margin-top:3px">· <a href="https://www.abc.net.au/news/2026-05-11/australian-repatriation-flight-hantavirus-cruise-ship/106665202" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">ABC Australia — "Passengers ordered to quarantine in Perth" (May 11, 2026)</a></div>
               </div>
             </div>
           </div>
@@ -996,6 +1003,41 @@
           </button>
           <div class="quar-flight-details">
             IRL290 · Irish Air Corps · TFS → Ireland · 2 passengers
+          </div>
+        </div>
+
+        <!-- Australia -->
+        <div class="quar-card" data-arrival="2026-05-13" data-duration="42">
+          <div class="quar-header">
+            <div class="quar-flag">🇦🇺</div>
+            <div class="quar-icon">
+              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="quar-title">
+              <h3>Australia + New Zealand</h3>
+              <p>Bullsbrook Centre for National Resilience · Perth, WA</p>
+            </div>
+            <span class="quar-status quar-status--monitoring">⏳ Pending</span>
+          </div>
+          <div class="quar-people">6 passengers · 5 Australians + 1 New Zealander · RAAF Base Pearce landing · Federal quarantine order</div>
+          <div class="quar-progress-wrap">
+            <div class="quar-progress-label">
+              <span class="quar-day-label">Awaiting flight</span>
+              <span>42-day isolation window</span>
+            </div>
+            <div class="quar-progress-bar">
+              <div class="quar-progress-fill" style="width:0%"></div>
+            </div>
+          </div>
+          <button class="quar-flight-toggle">
+            <span class="toggle-arrow">▼</span> Flight details
+          </button>
+          <div class="quar-flight-details">
+            Australian government charter · TFS → RAAF Base Pearce, WA · 6 passengers · Flight expected "coming days" · Testing at Doherty Institute, Melbourne · "One of the stronger responses you'll see around the world" — Health Minister Butler
           </div>
         </div>
 

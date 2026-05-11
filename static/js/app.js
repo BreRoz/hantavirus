@@ -581,7 +581,7 @@ const OverviewTab = {
       // ── Other confirmed repatriation flights (no quarantine location confirmed yet) ──
       { pos: [41.00, 28.98],  flag: "🇹🇷", label: "Turkey · 3 passengers · DEPARTED TFS", count: 3, confirmed: true },
       { pos: [53.33, -6.25],  flag: "🇮🇪", label: "Ireland · 2 passengers · IRL290 · Irish Air Corps · DEPARTED TFS", count: 2, confirmed: true },
-      { pos: [-33.87,151.21], flag: "🇦🇺", label: "Australia · plane arriving Monday (last flight) · also evacuating NZ + nearby", count: 4, confirmed: true },
+      { pos: [-31.67, 115.97], flag: "🇦🇺", label: "Australia + NZ · 6 passengers · Flight pending → RAAF Pearce, WA · Quarantine: Bullsbrook Centre, Perth · 21-42 days", count: 6, confirmed: true },
     ];
 
     const makeQuarantineIcon = (status) => {

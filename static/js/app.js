@@ -642,16 +642,8 @@ const OverviewTab = {
       ).addTo(this._map);
     });
 
-    // Ship's next voyage: Tenerife → Rotterdam for disinfection (~5 days)
-    const rotterdamPos = [51.9225, 4.4792];
-    L.polyline([tenerifePos, [45.0, -5.0], rotterdamPos], {
-      color: "#2dd4bf", weight: 1.2, opacity: 0.25, dashArray: "4 10", smoothFactor: 1,
-    }).addTo(this._map);
-    L.circleMarker(rotterdamPos, {
-      radius: 5, color: "#2dd4bf", fillColor: "#2dd4bf", fillOpacity: 0.5, weight: 1.5,
-    }).bindTooltip("🇳🇱 Rotterdam — MV Hondius destination for disinfection (~5 days)", {
-      permanent: false, className: "dark-tooltip", direction: "top",
-    }).addTo(this._map);
+    // Ship's Rotterdam disinfection route removed from map — overlapped with NL quarantine icon.
+    // Detail noted in Docking Notes pane instead.
 
     // Tristan da Cunha — suspected case, British paratroopers airdropped
     const tristanPos = [-37.067, -12.311];

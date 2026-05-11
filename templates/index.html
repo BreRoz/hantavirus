@@ -1289,58 +1289,31 @@
 <!-- ===== DISCLAIMER MODAL ===== -->
 <div class="disclaimer-modal" id="disclaimer-modal">
   <div class="disclaimer-modal-overlay" onclick="DisclaimerSystem.closeModal()"></div>
-  <div class="disclaimer-modal-content">
+  <div class="disclaimer-modal-content" style="max-width:480px">
     <div class="disclaimer-modal-header">
-      <span style="font-size:18px;flex-shrink:0">⚠</span>
-      <div class="disclaimer-modal-title">OUTBREAK TRACKER — DATA DISCLAIMER</div>
+      <span style="font-size:18px;flex-shrink:0">📡</span>
+      <div class="disclaimer-modal-title">EPITRACE — TRACKER SHUTTING DOWN</div>
     </div>
     <div class="disclaimer-modal-body">
-      <p>This tracker is a visualization tool for monitoring disease transmission chains and is <strong>NOT an official public health resource</strong>.</p>
-
-      <div class="disclaimer-section-title">DATA SOURCES &amp; LIMITATIONS</div>
-      <ul>
-        <li>Case data is manually entered from public sources (news reports, WHO briefings, official announcements)</li>
-        <li>Data may be incomplete, outdated, or contain errors from source reporting</li>
-        <li>Case status (suspected/confirmed) reflects information available at time of entry and may change</li>
-        <li>Laboratory-confirmed vs suspected cases are based on publicly reported information only</li>
-        <li>This tracker is NOT connected to official health authority databases or real-time reporting systems</li>
-      </ul>
-
-      <div class="disclaimer-section-title">TRANSMISSION CHAIN ACCURACY</div>
-      <ul>
-        <li>Transmission connections are based on available contact tracing data from public sources</li>
-        <li>Person-to-person transmission is inferred from reported exposure, not epidemiological investigation</li>
-        <li>Exposure timelines, flight manifests, and cabin assignments may be incomplete or approximate</li>
-        <li>Secondary transmission risk calculations are estimates only, not epidemiological predictions</li>
-      </ul>
-
-      <div class="disclaimer-section-title">OFFICIAL INFORMATION SOURCES</div>
-      <ul>
-        <li>WHO Emergency Response: <a href="https://www.who.int/emergencies" target="_blank" rel="noopener">who.int/emergencies</a></li>
-        <li>CDC Outbreak Tracking: <a href="https://www.cdc.gov/" target="_blank" rel="noopener">cdc.gov</a></li>
-        <li>ECDC (Europe): <a href="https://www.ecdc.europa.eu/" target="_blank" rel="noopener">ecdc.europa.eu</a></li>
-        <li>Local public health authorities in your region</li>
-      </ul>
-
-      <div class="disclaimer-section-title">INTENDED USE</div>
-      <p>Designed for personal research, situational awareness, and understanding transmission patterns.</p>
-      <div class="disclaimer-warning-box">
-        ⛔ DO NOT USE FOR: official contact tracing &nbsp;·&nbsp; public health decision-making &nbsp;·&nbsp; travel or quarantine decisions &nbsp;·&nbsp; medical advice
+      <p style="line-height:1.7">This tracker was built and maintained by one person to help make sense of a fast-moving, confusing outbreak. It's been a privilege to put it together.</p>
+      <p style="line-height:1.7;margin-top:12px">Unfortunately, the hosting costs are no longer sustainable, and the site will be going offline soon. The data here reflects what was known as of <strong>May 11, 2026</strong> and will not be updated further.</p>
+      <div class="disclaimer-warning-box" style="margin-top:16px;text-align:left;line-height:1.6">
+        For continued updates, follow official sources:<br>
+        · <a href="https://www.who.int/emergencies" target="_blank" rel="noopener" style="color:rgba(255,215,0,0.8)">WHO Emergency Response</a><br>
+        · <a href="https://www.cdc.gov/" target="_blank" rel="noopener" style="color:rgba(255,215,0,0.8)">CDC.gov</a><br>
+        · <a href="https://www.ecdc.europa.eu/" target="_blank" rel="noopener" style="color:rgba(255,215,0,0.8)">ECDC (Europe)</a>
       </div>
-
-      <div class="disclaimer-section-title">ACCURACY RESPONSIBILITY</div>
-      <p>Data entry and visualization are subject to human error. Always verify critical information with official health sources before making any decisions based on this tracker.</p>
-
-      <div class="disclaimer-meta">
-        <span>LAST UPDATED: <span id="disclaimer-date" style="color:rgba(255,215,0,0.6)">—</span></span>
-        <span>SYSTEM: EPITRACE v2.0 · RETRO BUILD</span>
+      <p style="margin-top:16px;color:rgba(255,255,255,0.45);font-size:11px;line-height:1.6">Thank you to everyone who shared it, corrected it, and followed along. Stay safe.</p>
+      <div class="disclaimer-meta" style="margin-top:16px">
+        <span>LAST UPDATED: <span id="disclaimer-date" style="color:rgba(255,215,0,0.6)">May 11, 2026</span></span>
+        <span>EPITRACE v2.0</span>
       </div>
     </div>
     <div class="disclaimer-modal-footer">
       <label>
-        <input type="checkbox" id="disclaimer-no-show"> DO NOT SHOW ON STARTUP
+        <input type="checkbox" id="disclaimer-no-show"> DON'T SHOW AGAIN
       </label>
-      <button class="disclaimer-close-btn" onclick="DisclaimerSystem.closeModal()">[ ACKNOWLEDGE &amp; CLOSE ]</button>
+      <button class="disclaimer-close-btn" onclick="DisclaimerSystem.closeModal()">[ CLOSE ]</button>
     </div>
   </div>
 </div>
@@ -1446,8 +1419,8 @@ const DisclaimerSystem = {
       banner.style.display = 'none';
     }
 
-    // Auto-open modal on first ever visit
-    const seen = localStorage.getItem('epitrace_disclaimer_v2');
+    // Show shutdown notice unless user checked "don't show again"
+    const seen = localStorage.getItem('epitrace_shutdown_v1');
     if (!seen) this.openModal();
   },
 
@@ -1458,7 +1431,7 @@ const DisclaimerSystem = {
   closeModal() {
     document.getElementById('disclaimer-modal')?.classList.remove('open');
     const cb = document.getElementById('disclaimer-no-show');
-    if (cb?.checked) localStorage.setItem('epitrace_disclaimer_v2', '1');
+    if (cb?.checked) localStorage.setItem('epitrace_shutdown_v1', '1');
   },
 
   dismissBanner() {

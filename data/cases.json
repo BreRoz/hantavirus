@@ -1251,7 +1251,7 @@
     },
     {
       "id": "PUSNEB01",
-      "name": "American Passenger — PCR Confirmed, Emory SCDU (Atlanta)",
+      "name": "American Passenger — PCR Confirmed, UNMC Biocontainment (Omaha)",
       "age": null,
       "sex": null,
       "nationality": "American",
@@ -1262,12 +1262,12 @@
       "date": "2026-05-11",
       "incubation_start": null,
       "location": {
-        "city": "Atlanta",
-        "state": "Georgia",
+        "city": "Omaha",
+        "state": "Nebraska",
         "country": "USA",
-        "venue": "Emory University Hospital — Serious Communicable Diseases Unit (SCDU)",
-        "lat": 33.79,
-        "lng": -84.32
+        "venue": "Nebraska Biocontainment Unit — UNMC",
+        "lat": 41.26,
+        "lng": -95.94
       },
       "ship_info": {
         "vessel": "MV Hondius",
@@ -1283,8 +1283,8 @@
       "flights": [],
       "source_url": "https://abcnews.go.com/Health/live-updates/hantavirus-outbreak-cruise-ship/?id=121234567",
       "source_notes": "HHS statement / Nebraska Medicine / ABC News, May 11 2026",
-      "clinical_notes": "American MV Hondius passenger — PCR confirmed positive for hantavirus, May 11 2026. Initially transported to UNMC Omaha; subsequently transferred via special flight Omaha → Hartsfield-Jackson Atlanta (arrived ~9am May 11). Transported by Grady ambulance to Emory University Hospital Serious Communicable Diseases Unit (SCDU) on Clifton Road — the same unit that treated Ebola patients. Georgia DPH confirmed transfer; HHS confirmed positive result. One of two patients transferred from Omaha to Emory on May 11 (the other, PUSRESPTC01, tested negative). First American PCR-confirmed hantavirus case from MV Hondius outbreak.",
-      "reporter": "Fox5 Atlanta / CBS Atlanta / Georgia DPH / HHS"
+      "clinical_notes": "American MV Hondius passenger — PCR confirmed positive for hantavirus, May 11 2026. Housed in the Nebraska Biocontainment Unit (NBU) at UNMC, Omaha — 1 of 16 Americans at UNMC (15 in quarantine unit, 1 in biocontainment). HHS confirmed positive result. This is the first American PCR-confirmed case of hantavirus linked to the MV Hondius outbreak. Note: Fox5 Atlanta initially suggested PCR-positive patient was transferred to Emory; ABC News/UNMC clarified the positive patient remains at UNMC biocontainment, while the 2 patients transferred to Emory are a symptomatic (PUSRESPTC01) and asymptomatic (PUSEMORY01) couple.",
+      "reporter": "HHS / Nebraska Medicine / ABC News"
     },
     {
       "id": "PUSRESPTC01",
@@ -1302,9 +1302,9 @@
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA",
-        "venue": "Emory University Hospital — Serious Communicable Diseases Unit (SCDU)",
-        "lat": 33.80,
-        "lng": -84.33
+        "venue": "Emory University Hospital — Serious Communicable Diseases Unit (SCDU), Biocontainment Unit",
+        "lat": 33.79,
+        "lng": -84.32
       },
       "ship_info": {
         "vessel": "MV Hondius",
@@ -1320,8 +1320,45 @@
       "flights": [],
       "source_url": "https://abcnews.go.com/Health/live-updates/hantavirus-outbreak-cruise-ship/?id=121234567",
       "source_notes": "ABC News live updates / HHS, May 11 2026",
-      "clinical_notes": "American MV Hondius passenger — symptomatic but PCR NEGATIVE for hantavirus per UNMC (confirmed May 11 2026, CBS Atlanta). Was symptomatic during repatriation and initially routed to Omaha. Transferred via special flight Omaha → Hartsfield-Jackson Atlanta (arrived ~9am May 11) alongside PCR-positive PUSNEB01. Transported by Grady ambulance to Emory University Hospital Serious Communicable Diseases Unit (SCDU). Despite negative PCR result, remains at Emory under observation given symptoms. Fox5 Atlanta initially reported both patients as 'tested positive' — CBS Atlanta/UNMC later clarified one tested negative.",
+      "clinical_notes": "American MV Hondius passenger — symptomatic, in Emory University Hospital SCDU biocontainment unit as of May 11 2026. Transferred via special flight from Omaha to Hartsfield-Jackson Atlanta (~9am May 11), transported by Grady ambulance to Emory. Emory confirmed: 'one is symptomatic and receiving care in Emory's biocontainment unit' (ABC News). This passenger and PUSEMORY01 are a couple. PCR result unclear from sources — Fox5 reported positive, CBS/UNMC reported negative; treating as symptomatic pending clarification.",
       "reporter": "HHS / ABC News"
+    },
+    {
+      "id": "PUSEMORY01",
+      "name": "American Passenger — Asymptomatic, Emory SCDU Monitoring (Atlanta)",
+      "age": null,
+      "sex": null,
+      "nationality": "American",
+      "status": "asymptomatic",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-11",
+      "incubation_start": null,
+      "location": {
+        "city": "Atlanta",
+        "state": "Georgia",
+        "country": "USA",
+        "venue": "Emory University Hospital — Serious Communicable Diseases Unit (SCDU), monitoring",
+        "lat": 33.80,
+        "lng": -84.33
+      },
+      "ship_info": {
+        "vessel": "MV Hondius",
+        "voyage": "HDS2526",
+        "disembark_port": "Tenerife",
+        "disembark_date": "2026-05-09"
+      },
+      "transport": {
+        "type": "flight",
+        "notes": "US DoS airlift TFS → Washington D.C. → Omaha; transferred Omaha → Atlanta May 11"
+      },
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands/?id=132746955",
+      "source_notes": "ABC News live updates / Emory University Hospital statement, May 11 2026",
+      "clinical_notes": "American MV Hondius passenger — asymptomatic, transferred from Omaha to Emory University Hospital SCDU, Atlanta on May 11 2026. Emory confirmed: 'undergoing evaluation and monitoring.' This passenger and PUSRESPTC01 are a couple — both transferred together from UNMC Omaha to Emory via special flight to Hartsfield-Jackson (~9am May 11), transported by Grady ambulance. No symptoms reported as of May 11. Under observation due to close-contact exposure and precautionary monitoring.",
+      "reporter": "ABC News / Emory University Hospital"
     }
   ],
   "edges": [

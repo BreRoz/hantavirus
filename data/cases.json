@@ -1285,6 +1285,43 @@
       "source_notes": "HHS statement / Nebraska Medicine / ABC News, May 11 2026",
       "clinical_notes": "American MV Hondius passenger — PCR confirmed positive for hantavirus, May 11 2026. Was asymptomatic at time of repatriation but tested positive on arrival testing. Transported in aircraft biocontainment unit from Tenerife to Washington D.C., then routed to Nebraska; now housed in the Nebraska Biocontainment Unit (NBU) at UNMC, Omaha — one of only a handful of dedicated biocontainment units in the US. HHS confirmed the positive result. A second American passenger is showing mild symptoms and is being evaluated at a Regional Emerging Special Pathogens Treatment Center (RESPTC) — not yet PCR confirmed. This is the first American PCR-confirmed case of hantavirus linked to the MV Hondius outbreak.",
       "reporter": "HHS / Nebraska Medicine / ABC News"
+    },
+    {
+      "id": "PUSRESPTC01",
+      "name": "American Passenger — Mild Symptoms, RESPTC (Pending PCR)",
+      "age": null,
+      "sex": null,
+      "nationality": "American",
+      "status": "symptomatic",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": "2026-05-11",
+      "date": "2026-05-11",
+      "incubation_start": null,
+      "location": {
+        "city": "Omaha",
+        "state": "Nebraska",
+        "country": "USA",
+        "venue": "Regional Emerging Special Pathogens Treatment Center (RESPTC) — location unconfirmed",
+        "lat": 41.27,
+        "lng": -95.96
+      },
+      "ship_info": {
+        "vessel": "MV Hondius",
+        "voyage": "HDS2526",
+        "disembark_port": "Tenerife",
+        "disembark_date": "2026-05-09"
+      },
+      "transport": {
+        "type": "flight",
+        "notes": "US DoS airlift — TFS → Washington D.C. → Nebraska"
+      },
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://abcnews.go.com/Health/live-updates/hantavirus-outbreak-cruise-ship/?id=121234567",
+      "source_notes": "ABC News live updates / HHS, May 11 2026",
+      "clinical_notes": "American MV Hondius passenger presenting with mild symptoms consistent with hantavirus as of May 11 2026. PCR test result PENDING — not yet confirmed positive. Being evaluated and isolated at a Regional Emerging Special Pathogens Treatment Center (RESPTC). Traveled on the same DoS airlift as confirmed case PUSNEB01 (TFS → Washington D.C. → Nebraska). Distinct from PUSNEB01 who is PCR-confirmed and housed in the Nebraska Biocontainment Unit at UNMC.",
+      "reporter": "HHS / ABC News"
     }
   ],
   "edges": [

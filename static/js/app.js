@@ -630,18 +630,20 @@ const OverviewTab = {
         return;
       }
 
-      // Arc: lift midpoint north for westward routes, south for eastward
-      const midLat = (flightsPos[0] + dest.pos[0]) / 2 + (dest.pos[1] > 0 ? -5 : 6);
-      const midLng = (flightsPos[1] + dest.pos[1]) / 2;
       const color   = isInflight ? "#ffffff" : dest.confirmed ? "#f59e0b" : isCrew ? "#94a3b8" : "#fbbf24";
-      const weight  = isInflight ? 2.5 : dest.confirmed ? 1.8 : isCrew ? 0.9 : 1.2;
-      const opacity = isInflight ? 0.90 : dest.confirmed ? 0.70 : isCrew ? 0.25 : 0.40;
-      const dash    = isInflight ? null : dest.confirmed ? "5 5" : isCrew ? "2 10" : "3 8";
       const radius  = isInflight ? 6 : dest.confirmed ? 5 : isCrew ? 3 : Math.max(3, Math.min(6, 2 + Math.round(dest.count / 5)));
 
-      L.polyline([flightsPos, [midLat, midLng], dest.pos], {
-        color, weight, opacity, dashArray: dash, smoothFactor: 1,
-      }).addTo(this._map);
+      // Only draw flight lines for confirmed repatriation flights — not nationality/crew dots
+      if (isInflight || dest.confirmed) {
+        const midLat = (flightsPos[0] + dest.pos[0]) / 2 + (dest.pos[1] > 0 ? -5 : 6);
+        const midLng = (flightsPos[1] + dest.pos[1]) / 2;
+        const weight  = isInflight ? 2.5 : 1.8;
+        const opacity = isInflight ? 0.90 : 0.55;
+        const dash    = isInflight ? null : "5 5";
+        L.polyline([flightsPos, [midLat, midLng], dest.pos], {
+          color, weight, opacity, dashArray: dash, smoothFactor: 1,
+        }).addTo(this._map);
+      }
 
       L.circleMarker(dest.pos, {
         radius,

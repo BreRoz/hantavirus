@@ -546,18 +546,12 @@ const OverviewTab = {
       dashArray: "6 8",
     }).addTo(this._map);
 
-    // Ship anchored at Tenerife
-    L.marker(tenerifePos, { icon: anchoredShipIcon, zIndexOffset: 1000 })
-      .bindPopup(`
-        <div style="font-family:Inter,sans-serif;min-width:200px">
-          <div style="font-weight:700;font-size:12px;color:#2dd4bf;margin-bottom:4px">⚓ MV Hondius — ANCHORED</div>
-          <div style="font-size:11px;color:#ccc">Port of Granadilla, Tenerife · May 10, 2026</div>
-          <div style="font-size:11px;color:#fbbf24;margin-top:4px;font-weight:600">⏳ Disembarkation pending — Spanish medics testing all passengers</div>
-          <div style="font-size:11px;color:#aaa;margin-top:4px">Planned ~09:00 Kyiv / 07:00 local · Transfer by boat → bus → airport</div>
-          <div style="font-size:11px;color:#f97316;margin-top:2px">⚠️ Flights delayed — not all repatriation routes secured</div>
-          <div style="font-size:11px;color:#aaa;margin-top:2px">147 aboard · 23 nationalities · Dutch carriers rerouting</div>
-        </div>`, { className: "dark-popup" })
-      .addTo(this._map);
+    // Tenerife: disembarkation point (simple circle marker, ship has sailed)
+    L.circleMarker(tenerifePos, {
+      radius: 5, color: "#2dd4bf", fillColor: "#2dd4bf", fillOpacity: 0.5, weight: 1.5,
+    }).bindTooltip("Tenerife — MV Hondius disembarkation point · May 10, 2026 · Ship now en route to Rotterdam", {
+      permanent: false, className: "dark-tooltip", direction: "top",
+    }).addTo(this._map);
 
     // Repatriation flights marker (offset slightly from ship)
     const flightsPos = [28.48, -16.25];
@@ -578,12 +572,12 @@ const OverviewTab = {
     // confirmed=true: flight officially confirmed | crew=true: crew-only nationality
     const flightDestinations = [
       // ── Confirmed repatriation flights ──────────────────────────────────────
-      { pos: [40.42, -3.70],  flag: "🇪🇸", label: "Spain · A310 'Reino de España' IN FLIGHT → Gómez Ulla, Madrid", count: 14, confirmed: true, inflight: true },
-      { pos: [48.97,  2.44],  flag: "🇫🇷", label: "France · LANDED Paris Le Bourget (LBG) 4:27PM · Falcon 900EX F-HREG ARL120E · 5 pax · WARNING: 1 pax symptomatic in-flight", count: 5,  confirmed: true, inflight: true },
-      { pos: [49.25, -123.12], flag: "🇨🇦", label: "Canada · 4 pax · TFS → Bagotville (transfer) → B.C. (final) · 21-42 day isolation · all asymptomatic · PHAC aboard", count: 4, confirmed: true, inflight: true },
-      { pos: [51.45,  5.37],  flag: "🇳🇱", label: "Netherlands · 26 passengers · LANDED Eindhoven Airport (EIN) · A220-type charter", count: 26, confirmed: true },
-      { pos: [41.12, -95.91], flag: "🇺🇸", label: "United States · 18 passengers IN FLIGHT → USA · 17 Americans + 1 British/US resident · CDC escort", count: 18, confirmed: true, inflight: true },
-      { pos: [53.35, -2.27],  flag: "🇬🇧", label: "United Kingdom · 22 passengers · LANDED Manchester Airport (MAN) · ZT791 / Titan Airways A320", count: 22, confirmed: true },
+      { pos: [40.42, -3.70],  flag: "🇪🇸", label: "Spain · 14 passengers · Quarantine: Gómez Ulla Hospital, Madrid · All asymptomatic", count: 14, confirmed: true, landed: true, quarStatus: "clear" },
+      { pos: [48.97,  2.44],  flag: "🇫🇷", label: "France · 5 passengers · Quarantine: Paris · ⚠ 1 of 5 symptomatic in-flight — testing underway", count: 5,  confirmed: true, landed: true, quarStatus: "symptomatic" },
+      { pos: [49.25, -123.12], flag: "🇨🇦", label: "Canada · 4 pax · TFS → Bagotville (transfer) → B.C. · 21-42 day isolation · all asymptomatic", count: 4, confirmed: true, inflight: true },
+      { pos: [51.45,  5.37],  flag: "🇳🇱", label: "Netherlands · 26 passengers · Quarantine: Eindhoven · incl. 2 Indian crew members · All asymptomatic", count: 26, confirmed: true, landed: true, quarStatus: "clear" },
+      { pos: [41.12, -95.91], flag: "🇺🇸", label: "United States · 18 passengers · En route: TFS → D.C. → Nebraska (UNMC) · CDC escort", count: 18, confirmed: true, inflight: true },
+      { pos: [53.35, -2.27],  flag: "🇬🇧", label: "United Kingdom · 22 passengers · Quarantine: Manchester · Hospitalized on arrival", count: 22, confirmed: true, landed: true, quarStatus: "monitoring" },
       { pos: [-33.87,151.21], flag: "🇦🇺", label: "Australia · plane arrives Monday (last flight) · also evacuating NZ + nearby", count: 4,  confirmed: true  },
       // ── Passenger nationalities ──────────────────────────────────────────────
       { pos: [52.52, 13.40],  flag: "🇩🇪", label: "Germany · 5 guests, 1 crew",    count: 6,  confirmed: false },
@@ -606,9 +600,36 @@ const OverviewTab = {
       { pos: [14.64,-90.51],  flag: "🇬🇹", label: "Guatemala · 1 crew",             count: 1,  confirmed: false, crew: true },
     ];
 
+    const makeQuarantineIcon = (status) => {
+      const color = status === "symptomatic" ? "#ef4444" : status === "monitoring" ? "#f59e0b" : "#10b981";
+      return L.divIcon({
+        className: "",
+        iconSize: [36, 46],
+        iconAnchor: [18, 23],
+        tooltipAnchor: [0, -26],
+        html: `<div style="color:${color};filter:drop-shadow(0 0 5px ${color}99)">
+          <svg viewBox="0 0 44 56" width="36" height="46" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+            <circle cx="22" cy="16" r="5" fill="currentColor"/>
+            <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+          </svg>
+        </div>`
+      });
+    };
+
     flightDestinations.forEach(dest => {
-      const isCrew    = !!dest.crew;
+      const isCrew     = !!dest.crew;
       const isInflight = !!dest.inflight;
+      const isLanded   = !!dest.landed;
+
+      // Landed flights: quarantine icon, no line
+      if (isLanded) {
+        L.marker(dest.pos, { icon: makeQuarantineIcon(dest.quarStatus || "clear"), zIndexOffset: 500 })
+          .bindTooltip(`${dest.flag} ${dest.label}`, { permanent: false, className: "dark-tooltip", direction: "top" })
+          .addTo(this._map);
+        return;
+      }
+
       // Arc: lift midpoint north for westward routes, south for eastward
       const midLat = (flightsPos[0] + dest.pos[0]) / 2 + (dest.pos[1] > 0 ? -5 : 6);
       const midLng = (flightsPos[1] + dest.pos[1]) / 2;

@@ -16,7 +16,7 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://hantavirus.up.railway.app/">
   <!-- Search -->
-  <meta name="description" content="Live hantavirus tracker for the 2026 MV Hondius cruise ship outbreak. 3 deaths, 35 cases, 14 countries. Ship arriving Tenerife Sunday. CDC HAN alert issued. US passengers → Nebraska quarantine. Updated continuously.">
+  <meta name="description" content="Live hantavirus tracker for the 2026 MV Hondius cruise ship outbreak. 3 deaths, 35 cases, 14 countries. Repatriation flights tracked, quarantine countdowns, transmission chains. Updated continuously.">
   <meta name="keywords" content="hantavirus, MV Hondius, hantavirus 2026, cruise ship outbreak, Andes virus, hantavirus tracker, hantavirus cases, hantavirus deaths, hantavirus map">
   <meta name="robots" content="index, follow">
   <meta name="author" content="EpiTrace — Independent Outbreak Tracker">
@@ -24,14 +24,14 @@
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://hantavirus.up.railway.app/">
   <meta property="og:title"       content="Hantavirus Outbreak Tracker — MV Hondius Cruise Ship 2026">
-  <meta property="og:description" content="Live case-by-case tracker: 3 deaths, 35 cases, 14 countries. Transmission chains, flight risk, live ship tracker. Updated continuously from WHO and health authorities.">
+  <meta property="og:description" content="Live case-by-case tracker: 3 deaths, 35 cases, 14 countries. Transmission chains, repatriation flights tracked, quarantine countdowns. Updated continuously.">
   <meta property="og:image"       content="https://hantavirus.up.railway.app/static/img/og-preview.png">
   <meta property="og:image:width"  content="1200">
   <meta property="og:image:height" content="630">
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Hantavirus Outbreak Tracker — MV Hondius 2026">
-  <meta name="twitter:description" content="Live case-by-case tracker: 3 deaths, 35 cases, 14 countries. Transmission chains, flight risk mapping, live AIS ship tracker.">
+  <meta name="twitter:description" content="Live case-by-case tracker: 3 deaths, 35 cases, 14 countries. Transmission chains, repatriation flights, quarantine countdowns by country.">
   <meta name="twitter:image"       content="https://hantavirus.up.railway.app/static/img/og-preview.png">
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -148,8 +148,7 @@
       Travel Exposure
     </button>
     <button class="tab-btn" data-tab="tracking" role="tab">
-      <span class="tab-icon">✈️</span> Live Tracking
-      <span class="tab-badge tab-badge--live">LIVE</span>
+      <span class="tab-icon">✈️</span> Tracking
     </button>
     <button class="tab-btn" data-tab="quarantine" role="tab">
       Quarantine Countdown
@@ -375,9 +374,6 @@
               <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-faint);margin:12px 0 6px">After Disembarkation</div>
               <div class="travel-status-row muted">MV Hondius sails to Rotterdam, Netherlands for full disinfection · ~5 days · Crew + body of deceased passenger remain aboard</div>
               <div class="travel-acc-note" style="margin-top:12px">🪂 Tristan da Cunha: British paratroopers (16 Air Assault Brigade) airdropped for suspected case — pop. 221, no airstrip · RAF A400M from Brize Norton · Source: Reuters / UK MoD</div>
-              <div style="margin-top:12px;font-size:11px;color:var(--color-text-faint)">
-                <a href="https://www.cruisemapper.com/?imo=9818709" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">MV Hondius on CruiseMapper ↗</a>
-              </div>
             </div>
           </div>
 
@@ -537,10 +533,6 @@
 
           <div class="travel-flights-divider">Standby / Pending</div>
 
-          <div class="travel-nav-item" data-repat="no" onclick="RepatNav.select('no')">
-            <div style="font-weight:700">🇳🇴 Norway — STANDBY</div>
-            <div style="font-size:10px;color:#10b981;margin-top:2px">Air ambulance on standby · TFS</div>
-          </div>
           <div class="travel-nav-item" data-repat="au" onclick="RepatNav.select('au')">
             <div style="font-weight:700">🇦🇺 Australia — MONDAY</div>
             <div style="font-size:10px;color:#fbbf24;margin-top:2px">Last flight · also 🇳🇿 + nearby nationalities</div>
@@ -614,20 +606,6 @@
             </div>
           </div>
 
-          <div id="repat-content-no" class="travel-content-pane" style="display:none">
-            <div class="panel-header"><span class="panel-title">🇳🇴 Norway — Air Ambulance · On Standby at TFS</span></div>
-            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
-              <div class="travel-status-row green">✈️ On-site at TFS · Norwegian air ambulance plane deployed on standby</div>
-              <div class="travel-status-row green">Purpose: immediate medical response if any passenger deteriorates suddenly during disembarkation</div>
-              <div class="travel-status-row green">EU-owned aircraft · Operated by Norway · Directorate for Civil Protection confirmed to NRK</div>
-              <div class="travel-acc-note" style="margin-top:16px">🗺 Standby aircraft — no flight number until activated</div>
-              <div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.07);font-size:10px;color:var(--color-text-faint)">
-                <div style="font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px">Sources</div>
-                <div>· <a href="https://www.2news.com/news/national/plane-carrying-spanish-passengers-from-hantavirus-stricken-mv-hondius-cruise-ship-leaves-for-madrid/article_648fe8ee-e26e-545f-ac46-632d081b948d.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">AP — MV Hondius evacuation coverage (2News / Nevada)</a></div>
-                <div style="margin-top:3px">· @OutbreakUpdates via Twitter — Norwegian air ambulance standby deployment</div>
-              </div>
-            </div>
-          </div>
 
           <div id="repat-content-nl" class="travel-content-pane" style="display:none">
             <div class="panel-header"><span class="panel-title">🇳🇱 Netherlands — Arrived Eindhoven</span></div>

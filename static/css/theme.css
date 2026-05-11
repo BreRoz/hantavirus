@@ -487,14 +487,17 @@ body {
 .btn--ghost:hover { background: var(--color-bg-elevated); color: var(--color-text); border-color: rgba(255,255,255,0.18); }
 .btn--sm { padding: var(--space-1) var(--space-3); font-size: var(--text-xs); }
 .btn--social {
-  background: rgba(99,102,241,0.15);
+  background: rgba(99,102,241,0.18);
   color: #818cf8;
-  border-color: rgba(99,102,241,0.35);
-  font-weight: 600;
+  border-color: rgba(99,102,241,0.45);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 6px 14px;
+  letter-spacing: 0.02em;
 }
 .btn--social:hover {
-  background: rgba(99,102,241,0.25);
-  border-color: rgba(99,102,241,0.6);
+  background: rgba(99,102,241,0.28);
+  border-color: rgba(99,102,241,0.7);
   color: #a5b4fc;
 }
 .social-share-wrap { position: relative; }

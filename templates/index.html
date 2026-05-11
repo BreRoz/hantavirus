@@ -512,7 +512,7 @@
           </div>
           <div class="travel-nav-item" data-repat="us" onclick="RepatNav.select('us')">
             <div style="font-weight:700">🇺🇸 Arrived in United States 🔴</div>
-            <div style="font-size:10px;color:#ef4444;margin-top:2px">Eppley Airfield, Omaha · 1 positive · 1 symptomatic</div>
+            <div style="font-size:10px;color:#ef4444;margin-top:2px">Emory Atlanta (2) · UNMC Omaha (16)</div>
           </div>
           <div class="travel-nav-item" data-repat="ca" onclick="RepatNav.select('ca')">
             <div style="font-weight:700">🇨🇦 Arrived in Canada</div>
@@ -623,20 +623,20 @@
           </div>
 
           <div id="repat-content-us" class="travel-content-pane" style="display:none">
-            <div class="panel-header"><span class="panel-title">🇺🇸 United States — Arrived Omaha, Nebraska</span></div>
+            <div class="panel-header"><span class="panel-title">🇺🇸 United States — Omaha (16) + Atlanta (2)</span></div>
             <div style="padding:var(--space-4);overflow-y:auto;flex:1">
               <div class="travel-status-row green">✅ LANDED — Eppley Airfield, Omaha, Nebraska · May 11, 2026</div>
               <div class="travel-status-row green">Route: TFS → Washington D.C. → Omaha · 18 passengers · DoS airlift · CDC escort</div>
-              <div class="travel-status-row red" style="background:rgba(239,68,68,0.12);border-left:3px solid #ef4444;color:#fca5a5">🔴 1 passenger PCR POSITIVE for hantavirus · Asymptomatic · Transported to Nebraska Biocontainment Unit (UNMC) · Follow-up test underway</div>
-              <div class="travel-status-row amber">⚠ 1 passenger with MILD SYMPTOMS · Transported to second RESPTC facility · Both were in aircraft biocontainment units during flight</div>
-              <div class="travel-status-row muted">Remaining passengers → National Quarantine Unit, UNMC · Assessment and monitoring underway</div>
+              <div class="travel-status-row red" style="background:rgba(239,68,68,0.12);border-left:3px solid #ef4444;color:#fca5a5">🔴 1 passenger PCR POSITIVE → transferred Omaha → Atlanta · Now at Emory University Hospital SCDU · First confirmed American case</div>
+              <div class="travel-status-row amber">⚠ 1 passenger symptomatic but PCR NEGATIVE (per UNMC) → also transferred to Emory SCDU Atlanta · Hartsfield-Jackson ~9am May 11 · Under observation</div>
+              <div class="travel-status-row muted">16 remaining → National Quarantine Unit, UNMC Omaha · Monitoring underway</div>
               <div class="travel-status-row muted">7 Americans already home pre-declaration — California, Texas, Virginia, Georgia · Monitored by state health departments</div>
-              <div class="travel-acc-note" style="margin-top:16px">UNMC hosts the only federally designated National Quarantine Center in the US. The PCR-positive passenger had no symptoms — detected during in-flight testing. "Out of an abundance of caution" — HHS statement.</div>
+              <div class="travel-acc-note" style="margin-top:16px">Emory's Serious Communicable Diseases Unit (SCDU) treated Ebola patients — specially-equipped ambulances, dedicated isolation ward. Gov. Kemp at GA Capitol signing: "We're as prepared as any state in the country." Fox5 initially reported both patients as "tested positive" — CBS Atlanta / UNMC clarified one was PCR negative.</div>
               <div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.07);font-size:10px;color:var(--color-text-faint)">
                 <div style="font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px">Sources</div>
-                <div>· <a href="https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands/?id=132746955" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">ABC News — Live updates: US plane lands Omaha, 1 positive, 1 symptomatic (May 11, 2026)</a></div>
-                <div style="margin-top:3px">· HHS statement — Department of Health and Human Services, May 10, 2026</div>
-                <div style="margin-top:3px">· Nebraska Medicine / UNMC statement, May 11, 2026</div>
+                <div>· <a href="https://www.fox5atlanta.com/news/dnp-2-georgia-residents-who-tested-positive-hantavirus-taken-emory" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Fox5 Atlanta — 2 hantavirus patients arrive at Emory (May 11, 2026) ↗</a></div>
+                <div style="margin-top:3px">· <a href="https://www.cbsnews.com/atlanta/news/hantavirus-outbreak-2-georgia-residents-exposed-arrive-at-emory-university-hospital-for-evaluation/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">CBS Atlanta — Emory receives 2 patients; one PCR negative per UNMC (May 11, 2026) ↗</a></div>
+                <div style="margin-top:3px">· HHS statement / Georgia DPH / Nebraska Medicine / UNMC, May 11, 2026</div>
               </div>
             </div>
           </div>
@@ -777,11 +777,11 @@
             </div>
             <div class="quar-title">
               <h3>United States</h3>
-              <p>Nebraska Biocontainment Unit (UNMC) + National Quarantine Unit · Eppley Airfield, Omaha</p>
+              <p>Emory SCDU, Atlanta (2) · National Quarantine Unit, UNMC Omaha (16)</p>
             </div>
             <span class="quar-status quar-status--symptomatic">🔴 Confirmed Positive</span>
           </div>
-          <div class="quar-people">18 passengers · 1 PCR POSITIVE → UNMC Biocontainment Unit · 1 mild symptoms → RESPTC · 16 → National Quarantine Unit</div>
+          <div class="quar-people">18 passengers · 2 → Emory SCDU Atlanta (1 PCR+ · 1 symptomatic/negative) · 16 → UNMC Omaha</div>
           <div class="quar-progress-wrap">
             <div class="quar-progress-label">
               <span class="quar-day-label">Day 1 of 21</span>
@@ -795,7 +795,7 @@
             <span class="toggle-arrow">▼</span> Flight details
           </button>
           <div class="quar-flight-details">
-            DoS airlift · TFS → Washington D.C. → Eppley Airfield, Omaha · 18 passengers (17 Americans + 1 British/US resident) · CDC + HHS escorting · 1 positive + 1 symptomatic traveled in aircraft biocontainment units
+            DoS airlift · TFS → Washington D.C. → Eppley Airfield, Omaha · 18 passengers (17 Americans + 1 British/US resident) · CDC + HHS escorting · 2 transferred Omaha → Emory SCDU Atlanta May 11
           </div>
         </div>
 

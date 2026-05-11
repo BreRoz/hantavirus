@@ -1251,7 +1251,7 @@
     },
     {
       "id": "PUSNEB01",
-      "name": "American Passenger — PCR Confirmed, UNMC Biocontainment (Nebraska)",
+      "name": "American Passenger — PCR Confirmed, Emory SCDU (Atlanta)",
       "age": null,
       "sex": null,
       "nationality": "American",
@@ -1262,12 +1262,12 @@
       "date": "2026-05-11",
       "incubation_start": null,
       "location": {
-        "city": "Omaha",
-        "state": "Nebraska",
+        "city": "Atlanta",
+        "state": "Georgia",
         "country": "USA",
-        "venue": "Nebraska Biocontainment Unit — UNMC",
-        "lat": 41.26,
-        "lng": -95.94
+        "venue": "Emory University Hospital — Serious Communicable Diseases Unit (SCDU)",
+        "lat": 33.79,
+        "lng": -84.32
       },
       "ship_info": {
         "vessel": "MV Hondius",
@@ -1283,12 +1283,12 @@
       "flights": [],
       "source_url": "https://abcnews.go.com/Health/live-updates/hantavirus-outbreak-cruise-ship/?id=121234567",
       "source_notes": "HHS statement / Nebraska Medicine / ABC News, May 11 2026",
-      "clinical_notes": "American MV Hondius passenger — PCR confirmed positive for hantavirus, May 11 2026. Was asymptomatic at time of repatriation but tested positive on arrival testing. Transported in aircraft biocontainment unit from Tenerife to Washington D.C., then routed to Nebraska; now housed in the Nebraska Biocontainment Unit (NBU) at UNMC, Omaha — one of only a handful of dedicated biocontainment units in the US. HHS confirmed the positive result. A second American passenger is showing mild symptoms and is being evaluated at a Regional Emerging Special Pathogens Treatment Center (RESPTC) — not yet PCR confirmed. This is the first American PCR-confirmed case of hantavirus linked to the MV Hondius outbreak.",
-      "reporter": "HHS / Nebraska Medicine / ABC News"
+      "clinical_notes": "American MV Hondius passenger — PCR confirmed positive for hantavirus, May 11 2026. Initially transported to UNMC Omaha; subsequently transferred via special flight Omaha → Hartsfield-Jackson Atlanta (arrived ~9am May 11). Transported by Grady ambulance to Emory University Hospital Serious Communicable Diseases Unit (SCDU) on Clifton Road — the same unit that treated Ebola patients. Georgia DPH confirmed transfer; HHS confirmed positive result. One of two patients transferred from Omaha to Emory on May 11 (the other, PUSRESPTC01, tested negative). First American PCR-confirmed hantavirus case from MV Hondius outbreak.",
+      "reporter": "Fox5 Atlanta / CBS Atlanta / Georgia DPH / HHS"
     },
     {
       "id": "PUSRESPTC01",
-      "name": "American Passenger — Mild Symptoms, RESPTC (Pending PCR)",
+      "name": "American Passenger — Symptomatic, PCR Negative, Emory SCDU (Atlanta)",
       "age": null,
       "sex": null,
       "nationality": "American",
@@ -1299,12 +1299,12 @@
       "date": "2026-05-11",
       "incubation_start": null,
       "location": {
-        "city": "Omaha",
-        "state": "Nebraska",
+        "city": "Atlanta",
+        "state": "Georgia",
         "country": "USA",
-        "venue": "Regional Emerging Special Pathogens Treatment Center (RESPTC) — location unconfirmed",
-        "lat": 41.27,
-        "lng": -95.96
+        "venue": "Emory University Hospital — Serious Communicable Diseases Unit (SCDU)",
+        "lat": 33.80,
+        "lng": -84.33
       },
       "ship_info": {
         "vessel": "MV Hondius",
@@ -1320,7 +1320,7 @@
       "flights": [],
       "source_url": "https://abcnews.go.com/Health/live-updates/hantavirus-outbreak-cruise-ship/?id=121234567",
       "source_notes": "ABC News live updates / HHS, May 11 2026",
-      "clinical_notes": "American MV Hondius passenger presenting with mild symptoms consistent with hantavirus as of May 11 2026. PCR test result PENDING — not yet confirmed positive. Being evaluated and isolated at a Regional Emerging Special Pathogens Treatment Center (RESPTC). Traveled on the same DoS airlift as confirmed case PUSNEB01 (TFS → Washington D.C. → Nebraska). Distinct from PUSNEB01 who is PCR-confirmed and housed in the Nebraska Biocontainment Unit at UNMC.",
+      "clinical_notes": "American MV Hondius passenger — symptomatic but PCR NEGATIVE for hantavirus per UNMC (confirmed May 11 2026, CBS Atlanta). Was symptomatic during repatriation and initially routed to Omaha. Transferred via special flight Omaha → Hartsfield-Jackson Atlanta (arrived ~9am May 11) alongside PCR-positive PUSNEB01. Transported by Grady ambulance to Emory University Hospital Serious Communicable Diseases Unit (SCDU). Despite negative PCR result, remains at Emory under observation given symptoms. Fox5 Atlanta initially reported both patients as 'tested positive' — CBS Atlanta/UNMC later clarified one tested negative.",
       "reporter": "HHS / ABC News"
     }
   ],

@@ -410,6 +410,7 @@ const DetailPanel = {
 const OverviewTab = {
   _map: null,
   _markers: [],
+  _quarantineMarkers: [], // { marker, date } — shown/hidden by slider
 
   init() {
     this._map = L.map("map", { zoomControl: true, attributionControl: false }).setView([20, 0], 2);
@@ -429,7 +430,6 @@ const OverviewTab = {
 
     const locOf = c => c.location && typeof c.location === "object" ? c.location : {};
     const visible = cases.filter(c => locOf(c).lat && locOf(c).lng);
-    document.getElementById("map-case-count").textContent = `${visible.length} case${visible.length !== 1 ? "s" : ""}`;
 
     // Group cases by exact coordinate so stacked pins become a cluster dot
     const clusters = {};
@@ -572,12 +572,12 @@ const OverviewTab = {
     // confirmed=true: flight officially confirmed | crew=true: crew-only nationality
     const flightDestinations = [
       // ── Confirmed repatriation flights ──────────────────────────────────────
-      { pos: [40.42, -3.70],  flag: "🇪🇸", label: "Spain · 14 passengers · Quarantine: Gómez Ulla Hospital, Madrid · All asymptomatic", count: 14, confirmed: true, landed: true, quarStatus: "clear" },
-      { pos: [48.97,  2.44],  flag: "🇫🇷", label: "France · 5 passengers · Quarantine: Paris · ⚠ 1 of 5 symptomatic in-flight — testing underway", count: 5,  confirmed: true, landed: true, quarStatus: "symptomatic" },
+      { pos: [40.42, -3.70],  flag: "🇪🇸", label: "Spain · 14 passengers · Quarantine: Gómez Ulla Hospital, Madrid · All asymptomatic", count: 14, confirmed: true, landed: true, quarStatus: "clear",       arrivedDate: "2026-05-10" },
+      { pos: [48.97,  2.44],  flag: "🇫🇷", label: "France · 5 passengers · Quarantine: Paris · ⚠ 1 of 5 symptomatic in-flight — testing underway", count: 5, confirmed: true, landed: true, quarStatus: "symptomatic", arrivedDate: "2026-05-10" },
       { pos: [49.25, -123.12], flag: "🇨🇦", label: "Canada · 4 pax · TFS → Bagotville (transfer) → B.C. · 21-42 day isolation · all asymptomatic", count: 4, confirmed: true, inflight: true },
-      { pos: [51.45,  5.37],  flag: "🇳🇱", label: "Netherlands · 26 passengers · Quarantine: Eindhoven · incl. 2 Indian crew members · All asymptomatic", count: 26, confirmed: true, landed: true, quarStatus: "clear" },
+      { pos: [51.45,  5.37],  flag: "🇳🇱", label: "Netherlands · 26 passengers · Quarantine: Eindhoven · incl. 2 Indian crew members · All asymptomatic", count: 26, confirmed: true, landed: true, quarStatus: "clear",       arrivedDate: "2026-05-10" },
       { pos: [41.12, -95.91], flag: "🇺🇸", label: "United States · 18 passengers · En route: TFS → D.C. → Nebraska (UNMC) · CDC escort", count: 18, confirmed: true, inflight: true },
-      { pos: [53.35, -2.27],  flag: "🇬🇧", label: "United Kingdom · 22 passengers · Quarantine: Manchester · Hospitalized on arrival", count: 22, confirmed: true, landed: true, quarStatus: "monitoring" },
+      { pos: [53.35, -2.27],  flag: "🇬🇧", label: "United Kingdom · 22 passengers · Quarantine: Manchester · Hospitalized on arrival", count: 22, confirmed: true, landed: true, quarStatus: "monitoring",  arrivedDate: "2026-05-10" },
       // ── Other confirmed repatriation flights (no quarantine location confirmed yet) ──
       { pos: [41.00, 28.98],  flag: "🇹🇷", label: "Turkey · 3 passengers · DEPARTED TFS", count: 3, confirmed: true },
       { pos: [53.33, -6.25],  flag: "🇮🇪", label: "Ireland · 2 passengers · IRL290 · Irish Air Corps · DEPARTED TFS", count: 2, confirmed: true },
@@ -606,11 +606,12 @@ const OverviewTab = {
       const isInflight = !!dest.inflight;
       const isLanded   = !!dest.landed;
 
-      // Landed flights: quarantine icon, no line
+      // Landed flights: quarantine icon, stored for slider date-gating
       if (isLanded) {
-        L.marker(dest.pos, { icon: makeQuarantineIcon(dest.quarStatus || "clear"), zIndexOffset: 500 })
-          .bindTooltip(`${dest.flag} ${dest.label}`, { permanent: false, className: "dark-tooltip", direction: "top" })
-          .addTo(this._map);
+        const qm = L.marker(dest.pos, { icon: makeQuarantineIcon(dest.quarStatus || "clear"), zIndexOffset: 500 })
+          .bindTooltip(`${dest.flag} ${dest.label}`, { permanent: false, className: "dark-tooltip", direction: "top" });
+        this._quarantineMarkers.push({ marker: qm, date: dest.arrivedDate || "2026-05-10" });
+        qm.addTo(this._map); // visible by default (slider starts at max)
         return;
       }
 
@@ -758,7 +759,10 @@ const MapSlider = {
     const dates = cases.map(c => c.onset_date || c.date).filter(Boolean).sort();
     if (!dates.length) return;
     this._min = Utils.parseDate(dates[0]);
-    this._max = Utils.parseDate(dates[dates.length - 1]);
+    // Extend max to include repatriation/quarantine events (May 10, 2026)
+    const repatDate = "2026-05-10";
+    const lastCase = dates[dates.length - 1];
+    this._max = Utils.parseDate(lastCase >= repatDate ? lastCase : repatDate);
     const totalDays = Utils.daysBetween(this._min, this._max);
     slider.min = 0;
     slider.max = totalDays;
@@ -812,6 +816,14 @@ const MapSlider = {
       return true;
     });
     OverviewTab.render(filtered);
+    // Show/hide quarantine markers based on their arrival date
+    OverviewTab._quarantineMarkers.forEach(({ marker, date }) => {
+      if (cutoff >= date) {
+        if (!OverviewTab._map.hasLayer(marker)) marker.addTo(OverviewTab._map);
+      } else {
+        if (OverviewTab._map.hasLayer(marker)) OverviewTab._map.removeLayer(marker);
+      }
+    });
   },
 };
 

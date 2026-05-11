@@ -499,8 +499,8 @@
             <div style="font-size:10px;color:#10b981;margin-top:2px">TFS → Torrejón Air Base · A310 "Reino de España"</div>
           </div>
           <div class="travel-nav-item" data-repat="fr" onclick="RepatNav.select('fr')">
-            <div style="font-weight:700">🇫🇷 Arrived in France ⚠</div>
-            <div style="font-size:10px;color:#f97316;margin-top:2px">TFS → Paris Le Bourget · Falcon 900EX · 1 pax symptomatic</div>
+            <div style="font-weight:700">🇫🇷 Arrived in France 🔴</div>
+            <div style="font-size:10px;color:#ef4444;margin-top:2px">1 of 5 CONFIRMED POSITIVE · Case #9 globally</div>
           </div>
           <div class="travel-nav-item" data-repat="gb" onclick="RepatNav.select('gb')">
             <div style="font-weight:700">🇬🇧 Arrived in United Kingdom</div>
@@ -509,6 +509,10 @@
           <div class="travel-nav-item" data-repat="nl" onclick="RepatNav.select('nl')">
             <div style="font-weight:700">🇳🇱 Arrived in Netherlands</div>
             <div style="font-size:10px;color:#10b981;margin-top:2px">Eindhoven Airport · 26 passengers</div>
+          </div>
+          <div class="travel-nav-item" data-repat="us" onclick="RepatNav.select('us')">
+            <div style="font-weight:700">🇺🇸 Arrived in United States 🔴</div>
+            <div style="font-size:10px;color:#ef4444;margin-top:2px">Eppley Airfield, Omaha · 1 positive · 1 symptomatic</div>
           </div>
 
           <div class="travel-flights-divider">Departed</div>
@@ -524,10 +528,6 @@
           <div class="travel-nav-item" data-repat="ie" onclick="RepatNav.select('ie')">
             <div style="font-weight:700">🇮🇪 Ireland — DEPARTED</div>
             <div style="font-size:10px;color:#10b981;margin-top:2px">IRL290 · Irish Air Corps · 2 passengers</div>
-          </div>
-          <div class="travel-nav-item" data-repat="us" onclick="RepatNav.select('us')">
-            <div style="font-weight:700">🇺🇸 United States — DEPARTED</div>
-            <div style="font-size:10px;color:#10b981;margin-top:2px">TFS → D.C. → Nebraska · 18 passengers · En route</div>
           </div>
 
           <div class="travel-flights-divider">Standby / Pending</div>
@@ -568,8 +568,8 @@
               <div class="travel-status-row green">Aircraft: Dassault Falcon 900EX · Reg: F-HREG · Callsign: ARL120E · Mode S: 39C486</div>
               <div class="travel-status-row green">Operator: Airlec Air Espace (ARL) — French medical air transport, Bordeaux · Le Bourget chosen to avoid commercial terminals</div>
               <div class="travel-status-row green">5 passengers + medical staff aboard · Special medical charter by French Foreign Office crisis centre</div>
-              <div class="travel-status-row amber">WARNING: 1 of 5 French passengers showed symptoms during the repatriation flight · Could be confirmed as 9th case globally</div>
-              <div class="travel-status-row amber">All 5 French passengers "immediately placed in strict isolation until further notice" — PM Lecornu on X · "Receiving medical care and will undergo testing and a full health assessment"</div>
+              <div class="travel-status-row red" style="background:rgba(239,68,68,0.12);border-left:3px solid #ef4444;color:#fca5a5">🔴 CONFIRMED POSITIVE — 1 of 5 French passengers has tested positive for hantavirus · Case #9 globally · French Health Minister Stéphanie Rist confirmed Monday morning on French public radio</div>
+              <div class="travel-status-row amber">All 5 in strict isolation · PM Lecornu on X: "immediately placed in strict isolation until further notice"</div>
               <div class="travel-status-row muted">French PM Sébastien Lecornu called emergency ministerial meeting · Nicolas Pillerel (French embassy) oversaw TFS logistics</div>
               <div class="travel-acc-note" style="margin-top:16px">Medical staff and fellow passengers on board may have been exposed in-flight. All 5 now in strict isolation on arrival at Paris Le Bourget — testing underway.</div>
               <div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.07);font-size:10px;color:var(--color-text-faint)">
@@ -623,23 +623,20 @@
           </div>
 
           <div id="repat-content-us" class="travel-content-pane" style="display:none">
-            <div class="panel-header"><span class="panel-title">🇺🇸 United States — TFS → Home or UNMC</span></div>
+            <div class="panel-header"><span class="panel-title">🇺🇸 United States — Arrived Omaha, Nebraska</span></div>
             <div style="padding:var(--space-4);overflow-y:auto;flex:1">
-              <div class="travel-status-row green">✈️ DEPARTED — TFS → Washington D.C. → Nebraska · En route · May 10, 2026</div>
-              <div class="travel-status-row green">18 passengers total · 17 Americans + 1 British national (US resident) · CDC escorting · 2-stop routing: TFS → DC → UNMC/Omaha</div>
-              <div class="travel-status-row green">Policy update: Nebraska OPTIONAL — Dr. Jay Bhattacharya (NIH Director, CNN) says passengers deemed low-risk may return home instead of going to UNMC</div>
-              <div class="travel-status-row muted">CDC will interview each passenger · Low risk (no contact with symptomatic person) = return home, report to state/local health authority · Higher risk = National Quarantine Center, UNMC, Omaha</div>
-              <div class="travel-status-row muted">7 Americans already home — returned pre-outbreak declaration to California, Texas, Virginia and Georgia · Being monitored by state health departments</div>
-              <div class="travel-acc-note" style="margin-top:16px">UNMC hosts the only federally designated National Quarantine Center in the US. Nebraska option remains available for any passenger who wants it, or is deemed higher risk.</div>
-              <div class="travel-acc-note" style="margin-top:10px">
-                Possible US flight being tracked (unconfirmed):
-                <a href="https://www.flightradar24.com/3f96e5c3" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Flightradar24 — watch flight ↗</a>
-              </div>
+              <div class="travel-status-row green">✅ LANDED — Eppley Airfield, Omaha, Nebraska · May 11, 2026</div>
+              <div class="travel-status-row green">Route: TFS → Washington D.C. → Omaha · 18 passengers · DoS airlift · CDC escort</div>
+              <div class="travel-status-row red" style="background:rgba(239,68,68,0.12);border-left:3px solid #ef4444;color:#fca5a5">🔴 1 passenger PCR POSITIVE for hantavirus · Asymptomatic · Transported to Nebraska Biocontainment Unit (UNMC) · Follow-up test underway</div>
+              <div class="travel-status-row amber">⚠ 1 passenger with MILD SYMPTOMS · Transported to second RESPTC facility · Both were in aircraft biocontainment units during flight</div>
+              <div class="travel-status-row muted">Remaining passengers → National Quarantine Unit, UNMC · Assessment and monitoring underway</div>
+              <div class="travel-status-row muted">7 Americans already home pre-declaration — California, Texas, Virginia, Georgia · Monitored by state health departments</div>
+              <div class="travel-acc-note" style="margin-top:16px">UNMC hosts the only federally designated National Quarantine Center in the US. The PCR-positive passenger had no symptoms — detected during in-flight testing. "Out of an abundance of caution" — HHS statement.</div>
               <div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.07);font-size:10px;color:var(--color-text-faint)">
                 <div style="font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px">Sources</div>
-                <div>· <a href="https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands/?id=132746955" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">ABC News — 18 passengers at TFS airport incl. 1 British/US resident (Spanish Health Minister)</a></div>
-                <div style="margin-top:3px">· <a href="https://www.usatoday.com/story/news/health/2026/05/10/hantavirus-live-updates-cruise-ship-quarantine--live/90020238007/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">USA Today — Live updates: MV Hondius disembarkation (May 10, 2026)</a></div>
-                <div style="margin-top:3px">· Dr. Jay Bhattacharya, NIH Director — CNN "State of the Union," May 10, 2026</div>
+                <div>· <a href="https://abcnews.com/International/live-updates/hantavirus-live-updates-mv-hondius-canary-islands/?id=132746955" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">ABC News — Live updates: US plane lands Omaha, 1 positive, 1 symptomatic (May 11, 2026)</a></div>
+                <div style="margin-top:3px">· HHS statement — Department of Health and Human Services, May 10, 2026</div>
+                <div style="margin-top:3px">· Nebraska Medicine / UNMC statement, May 11, 2026</div>
               </div>
             </div>
           </div>

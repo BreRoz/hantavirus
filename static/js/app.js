@@ -576,7 +576,7 @@ const OverviewTab = {
       { pos: [48.97,  2.44],  flag: "🇫🇷", label: "France · 5 passengers · Quarantine: Paris · ⚠ 1 of 5 symptomatic in-flight — testing underway", count: 5, confirmed: true, landed: true, quarStatus: "symptomatic", arrivedDate: "2026-05-10" },
       { pos: [49.25, -123.12], flag: "🇨🇦", label: "Canada · 4 pax · TFS → Bagotville (transfer) → B.C. · 21-42 day isolation · all asymptomatic", count: 4, confirmed: true, inflight: true },
       { pos: [51.45,  5.37],  flag: "🇳🇱", label: "Netherlands · 26 passengers · Quarantine: Eindhoven · incl. 2 Indian crew members · All asymptomatic", count: 26, confirmed: true, landed: true, quarStatus: "clear",       arrivedDate: "2026-05-10" },
-      { pos: [41.12, -95.91], flag: "🇺🇸", label: "United States · 18 passengers · En route: TFS → D.C. → Nebraska (UNMC) · CDC escort", count: 18, confirmed: true, inflight: true },
+      { pos: [41.25, -95.93], flag: "🇺🇸", label: "United States · 18 passengers · LANDED Omaha · 1 PCR positive (UNMC biocontainment) · 1 symptomatic (RESPTC) · 16 National Quarantine Unit", count: 18, confirmed: true, landed: true, quarStatus: "symptomatic", arrivedDate: "2026-05-11" },
       { pos: [53.35, -2.27],  flag: "🇬🇧", label: "United Kingdom · 22 passengers · Quarantine: Manchester · Hospitalized on arrival", count: 22, confirmed: true, landed: true, quarStatus: "monitoring",  arrivedDate: "2026-05-10" },
       // ── Other confirmed repatriation flights (no quarantine location confirmed yet) ──
       { pos: [41.00, 28.98],  flag: "🇹🇷", label: "Turkey · 3 passengers · DEPARTED TFS", count: 3, confirmed: true },

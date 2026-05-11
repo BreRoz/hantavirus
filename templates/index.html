@@ -726,41 +726,6 @@
       <p class="quar-subtitle">All groups arrived May 10–11, 2026 from Tenerife South Airport (TFS). Quarantine periods run from arrival date.</p>
       <div class="quar-grid">
 
-        <!-- Spain -->
-        <div class="quar-card" data-arrival="2026-05-10" data-duration="21">
-          <div class="quar-header">
-            <div class="quar-flag">🇪🇸</div>
-            <div class="quar-icon">
-              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
-                <circle cx="22" cy="16" r="5" fill="currentColor"/>
-                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
-              </svg>
-            </div>
-            <div class="quar-title">
-              <h3>Spain</h3>
-              <p>Gómez Ulla Central Defense Hospital, Madrid</p>
-            </div>
-            <span class="quar-status quar-status--clear">All clear</span>
-          </div>
-          <div class="quar-people">14 passengers · Hospital quarantine</div>
-          <div class="quar-progress-wrap">
-            <div class="quar-progress-label">
-              <span class="quar-day-label">Day 1 of 21</span>
-              <span>21-day isolation</span>
-            </div>
-            <div class="quar-progress-bar">
-              <div class="quar-progress-fill" style="width:5%"></div>
-            </div>
-          </div>
-          <button class="quar-flight-toggle">
-            <span class="toggle-arrow">▼</span> Flight details
-          </button>
-          <div class="quar-flight-details">
-            Spanish Air Force A310 "Reino de España" (T.22-2) · TFS → Torrejón Air Base · 14 Spanish nationals · First group to leave the ship
-          </div>
-        </div>
-
         <!-- France -->
         <div class="quar-card quar-card--symptomatic" data-arrival="2026-05-10" data-duration="21">
           <div class="quar-header">
@@ -793,6 +758,76 @@
           </button>
           <div class="quar-flight-details">
             Dassault Falcon 900EX F-HREG (ARL120E) · TFS → Paris Le Bourget (LBG) · 5 passengers · 1 symptomatic in-flight · Landed 4:27 PM local
+          </div>
+        </div>
+
+        <!-- United States -->
+        <div class="quar-card quar-card--symptomatic" data-arrival="2026-05-11" data-duration="21">
+          <div class="quar-header">
+            <div class="quar-flag">🇺🇸</div>
+            <div class="quar-icon">
+              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="quar-title">
+              <h3>United States</h3>
+              <p>Nebraska Biocontainment Unit (UNMC) + National Quarantine Unit · Eppley Airfield, Omaha</p>
+            </div>
+            <span class="quar-status quar-status--symptomatic">🔴 Confirmed Positive</span>
+          </div>
+          <div class="quar-people">18 passengers · 1 PCR POSITIVE → UNMC Biocontainment Unit · 1 mild symptoms → RESPTC · 16 → National Quarantine Unit</div>
+          <div class="quar-progress-wrap">
+            <div class="quar-progress-label">
+              <span class="quar-day-label">Day 1 of 21</span>
+              <span>21-day isolation</span>
+            </div>
+            <div class="quar-progress-bar">
+              <div class="quar-progress-fill quar-progress-fill--red" style="width:5%"></div>
+            </div>
+          </div>
+          <button class="quar-flight-toggle">
+            <span class="toggle-arrow">▼</span> Flight details
+          </button>
+          <div class="quar-flight-details">
+            DoS airlift · TFS → Washington D.C. → Eppley Airfield, Omaha · 18 passengers (17 Americans + 1 British/US resident) · CDC + HHS escorting · 1 positive + 1 symptomatic traveled in aircraft biocontainment units
+          </div>
+        </div>
+
+        <!-- Spain -->
+        <div class="quar-card" data-arrival="2026-05-10" data-duration="21">
+          <div class="quar-header">
+            <div class="quar-flag">🇪🇸</div>
+            <div class="quar-icon">
+              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="quar-title">
+              <h3>Spain</h3>
+              <p>Gómez Ulla Central Defense Hospital, Madrid</p>
+            </div>
+            <span class="quar-status quar-status--clear">All clear</span>
+          </div>
+          <div class="quar-people">14 passengers · Hospital quarantine</div>
+          <div class="quar-progress-wrap">
+            <div class="quar-progress-label">
+              <span class="quar-day-label">Day 1 of 21</span>
+              <span>21-day isolation</span>
+            </div>
+            <div class="quar-progress-bar">
+              <div class="quar-progress-fill" style="width:5%"></div>
+            </div>
+          </div>
+          <button class="quar-flight-toggle">
+            <span class="toggle-arrow">▼</span> Flight details
+          </button>
+          <div class="quar-flight-details">
+            Spanish Air Force A310 "Reino de España" (T.22-2) · TFS → Torrejón Air Base · 14 Spanish nationals · First group to leave the ship
           </div>
         </div>
 
@@ -898,41 +933,6 @@
           </button>
           <div class="quar-flight-details">
             Charter · TFS → Bagotville, QC (3 Wing CFB, transfer) → B.C. · 4 passengers · PHAC officer aboard · 2-leg flight
-          </div>
-        </div>
-
-        <!-- United States -->
-        <div class="quar-card quar-card--symptomatic" data-arrival="2026-05-11" data-duration="21">
-          <div class="quar-header">
-            <div class="quar-flag">🇺🇸</div>
-            <div class="quar-icon">
-              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
-                <circle cx="22" cy="16" r="5" fill="currentColor"/>
-                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
-              </svg>
-            </div>
-            <div class="quar-title">
-              <h3>United States</h3>
-              <p>Nebraska Biocontainment Unit (UNMC) + National Quarantine Unit · Eppley Airfield, Omaha</p>
-            </div>
-            <span class="quar-status quar-status--symptomatic">🔴 Confirmed Positive</span>
-          </div>
-          <div class="quar-people">18 passengers · 1 PCR POSITIVE → UNMC Biocontainment Unit · 1 mild symptoms → RESPTC · 16 → National Quarantine Unit</div>
-          <div class="quar-progress-wrap">
-            <div class="quar-progress-label">
-              <span class="quar-day-label">Day 1 of 21</span>
-              <span>21-day isolation</span>
-            </div>
-            <div class="quar-progress-bar">
-              <div class="quar-progress-fill" style="width:5%"></div>
-            </div>
-          </div>
-          <button class="quar-flight-toggle">
-            <span class="toggle-arrow">▼</span> Flight details
-          </button>
-          <div class="quar-flight-details">
-            DoS airlift · TFS → Washington D.C. → Eppley Airfield, Omaha · 18 passengers (17 Americans + 1 British/US resident) · CDC + HHS escorting · 1 positive + 1 symptomatic traveled in aircraft biocontainment units
           </div>
         </div>
 

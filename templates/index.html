@@ -504,7 +504,7 @@
           </div>
           <div class="travel-nav-item" data-repat="gb" onclick="RepatNav.select('gb')">
             <div style="font-weight:700">🇬🇧 Arrived in United Kingdom</div>
-            <div style="font-size:10px;color:#10b981;margin-top:2px">ZT791 · Manchester Airport · 22 passengers</div>
+            <div style="font-size:10px;color:#10b981;margin-top:2px">ZT791 · Arrowe Park Hospital, Wirral · 22 passengers</div>
           </div>
           <div class="travel-nav-item" data-repat="nl" onclick="RepatNav.select('nl')">
             <div style="font-weight:700">🇳🇱 Arrived in Netherlands</div>
@@ -518,16 +518,16 @@
             <div style="font-weight:700">🇨🇦 Arrived in Canada</div>
             <div style="font-size:10px;color:#10b981;margin-top:2px">British Columbia · 4 passengers · In isolation</div>
           </div>
+          <div class="travel-nav-item" data-repat="ie" onclick="RepatNav.select('ie')">
+            <div style="font-weight:700">🇮🇪 Arrived in Ireland</div>
+            <div style="font-size:10px;color:#10b981;margin-top:2px">IRL290 · Baldonnel · Mater Hospital · 42 days</div>
+          </div>
 
           <div class="travel-flights-divider">Departed</div>
 
           <div class="travel-nav-item" data-repat="tr" onclick="RepatNav.select('tr')">
             <div style="font-weight:700">🇹🇷 Turkey — DEPARTED</div>
             <div style="font-size:10px;color:#10b981;margin-top:2px">TFS → Turkey · 3 passengers</div>
-          </div>
-          <div class="travel-nav-item" data-repat="ie" onclick="RepatNav.select('ie')">
-            <div style="font-weight:700">🇮🇪 Ireland — DEPARTED</div>
-            <div style="font-size:10px;color:#10b981;margin-top:2px">IRL290 · Irish Air Corps · 2 passengers</div>
           </div>
 
           <div class="travel-flights-divider">Standby / Pending</div>
@@ -642,11 +642,11 @@
           </div>
 
           <div id="repat-content-gb" class="travel-content-pane" style="display:none">
-            <div class="panel-header"><span class="panel-title">🇬🇧 United Kingdom — Arrived Manchester</span></div>
+            <div class="panel-header"><span class="panel-title">🇬🇧 United Kingdom — Arrowe Park Hospital, Wirral</span></div>
             <div style="padding:var(--space-4);overflow-y:auto;flex:1">
               <div class="travel-status-row green">✅ LANDED — Manchester Airport (MAN) · May 10, 2026</div>
               <div class="travel-status-row green">Flight: ZT791 / AWC7791 · Aircraft: Airbus A320 · Operator: Titan Airways · 22 passengers</div>
-              <div class="travel-status-row muted">Hospitalization on arrival per UK authorities</div>
+              <div class="travel-status-row green">Quarantine: Arrowe Park Hospital, Wirral, Merseyside · 20 British nationals + 1 German resident + 1 Japanese resident</div>
               <div class="travel-acc-note" style="margin-top:16px">
                 Track live:
                 <a href="https://www.flightradar24.com/ZT791" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Flightradar24 — ZT791 ↗</a>
@@ -657,6 +657,7 @@
                 <div style="font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px">Sources</div>
                 <div>· Flight identified via ADS-B · ZT/AWC = Titan Airways IATA/ICAO</div>
                 <div style="margin-top:3px">· BPI News via Twitter — UK repatriation flight departed TFS, 22 passengers</div>
+                <div style="margin-top:3px">· <a href="https://www.bbc.com/news/articles/c4g83vddnz0o" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">BBC News — 22 passengers in quarantine at Arrowe Park Hospital, Wirral (May 11, 2026) ↗</a></div>
               </div>
             </div>
           </div>
@@ -675,18 +676,19 @@
           </div>
 
           <div id="repat-content-ie" class="travel-content-pane" style="display:none">
-            <div class="panel-header"><span class="panel-title">🇮🇪 Ireland — TFS → Ireland · IRL290</span></div>
+            <div class="panel-header"><span class="panel-title">🇮🇪 Ireland — Baldonnel Aerodrome → Mater Hospital, Dublin</span></div>
             <div style="padding:var(--space-4);overflow-y:auto;flex:1">
-              <div class="travel-status-row green">✈️ DEPARTED · 2 passengers · Confirmed by Spanish Health Ministry</div>
-              <div class="travel-status-row green">Callsign: IRL290 · Operator: Irish Air Corps (military government flight)</div>
+              <div class="travel-status-row green">✅ LANDED — Baldonnel Aerodrome (Casement Aerodrome), west Co Dublin · ~9:00 PM · May 10, 2026</div>
+              <div class="travel-status-row green">Callsign: IRL290 · Operator: Irish Air Corps · Government jet · Departed TFS ~5:40 PM · 2 ambulances seen leaving ~9:30 PM</div>
+              <div class="travel-status-row green">Quarantine: Mater Hospital National Isolation Unit, Dublin · 42-day isolation · Period runs from Wednesday May 6</div>
+              <div class="travel-status-row muted">Interim CMO Prof. Mary Horgan: Mater Hospital has "a team of experts in infectious diseases, intensive care, nurses trained to deal with any potential issues." Treatment described as "supportive" — if symptoms (respiratory/kidney failure) develop, ICU intervention ready.</div>
               <div class="travel-acc-note" style="margin-top:16px">
-                Track live:
                 <a href="https://www.flightradar24.com/IRL290/3fa13094" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Flightradar24 — IRL290 ↗</a>
               </div>
               <div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.07);font-size:10px;color:var(--color-text-faint)">
                 <div style="font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px">Sources</div>
                 <div>· Flight callsign identified via Flightradar24 · IRL = Irish Air Corps ICAO prefix</div>
-                <div style="margin-top:3px">· <a href="https://www.usatoday.com/story/news/health/2026/05/10/hantavirus-live-updates-cruise-ship-quarantine--live/90020238007/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">USA Today — Live updates: MV Hondius disembarkation (May 10, 2026)</a></div>
+                <div style="margin-top:3px">· <a href="https://www.independent.ie/irish-news/irish-passengers-from-hantavirus-hit-ship-isolating-in-hse-run-facility-for-42-days-confirms-cmo/a693828692.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Irish Independent — CMO confirms 42-day isolation at HSE facility (May 11, 2026) ↗</a></div>
               </div>
             </div>
           </div>
@@ -844,11 +846,11 @@
             </div>
             <div class="quar-title">
               <h3>United Kingdom</h3>
-              <p>Hospitalized, Manchester</p>
+              <p>Arrowe Park Hospital, Wirral, Merseyside</p>
             </div>
             <span class="quar-status quar-status--monitoring">Monitoring</span>
           </div>
-          <div class="quar-people">22 passengers · Hospital isolation</div>
+          <div class="quar-people">20 British nationals + 1 German + 1 Japanese · Arrowe Park Hospital</div>
           <div class="quar-progress-wrap">
             <div class="quar-progress-label">
               <span class="quar-day-label">Day 1 of 21</span>
@@ -862,7 +864,7 @@
             <span class="toggle-arrow">▼</span> Flight details
           </button>
           <div class="quar-flight-details">
-            ZT791 / AWC7791 · Airbus A320 · Titan Airways · TFS → Manchester (MAN) · 22 passengers
+            ZT791 / AWC7791 · Airbus A320 · Titan Airways · TFS → Manchester (MAN) · 22 passengers · 20 British + 1 German + 1 Japanese
           </div>
         </div>
 
@@ -972,7 +974,7 @@
         </div>
 
         <!-- Ireland -->
-        <div class="quar-card" data-arrival="2026-05-10" data-duration="21">
+        <div class="quar-card" data-arrival="2026-05-06" data-duration="42">
           <div class="quar-header">
             <div class="quar-flag">🇮🇪</div>
             <div class="quar-icon">
@@ -984,25 +986,25 @@
             </div>
             <div class="quar-title">
               <h3>Ireland</h3>
-              <p>Location TBD</p>
+              <p>Mater Hospital National Isolation Unit, Dublin</p>
             </div>
             <span class="quar-status quar-status--clear">All clear</span>
           </div>
-          <div class="quar-people">2 passengers</div>
+          <div class="quar-people">2 passengers · 42-day isolation from May 6 · Mater Hospital, Dublin</div>
           <div class="quar-progress-wrap">
             <div class="quar-progress-label">
-              <span class="quar-day-label">Day 1 of 21</span>
-              <span>21-day isolation</span>
+              <span class="quar-day-label">Day 1 of 42</span>
+              <span>42-day isolation</span>
             </div>
             <div class="quar-progress-bar">
-              <div class="quar-progress-fill" style="width:5%"></div>
+              <div class="quar-progress-fill" style="width:2%"></div>
             </div>
           </div>
           <button class="quar-flight-toggle">
             <span class="toggle-arrow">▼</span> Flight details
           </button>
           <div class="quar-flight-details">
-            IRL290 · Irish Air Corps · TFS → Ireland · 2 passengers
+            IRL290 · Irish Air Corps · TFS → Baldonnel Aerodrome, Dublin · 2 passengers · Landed ~9:00 PM May 10
           </div>
         </div>
 

@@ -577,10 +577,10 @@ const OverviewTab = {
       { pos: [49.25, -123.12], flag: "🇨🇦", label: "Canada · 4 passengers · LANDED British Columbia · Quarantine: 21-42 day isolation · All asymptomatic", count: 4, confirmed: true, landed: true, quarStatus: "clear", arrivedDate: "2026-05-11" },
       { pos: [51.45,  5.37],  flag: "🇳🇱", label: "Netherlands · 26 passengers · Quarantine: Eindhoven · incl. 2 Indian crew members · All asymptomatic", count: 26, confirmed: true, landed: true, quarStatus: "clear",       arrivedDate: "2026-05-10" },
       { pos: [41.25, -95.93], flag: "🇺🇸", label: "United States · 18 passengers · LANDED Omaha · 1 PCR positive (UNMC biocontainment) · 1 symptomatic (RESPTC) · 16 National Quarantine Unit", count: 18, confirmed: true, landed: true, quarStatus: "symptomatic", arrivedDate: "2026-05-11" },
-      { pos: [53.35, -2.27],  flag: "🇬🇧", label: "United Kingdom · 22 passengers · Quarantine: Manchester · Hospitalized on arrival", count: 22, confirmed: true, landed: true, quarStatus: "monitoring",  arrivedDate: "2026-05-10" },
+      { pos: [53.39, -3.03],  flag: "🇬🇧", label: "United Kingdom · 22 passengers · Quarantine: Arrowe Park Hospital, Wirral · 20 British + 1 German + 1 Japanese", count: 22, confirmed: true, landed: true, quarStatus: "monitoring",  arrivedDate: "2026-05-10" },
       // ── Other confirmed repatriation flights (no quarantine location confirmed yet) ──
       { pos: [41.00, 28.98],  flag: "🇹🇷", label: "Turkey · 3 passengers · DEPARTED TFS", count: 3, confirmed: true },
-      { pos: [53.33, -6.25],  flag: "🇮🇪", label: "Ireland · 2 passengers · IRL290 · Irish Air Corps · DEPARTED TFS", count: 2, confirmed: true },
+      { pos: [53.34, -6.27],  flag: "🇮🇪", label: "Ireland · 2 passengers · IRL290 · Landed Baldonnel Aerodrome · Quarantine: Mater Hospital, Dublin · 42 days from May 6", count: 2, confirmed: true, landed: true, quarStatus: "clear", arrivedDate: "2026-05-10" },
       { pos: [-31.67, 115.97], flag: "🇦🇺", label: "Australia + NZ · 6 passengers · Flight pending → RAAF Pearce, WA · Quarantine: Bullsbrook Centre, Perth · 21-42 days", count: 6, confirmed: true },
     ];
 

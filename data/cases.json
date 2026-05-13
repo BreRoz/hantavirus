@@ -1051,7 +1051,7 @@
     },
     {
       "id": "PUSCA01",
-      "name": "California Resident — Returned MV Hondius Passenger",
+      "name": "California Residents (4) — MV Hondius Exposure",
       "age": null,
       "sex": null,
       "nationality": "American",
@@ -1075,8 +1075,8 @@
       "flights": [],
       "source_url": null,
       "source_notes": "California Department of Public Health news release, May 8 2026",
-      "clinical_notes": "One California resident returned from MV Hondius, under monitoring by local health officials. Protocol: daily temperature checks, assessment for hantavirus-consistent symptoms, and direction to modify activities. No symptoms reported as of May 8. A second California resident remains aboard the ship (not yet disembarked). California is one of 6 US states (AZ, CA, GA, NJ, TX, VA) monitoring returned passengers — 9 US residents total across all states, none ill.",
-      "reporter": "California Department of Public Health"
+      "clinical_notes": "Four California residents exposed to Andes hantavirus — updated May 13 2026 (up from 1 reported May 8). 2 are quarantined; 2 are monitored by local health departments (California Dept of Public Health). All asymptomatic as of May 13. Protocol: daily temperature checks, assessment for hantavirus-consistent symptoms. California is one of 10 US states monitoring returned passengers/contacts as of May 13.",
+      "reporter": "California Department of Public Health / USA Today"
     },
     {
       "id": "PFRCE02",
@@ -1511,6 +1511,72 @@
       "source_notes": "Italian Health Ministry / Yahoo News, May 13 2026",
       "clinical_notes": "⚠️ ALL TESTED NEGATIVE — RULED OUT. Four people in Italy tested negative for hantavirus May 13 2026: (1) Argentine tourist hospitalized with pneumonia; (2) 25-year-old Italian man from Calabria — voluntary quarantine after traveling on KLM flight alongside a woman who later died, briefly counted as WHO 'probable' case; (3) British tourist in Milan; (4) traveling companion of British tourist. Italian Health Ministry: 'The risk connected with the virus remains very low in Europe.' Kept in database as epidemiologically significant ruled-out cluster — demonstrates active contact tracing across Europe.",
       "reporter": "Italian Health Ministry / Yahoo News"
+    },
+    {
+      "id": "PUSNQC01",
+      "name": "Jake Rosmarin — Boston Travel Influencer, UNMC Quarantine (Asymptomatic)",
+      "age": null,
+      "sex": "M",
+      "nationality": "American",
+      "status": "asymptomatic",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-11",
+      "incubation_start": null,
+      "location": {
+        "city": "Omaha",
+        "state": "Nebraska",
+        "country": "USA",
+        "venue": "National Quarantine Unit — UNMC",
+        "lat": 41.255,
+        "lng": -95.945
+      },
+      "ship_info": {
+        "vessel": "MV Hondius",
+        "voyage": "HDS2526",
+        "disembark_port": "Tenerife",
+        "disembark_date": "2026-05-09"
+      },
+      "transport": {
+        "type": "flight",
+        "notes": "US DoS airlift TFS → Washington D.C. → Omaha"
+      },
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.usatoday.com/story/life/health-wellness/2026/05/13/hantavirus-quarantine-jake-rosmarin/90050794007/",
+      "source_notes": "USA Today, May 13 2026",
+      "clinical_notes": "Jake Rosmarin — Boston-based travel influencer and one of 18 Americans aboard MV Hondius. Currently asymptomatic in UNMC National Quarantine Unit, Omaha. Voluntarily committing to full 42-day quarantine. Has fiancé Alex in Boston. 'From the beginning, I made that decision immediately, that I want to be here for that 42 days, because I know that if I'm here, I'm going to be in the best care possible.' Room has stationary bike, thermometer; bloodwork done daily. Has been speaking with media frequently. Quote on public risk: 'It's not COVID. It's scary, or scarier, for people like us, who are at risk with exposure after being on a ship with people for five-to-six weeks. But, for people who are never coming in contact with us... I don't think it's anything anyone needs to worry about.' One of 15 Americans in the standard quarantine unit (vs. Dr. Kornfeld in biocontainment).",
+      "reporter": "USA Today"
+    },
+    {
+      "id": "PUSIL01",
+      "name": "Illinois Resident — Possible Hantavirus, NOT Tied to Cruise Ship",
+      "age": null,
+      "sex": null,
+      "nationality": "American",
+      "status": "symptomatic",
+      "generation": 0,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-13",
+      "incubation_start": null,
+      "location": {
+        "city": "Illinois",
+        "state": "Illinois",
+        "country": "USA",
+        "venue": "Under investigation",
+        "lat": 40.0,
+        "lng": -89.2
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.usatoday.com/story/news/health/2026/05/13/hantavirus-updates-american-tests-negative/90057777007/",
+      "source_notes": "USA Today, May 13 2026",
+      "clinical_notes": "Possible hantavirus case in Illinois explicitly confirmed as NOT tied to the MV Hondius cruise ship outbreak. Source of exposure under investigation — likely rodent/environmental contact, which is the typical transmission route for hantavirus in the US. Details limited as of May 13. Important distinction: this would be a separate, independent hantavirus exposure unrelated to the Andes strain ship cluster. Generation listed as 0 (independent index case if confirmed). Status and details pending further reporting.",
+      "reporter": "USA Today"
     }
   ],
   "edges": [

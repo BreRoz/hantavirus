@@ -761,7 +761,7 @@
       "flights": [],
       "source_url": "https://www.kcra.com/article/hantavirus-cruise-ship-california/71244285",
       "source_notes": "AP / KCRA May 7 2026",
-      "clinical_notes": "VOYAGE TIMELINE (Oceanwide Expeditions official, via USA Today May 8 2026):\nApr 1: Departed Ushuaia — 175 aboard (114 guests, 61 crew).\nApr 4-7: Stop at South Georgia Island.\nApr 13-16: Stop at Tristan da Cunha/Inaccessible/Nightingale Islands — 6 guests embark (islanders), 1 crew disembarks → 180 total (120 guests, 60 crew).\nApr 17: Stop at Gough Island.\nApr 21-24: Stop at St. Helena — 1 crew embarks, 32 guests disembark (including Dutch couple P002/PEDB43) → 149 total (88 guests, 61 crew).\nApr 27: 2 guests medevaced via Ascension Island — British national P003 (symptomatic) and American partner PUSPAR01 (precautionary) → 147 total (86 guests, 61 crew).\n\nCURRENT SHIP MANIFEST (Oceanwide, USA Today May 8) by nationality: Argentina 1g, Australia 4g, Belgium 2g, Canada 4g, France 5g, Germany 5g+1c, Greece 1g, Guatemala 1c, India 2c, Ireland 2g, Italy 1g, Japan 1g, Montenegro 1c, Netherlands 8g+5c, New Zealand 1g, Philippines 38c, Poland 1c, Portugal 1c, Russia 1c, Spain 13g+1c, Turkey 3g, UK 19g+3c, Ukraine 5c, USA 17g. (g=guest, c=crew)\n\nCountries notified by WHO (May 7): Canada, Denmark, Germany, Netherlands, New Zealand, Saint Kitts and Nevis, Singapore, Sweden, Switzerland, Turkey, UK, USA. Also South Africa and Spain.\n\nSt. Helena authorities monitoring a 'small number' of higher-risk contacts ordered to isolate 45 days. Singapore monitoring 2 men (PUSSG01). 7 Americans across 6 US states (AZ, CA, GA, NJ, TX, VA) monitored — none symptomatic. New Jersey monitoring 2 (PUSNJ01). US biocontainment charter to Nebraska planned for 17 Americans. Ship docking Granadilla port, Tenerife, Sunday May 10.",
+      "clinical_notes": "VOYAGE TIMELINE (Oceanwide Expeditions official, via USA Today May 8 2026):\nApr 1: Departed Ushuaia — 175 aboard (114 guests, 61 crew).\nApr 4-7: Stop at South Georgia Island.\nApr 13-16: Stop at Tristan da Cunha/Inaccessible/Nightingale Islands — 6 guests embark (islanders), 1 crew disembarks → 180 total (120 guests, 60 crew).\nApr 17: Stop at Gough Island.\nApr 21-24: Stop at St. Helena — 1 crew embarks, 32 guests disembark (including Dutch couple P002/PEDB43) → 149 total (88 guests, 61 crew).\nApr 27: 2 guests medevaced via Ascension Island — British national P003 (symptomatic) and American partner PUSPAR01 (precautionary) → 147 total (86 guests, 61 crew).\n\nCURRENT SHIP MANIFEST (Oceanwide, USA Today May 8) by nationality: Argentina 1g, Australia 4g, Belgium 2g, Canada 4g, France 5g, Germany 5g+1c, Greece 1g, Guatemala 1c, India 2c, Ireland 2g, Italy 1g, Japan 1g, Montenegro 1c, Netherlands 8g+5c, New Zealand 1g, Philippines 38c, Poland 1c, Portugal 1c, Russia 1c, Spain 13g+1c, Turkey 3g, UK 19g+3c, Ukraine 5c, USA 17g. (g=guest, c=crew)\n\nCountries notified by WHO (May 7): Canada, Denmark, Germany, Netherlands, New Zealand, Saint Kitts and Nevis, Singapore, Sweden, Switzerland, Turkey, UK, USA. Also South Africa and Spain.\n\nSt. Helena authorities monitoring a 'small number' of higher-risk contacts ordered to isolate 45 days. Singapore monitoring 2 men (PUSSG01). 7 Americans across 6 US states (AZ, CA, GA, NJ, TX, VA) monitored — none symptomatic. New Jersey monitoring 2 (PUSNJ01). US biocontainment charter to Nebraska planned for 17 Americans. Ship docked Granadilla port, Tenerife, Sunday May 10. All passengers disembarked and repatriated to six European countries, Canada, and USA by May 11. MV Hondius departed Tenerife May 12, returning to Netherlands (ETA May 17-18 per ECDC May 13 update). Crew remain aboard for return voyage.",
       "reporter": "AP / KCRA / CDPH / CNN / WHO / NBC News / Calgary CityNews"
     },
     {
@@ -790,8 +790,8 @@
       "flights": [],
       "source_url": "https://www.livescience.com/health/live/hantivirus-cruise-friday-may-8",
       "source_notes": "Spain Health Minister Mónica García via X / LiveScience, May 8 2026; NBC News May 8 2026",
-      "clinical_notes": "32-year-old Spanish woman hospitalised in Alicante (NOT home-isolating) after travelling on a flight 'close to' the Dutch woman (PEDB43) who died of hantavirus. Seated two rows behind PEDB43 on the flight. Reporting mild symptoms compatible with hantavirus. Admitted to hospital; National Microbiology Center test results expected within 24–48 hours. Status remains SUSPECTED — NOT confirmed (ABC reporting of 'tested positive' is incorrect per NBC, May 8 2026). Gen 2 case — flight contact with index case, not aboard MV Hondius. Same transmission pathway as PFRCE01 (French citizen) and PKLM01 (Airlink flight attendant). Spain health minister: 'risk for the general population remains very low.'",
-      "reporter": "Spain Health Minister Mónica García / LiveScience / NBC News"
+      "clinical_notes": "32-year-old Spanish woman hospitalised in Alicante (NOT home-isolating) after travelling on a flight 'close to' the Dutch woman (PEDB43) who died of hantavirus. Seated two rows behind PEDB43 on the flight. Reporting mild symptoms compatible with hantavirus. Admitted to Sant Joan Hospital in negative pressure isolation room. Gen 2 case — flight contact with index case, not aboard MV Hondius. Same transmission pathway as PFRCE01 (French citizen) and PKLM01 (Airlink flight attendant). UPDATE May 12-13: TESTED NEGATIVE TWICE by Spain's National Microbiology Centre. Remains hospitalised pending mandatory third PCR test per protocol. Condition stable with only mild respiratory symptoms (cough). Likely to be ruled out. Spain health minister: 'risk for the general population remains very low.'",
+      "reporter": "Spain Health Minister Mónica García / LiveScience / NBC News / Alicante Today"
     },
     {
       "id": "PTRISTAN01",
@@ -885,8 +885,8 @@
       "flights": [],
       "source_url": "https://www.cnn.com/2026/05/08/health/hantavirus-by-the-numbers",
       "source_notes": "CNN / Spain Health Minister Mónica García, May 8 2026",
-      "clinical_notes": "14 Spanish passengers aboard MV Hondius to be transported to Gómez Ulla Military Hospital in Madrid (NOT Tenerife) after disembarkation at Tenerife (expected Sunday May 10). Full protocol per Spain head of emergency services Virginia Barcones: PCR test on arrival + repeat PCR on day 7; if positive → UATAN unit; single rooms, no visitor contact. All other remaining passengers to be repatriated per Spain health minister Mónica García. Arrival under strict protocol: completely isolated cordoned-off area, guarded vehicles, sealed airport section with no contact with local residents. 17 US citizens to be repatriated by US government plane (NBC News / CNN, May 8 2026).",
-      "reporter": "CNN / Spain Health Ministry"
+      "clinical_notes": "14 Spanish passengers aboard MV Hondius transported to Gómez Ulla Military Hospital in Madrid after disembarkation at Tenerife (May 10). Full protocol per Spain head of emergency services Virginia Barcones: PCR test on arrival + repeat PCR on day 7; if positive → UATAN unit; single rooms, no visitor contact. UPDATE May 12: ONE CONFIRMED POSITIVE — one Spanish passenger tested positive (initially provisional on May 11, confirmed May 12 by second PCR). Patient was initially asymptomatic but later developed low-grade fever and mild respiratory symptoms. Currently stable on floor 22 with maximum isolation, no clinical deterioration. The OTHER 13 passengers ALL TESTED NEGATIVE on first PCR. Confirmed case is now tracked separately as PESP_GU01. Spain health ministry set May 10 as 'day zero' for quarantine (up to 42 days).",
+      "reporter": "CNN / Spain Health Ministry / Al Jazeera / Euronews / The Spanish Eye"
     },
     {
       "id": "PUSNJ01",
@@ -1577,6 +1577,111 @@
       "source_notes": "USA Today, May 13 2026",
       "clinical_notes": "Possible hantavirus case in Illinois explicitly confirmed as NOT tied to the MV Hondius cruise ship outbreak. Source of exposure under investigation — likely rodent/environmental contact, which is the typical transmission route for hantavirus in the US. Details limited as of May 13. Important distinction: this would be a separate, independent hantavirus exposure unrelated to the Andes strain ship cluster. Generation listed as 0 (independent index case if confirmed). Status and details pending further reporting.",
       "reporter": "USA Today"
+    },
+    {
+      "id": "PESP_GU01",
+      "name": "Spanish Passenger — Gómez Ulla Confirmed Positive",
+      "age": null,
+      "sex": null,
+      "nationality": "Spanish",
+      "status": "confirmed",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": "2026-05-11",
+      "date": "2026-05-12",
+      "incubation_start": null,
+      "location": {
+        "city": "Madrid",
+        "state": "Community of Madrid",
+        "country": "Spain",
+        "venue": "Gómez Ulla Central Defence Hospital — Floor 22, Maximum Isolation / UATAN Unit",
+        "lat": 40.3811,
+        "lng": -3.7178
+      },
+      "ship_info": {
+        "vessel": "MV Hondius",
+        "voyage": "HDS2526",
+        "disembark_port": "Tenerife",
+        "disembark_date": "2026-05-10"
+      },
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.aljazeera.com/news/2026/5/12/spain-reports-new-hantavirus-case-in-passenger-evacuated-from-cruise-ship",
+      "source_notes": "Al Jazeera / Euronews / The Spanish Eye, May 11-12 2026",
+      "clinical_notes": "One of 14 Spanish MV Hondius passengers quarantined at Gómez Ulla Military Hospital, Madrid. Initial PCR on arrival (May 10-11) came back positive provisionally; confirmed positive by second PCR on May 12. Was initially asymptomatic upon arrival but developed low-grade fever and mild respiratory symptoms. Currently stable on floor 22 with maximum isolation — no evident clinical deterioration. Health Minister Mónica García announced result via social media. If confirmed, will transfer to UATAN high-level isolation unit. Part of PESP14 group — the only positive among 14 (other 13 tested negative on first PCR). Spain set May 10 as 'day zero' for the 42-day quarantine. This is the 10th confirmed case in the MV Hondius outbreak per WHO count.",
+      "reporter": "Al Jazeera / Euronews / Spain Health Ministry / The Spanish Eye"
+    },
+    {
+      "id": "PUKAP01",
+      "name": "UK Arrowe Park Evacuees (24) — 22 British + 1 German + 1 Japanese",
+      "age": null,
+      "sex": null,
+      "nationality": "Multiple (22 British, 1 German, 1 Japanese)",
+      "status": "asymptomatic",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-10",
+      "incubation_start": null,
+      "location": {
+        "city": "Birkenhead",
+        "state": "Merseyside",
+        "country": "United Kingdom",
+        "venue": "Arrowe Park Hospital, Wirral — Isolation Wing → Home Self-Isolation",
+        "lat": 53.3727,
+        "lng": -3.0738
+      },
+      "ship_info": {
+        "vessel": "MV Hondius",
+        "voyage": "HDS2526",
+        "disembark_port": "Tenerife",
+        "disembark_date": "2026-05-09"
+      },
+      "transport": {
+        "type": "flight",
+        "notes": "Dedicated repatriation flight Tenerife → Manchester Airport, May 10. Transferred by private coach to Arrowe Park Hospital."
+      },
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://thetab.com/2026/05/13/22-cruise-ship-evacuees-set-to-leave-liverpool-hospital-following-hantavirus-outbreak",
+      "source_notes": "The Tab / ITV News Granada / UKHSA, May 10-13 2026",
+      "clinical_notes": "24 MV Hondius evacuees (22 British nationals + 1 German UK-resident + 1 Japanese passenger) arrived Manchester airport May 10 on a dedicated flight and were transferred by private coach to Arrowe Park Hospital on the Wirral for 72 hours of precautionary isolation. All healthy and asymptomatic on arrival per Prof Robin May (UKHSA). Strict infection control: PPE including face masks for passengers, crew, drivers, and medical teams throughout. As of May 13: being discharged to 42 days of home self-isolation in self-contained flats with phone access. Public transport prohibited during isolation. Specialist support team on-site. 6 individuals already released to home/suitable accommodation after negative PCR tests. If symptoms develop → transfer to Royal Liverpool University Hospital Tropical & Infectious Diseases Unit. Additionally, 10 more passengers/crew from St Helena and Ascension Island expected to arrive for similar monitoring. Note: excludes previously evacuated British nationals P003 (in SA), P872E8 (in Netherlands), and PTRISTAN01/PTRDC01 (Tristan da Cunha).",
+      "reporter": "UKHSA / The Tab / ITV News Granada"
+    },
+    {
+      "id": "PBEL01",
+      "name": "Belgian Passengers (2) — Antwerp University Hospital",
+      "age": null,
+      "sex": null,
+      "nationality": "Belgian",
+      "status": "asymptomatic",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-11",
+      "incubation_start": null,
+      "location": {
+        "city": "Antwerp",
+        "state": "Antwerp Province",
+        "country": "Belgium",
+        "venue": "Antwerp University Hospital (UZA) → Home monitoring by Flemish health authorities",
+        "lat": 51.2194,
+        "lng": 4.4025
+      },
+      "ship_info": {
+        "vessel": "MV Hondius",
+        "voyage": "HDS2526",
+        "disembark_port": "Tenerife",
+        "disembark_date": "2026-05-09"
+      },
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.euronews.com/health/2026/05/11/european-passengers-from-the-hantavirus-hit-ship-are-back-in-their-home-countries-what-hap",
+      "source_notes": "Euronews, May 11 2026",
+      "clinical_notes": "Two Belgian MV Hondius passengers received at Antwerp University Hospital (UZA) on Sunday May 11 for medical assessment. Consistent with ship manifest showing 2 Belgian guests. If asymptomatic (which they are), to be sent home and monitored through follow-up by Flemish health authorities. Belgium is among six European countries receiving repatriated MV Hondius passengers.",
+      "reporter": "Euronews"
     }
   ],
   "edges": [

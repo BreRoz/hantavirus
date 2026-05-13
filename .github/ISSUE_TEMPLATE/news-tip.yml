@@ -1,0 +1,100 @@
+name: 📰 News Tip / Source Submission
+description: Share a news article or update that should be reflected in the tracker
+title: "[TIP] "
+labels: ["news-tip"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep this tracker accurate! Please fill in as much as you can.
+        One issue per article is ideal. Check [existing issues](https://github.com/BreRoz/hantavirus/issues) first to avoid duplicates.
+
+  - type: input
+    id: source-url
+    attributes:
+      label: Source URL
+      description: Direct link to the news article or official statement
+      placeholder: https://...
+    validations:
+      required: true
+
+  - type: input
+    id: publication
+    attributes:
+      label: Publication / Source
+      description: Who published it? (e.g. Reuters, BBC, WHO, CDC, local health ministry)
+      placeholder: Reuters
+    validations:
+      required: true
+
+  - type: input
+    id: publish-date
+    attributes:
+      label: Publication Date
+      placeholder: May 13, 2026
+    validations:
+      required: true
+
+  - type: dropdown
+    id: country
+    attributes:
+      label: Country / Region this relates to
+      options:
+        - 🌐 Global / WHO
+        - 🇦🇷 Argentina
+        - 🇦🇺 Australia / New Zealand
+        - 🇧🇪 Belgium
+        - 🇨🇦 Canada
+        - 🇫🇷 France
+        - 🇩🇪 Germany
+        - 🇮🇪 Ireland
+        - 🇮🇹 Italy
+        - 🇳🇱 Netherlands
+        - 🇳🇿 New Zealand
+        - 🇷🇺 Russia
+        - 🇿🇦 South Africa
+        - 🇪🇸 Spain
+        - 🇨🇭 Switzerland
+        - 🇹🇷 Turkey
+        - 🇬🇧 United Kingdom
+        - 🇺🇸 United States
+        - 🚢 MV Hondius (ship)
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-is-new
+    attributes:
+      label: What's new or what should be updated?
+      description: Summarize in 2–4 sentences what the article says that isn't already on the tracker. Quote the key sentence if you can.
+      placeholder: "Article says the French patient's condition has improved and they are off ECMO. Quote: 'Doctors confirmed Tuesday she has been removed from the artificial lung device.'"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: update-type
+    attributes:
+      label: Type of update
+      options:
+        - New case confirmed
+        - Case status change (condition improved/worsened)
+        - New location / facility named
+        - Quarantine update
+        - Official statement / press conference
+        - Flight / repatriation update
+        - Death
+        - Test result
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and this article hasn't been submitted yet
+          required: true
+        - label: The source is a news outlet, official health authority, or government body (not social media rumor)
+          required: true

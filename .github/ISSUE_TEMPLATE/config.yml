@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🌍 WHO Emergency Response (official updates)
+    url: https://www.who.int/emergencies
+    about: For official public health guidance, go to WHO directly — not this tracker.
+  - name: 🦠 CDC Hantavirus Information
+    url: https://www.cdc.gov/hantavirus
+    about: U.S. Centers for Disease Control hantavirus information.

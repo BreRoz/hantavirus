@@ -1292,20 +1292,24 @@
   <div class="disclaimer-modal-content" style="max-width:480px">
     <div class="disclaimer-modal-header">
       <span style="font-size:18px;flex-shrink:0">📡</span>
-      <div class="disclaimer-modal-title">EPITRACE — TRACKER SHUTTING DOWN</div>
+      <div class="disclaimer-modal-title" style="color:#4ade80">EPITRACE — STILL UPDATING</div>
     </div>
     <div class="disclaimer-modal-body">
-      <p style="line-height:1.7">This tracker was built and maintained by one person to help make sense of a fast-moving, confusing outbreak. It's been a privilege to put it together.</p>
-      <p style="line-height:1.7;margin-top:12px">Unfortunately, the hosting costs are no longer sustainable, and the site will be going offline soon. The data here reflects what was known as of <strong>May 11, 2026</strong> and will not be updated further.</p>
-      <div class="disclaimer-warning-box" style="margin-top:16px;text-align:left;line-height:1.6">
-        For continued updates, follow official sources:<br>
-        · <a href="https://www.who.int/emergencies" target="_blank" rel="noopener" style="color:rgba(255,215,0,0.8)">WHO Emergency Response</a><br>
-        · <a href="https://www.cdc.gov/" target="_blank" rel="noopener" style="color:rgba(255,215,0,0.8)">CDC.gov</a><br>
-        · <a href="https://www.ecdc.europa.eu/" target="_blank" rel="noopener" style="color:rgba(255,215,0,0.8)">ECDC (Europe)</a>
+      <p style="line-height:1.7">This tracker is built and maintained by <strong>one person</strong> — no team, no newsroom, just someone following the outbreak closely and trying to keep this organized.</p>
+      <p style="line-height:1.7;margin-top:12px">It is still being actively updated as new information comes in. Last updated: <strong style="color:#4ade80">May 13, 2026</strong>.</p>
+      <div class="disclaimer-warning-box" style="margin-top:16px;text-align:left;line-height:1.8;background:rgba(74,222,128,0.07);border-color:rgba(74,222,128,0.3)">
+        <strong style="color:#4ade80">If this helped you — share it on Reddit.</strong><br>
+        That's where people care most about this outbreak and where it'll reach the people who need it:<br>
+        <span style="color:rgba(255,255,255,0.5);font-size:11px">r/worldnews · r/andes · r/COVID19 · r/pandemicpreparedness</span>
       </div>
-      <p style="margin-top:16px;color:rgba(255,255,255,0.45);font-size:11px;line-height:1.6">Thank you to everyone who shared it, corrected it, and followed along. Stay safe.</p>
+      <div style="margin-top:16px;padding:10px 12px;background:rgba(255,255,255,0.04);border-radius:6px;font-size:11px;color:rgba(255,255,255,0.45);line-height:1.6">
+        For official updates:<br>
+        · <a href="https://www.who.int/emergencies" target="_blank" rel="noopener" style="color:rgba(255,215,0,0.7)">WHO Emergency Response</a> &nbsp;·&nbsp;
+        <a href="https://www.cdc.gov/" target="_blank" rel="noopener" style="color:rgba(255,215,0,0.7)">CDC.gov</a> &nbsp;·&nbsp;
+        <a href="https://www.ecdc.europa.eu/" target="_blank" rel="noopener" style="color:rgba(255,215,0,0.7)">ECDC (Europe)</a>
+      </div>
       <div class="disclaimer-meta" style="margin-top:16px">
-        <span>LAST UPDATED: <span id="disclaimer-date" style="color:rgba(255,215,0,0.6)">May 11, 2026</span></span>
+        <span>LAST UPDATED: <span id="disclaimer-date" style="color:#4ade80">May 13, 2026</span></span>
         <span>EPITRACE v2.0</span>
       </div>
     </div>
@@ -1420,7 +1424,7 @@ const DisclaimerSystem = {
     }
 
     // Show shutdown notice unless user checked "don't show again"
-    const seen = localStorage.getItem('epitrace_shutdown_v1');
+    const seen = localStorage.getItem('epitrace_notice_v2');
     if (!seen) this.openModal();
   },
 
@@ -1431,7 +1435,7 @@ const DisclaimerSystem = {
   closeModal() {
     document.getElementById('disclaimer-modal')?.classList.remove('open');
     const cb = document.getElementById('disclaimer-no-show');
-    if (cb?.checked) localStorage.setItem('epitrace_shutdown_v1', '1');
+    if (cb?.checked) localStorage.setItem('epitrace_notice_v2', '1');
   },
 
   dismissBanner() {

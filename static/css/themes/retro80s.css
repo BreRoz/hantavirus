@@ -1023,9 +1023,9 @@ body.banner-visible .app-layout {
 .disclaimer-modal-content {
   position: relative;
   background: #030e05;
-  border: 1px solid #FF6600;
+  border: 1px solid #4ade80;
   border-radius: 4px;
-  box-shadow: 0 0 50px rgba(255,102,0,0.2), 0 0 120px rgba(255,102,0,0.06), 0 24px 60px rgba(0,0,0,0.95);
+  box-shadow: 0 0 50px rgba(74,222,128,0.2), 0 0 120px rgba(74,222,128,0.06), 0 24px 60px rgba(0,0,0,0.95);
   width: 90%;
   max-width: 700px;
   max-height: 86vh;
@@ -1040,15 +1040,15 @@ body.banner-visible .app-layout {
   content: '';
   position: absolute;
   width: 16px; height: 16px;
-  border: 2px solid rgba(255,102,0,0.5);
+  border: 2px solid rgba(74,222,128,0.5);
   pointer-events: none;
 }
 .disclaimer-modal-content::before { top: 4px; left: 4px; border-right: none; border-bottom: none; }
 .disclaimer-modal-content::after  { bottom: 4px; right: 4px; border-left: none; border-top: none; }
 
 .disclaimer-modal-header {
-  background: linear-gradient(90deg, #1a0800 0%, #240d00 100%);
-  border-bottom: 1px solid rgba(255,102,0,0.5);
+  background: linear-gradient(90deg, #001a05 0%, #002a08 100%);
+  border-bottom: 1px solid rgba(74,222,128,0.35);
   padding: 12px 20px;
   display: flex;
   align-items: center;

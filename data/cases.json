@@ -919,7 +919,7 @@
     },
     {
       "id": "PCAN01",
-      "name": "Alberta Residents — Flight Contacts (2)",
+      "name": "Alberta Residents — Flight Contacts (2), Isolating at Home 21+ days",
       "age": null,
       "sex": null,
       "nationality": "Canadian",
@@ -933,7 +933,7 @@
         "city": "Alberta",
         "state": "Alberta",
         "country": "Canada",
-        "venue": "Home monitoring",
+        "venue": "Isolating at home — Alberta",
         "lat": 53.9333,
         "lng": -116.5765
       },
@@ -941,14 +941,14 @@
       "transport": {},
       "exposures": [],
       "flights": [],
-      "source_url": "https://calgary.citynews.ca/2026/05/08/alberta-hantavirus-monitoring",
-      "source_notes": "Calgary CityNews / Alberta Ministry of Primary and Preventative Health Services, May 8 2026",
-      "clinical_notes": "Two Alberta residents who had brief contact with an infected MV Hondius passenger on separate flights — NOT aboard the ship themselves. Contacted and at home monitoring for symptoms. Health zone not disclosed per patient confidentiality. Assessed as part of Canada Chief Medical Officer Dr. Joss Reimer's review of 3 total flight contacts (2 Alberta + 1 Ontario). No symptoms as of May 8. Gen 2 case — post-disembarkation flight contact. Alberta Ministry confirmed: \"both people have been contacted and are at home monitoring for symptoms.\" Hantavirus incubation 1–6 weeks per Reimer, occasionally longer.",
-      "reporter": "Calgary CityNews / Alberta Ministry of Health / Dr. Joss Reimer"
+      "source_url": "https://www.sasktoday.ca/national-news/what-we-know-about-hantavirus-now-that-people-linked-to-outbreak-are-back-in-canada-12274333",
+      "source_notes": "The Canadian Press (Nicole Ireland / Hannah Alberga), May 13 2026",
+      "clinical_notes": "Two Alberta residents possibly exposed to hantavirus on a flight — NOT aboard the ship. Isolating at home in Alberta for at least 21 days from time of possible exposure. No symptoms as of May 13. Part of 10 total people in Canada with connections to the outbreak: 6 ship passengers + 4 flight contacts. Gen 2 — post-disembarkation flight contact. Testing only begins if symptoms develop; experts warn initial Andes virus symptoms are 'tricky' — easily mistaken for cold, headache, or stress. David Safronetz (National Microbiology Lab, Winnipeg): 'The question is always going to be, is the person truly negative because they were never actually infected, or are they negative because at the time that sample was collected, the virus just isn't present at high enough levels?'",
+      "reporter": "The Canadian Press / Alberta Ministry of Health / National Microbiology Laboratory"
     },
     {
       "id": "PCAN02",
-      "name": "Ontario Resident — Flight Contact",
+      "name": "Ontario/Peel Region Residents — Flight Contacts (8 total: 1 isolating + 7 low-risk)",
       "age": null,
       "sex": null,
       "nationality": "Canadian",
@@ -959,25 +959,25 @@
       "date": "2026-05-08",
       "incubation_start": null,
       "location": {
-        "city": "Ontario",
+        "city": "Peel Region",
         "state": "Ontario",
         "country": "Canada",
-        "venue": "Home monitoring",
-        "lat": 51.2538,
-        "lng": -85.3232
+        "venue": "Isolating — Peel region (1 primary) + 7 secondary contacts isolating as of May 13",
+        "lat": 43.7315,
+        "lng": -79.7624
       },
       "ship_info": null,
       "transport": {},
       "exposures": [],
       "flights": [],
-      "source_url": "https://calgary.citynews.ca/2026/05/08/alberta-hantavirus-monitoring",
-      "source_notes": "Calgary CityNews / Canada Chief Medical Officer, May 8 2026",
-      "clinical_notes": "One Ontario resident who had brief contact with an infected MV Hondius passenger on a separate flight — NOT aboard the ship. Part of 3 total flight contacts identified by Canada Chief Medical Officer Dr. Joss Reimer (2 Alberta + 1 Ontario). No symptoms as of May 8. Gen 2 — post-disembarkation flight contact, same pathway as PFRCE01 (France), PESP02 (Spain), PKLM01 (Airlink attendant). Incubation 1–6 weeks per Reimer.",
-      "reporter": "Calgary CityNews / Canada Chief Medical Officer Dr. Joss Reimer"
+      "source_url": "https://www.sasktoday.ca/national-news/what-we-know-about-hantavirus-now-that-people-linked-to-outbreak-are-back-in-canada-12274333",
+      "source_notes": "The Canadian Press, May 13 2026",
+      "clinical_notes": "Primary: 1 visitor to Canada (not a ship passenger) who was on a flight with a ship passenger who later died of hantavirus — isolating in Peel region, Ontario. On Tuesday May 13, Ontario's Ministry of Health asked 7 additional people to isolate as 'low risk' contacts — they had come into contact with this higher-risk Peel region person. Total Ontario flight contact network: 8 people. No symptoms as of May 13. Gen 2 case. David Safronetz (National Microbiology Lab): testing not reliable pre-symptoms given long incubation. All tests sent to provincial labs then National Microbiology Laboratory in Winnipeg for confirmation.",
+      "reporter": "The Canadian Press / Ontario Ministry of Health"
     },
     {
       "id": "PCAN03",
-      "name": "Canadian Early Returnees — Isolating (3)",
+      "name": "Canadian Ship Passengers — Back in Canada (6 total, 4 locations)",
       "age": null,
       "sex": null,
       "nationality": "Canadian",
@@ -988,12 +988,12 @@
       "date": "2026-04-27",
       "incubation_start": "2026-04-01",
       "location": {
-        "city": "Ontario / Quebec",
-        "state": "Ontario",
+        "city": "Vancouver Island / Grey Bruce / Ontario / Quebec",
+        "state": "British Columbia",
         "country": "Canada",
-        "venue": "Isolating at home — Ontario (2) and Quebec (1)",
-        "lat": 45.5017,
-        "lng": -73.5673
+        "venue": "Various — BC (4), Ontario-Grey Bruce (2)",
+        "lat": 49.25,
+        "lng": -123.12
       },
       "ship_info": {
         "vessel": "MV Hondius",
@@ -1007,10 +1007,10 @@
       "transport": {},
       "exposures": [],
       "flights": [],
-      "source_url": "https://calgary.citynews.ca/2026/05/08/alberta-hantavirus-monitoring",
-      "source_notes": "Calgary CityNews, May 8 2026",
-      "clinical_notes": "Three people who disembarked MV Hondius early and returned to Canada on April 26-27 — before the hantavirus outbreak was identified. Two are Canadian nationals; a third person (nationality unconfirmed) returned with them. Two are isolating in Ontario, one in Quebec. No symptoms reported as of May 8. 4 additional Canadians remain aboard the ship, all symptom-free. Canadian consular officials coordinating support. Each province has identified a specific hospital capable of managing complex viruses. Incubation period 1–6 weeks per Canada Chief Medical Officer Dr. Joss Reimer.",
-      "reporter": "Calgary CityNews / Canada Chief Medical Officer Dr. Joss Reimer"
+      "source_url": "https://www.sasktoday.ca/national-news/what-we-know-about-hantavirus-now-that-people-linked-to-outbreak-are-back-in-canada-12274333",
+      "source_notes": "The Canadian Press (Nicole Ireland / Hannah Alberga), May 13 2026",
+      "clinical_notes": "UPDATE May 13 2026 — 6 ship passengers back in Canada across 4 locations:\n(1) Vancouver Island, BC — 4 passengers: a couple in their 70s from the Yukon; a person in their 70s from Vancouver Island; a person from BC in their 50s who lives abroad. 21-day quarantine started Sunday May 11 — could extend to 42 days. Dr. Bonnie Henry (BC PHO) confirmed.\n(2) Grey Bruce region, Ontario — 2 passengers (a couple), isolating 45 days.\n(3) One Quebecer possibly exposed on a flight — was isolating until Monday May 11, then deemed low risk; now self-monitoring 42 days.\nTotal Canada: 10 people (6 ship passengers + 4 flight contacts). None symptomatic. Canada implementing temporary measures to prevent MV Hondius passengers/crew from boarding flights to Canada (per PHAC). Each province has identified a hospital for complex virus management. National Microbiology Lab (Winnipeg) performing confirmation testing.",
+      "reporter": "The Canadian Press / Dr. Bonnie Henry (BC PHO) / PHAC"
     },
     {
       "id": "PUSPAR01",

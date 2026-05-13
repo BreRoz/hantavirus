@@ -1246,7 +1246,7 @@
       ],
       "source_url": "https://abcnews.go.com/Health/live-updates/hantavirus-outbreak-cruise-ship/?id=121234567",
       "source_notes": "ABC News live updates / French Health Minister Stéphanie Rist, May 11 2026",
-      "clinical_notes": "French MV Hondius passenger — PCR confirmed positive. Was asymptomatic when leaving the ship (per ECDC briefing, Stockholm, May 13). Became critically ill after repatriation. As of May 13 2026: breathing with artificial lung at Bichat Hospital, Paris, under care of infectious disease specialist Dr. Xavier Lescure. One of three passengers globally reported as critically ill (ECDC). French Health Minister Rist told National Assembly: virus sequencing incomplete — 'rather reassured' it has not mutated, but not yet certain. 22 French contact cases identified as of May 13. Repatriated on Falcon 900EX (F-HREG, ARL120E) TFS→LBG May 10.",
+      "clinical_notes": "French MV Hondius passenger — PCR confirmed positive. Was asymptomatic when leaving the ship (per ECDC briefing, Stockholm, May 13). Became critically ill after repatriation. As of May 13 2026: on ECMO (extracorporeal membrane oxygenation) — artificial lung — at Bichat Hospital, Paris. Dr. Xavier Lescure (infectious disease, Bichat): device pumps blood through artificial lung providing oxygen and returning it to the body — 'the final stage of supportive care.' French Health Minister Rist (May 13): condition deteriorating. Hope is that ECMO relieves pressure on lungs/heart to allow recovery. One of three passengers globally critically ill (ECDC). 22 French contact cases identified. Repatriated ARL120E TFS→LBG May 10.",
       "reporter": "NYT / French Health Ministry / ECDC / USA Today"
     },
     {
@@ -1434,9 +1434,9 @@
         "city": "Netherlands",
         "state": null,
         "country": "Netherlands",
-        "venue": "Dutch hospital — preventive quarantine",
-        "lat": 52.25,
-        "lng": 5.20
+        "venue": "Radboudumc Hospital, Nijmegen — preventive quarantine",
+        "lat": 51.82,
+        "lng": 5.87
       },
       "ship_info": null,
       "transport": {},
@@ -1451,8 +1451,66 @@
       "flights": [],
       "source_url": "https://www.nytimes.com/2026/05/13/world/europe/hantavirus-outbreak-cases-france.html",
       "source_notes": "NYT / Dutch hospital statement, May 13 2026",
-      "clinical_notes": "12 Dutch hospital employees who may have been exposed to hantavirus while processing blood and urine samples from a confirmed infected MV Hondius patient. Hospital confirmed they would enter preventive quarantine for six weeks as a precaution. None symptomatic as of May 13. This represents a secondary healthcare-worker exposure — not direct ship contact. Highlights the risk of laboratory handling of samples from confirmed cases without full BSL precautions.",
-      "reporter": "NYT / Dutch hospital"
+      "clinical_notes": "12 staff at Radboudumc Hospital, Nijmegen quarantined for 6 weeks after handling blood and urine from a confirmed MV Hondius hantavirus patient admitted May 7 without following the strictest protocols. Dutch Health Minister Sophie Hermans told parliament: 'strict procedures were followed, but not the very strictest procedures that apply in cases involving this hantavirus.' Infection risk described as 'small' but hospital chose precautionary quarantine. Patient care at Radboudumc continued uninterrupted. Minister Hermans: 'It really is a different situation than with COVID. With the knowledge we have and the measures we are taking, we are confident we can keep this virus under control.'",
+      "reporter": "Yahoo News / Radboudumc / Dutch Health Ministry"
+    },
+    {
+      "id": "PUSMN01",
+      "name": "Minnesota Resident — Brief Overseas Exposure (Monitoring)",
+      "age": null,
+      "sex": null,
+      "nationality": "American",
+      "status": "asymptomatic",
+      "generation": 2,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-13",
+      "incubation_start": null,
+      "location": {
+        "city": "Minnesota",
+        "state": "Minnesota",
+        "country": "USA",
+        "venue": "Home monitoring",
+        "lat": 46.73,
+        "lng": -94.68
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.yahoo.com/news/world/live/hantavirus-latest-updates-18-people-in-us-being-monitored-for-hantavirus-in-nebraska-and-georgia-195033683.html",
+      "source_notes": "Minnesota Department of Health / Yahoo News, May 13 2026",
+      "clinical_notes": "Minnesota is the 10th US state monitoring residents for potential hantavirus exposure. One person 'who may have briefly been exposed overseas to someone who was on board the MV Hondius cruise and tested positive for hantavirus (Andes virus).' Per MDH: person is cooperative, monitored daily, no symptoms. Not aboard the ship — secondary contact exposure overseas. States monitoring as of May 13: AZ, CA, GA, KS, MD, MN, NJ, TX, VA, WA (10 states).",
+      "reporter": "Minnesota Department of Health / Yahoo News"
+    },
+    {
+      "id": "PITA01",
+      "name": "Italy Cluster (4) — ALL TESTED NEGATIVE (Ruled Out)",
+      "age": null,
+      "sex": null,
+      "nationality": "Various",
+      "status": "recovered",
+      "generation": 2,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-13",
+      "incubation_start": null,
+      "location": {
+        "city": "Rome",
+        "state": null,
+        "country": "Italy",
+        "venue": "Various hospitals — all cleared",
+        "lat": 41.87,
+        "lng": 12.57
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.yahoo.com/news/world/live/hantavirus-latest-updates-18-people-in-us-being-monitored-for-hantavirus-in-nebraska-and-georgia-195033683.html",
+      "source_notes": "Italian Health Ministry / Yahoo News, May 13 2026",
+      "clinical_notes": "⚠️ ALL TESTED NEGATIVE — RULED OUT. Four people in Italy tested negative for hantavirus May 13 2026: (1) Argentine tourist hospitalized with pneumonia; (2) 25-year-old Italian man from Calabria — voluntary quarantine after traveling on KLM flight alongside a woman who later died, briefly counted as WHO 'probable' case; (3) British tourist in Milan; (4) traveling companion of British tourist. Italian Health Ministry: 'The risk connected with the virus remains very low in Europe.' Kept in database as epidemiologically significant ruled-out cluster — demonstrates active contact tracing across Europe.",
+      "reporter": "Italian Health Ministry / Yahoo News"
     }
   ],
   "edges": [

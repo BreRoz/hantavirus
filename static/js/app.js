@@ -414,11 +414,23 @@ const OverviewTab = {
 
   init() {
     this._map = L.map("map", { zoomControl: true, attributionControl: false }).setView([20, 0], 2);
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-      attribution: "© CartoDB",
-      subdomains: "abcd",
-      maxZoom: 19,
-    }).addTo(this._map);
+
+    // Self-hosted SVG world map — no tile server dependency
+    fetch("/static/data/world.geojson")
+      .then(r => r.json())
+      .then(geojson => {
+        L.geoJSON(geojson, {
+          style: {
+            fillColor: "#1e293b",
+            fillOpacity: 1,
+            color: "#334155",
+            weight: 0.5,
+          }
+        }).addTo(this._map);
+      });
+
+    // Ocean background colour
+    document.getElementById("map").style.background = "#0f172a";
 
     document.getElementById("btn-map-fit")?.addEventListener("click", () => this._fit());
     this._addShipLayer();

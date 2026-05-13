@@ -113,7 +113,7 @@
       "flights": [],
       "source_url": null,
       "source_notes": "Manually entered — search MRCC Cape Town / SA health authorities for April 2026 evacuation records",
-      "clinical_notes": "British male GUEST (not crew — corrected per Oceanwide Expeditions official timeline, USA Today May 8 2026). Reported fever, shortness of breath, and signs of pneumonia to the ship's doctor on April 24. Condition worsened; medically evacuated April 27 via Ascension Island alongside his American partner (see PUSPAR01) — both removed from the ship together as the total was reduced from 149 to 147. Tested positive for hantavirus on May 2 in South Africa — making him the FIRST laboratory-confirmed case in the outbreak (AP, May 7 2026). Currently hospitalized in intensive care in South Africa. WHO update (May 8 via Dr. Maria Van Kerkhove briefing): patient was reported as 'doing better.'",
+      "clinical_notes": "British male GUEST (not crew — corrected per Oceanwide Expeditions official timeline, USA Today May 8 2026). Reported fever, shortness of breath, and signs of pneumonia to the ship's doctor on April 24. Condition worsened; medically evacuated April 27 via Ascension Island alongside his American partner (see PUSPAR01) — both removed from the ship together as the total was reduced from 149 to 147. Tested positive for hantavirus on May 2 in South Africa — making him the FIRST laboratory-confirmed case in the outbreak (AP, May 7 2026). UPDATE May 13: South African health ministry spokesperson told Reuters patient is 'improving, gradually so' but 'still ill.' Previously reported as 'doing better' by WHO May 8.",
       "reporter": "MRCC Cape Town / SA Medical Services"
     },
     {
@@ -1080,7 +1080,7 @@
     },
     {
       "id": "PFRCE02",
-      "name": "French Contacts — South Africa Flight (7)",
+      "name": "French Contacts — 22 identified (May 13)",
       "age": null,
       "sex": null,
       "nationality": "French",
@@ -1104,7 +1104,7 @@
       "flights": [],
       "source_url": "https://elpais.com/ciencia/2026-05-09/como-se-cerca-el-brote-de-hantavirus-una-carrera-internacional-para-encontrar-contactos.html",
       "source_notes": "El País, May 9 2026",
-      "clinical_notes": "Seven additional French citizens (beyond symptomatic PFRCE01) identified by French health authorities as having been on the April 25 Airlink flight from St Helena to Johannesburg alongside confirmed Swiss case P3BE87. Being traced and monitored as asymptomatic contacts. No symptoms reported.",
+      "clinical_notes": "French contact cases — count grew from 7 (May 9) to 22 (May 13) as contact tracing expanded. French Health Minister Rist told National Assembly May 13: 22 contact cases identified, all being quarantined in hospitals and undergoing testing. Originally identified as passengers on April 25 Airlink flight (SHN→JNB) alongside confirmed cases. As tracing widened, additional contacts of repatriated passengers identified. None confirmed positive as of May 13.",
       "reporter": "El País / French Health Ministry"
     },
     {
@@ -1208,7 +1208,7 @@
     },
     {
       "id": "PFRCE03",
-      "name": "French Repatriated Passenger — PCR Confirmed (Paris)",
+      "name": "French Repatriated Passenger — PCR Confirmed, CRITICALLY ILL (Bichat Hospital, Paris)",
       "age": null,
       "sex": null,
       "nationality": "French",
@@ -1222,9 +1222,9 @@
         "city": "Paris",
         "state": "Île-de-France",
         "country": "France",
-        "venue": "Paris Le Bourget — isolation facility",
-        "lat": 48.97,
-        "lng": 2.44
+        "venue": "Bichat Hospital, Paris — ICU, artificial lung (ECMO)",
+        "lat": 48.884,
+        "lng": 2.329
       },
       "ship_info": {
         "vessel": "MV Hondius",
@@ -1246,12 +1246,12 @@
       ],
       "source_url": "https://abcnews.go.com/Health/live-updates/hantavirus-outbreak-cruise-ship/?id=121234567",
       "source_notes": "ABC News live updates / French Health Minister Stéphanie Rist, May 11 2026",
-      "clinical_notes": "French MV Hondius passenger — first French national to PCR-confirm positive for hantavirus. Confirmed by French Health Minister Stéphanie Rist on French public radio, May 11 2026. Was symptomatic during repatriation aboard the French government Falcon 900EX (F-HREG, call sign ARL120E) from TFS to Paris Le Bourget on May 10. Now in isolation at Le Bourget facility. Third French case overall (after symptomatic PFRCE01 and the 7 asymptomatic flight contacts PFRCE02). This is the first PCR-confirmed French case.",
-      "reporter": "French Health Ministry / ABC News"
+      "clinical_notes": "French MV Hondius passenger — PCR confirmed positive. Was asymptomatic when leaving the ship (per ECDC briefing, Stockholm, May 13). Became critically ill after repatriation. As of May 13 2026: breathing with artificial lung at Bichat Hospital, Paris, under care of infectious disease specialist Dr. Xavier Lescure. One of three passengers globally reported as critically ill (ECDC). French Health Minister Rist told National Assembly: virus sequencing incomplete — 'rather reassured' it has not mutated, but not yet certain. 22 French contact cases identified as of May 13. Repatriated on Falcon 900EX (F-HREG, ARL120E) TFS→LBG May 10.",
+      "reporter": "NYT / French Health Ministry / ECDC / USA Today"
     },
     {
       "id": "PUSNEB01",
-      "name": "American Passenger — PCR Confirmed, UNMC Biocontainment (Omaha)",
+      "name": "Dr. Stephen Kornfeld — Retired Oncologist, Bend OR — UNMC Biocontainment",
       "age": null,
       "sex": null,
       "nationality": "American",
@@ -1283,12 +1283,12 @@
       "flights": [],
       "source_url": "https://abcnews.go.com/Health/live-updates/hantavirus-outbreak-cruise-ship/?id=121234567",
       "source_notes": "HHS statement / Nebraska Medicine / ABC News, May 11 2026",
-      "clinical_notes": "American MV Hondius passenger — PCR confirmed positive for hantavirus, May 11 2026. Housed in the Nebraska Biocontainment Unit (NBU) at UNMC, Omaha — 1 of 16 Americans at UNMC (15 in quarantine unit, 1 in biocontainment). HHS confirmed positive result. This is the first American PCR-confirmed case of hantavirus linked to the MV Hondius outbreak. Note: Fox5 Atlanta initially suggested PCR-positive patient was transferred to Emory; ABC News/UNMC clarified the positive patient remains at UNMC biocontainment, while the 2 patients transferred to Emory are a symptomatic (PUSRESPTC01) and asymptomatic (PUSEMORY01) couple.",
-      "reporter": "HHS / Nebraska Medicine / ABC News"
+      "clinical_notes": "Dr. Stephen Kornfeld, retired oncologist from Bend, Oregon — avid birder who joined the MV Hondius cruise to spot rare birds. When the ship's physician fell ill, Kornfeld stepped in to monitor patients, comfort frightened passengers and assist crew. Identified as the 'mildly PCR positive' American passenger referenced in HHS May 10 statement. Kornfeld explained on CNN (May 12): two swabs sent to two Dutch labs — one negative, one 'faintly positive' — result described as 'intermediate.' CDC conducting further confirmatory testing. Had flu-like symptoms in early April on ship (3 days night sweats, chills, mild respiratory issues, fatigue for 2.5 weeks) but recovered. Now feeling 'great... 100%' and asymptomatic. In UNMC biocontainment unit in Omaha — only patient in that unit. Staff enter in full hazmat. On WhatsApp with family. All 17 Americans voluntarily committing to 42-day quarantine. Two exposures: (1) socialized with index case (P002/PEDB43) before outbreak identified; (2) provided medical care to symptomatic passengers.",
+      "reporter": "People Magazine / Statesman Journal / CNN / HHS"
     },
     {
       "id": "PUSRESPTC01",
-      "name": "American Passenger — Symptomatic, PCR Negative, Emory SCDU (Atlanta)",
+      "name": "American Passenger — Symptomatic, PCR NEGATIVE Confirmed, Emory SCDU (Atlanta)",
       "age": null,
       "sex": null,
       "nationality": "American",
@@ -1320,7 +1320,7 @@
       "flights": [],
       "source_url": "https://abcnews.go.com/Health/live-updates/hantavirus-outbreak-cruise-ship/?id=121234567",
       "source_notes": "ABC News live updates / HHS, May 11 2026",
-      "clinical_notes": "American MV Hondius passenger — symptomatic, in Emory University Hospital SCDU biocontainment unit as of May 11 2026. Transferred via special flight from Omaha to Hartsfield-Jackson Atlanta (~9am May 11), transported by Grady ambulance to Emory. Emory confirmed: 'one is symptomatic and receiving care in Emory's biocontainment unit' (ABC News). This passenger and PUSEMORY01 are a couple. PCR result unclear from sources — Fox5 reported positive, CBS/UNMC reported negative; treating as symptomatic pending clarification.",
+      "clinical_notes": "American MV Hondius passenger — symptomatic but PCR NEGATIVE confirmed by HHS May 12 via X post: 'The mildly symptomatic U.S. passenger taken to the @EmoryUniversity RESPTC in Atlanta tested negative for the Andes variant of hantavirus.' At Emory SCDU biocontainment unit. Transferred from UNMC Omaha to Hartsfield-Jackson Atlanta (~9am May 11) with partner PUSEMORY01 (asymptomatic). Fox5 initially reported positive — HHS officially confirmed negative. Still under observation at Emory given symptoms, even with negative PCR.",
       "reporter": "HHS / ABC News"
     },
     {
@@ -1359,6 +1359,100 @@
       "source_notes": "ABC News live updates / Emory University Hospital statement, May 11 2026",
       "clinical_notes": "American MV Hondius passenger — asymptomatic, transferred from Omaha to Emory University Hospital SCDU, Atlanta on May 11 2026. Emory confirmed: 'undergoing evaluation and monitoring.' This passenger and PUSRESPTC01 are a couple — both transferred together from UNMC Omaha to Emory via special flight to Hartsfield-Jackson (~9am May 11), transported by Grady ambulance. No symptoms reported as of May 11. Under observation due to close-contact exposure and precautionary monitoring.",
       "reporter": "ABC News / Emory University Hospital"
+    },
+    {
+      "id": "PUSKS01",
+      "name": "Kansas Contacts (3) — High-Risk Exposure, Not on Ship",
+      "age": null,
+      "sex": null,
+      "nationality": "American",
+      "status": "asymptomatic",
+      "generation": 2,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-12",
+      "incubation_start": null,
+      "location": {
+        "city": "Kansas",
+        "state": "Kansas",
+        "country": "USA",
+        "venue": "Home monitoring",
+        "lat": 38.52,
+        "lng": -98.32
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.usatoday.com/story/news/health/2026/05/12/hantavirus-cruise-ship-updates--live/90031896007/",
+      "source_notes": "Kansas KDHE statement / USA Today, May 12 2026",
+      "clinical_notes": "Three Kansas residents with 'high-risk exposure' to a confirmed Andes virus case — NOT aboard MV Hondius. Close contacts of an infected person who was symptomatic while traveling. Kansas KDHE (citing CDC): classified as high-risk because of close contact with a confirmed symptomatic case. All three asymptomatic as of May 12. 'No suspected cases of the virus in Kansas and the risk to the public remains extremely low.' Under monitoring.",
+      "reporter": "Kansas KDHE / USA Today"
+    },
+    {
+      "id": "PUSWA01",
+      "name": "Washington State Contacts (3) — Plane Exposure + 1 Ship Passenger",
+      "age": null,
+      "sex": null,
+      "nationality": "American",
+      "status": "asymptomatic",
+      "generation": 2,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-12",
+      "incubation_start": null,
+      "location": {
+        "city": "King County",
+        "state": "Washington",
+        "country": "USA",
+        "venue": "Home monitoring / UNMC quarantine",
+        "lat": 47.56,
+        "lng": -122.13
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.usatoday.com/story/news/health/2026/05/12/hantavirus-cruise-ship-updates--live/90031896007/",
+      "source_notes": "Washington State DOH / USA Today, May 12 2026",
+      "clinical_notes": "Three Washington state residents under monitoring as of May 12 2026. (1) Two King County residents sat next to an ill cruise passenger who later tested positive for hantavirus on an airplane — no symptoms, monitoring at home. (2) One MV Hondius ship passenger from Washington state — asymptomatic, housed at UNMC National Quarantine Center in Omaha. Dr. Sandra J. Valenciano, Health Officer, King County: 'These are measures that have contained the spread in previous outbreaks of hantavirus. The risk of this virus spreading to residents of King County is low at this time.'",
+      "reporter": "Washington State DOH / USA Today"
+    },
+    {
+      "id": "PNLHOSP01",
+      "name": "Dutch Hospital Workers (12) — Preventive Quarantine, Sample Exposure",
+      "age": null,
+      "sex": null,
+      "nationality": "Dutch",
+      "status": "asymptomatic",
+      "generation": 2,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-13",
+      "incubation_start": null,
+      "location": {
+        "city": "Netherlands",
+        "state": null,
+        "country": "Netherlands",
+        "venue": "Dutch hospital — preventive quarantine",
+        "lat": 52.25,
+        "lng": 5.20
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [
+        {
+          "type": "laboratory_exposure",
+          "venue": "Dutch hospital laboratory",
+          "date": "2026-05-13",
+          "notes": "Processing blood and urine samples from a confirmed hantavirus-infected patient without full precautions"
+        }
+      ],
+      "flights": [],
+      "source_url": "https://www.nytimes.com/2026/05/13/world/europe/hantavirus-outbreak-cases-france.html",
+      "source_notes": "NYT / Dutch hospital statement, May 13 2026",
+      "clinical_notes": "12 Dutch hospital employees who may have been exposed to hantavirus while processing blood and urine samples from a confirmed infected MV Hondius patient. Hospital confirmed they would enter preventive quarantine for six weeks as a precaution. None symptomatic as of May 13. This represents a secondary healthcare-worker exposure — not direct ship contact. Highlights the risk of laboratory handling of samples from confirmed cases without full BSL precautions.",
+      "reporter": "NYT / Dutch hospital"
     }
   ],
   "edges": [

@@ -416,6 +416,11 @@ const OverviewTab = {
     this._map = L.map("map", { zoomControl: true, attributionControl: false }).setView([20, 0], 2);
 
     // Self-hosted SVG world map — no tile server dependency
+    // Use a custom pane at z-index 199 so flight polylines (overlayPane, z=400) always render on top of land polygons
+    this._map.createPane('worldPane');
+    this._map.getPane('worldPane').style.zIndex = 199;
+    this._map.getPane('worldPane').style.pointerEvents = 'none';
+
     fetch("/static/data/world.geojson")
       .then(r => r.json())
       .then(geojson => {
@@ -425,7 +430,8 @@ const OverviewTab = {
             fillOpacity: 1,
             color: "#334155",
             weight: 0.5,
-          }
+          },
+          pane: 'worldPane',
         }).addTo(this._map);
       });
 
@@ -594,7 +600,7 @@ const OverviewTab = {
       // ── Other confirmed repatriation flights (no quarantine location confirmed yet) ──
       { pos: [41.00, 28.98],  flag: "🇹🇷", label: "Turkey · 3 passengers · LANDED · Quarantine location TBC", count: 3, confirmed: true, landed: true, quarStatus: "clear", arrivedDate: "2026-05-10" },
       { pos: [53.34, -6.27],  flag: "🇮🇪", label: "Ireland · 2 passengers · IRL290 · Landed Baldonnel Aerodrome · Quarantine: Mater Hospital, Dublin · 42 days from May 6", count: 2, confirmed: true, landed: true, quarStatus: "clear", arrivedDate: "2026-05-10" },
-      { pos: [-31.67, 115.97], flag: "🇦🇺", label: "Australia + NZ · 6 passengers · Flight pending → RAAF Pearce, WA · Quarantine: Bullsbrook Centre, Perth · 21-42 days", count: 6, confirmed: true },
+      { pos: [52.20, 4.55], flag: "🇦🇺", label: "Australia + NZ · 6 passengers · IN TRANSIT — Netherlands · Awaiting refuelling clearance for Perth leg · RAAF Pearce → Bullsbrook Centre", count: 6, confirmed: true, landed: true, quarStatus: "monitoring", arrivedDate: "2026-05-12" },
     ];
 
     const makeQuarantineIcon = (status) => {
@@ -654,6 +660,19 @@ const OverviewTab = {
         { permanent: false, className: "dark-tooltip", direction: "top" }
       ).addTo(this._map);
     });
+
+    // Australia pending leg: Netherlands → Perth (dashed — awaiting refuelling clearance)
+    // Drawn manually so origin is NL, not Tenerife
+    const nlPos   = [52.20, 4.55];
+    const perthPos = [-31.84, 115.97];
+    L.polyline([nlPos, [10, 60], perthPos], {
+      color: "#f59e0b", weight: 1.8, opacity: 0.50, dashArray: "5 5", smoothFactor: 1,
+    }).addTo(this._map);
+    L.circleMarker(perthPos, {
+      radius: 5, color: "#f59e0b", fillColor: "#f59e0b", fillOpacity: 0.25, weight: 1.5,
+    }).bindTooltip("🇦🇺 Perth — PENDING ARRIVAL · RAAF Base Pearce → Bullsbrook Centre · Awaiting refuelling clearance",
+      { permanent: false, className: "dark-tooltip", direction: "top" }
+    ).addTo(this._map);
 
     // Ship's Rotterdam disinfection route removed from map — overlapped with NL quarantine icon.
     // Detail noted in Docking Notes pane instead.

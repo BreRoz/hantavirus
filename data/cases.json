@@ -1080,7 +1080,7 @@
     },
     {
       "id": "PFRCE02",
-      "name": "French Contacts — 22 identified (May 13)",
+      "name": "French Contacts — 26 in hospital isolation, ALL NEGATIVE (May 14)",
       "age": null,
       "sex": null,
       "nationality": "French",
@@ -1094,7 +1094,7 @@
         "city": "France",
         "state": "",
         "country": "France",
-        "venue": "Under monitoring",
+        "venue": "Hospital isolation — all tested negative as of May 14",
         "lat": 46.2276,
         "lng": 2.2137
       },
@@ -1102,10 +1102,10 @@
       "transport": {},
       "exposures": [],
       "flights": [],
-      "source_url": "https://elpais.com/ciencia/2026-05-09/como-se-cerca-el-brote-de-hantavirus-una-carrera-internacional-para-encontrar-contactos.html",
-      "source_notes": "El País, May 9 2026",
-      "clinical_notes": "French contact cases — count grew from 7 (May 9) to 22 (May 13) as contact tracing expanded. French Health Minister Rist told National Assembly May 13: 22 contact cases identified, all being quarantined in hospitals and undergoing testing. Originally identified as passengers on April 25 Airlink flight (SHN→JNB) alongside confirmed cases. As tracing widened, additional contacts of repatriated passengers identified. None confirmed positive as of May 13.",
-      "reporter": "El País / French Health Ministry"
+      "source_url": "https://www.arabnews.com/node/2643574/amp",
+      "source_notes": "Arab News / Reuters / JPost — French Health Minister Rist, May 14 2026",
+      "clinical_notes": "UPDATE May 14 2026: ALL 26 TESTED NEGATIVE. French Health Minister Stephanie Rist confirmed on X/Twitter that all 26 people in hospital isolation in France have tested negative for hantavirus — 'without exception.' They will continue to be monitored and tested 3 times per week. Health authorities will no longer communicate results unless there is a positive test. Breakdown of the 26: (1) 22 flight contacts — passengers on the April 25 Airlink flight SHN→JNB and/or the Johannesburg→Amsterdam KLM flight on which PEDB43 (Dutch index case) was traveling when she deteriorated. She was removed from the JNB→AMS flight and died in South Africa. (2) 4 French ship passengers currently in isolation at Bichat Hospital. A 5th French ship passenger (PFRCE03) is confirmed positive and critically ill on ECMO — not included in this negative count. French count grew from 7 (May 9) to 22 (May 13) to 26 total (May 14) as contact tracing expanded.",
+      "reporter": "Arab News / Reuters / JPost / French Health Minister Rist"
     },
     {
       "id": "PNLKLM01",

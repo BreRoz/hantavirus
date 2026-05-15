@@ -661,13 +661,7 @@ const OverviewTab = {
       ).addTo(this._map);
     });
 
-    // Australia leg: Netherlands → Perth (landed May 15)
-    // Drawn manually so origin is NL, not Tenerife
-    const nlPos   = [52.20, 4.55];
-    const perthPos = [-31.84, 115.97];
-    L.polyline([nlPos, [10, 60], perthPos], {
-      color: "#10b981", weight: 1.8, opacity: 0.55, dashArray: null, smoothFactor: 1,
-    }).addTo(this._map);
+    // Australia: landed May 15 — flight line removed, marker at Perth
 
     // Ship's Rotterdam disinfection route removed from map — overlapped with NL quarantine icon.
     // Detail noted in Docking Notes pane instead.

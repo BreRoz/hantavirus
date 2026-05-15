@@ -533,34 +533,6 @@
       "reporter": "Dutch Health Ministry / USA Today / dutchnews.nl / NBC News"
     },
     {
-      "id": "PIL001",
-      "name": "Israeli Patient (European Strain)",
-      "age": null,
-      "sex": null,
-      "nationality": "Israeli",
-      "status": "confirmed",
-      "generation": 0,
-      "infected_by": null,
-      "onset_date": null,
-      "date": "2026-05-07",
-      "incubation_start": null,
-      "location": {
-        "city": "Israel",
-        "state": "",
-        "country": "Israel",
-        "venue": "Under medical observation",
-        "lat": 31.5,
-        "lng": 34.75
-      },
-      "ship_info": null,
-      "transport": {},
-      "exposures": [],
-      "flights": [],
-      "source_url": "https://www.jpost.com/israel-news/article-895478",
-      "source_notes": "Jerusalem Post, May 7 2026",
-      "clinical_notes": "Israeli patient confirmed with European strain hantavirus (separate from MV Hondius Andes strain). Infected in Eastern Europe several months before diagnosis in May 2026. Confirmed by antibody and PCR tests. Stable — not requiring ICU or strict isolation, under medical observation. Identity withheld by Health Ministry. Unrelated to MV Hondius cruise ship cluster.",
-      "reporter": "Israeli Ministry of Health / Jerusalem Post"
-    },
     {
       "id": "PUSSG01",
       "name": "Singapore Men — Isolated & Tested (2)",
@@ -1251,11 +1223,11 @@
     },
     {
       "id": "PUSNEB01",
-      "name": "Dr. Stephen Kornfeld — Retired Oncologist, Bend OR — UNMC Biocontainment (Intermediate PCR — not CDC-confirmed)",
+      "name": "Dr. Stephen Kornfeld — Retired Oncologist, Bend OR — UNMC Quarantine Unit (Subsequent Tests NEGATIVE)",
       "age": null,
       "sex": null,
       "nationality": "American",
-      "status": "symptomatic",
+      "status": "monitoring",
       "generation": 1,
       "infected_by": null,
       "onset_date": null,
@@ -1265,7 +1237,7 @@
         "city": "Omaha",
         "state": "Nebraska",
         "country": "USA",
-        "venue": "Nebraska Biocontainment Unit — UNMC",
+        "venue": "National Quarantine Unit — UNMC (moved from biocontainment May 15)",
         "lat": 41.26,
         "lng": -95.94
       },
@@ -1283,7 +1255,7 @@
       "flights": [],
       "source_url": "https://abcnews.go.com/Health/live-updates/hantavirus-outbreak-cruise-ship/?id=121234567",
       "source_notes": "HHS statement / Nebraska Medicine / ABC News, May 11 2026",
-      "clinical_notes": "Dr. Stephen Kornfeld, retired oncologist from Bend, Oregon — avid birder who joined the MV Hondius cruise to spot rare birds. When the ship's physician fell ill, Kornfeld stepped in to monitor patients, comfort frightened passengers and assist crew. Identified as the 'mildly PCR positive' American passenger referenced in HHS May 10 statement. Kornfeld explained on CNN (May 12): two swabs sent to two Dutch labs — one negative, one 'faintly positive' — result described as 'intermediate.' CDC conducting further confirmatory testing. UPDATE May 14: CDC officially states there are ZERO confirmed U.S. hantavirus cases — Kornfeld's intermediate result does not yet meet CDC's case confirmation threshold. Status updated to symptomatic/intermediate pending further testing. Had flu-like symptoms in early April on ship (3 days night sweats, chills, mild respiratory issues, fatigue for 2.5 weeks) but recovered. Now feeling 'great... 100%' and asymptomatic. In UNMC biocontainment unit in Omaha — only patient in that unit. Staff enter in full hazmat. On WhatsApp with family. All 17 Americans voluntarily committing to 42-day quarantine. Two exposures: (1) socialized with index case (P002/PEDB43) before outbreak identified; (2) provided medical care to symptomatic passengers. CDC May 14: 41 people monitored nationwide, risk to general public low.",
+      "clinical_notes": "Dr. Stephen Kornfeld, retired oncologist from Bend, Oregon — avid birder who joined the MV Hondius cruise to spot rare birds. When the ship's physician fell ill, Kornfeld stepped in to monitor patients, comfort frightened passengers and assist crew. Identified as the 'mildly PCR positive' American passenger referenced in HHS May 10 statement. Kornfeld explained on CNN (May 12): two swabs sent to two Dutch labs — one negative, one 'faintly positive' — result described as 'intermediate.' CDC conducting further confirmatory testing. UPDATE May 14: CDC officially states there are ZERO confirmed U.S. hantavirus cases — Kornfeld's intermediate result does not yet meet CDC's case confirmation threshold. Had flu-like symptoms in early April on ship (3 days night sweats, chills, mild respiratory issues, fatigue for 2.5 weeks) but recovered. Now feeling 'great... 100%' and asymptomatic. On WhatsApp with family. All 17 Americans voluntarily committing to 42-day quarantine. Two exposures: (1) socialized with index case (P002/PEDB43) before outbreak identified; (2) provided medical care to symptomatic passengers. UPDATE May 15: Subsequent PCR tests came back NEGATIVE — moved from Nebraska biocontainment unit to the National Quarantine Unit to join the other 15 American passengers. CDC confirms 0 US cases. Yahoo News / CDC, May 15.",
       "reporter": "People Magazine / Statesman Journal / CNN / HHS / CNBC / CDC press conference May 13-14"
     },
     {
@@ -1388,6 +1360,35 @@
       "source_notes": "Kansas KDHE statement / USA Today, May 12 2026",
       "clinical_notes": "Three Kansas residents with 'high-risk exposure' to a confirmed Andes virus case — NOT aboard MV Hondius. Close contacts of an infected person who was symptomatic while traveling. Kansas KDHE (citing CDC): classified as high-risk because of close contact with a confirmed symptomatic case. All three asymptomatic as of May 12. 'No suspected cases of the virus in Kansas and the risk to the public remains extremely low.' Under monitoring.",
       "reporter": "Kansas KDHE / USA Today"
+    },
+    {
+      "id": "PUSMD01",
+      "name": "Maryland Resident(s) — Monitoring (Connection to MV Hondius)",
+      "age": null,
+      "sex": null,
+      "nationality": "American",
+      "status": "monitoring",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-15",
+      "incubation_start": null,
+      "location": {
+        "city": "Maryland",
+        "state": "Maryland",
+        "country": "USA",
+        "venue": "State health monitoring",
+        "lat": 39.0458,
+        "lng": -76.6413
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.yahoo.com/news/world/live/hantavirus-latest-updates-no-known-cases-in-us-who-says-global-risk-remains-low-195033165.html",
+      "source_notes": "Yahoo News / CDC, May 15 2026",
+      "clinical_notes": "Maryland is among the 10 US states confirmed by CDC as monitoring residents with connections to the MV Hondius outbreak. No further details disclosed. 10 states total: AZ, CA, GA, KS, MD, MN, NJ, TX, VA, WA. No symptoms reported. No confirmed cases.",
+      "reporter": "Yahoo News / CDC"
     },
     {
       "id": "PUSWA01",
@@ -1546,7 +1547,7 @@
       "flights": [],
       "source_url": "https://www.usatoday.com/story/life/health-wellness/2026/05/13/hantavirus-quarantine-jake-rosmarin/90050794007/",
       "source_notes": "USA Today, May 13 2026",
-      "clinical_notes": "Jake Rosmarin — Boston-based travel influencer and one of 18 Americans aboard MV Hondius. Currently asymptomatic in UNMC National Quarantine Unit, Omaha. Voluntarily committing to full 42-day quarantine. Has fiancé Alex in Boston. 'From the beginning, I made that decision immediately, that I want to be here for that 42 days, because I know that if I'm here, I'm going to be in the best care possible.' Room has stationary bike, thermometer; bloodwork done daily. Has been speaking with media frequently. Quote on public risk: 'It's not COVID. It's scary, or scarier, for people like us, who are at risk with exposure after being on a ship with people for five-to-six weeks. But, for people who are never coming in contact with us... I don't think it's anything anyone needs to worry about.' One of 15 Americans in the standard quarantine unit (vs. Dr. Kornfeld in biocontainment).",
+      "clinical_notes": "Jake Rosmarin — Boston-based travel influencer and one of 18 Americans aboard MV Hondius. Currently asymptomatic in UNMC National Quarantine Unit, Omaha. Voluntarily committing to full 42-day quarantine. Has fiancé Alex in Boston. 'From the beginning, I made that decision immediately, that I want to be here for that 42 days, because I know that if I'm here, I'm going to be in the best care possible.' Room has stationary bike, thermometer; bloodwork done daily. Has been speaking with media frequently. Quote on public risk: 'It's not COVID. It's scary, or scarier, for people like us, who are at risk with exposure after being on a ship with people for five-to-six weeks. But, for people who are never coming in contact with us... I don't think it's anything anyone needs to worry about.' One of 16 Americans now in the UNMC quarantine unit (Dr. Kornfeld moved from biocontainment to quarantine unit May 15 after subsequent tests came back negative).",
       "reporter": "USA Today"
     },
     {
@@ -1682,6 +1683,38 @@
       "source_notes": "Euronews, May 11 2026",
       "clinical_notes": "Two Belgian MV Hondius passengers received at Antwerp University Hospital (UZA) on Sunday May 11 for medical assessment. Consistent with ship manifest showing 2 Belgian guests. If asymptomatic (which they are), to be sent home and monitored through follow-up by Flemish health authorities. Belgium is among six European countries receiving repatriated MV Hondius passengers.",
       "reporter": "Euronews"
+    },
+    {
+      "id": "PUSJNB16",
+      "name": "US Flight Contacts — April 25 Johannesburg Flight (16 people)",
+      "age": null,
+      "sex": null,
+      "nationality": "American",
+      "status": "monitoring",
+      "generation": 2,
+      "infected_by": "PEDB43",
+      "onset_date": null,
+      "date": "2026-05-15",
+      "incubation_start": null,
+      "location": {
+        "city": "Various (undisclosed)",
+        "state": null,
+        "country": "USA",
+        "venue": "Monitored by CDC — locations not disclosed",
+        "lat": 38.9,
+        "lng": -96.5
+      },
+      "ship_info": null,
+      "transport": {
+        "type": "flight",
+        "notes": "Airlink flight 4Z 301 — Saint Helena → Johannesburg, April 25 2026"
+      },
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.firstpost.com/world/united-states/16-more-people-in-us-are-being-monitored-for-hantavirus-taking-total-to-41-cdc-14011413.html",
+      "source_notes": "Firstpost / CDC / Dr. David Fitter, May 15 2026",
+      "clinical_notes": "16 Americans who were passengers on the April 25 Airlink flight 4Z 301 (Saint Helena → Johannesburg), which carried index case PEDB43 (the Dutch woman who died in Johannesburg on April 26). These are Gen 2 contacts — NOT MV Hondius passengers. Announced May 15 by CDC/Dr. David Fitter. CDC is 'monitoring all Americans that potentially would have been exposed, whether in the U.S. or abroad.' CDC declined to disclose where in the US these individuals are located. All in quarantine/monitoring. No confirmed cases among them as of May 15. Brings total US monitoring to 41: 18 ship passengers (UNMC/Emory biocontainment) + 7 pre-detection St. Helena returnees (state-monitored) + 16 Johannesburg flight contacts (this group) = 41.",
+      "reporter": "Firstpost / CDC"
     }
   ],
   "edges": [

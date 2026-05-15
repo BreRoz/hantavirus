@@ -600,7 +600,7 @@ const OverviewTab = {
       // ── Other confirmed repatriation flights (no quarantine location confirmed yet) ──
       { pos: [41.00, 28.98],  flag: "🇹🇷", label: "Turkey · 3 passengers · LANDED · Quarantine location TBC", count: 3, confirmed: true, landed: true, quarStatus: "clear", arrivedDate: "2026-05-10" },
       { pos: [53.34, -6.27],  flag: "🇮🇪", label: "Ireland · 2 passengers · IRL290 · Landed Baldonnel Aerodrome · Quarantine: Mater Hospital, Dublin · 42 days from May 6", count: 2, confirmed: true, landed: true, quarStatus: "clear", arrivedDate: "2026-05-10" },
-      { pos: [52.20, 4.55], flag: "🇦🇺", label: "Australia + NZ · 6 passengers · IN TRANSIT — Netherlands · Awaiting refuelling clearance for Perth leg · RAAF Pearce → Bullsbrook Centre", count: 6, confirmed: true, landed: true, quarStatus: "monitoring", arrivedDate: "2026-05-12" },
+      { pos: [-31.84, 115.97], flag: "🇦🇺", label: "Australia + NZ · 6 passengers · LANDED — RAAF Base Pearce, Perth · May 15 · Bullsbrook Centre for National Resilience · 21-day minimum quarantine", count: 6, confirmed: true, landed: true, quarStatus: "clear", arrivedDate: "2026-05-15" },
     ];
 
     const makeQuarantineIcon = (status) => {
@@ -661,18 +661,13 @@ const OverviewTab = {
       ).addTo(this._map);
     });
 
-    // Australia pending leg: Netherlands → Perth (dashed — awaiting refuelling clearance)
+    // Australia leg: Netherlands → Perth (landed May 15)
     // Drawn manually so origin is NL, not Tenerife
     const nlPos   = [52.20, 4.55];
     const perthPos = [-31.84, 115.97];
     L.polyline([nlPos, [10, 60], perthPos], {
-      color: "#f59e0b", weight: 1.8, opacity: 0.50, dashArray: "5 5", smoothFactor: 1,
+      color: "#10b981", weight: 1.8, opacity: 0.55, dashArray: null, smoothFactor: 1,
     }).addTo(this._map);
-    L.circleMarker(perthPos, {
-      radius: 5, color: "#f59e0b", fillColor: "#f59e0b", fillOpacity: 0.25, weight: 1.5,
-    }).bindTooltip("🇦🇺 Perth — PENDING ARRIVAL · RAAF Base Pearce → Bullsbrook Centre · Awaiting refuelling clearance",
-      { permanent: false, className: "dark-tooltip", direction: "top" }
-    ).addTo(this._map);
 
     // Ship's Rotterdam disinfection route removed from map — overlapped with NL quarantine icon.
     // Detail noted in Docking Notes pane instead.

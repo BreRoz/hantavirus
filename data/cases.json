@@ -761,7 +761,7 @@
       "flights": [],
       "source_url": "https://www.kcra.com/article/hantavirus-cruise-ship-california/71244285",
       "source_notes": "AP / KCRA May 7 2026",
-      "clinical_notes": "VOYAGE TIMELINE (Oceanwide Expeditions official, via USA Today May 8 2026):\nApr 1: Departed Ushuaia — 175 aboard (114 guests, 61 crew).\nApr 4-7: Stop at South Georgia Island.\nApr 13-16: Stop at Tristan da Cunha/Inaccessible/Nightingale Islands — 6 guests embark (islanders), 1 crew disembarks → 180 total (120 guests, 60 crew).\nApr 17: Stop at Gough Island.\nApr 21-24: Stop at St. Helena — 1 crew embarks, 32 guests disembark (including Dutch couple P002/PEDB43) → 149 total (88 guests, 61 crew).\nApr 27: 2 guests medevaced via Ascension Island — British national P003 (symptomatic) and American partner PUSPAR01 (precautionary) → 147 total (86 guests, 61 crew).\n\nCURRENT SHIP MANIFEST (Oceanwide, USA Today May 8) by nationality: Argentina 1g, Australia 4g, Belgium 2g, Canada 4g, France 5g, Germany 5g+1c, Greece 1g, Guatemala 1c, India 2c, Ireland 2g, Italy 1g, Japan 1g, Montenegro 1c, Netherlands 8g+5c, New Zealand 1g, Philippines 38c, Poland 1c, Portugal 1c, Russia 1c, Spain 13g+1c, Turkey 3g, UK 19g+3c, Ukraine 5c, USA 17g. (g=guest, c=crew)\n\nCountries notified by WHO (May 7): Canada, Denmark, Germany, Netherlands, New Zealand, Saint Kitts and Nevis, Singapore, Sweden, Switzerland, Turkey, UK, USA. Also South Africa and Spain.\n\nSt. Helena authorities monitoring a 'small number' of higher-risk contacts ordered to isolate 45 days. Singapore monitoring 2 men (PUSSG01). 7 Americans across 6 US states (AZ, CA, GA, NJ, TX, VA) monitored — none symptomatic. New Jersey monitoring 2 (PUSNJ01). US biocontainment charter to Nebraska planned for 17 Americans. Ship docking Granadilla port, Tenerife, Sunday May 10.",
+      "clinical_notes": "VOYAGE TIMELINE (Oceanwide Expeditions official, via USA Today May 8 2026):\nApr 1: Departed Ushuaia — 175 aboard (114 guests, 61 crew).\nApr 4-7: Stop at South Georgia Island.\nApr 13-16: Stop at Tristan da Cunha/Inaccessible/Nightingale Islands — 6 guests embark (islanders), 1 crew disembarks → 180 total (120 guests, 60 crew).\nApr 17: Stop at Gough Island.\nApr 21-24: Stop at St. Helena — 1 crew embarks, 32 guests disembark (including Dutch couple P002/PEDB43) → 149 total (88 guests, 61 crew).\nApr 27: 2 guests medevaced via Ascension Island — British national P003 (symptomatic) and American partner PUSPAR01 (precautionary) → 147 total (86 guests, 61 crew).\n\nCURRENT SHIP MANIFEST (Oceanwide, USA Today May 8) by nationality: Argentina 1g, Australia 4g, Belgium 2g, Canada 4g, France 5g, Germany 5g+1c, Greece 1g, Guatemala 1c, India 2c, Ireland 2g, Italy 1g, Japan 1g, Montenegro 1c, Netherlands 8g+5c, New Zealand 1g, Philippines 38c, Poland 1c, Portugal 1c, Russia 1c, Spain 13g+1c, Turkey 3g, UK 19g+3c, Ukraine 5c, USA 17g. (g=guest, c=crew)\n\nCountries notified by WHO (May 7): Canada, Denmark, Germany, Netherlands, New Zealand, Saint Kitts and Nevis, Singapore, Sweden, Switzerland, Turkey, UK, USA. Also South Africa and Spain.\n\nSt. Helena authorities monitoring a 'small number' of higher-risk contacts ordered to isolate 45 days. Singapore monitoring 2 men (PUSSG01). 7 Americans across 6 US states (AZ, CA, GA, NJ, TX, VA) monitored — none symptomatic. New Jersey monitoring 2 (PUSNJ01). US biocontainment charter to Nebraska planned for 17 Americans. Ship docking Granadilla port, Tenerife, Sunday May 10.\n\nUPDATE May 15 2026 (RIVM / NL Times):\nREPATRIATION FLIGHTS: All 26 passengers from the 2nd and 3rd repatriation flights tested negative for Andes virus. The 1st flight's 26 passengers also tested negative on arrival. Weekly retesting continues. All repatriated passengers remain under mandatory 6-week home isolation with daily GGD monitoring.\nROTTERDAM CREW QUARANTINE: 23 temporary quarantine cabins being set up at Port of Rotterdam for international crew arriving on MV Hondius. Ship ETA Monday morning May 18 with 27 people aboard — 25 crew (Philippines 17, Ukraine 4, Russia 1, Poland 1, Germany 1, Portugal 1) and 2 RIVM employees. Rotterdam-Rijnmond GGD will test crew and medical personnel upon arrival. Decision pending on whether crew will complete full 6-week quarantine in the cabins.",
       "reporter": "AP / KCRA / CDPH / CNN / WHO / NBC News / Calgary CityNews"
     },
     {
@@ -1577,6 +1577,35 @@
       "source_notes": "USA Today, May 13 2026",
       "clinical_notes": "Possible hantavirus case in Illinois explicitly confirmed as NOT tied to the MV Hondius cruise ship outbreak. Source of exposure under investigation — likely rodent/environmental contact, which is the typical transmission route for hantavirus in the US. Details limited as of May 13. Important distinction: this would be a separate, independent hantavirus exposure unrelated to the Andes strain ship cluster. Generation listed as 0 (independent index case if confirmed). Status and details pending further reporting.",
       "reporter": "USA Today"
+    },
+    {
+      "id": "PSCOT01",
+      "name": "Scottish Contacts — PHS Monitoring (MV Hondius Links)",
+      "age": null,
+      "sex": null,
+      "nationality": "British (Scottish)",
+      "status": "asymptomatic",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-14",
+      "incubation_start": null,
+      "location": {
+        "city": "Scotland",
+        "state": "Scotland",
+        "country": "United Kingdom",
+        "venue": "Under monitoring — PHS / NHS Scotland",
+        "lat": 56.49,
+        "lng": -4.2
+      },
+      "ship_info": null,
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://publichealthscotland.scot/news/2026/may/hantavirus-cruise-ship-outbreak/",
+      "source_notes": "Public Health Scotland official statement, May 14 2026",
+      "clinical_notes": "A 'small number' of individuals in Scotland with potential links to the MV Hondius hantavirus outbreak are being monitored by PHS and NHS boards. Follow-up for up to 45 days from last potential exposure, with precautionary testing as required. No confirmed hantavirus cases in Scotland. Risk to general public assessed as very low. PHS coordinating with UKHSA on contact tracing and isolation protocols. Scotland is a new region in the UK outbreak response — existing UK entries cover Arrowe Park (England) and Tristan da Cunha but not Scottish contacts.",
+      "reporter": "Public Health Scotland"
     }
   ],
   "edges": [

@@ -1614,10 +1614,10 @@
     },
     {
       "id": "PUKAP01",
-      "name": "UK Arrowe Park Evacuees (24) — 22 British + 1 German + 1 Japanese",
+      "name": "UK Arrowe Park Evacuees (22) — 20 British + 1 German + 1 Japanese",
       "age": null,
       "sex": null,
-      "nationality": "Multiple (22 British, 1 German, 1 Japanese)",
+      "nationality": "Multiple (20 British, 1 German, 1 Japanese)",
       "status": "asymptomatic",
       "generation": 1,
       "infected_by": null,
@@ -1646,7 +1646,7 @@
       "flights": [],
       "source_url": "https://thetab.com/2026/05/13/22-cruise-ship-evacuees-set-to-leave-liverpool-hospital-following-hantavirus-outbreak",
       "source_notes": "The Tab / ITV News Granada / UKHSA, May 10-13 2026",
-      "clinical_notes": "24 MV Hondius evacuees (22 British nationals + 1 German UK-resident + 1 Japanese passenger) arrived Manchester airport May 10 on a dedicated flight and were transferred by private coach to Arrowe Park Hospital on the Wirral for 72 hours of precautionary isolation. All healthy and asymptomatic on arrival per Prof Robin May (UKHSA). Strict infection control: PPE including face masks for passengers, crew, drivers, and medical teams throughout. As of May 13: being discharged to 42 days of home self-isolation in self-contained flats with phone access. Public transport prohibited during isolation. Specialist support team on-site. 6 individuals already released to home/suitable accommodation after negative PCR tests. If symptoms develop → transfer to Royal Liverpool University Hospital Tropical & Infectious Diseases Unit. Additionally, 10 more passengers/crew from St Helena and Ascension Island expected to arrive for similar monitoring. Note: excludes previously evacuated British nationals P003 (in SA), P872E8 (in Netherlands), and PTRISTAN01/PTRDC01 (Tristan da Cunha).",
+      "clinical_notes": "22 MV Hondius evacuees (20 British nationals + 1 German UK-resident + 1 Japanese passenger) arrived Manchester airport May 10 on a dedicated flight and were transferred by private coach to Arrowe Park Hospital on the Wirral for 72 hours of precautionary isolation. All healthy and asymptomatic on arrival per Prof Robin May (UKHSA). Strict infection control: PPE including face masks for passengers, crew, drivers, and medical teams throughout. As of May 13: being discharged to 42 days of home self-isolation in self-contained flats with phone access. Public transport prohibited during isolation. Specialist support team on-site. 6 individuals already released to home/suitable accommodation after negative PCR tests. If symptoms develop → transfer to Royal Liverpool University Hospital Tropical & Infectious Diseases Unit. Additionally, 10 more passengers/crew from St Helena and Ascension Island expected to arrive for similar monitoring. Note: excludes previously evacuated British nationals P003 (in SA), P872E8 (in Netherlands), and PTRISTAN01/PTRDC01 (Tristan da Cunha).",
       "reporter": "UKHSA / The Tab / ITV News Granada"
     },
     {

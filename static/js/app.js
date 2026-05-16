@@ -598,7 +598,6 @@ const OverviewTab = {
       { pos: [33.79, -84.32], flag: "🇺🇸", label: "United States · Atlanta, Georgia · 2 passengers → Emory SCDU · 1 symptomatic (biocontainment) · 1 asymptomatic (monitoring) · Married couple", count: 2, confirmed: true, landed: true, quarStatus: "monitoring", arrivedDate: "2026-05-11" },
       { pos: [53.39, -3.03],  flag: "🇬🇧", label: "United Kingdom · 22 passengers · Quarantine: Arrowe Park Hospital, Wirral · 20 British + 1 German + 1 Japanese", count: 22, confirmed: true, landed: true, quarStatus: "monitoring",  arrivedDate: "2026-05-10" },
       // ── Other confirmed repatriation flights (no quarantine location confirmed yet) ──
-      { pos: [41.00, 28.98],  flag: "🇹🇷", label: "Turkey · 3 passengers · LANDED · Quarantine location TBC", count: 3, confirmed: true, landed: true, quarStatus: "clear", arrivedDate: "2026-05-10" },
       { pos: [53.34, -6.27],  flag: "🇮🇪", label: "Ireland · 2 passengers · IRL290 · Landed Baldonnel Aerodrome · Quarantine: Mater Hospital, Dublin · 42 days from May 6", count: 2, confirmed: true, landed: true, quarStatus: "clear", arrivedDate: "2026-05-10" },
       { pos: [-31.84, 115.97], flag: "🇦🇺", label: "Australia + NZ · 6 passengers · LANDED — RAAF Base Pearce, Perth · May 15 · Bullsbrook Centre for National Resilience · 21-day minimum quarantine", count: 6, confirmed: true, landed: true, quarStatus: "clear", arrivedDate: "2026-05-15" },
     ];

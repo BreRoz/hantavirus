@@ -556,14 +556,6 @@ const OverviewTab = {
       iconAnchor: [18, 18],
     });
 
-    // Dashed route line Cape Verde → Tenerife
-    L.polyline([capeVerdePos, tenerifePos], {
-      color: "#2dd4bf",
-      weight: 1.5,
-      opacity: 0.3,
-      dashArray: "6 8",
-    }).addTo(this._map);
-
     // Tenerife: disembarkation point (simple circle marker, ship has sailed)
     L.circleMarker(tenerifePos, {
       radius: 5, color: "#2dd4bf", fillColor: "#2dd4bf", fillOpacity: 0.5, weight: 1.5,
@@ -576,13 +568,11 @@ const OverviewTab = {
     L.marker(flightsPos, { icon: planeIcon, zIndexOffset: 999 })
       .bindPopup(`
         <div style="font-family:Inter,sans-serif;min-width:200px">
-          <div style="font-weight:700;font-size:12px;color:#f59e0b;margin-bottom:4px">✈️ Repatriation Flights — TFS Airport</div>
-          <div style="font-size:11px;color:#10b981;font-weight:600">DISEMBARKATION UNDERWAY — May 10, 2026</div>
-          <div style="font-size:11px;color:#10b981;margin-top:6px">🇪🇸 → Gómez Ulla Defense Hospital, Madrid ✓ DEPARTED</div>
-          <div style="font-size:11px;color:#10b981;margin-top:2px">🇫🇷 → Paris area · 5 pax · special medical flight ✓ DEPARTED ~12:00</div>
-          <div style="font-size:11px;color:#aaa;margin-top:4px">🇳🇱🇺🇸🇬🇧🇩🇪🇨🇦🇦🇺🇹🇷🇧🇪🇮🇪 → coordinating</div>
-          <div style="font-size:10px;color:#aaa;margin-top:4px;font-style:italic">French PM called emergency ministerial meeting · 72h hospital + 45-day home isolation protocol</div>
-          <div style="font-size:10px;color:#666;margin-top:2px">147 aboard · 23 nationalities · Source: The Guardian</div>
+          <div style="font-weight:700;font-size:12px;color:#10b981;margin-bottom:4px">✈️ Repatriation Flights — TFS Airport</div>
+          <div style="font-size:11px;color:#10b981;font-weight:600">✅ ALL FLIGHTS COMPLETE — May 10–15, 2026</div>
+          <div style="font-size:11px;color:#10b981;margin-top:6px">🇪🇸 🇫🇷 🇳🇱 🇺🇸 🇬🇧 🇩🇪 🇨🇦 🇧🇪 🇮🇪 ✓ DEPARTED & ARRIVED</div>
+          <div style="font-size:11px;color:#10b981;margin-top:2px">🇦🇺 + 🇳🇿 → Netherlands → Perth ✓ ARRIVED May 15</div>
+          <div style="font-size:10px;color:#aaa;margin-top:6px">All passengers disembarked May 10–11 · MV Hondius now en route Rotterdam</div>
         </div>`, { className: "dark-popup" })
       .addTo(this._map);
 

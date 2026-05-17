@@ -980,8 +980,43 @@
       "flights": [],
       "source_url": "https://www.sasktoday.ca/national-news/what-we-know-about-hantavirus-now-that-people-linked-to-outbreak-are-back-in-canada-12274333",
       "source_notes": "The Canadian Press (Nicole Ireland / Hannah Alberga), May 13 2026",
-      "clinical_notes": "UPDATE May 13 2026 — 6 ship passengers back in Canada across 4 locations:\n(1) Vancouver Island, BC — 4 passengers: a couple in their 70s from the Yukon; a person in their 70s from Vancouver Island; a person from BC in their 50s who lives abroad. 21-day quarantine started Sunday May 11 — could extend to 42 days. Dr. Bonnie Henry (BC PHO) confirmed.\n(2) Grey Bruce region, Ontario — 2 passengers (a couple), isolating 45 days.\n(3) One Quebecer possibly exposed on a flight — was isolating until Monday May 11, then deemed low risk; now self-monitoring 42 days.\nTotal Canada: 10 people (6 ship passengers + 4 flight contacts). None symptomatic. Canada implementing temporary measures to prevent MV Hondius passengers/crew from boarding flights to Canada (per PHAC). Each province has identified a hospital for complex virus management. National Microbiology Lab (Winnipeg) performing confirmation testing.",
+      "clinical_notes": "UPDATE May 13 2026 — 6 ship passengers back in Canada across 4 locations:\n(1) Vancouver Island, BC — 4 passengers: a couple in their 70s from the Yukon; a person in their 70s from Vancouver Island; a person from BC in their 50s who lives abroad. 21-day quarantine started Sunday May 11 — could extend to 42 days. Dr. Bonnie Henry (BC PHO) confirmed.\n(2) Grey Bruce region, Ontario — 2 passengers (a couple), isolating 45 days.\n(3) One Quebecer possibly exposed on a flight — was isolating until Monday May 11, then deemed low risk; now self-monitoring 42 days.\nTotal Canada: 10 people (6 ship passengers + 4 flight contacts). None symptomatic as of May 13.\n\nUPDATE May 16 2026 — Yukon passenger (part of Vancouver Island group) returned PRESUMPTIVE POSITIVE for Andes hantavirus. See PCAN04 for individual case. Their spouse has mild symptoms and was also hospitalized. A third person was taken to hospital for assessment out of abundance of caution. Dr. Bonnie Henry: quarantine timeline may now be extended to 42 days for all VI passengers. Canada total monitoring: 36 people (per PHAC May 16), including 4 ship passengers currently in isolation. All 4 Vancouver Island passengers confirmed to have had no contact with the public since arrival. NML Winnipeg confirmatory results expected within 2 days.",
       "reporter": "The Canadian Press / Dr. Bonnie Henry (BC PHO) / PHAC"
+    },
+    {
+      "id": "PCAN04",
+      "name": "Canadian Passenger — Yukon, Presumptive Positive (Vancouver Island isolation)",
+      "age": null,
+      "sex": null,
+      "nationality": "Canadian",
+      "status": "symptomatic",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": "2026-05-15",
+      "date": "2026-05-16",
+      "incubation_start": "2026-04-01",
+      "location": {
+        "city": "Vancouver Island",
+        "state": "British Columbia",
+        "country": "Canada",
+        "venue": "Hospital — Vancouver Island (isolating)",
+        "lat": 49.25,
+        "lng": -123.12
+      },
+      "ship_info": {
+        "vessel": "MV Hondius",
+        "voyage": "HDS2526",
+        "role": "passenger",
+        "embarkation_port": "Ushuaia",
+        "embarkation_date": "2026-04-01"
+      },
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.nbcnews.com/health/health-news/canadian-hondius-cruise-passenger-positive-hantavirus-rcna345478",
+      "source_notes": "NBC News / BBC / Public Health Agency of Canada, May 16 2026",
+      "clinical_notes": "Yukon resident — one of four Vancouver Island group passengers isolating in BC. Developed symptoms and was hospitalized Thursday May 15 along with spouse (also experiencing mild symptoms — both Hondius passengers). Returned PRESUMPTIVE POSITIVE for Andes hantavirus on Friday May 16. Dr. Bonnie Henry (BC PHO): 'Clearly, this is not what we hoped for, but it is what we planned for.' Samples sent to National Microbiology Laboratory in Winnipeg for confirmatory testing — results expected in ~2 days. A third person isolating in secure lodging also taken to hospital for assessment 'out of abundance of caution' — connection to couple unclear. All four Vancouver Island passengers confirmed to have had no contact with the general public since arriving in Canada. PHAC: overall risk to Canadian public remains low. This is the first presumptive positive among passengers who have returned home after disembarkation.",
+      "reporter": "NBC News / BBC / PHAC / Dr. Bonnie Henry"
     },
     {
       "id": "PUSPAR01",
@@ -1391,7 +1426,7 @@
     },
     {
       "id": "PUSWA01",
-      "name": "Washington State Contacts (3) — Plane Exposure + 1 Ship Passenger",
+      "name": "Washington State Contacts (6) — Flight Contacts + 1 Ship Passenger",
       "age": null,
       "sex": null,
       "nationality": "American",
@@ -1415,8 +1450,8 @@
       "flights": [],
       "source_url": "https://www.usatoday.com/story/news/health/2026/05/12/hantavirus-cruise-ship-updates--live/90031896007/",
       "source_notes": "Washington State DOH / USA Today, May 12 2026",
-      "clinical_notes": "Three Washington state residents under monitoring as of May 12 2026. (1) Two King County residents sat next to an ill cruise passenger who later tested positive for hantavirus on an airplane — no symptoms, monitoring at home. (2) One MV Hondius ship passenger from Washington state — asymptomatic, housed at UNMC National Quarantine Center in Omaha. Dr. Sandra J. Valenciano, Health Officer, King County: 'These are measures that have contained the spread in previous outbreaks of hantavirus. The risk of this virus spreading to residents of King County is low at this time.'",
-      "reporter": "Washington State DOH / USA Today"
+      "clinical_notes": "UPDATE May 17 2026: Washington state now investigating 6 potential Andes hantavirus cases — up from 3 as of May 12. Breakdown: (1) 5 flight contacts on an international flight with a Hondius passenger who was later diagnosed with hantavirus — 4 are King County residents, 1 from eastern Washington. (2) 1 MV Hondius ship passenger from Washington state — asymptomatic, at UNMC quarantine unit Omaha. All 6 being monitored for symptoms. Washington State DOH confirms all are being monitored. Dr. Sandra J. Valenciano (King County Health Officer): risk to King County residents remains low.\n\nSEPARATE UNRELATED CASE: A sixth Washington resident tested positive for Sin Nombre hantavirus (Chelan-Douglas Health District, May 16) — this is a separate rodent-transmitted strain, unrelated to the Andes virus/MV Hondius outbreak. Sin Nombre is the most common US hantavirus and is NOT transmissible person-to-person.",
+      "reporter": "Washington State DOH / NBC News / USA Today"
     },
     {
       "id": "PNLHOSP01",

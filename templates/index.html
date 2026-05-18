@@ -689,289 +689,353 @@
         </div>
       </div>
       <p class="quar-subtitle">All groups arrived May 10–11, 2026 from Tenerife South Airport (TFS). Quarantine periods run from arrival date.</p>
-      <div class="quar-grid">
+      <div class="travel-layout">
 
-        <!-- Canada -->
-        <div class="quar-card" data-arrival="2026-05-11" data-duration="45">
-          <div class="quar-header">
-            <div class="quar-flag">🇨🇦</div>
-            <div class="quar-icon">
-              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
-                <circle cx="22" cy="16" r="5" fill="currentColor"/>
-                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
-              </svg>
-            </div>
-            <div class="quar-title">
-              <h3>Canada</h3>
-              <p>Vancouver Island, BC (4) · Grey Bruce, Ontario (2)</p>
-            </div>
-            <span class="quar-status quar-status--symptomatic">🔴 1 Confirmed Positive</span>
+        <!-- Left: country selector list -->
+        <div class="travel-left-panel">
+          <div class="travel-nav-item selected" data-quar="ca" onclick="QuarNav.select('ca')">
+            <div style="font-weight:700">🇨🇦 Canada</div>
+            <div style="font-size:10px;color:#ef4444;margin-top:2px">Vancouver Island + Grey Bruce · 🔴 1 confirmed positive</div>
           </div>
-          <div class="quar-people">🔴 UPDATE May 18: Yukon passenger (couple in 70s) CONFIRMED POSITIVE — PHAC confirmed May 18 · Spouse tested NEGATIVE · Both in hospital in Victoria · 10th confirmed case from MV Hondius · Other 2 VI passengers and Grey Bruce couple still isolating · All had no public contact since return · PHAC: overall risk to public remains low</div>
-          <div class="quar-progress-wrap">
-            <div class="quar-progress-label">
-              <span class="quar-day-label">Day 1 of 45</span>
-              <span>Up to 45-day isolation</span>
-            </div>
-            <div class="quar-progress-bar">
-              <div class="quar-progress-fill" style="width:2%"></div>
-            </div>
+          <div class="travel-nav-item" data-quar="fr" onclick="QuarNav.select('fr')">
+            <div style="font-weight:700">🇫🇷 France</div>
+            <div style="font-size:10px;color:#ef4444;margin-top:2px">Paris area · 🔴 1 critically ill (ECMO)</div>
           </div>
-          <button class="quar-flight-toggle">
-            <span class="toggle-arrow">▼</span> Flight details
-          </button>
-          <div class="quar-flight-details">
-            Charter · TFS → Bagotville, QC (3 Wing CFB, transfer) → Vancouver Island, BC · 4 passengers · PHAC officer aboard · 2-leg flight · Grey Bruce couple arrived separately
+          <div class="travel-nav-item" data-quar="us" onclick="QuarNav.select('us')">
+            <div style="font-weight:700">🇺🇸 United States</div>
+            <div style="font-size:10px;color:#f59e0b;margin-top:2px">UNMC Omaha + Emory Atlanta · ⚠ 41 monitored · 0 confirmed</div>
+          </div>
+          <div class="travel-nav-item" data-quar="es" onclick="QuarNav.select('es')">
+            <div style="font-weight:700">🇪🇸 Spain</div>
+            <div style="font-size:10px;color:#10b981;margin-top:2px">Gómez Ulla Hospital · ✅ All clear</div>
+          </div>
+          <div class="travel-nav-item" data-quar="gb" onclick="QuarNav.select('gb')">
+            <div style="font-weight:700">🇬🇧 United Kingdom</div>
+            <div style="font-size:10px;color:#10b981;margin-top:2px">Arrowe Park → home isolation · ✅ Monitoring</div>
+          </div>
+          <div class="travel-nav-item" data-quar="nl" onclick="QuarNav.select('nl')">
+            <div style="font-weight:700">🇳🇱 Netherlands</div>
+            <div style="font-size:10px;color:#10b981;margin-top:2px">Amsterdam · ✅ Monitoring</div>
+          </div>
+          <div class="travel-nav-item" data-quar="ie" onclick="QuarNav.select('ie')">
+            <div style="font-weight:700">🇮🇪 Ireland</div>
+            <div style="font-size:10px;color:#10b981;margin-top:2px">Mater Hospital, Dublin · ✅ Monitoring</div>
+          </div>
+          <div class="travel-nav-item" data-quar="au" onclick="QuarNav.select('au')">
+            <div style="font-weight:700">🇦🇺 Australia + NZ</div>
+            <div style="font-size:10px;color:#f59e0b;margin-top:2px">Bullsbrook Centre, Perth · ⚠ 21-day quarantine</div>
           </div>
         </div>
 
-        <!-- France -->
-        <div class="quar-card quar-card--symptomatic" data-arrival="2026-05-10" data-duration="21">
-          <div class="quar-header">
-            <div class="quar-flag">🇫🇷</div>
-            <div class="quar-icon">
-              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
-                <circle cx="22" cy="16" r="5" fill="currentColor"/>
-                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
-              </svg>
-            </div>
-            <div class="quar-title">
-              <h3>France</h3>
-              <p>Bichat Hospital, Paris · ICU (1) · Isolation (4)</p>
-            </div>
-            <span class="quar-status quar-status--symptomatic">🔴 Critically Ill</span>
-          </div>
-          <div class="quar-people">5 passengers · 1 CRITICALLY ILL · ECMO (artificial lung) · Bichat Hospital · 4 isolating · 22 flight contacts + 4 ship passengers (26 total) ALL TESTED NEGATIVE May 14 · Tested 3x/week</div>
-          <div class="quar-progress-wrap">
-            <div class="quar-progress-label">
-              <span class="quar-day-label">Day 1 of 21</span>
-              <span>21-day isolation</span>
-            </div>
-            <div class="quar-progress-bar">
-              <div class="quar-progress-fill quar-progress-fill--red" style="width:5%"></div>
-            </div>
-          </div>
-          <button class="quar-flight-toggle">
-            <span class="toggle-arrow">▼</span> Flight details
-          </button>
-          <div class="quar-flight-details">
-            Dassault Falcon 900EX F-HREG (ARL120E) · TFS → Paris Le Bourget (LBG) · 5 passengers · 1 symptomatic in-flight · Landed 4:27 PM local
-          </div>
-        </div>
+        <!-- Right: detail panes -->
+        <div class="travel-right-panel">
 
-        <!-- United States -->
-        <div class="quar-card quar-card--symptomatic" data-arrival="2026-05-11" data-duration="42">
-          <div class="quar-header">
-            <div class="quar-flag">🇺🇸</div>
-            <div class="quar-icon">
-              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
-                <circle cx="22" cy="16" r="5" fill="currentColor"/>
-                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
-              </svg>
+          <!-- Canada -->
+          <div id="quar-detail-ca" class="travel-content-pane quar-card" data-arrival="2026-05-11" data-duration="45" style="display:block">
+            <div class="panel-header"><span class="panel-title">🇨🇦 Canada</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="quar-header">
+                <div class="quar-flag">🇨🇦</div>
+                <div class="quar-icon">
+                  <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                    <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                    <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="quar-title">
+                  <h3>Canada</h3>
+                  <p>Vancouver Island, BC (4) · Grey Bruce, Ontario (2)</p>
+                </div>
+                <span class="quar-status quar-status--symptomatic">🔴 1 Confirmed Positive</span>
+              </div>
+              <div class="quar-people">🔴 UPDATE May 18: Yukon passenger (couple in 70s) CONFIRMED POSITIVE — PHAC confirmed May 18 · Spouse tested NEGATIVE · Both in hospital in Victoria · 10th confirmed case from MV Hondius · Other 2 VI passengers and Grey Bruce couple still isolating · All had no public contact since return · PHAC: overall risk to public remains low</div>
+              <div class="quar-progress-wrap">
+                <div class="quar-progress-label">
+                  <span class="quar-day-label">Day 1 of 45</span>
+                  <span>Up to 45-day isolation</span>
+                </div>
+                <div class="quar-progress-bar">
+                  <div class="quar-progress-fill" style="width:2%"></div>
+                </div>
+              </div>
+              <button class="quar-flight-toggle">
+                <span class="toggle-arrow">▼</span> Flight details
+              </button>
+              <div class="quar-flight-details">
+                Charter · TFS → Bagotville, QC (3 Wing CFB, transfer) → Vancouver Island, BC · 4 passengers · PHAC officer aboard · 2-leg flight · Grey Bruce couple arrived separately
+              </div>
             </div>
-            <div class="quar-title">
-              <h3>United States</h3>
-              <p>Emory SCDU, Atlanta (2) · National Quarantine Unit, UNMC Omaha (16)</p>
-            </div>
-            <span class="quar-status quar-status--monitoring">⚠ 0 Confirmed · 41 Monitored</span>
           </div>
-          <div class="quar-people">CDC (May 15): NO confirmed U.S. hantavirus cases · 41 monitored: 16 at UNMC quarantine unit (incl. Kornfeld, moved from biocontainment after negative subsequent tests) · 2 at Emory Atlanta · 7 St. Helena returnees (state monitoring) · 16 Johannesburg flight contacts · 10 states: AZ, CA, GA, KS, MD, MN, NJ, TX, VA, WA · 42-day monitoring</div>
-          <div class="quar-progress-wrap">
-            <div class="quar-progress-label">
-              <span class="quar-day-label">Day 1 of 42</span>
-              <span>42-day voluntary isolation</span>
-            </div>
-            <div class="quar-progress-bar">
-              <div class="quar-progress-fill quar-progress-fill--red" style="width:5%"></div>
-            </div>
-          </div>
-          <button class="quar-flight-toggle">
-            <span class="toggle-arrow">▼</span> Flight details
-          </button>
-          <div class="quar-flight-details">
-            DoS airlift · TFS → Washington D.C. → Eppley Airfield, Omaha · 18 passengers (17 Americans + 1 British/US resident) · CDC + HHS escorting · 2 transferred Omaha → Emory SCDU Atlanta May 11
-          </div>
-        </div>
 
-        <!-- Spain -->
-        <div class="quar-card" data-arrival="2026-05-10" data-duration="21">
-          <div class="quar-header">
-            <div class="quar-flag">🇪🇸</div>
-            <div class="quar-icon">
-              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
-                <circle cx="22" cy="16" r="5" fill="currentColor"/>
-                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
-              </svg>
+          <!-- France -->
+          <div id="quar-detail-fr" class="travel-content-pane quar-card quar-card--symptomatic" data-arrival="2026-05-10" data-duration="21" style="display:none">
+            <div class="panel-header"><span class="panel-title">🇫🇷 France</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="quar-header">
+                <div class="quar-flag">🇫🇷</div>
+                <div class="quar-icon">
+                  <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                    <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                    <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="quar-title">
+                  <h3>France</h3>
+                  <p>Bichat Hospital, Paris · ICU (1) · Isolation (4)</p>
+                </div>
+                <span class="quar-status quar-status--symptomatic">🔴 Critically Ill</span>
+              </div>
+              <div class="quar-people">5 passengers · 1 CRITICALLY ILL · ECMO (artificial lung) · Bichat Hospital · 4 isolating · 22 flight contacts + 4 ship passengers (26 total) ALL TESTED NEGATIVE May 14 · Tested 3x/week</div>
+              <div class="quar-progress-wrap">
+                <div class="quar-progress-label">
+                  <span class="quar-day-label">Day 1 of 21</span>
+                  <span>21-day isolation</span>
+                </div>
+                <div class="quar-progress-bar">
+                  <div class="quar-progress-fill quar-progress-fill--red" style="width:5%"></div>
+                </div>
+              </div>
+              <button class="quar-flight-toggle">
+                <span class="toggle-arrow">▼</span> Flight details
+              </button>
+              <div class="quar-flight-details">
+                Dassault Falcon 900EX F-HREG (ARL120E) · TFS → Paris Le Bourget (LBG) · 5 passengers · 1 symptomatic in-flight · Landed 4:27 PM local
+              </div>
             </div>
-            <div class="quar-title">
-              <h3>Spain</h3>
-              <p>Gómez Ulla Central Defense Hospital, Madrid</p>
-            </div>
-            <span class="quar-status quar-status--clear">All clear</span>
           </div>
-          <div class="quar-people">14 passengers · Hospital quarantine</div>
-          <div class="quar-progress-wrap">
-            <div class="quar-progress-label">
-              <span class="quar-day-label">Day 1 of 21</span>
-              <span>21-day isolation</span>
-            </div>
-            <div class="quar-progress-bar">
-              <div class="quar-progress-fill" style="width:5%"></div>
-            </div>
-          </div>
-          <button class="quar-flight-toggle">
-            <span class="toggle-arrow">▼</span> Flight details
-          </button>
-          <div class="quar-flight-details">
-            Spanish Air Force A310 "Reino de España" (T.22-2) · TFS → Torrejón Air Base · 14 Spanish nationals · First group to leave the ship
-          </div>
-        </div>
 
-        <!-- United Kingdom -->
-        <div class="quar-card quar-card--monitoring" data-arrival="2026-05-10" data-duration="21">
-          <div class="quar-header">
-            <div class="quar-flag">🇬🇧</div>
-            <div class="quar-icon">
-              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
-                <circle cx="22" cy="16" r="5" fill="currentColor"/>
-                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
-              </svg>
+          <!-- United States -->
+          <div id="quar-detail-us" class="travel-content-pane quar-card quar-card--symptomatic" data-arrival="2026-05-11" data-duration="42" style="display:none">
+            <div class="panel-header"><span class="panel-title">🇺🇸 United States</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="quar-header">
+                <div class="quar-flag">🇺🇸</div>
+                <div class="quar-icon">
+                  <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                    <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                    <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="quar-title">
+                  <h3>United States</h3>
+                  <p>Emory SCDU, Atlanta (2) · National Quarantine Unit, UNMC Omaha (16)</p>
+                </div>
+                <span class="quar-status quar-status--monitoring">⚠ 0 Confirmed · 41 Monitored</span>
+              </div>
+              <div class="quar-people">CDC (May 15): NO confirmed U.S. hantavirus cases · 41 monitored: 16 at UNMC quarantine unit (incl. Kornfeld, moved from biocontainment after negative subsequent tests) · 2 at Emory Atlanta · 7 St. Helena returnees (state monitoring) · 16 Johannesburg flight contacts · 10 states: AZ, CA, GA, KS, MD, MN, NJ, TX, VA, WA · 42-day monitoring</div>
+              <div class="quar-progress-wrap">
+                <div class="quar-progress-label">
+                  <span class="quar-day-label">Day 1 of 42</span>
+                  <span>42-day voluntary isolation</span>
+                </div>
+                <div class="quar-progress-bar">
+                  <div class="quar-progress-fill quar-progress-fill--red" style="width:5%"></div>
+                </div>
+              </div>
+              <button class="quar-flight-toggle">
+                <span class="toggle-arrow">▼</span> Flight details
+              </button>
+              <div class="quar-flight-details">
+                DoS airlift · TFS → Washington D.C. → Eppley Airfield, Omaha · 18 passengers (17 Americans + 1 British/US resident) · CDC + HHS escorting · 2 transferred Omaha → Emory SCDU Atlanta May 11
+              </div>
             </div>
-            <div class="quar-title">
-              <h3>United Kingdom</h3>
-              <p>Arrowe Park Hospital, Wirral, Merseyside</p>
-            </div>
-            <span class="quar-status quar-status--monitoring">Monitoring</span>
           </div>
-          <div class="quar-people">20 British nationals + 1 German + 1 Japanese · Arrowe Park Hospital</div>
-          <div class="quar-progress-wrap">
-            <div class="quar-progress-label">
-              <span class="quar-day-label">Day 1 of 21</span>
-              <span>21-day isolation</span>
-            </div>
-            <div class="quar-progress-bar">
-              <div class="quar-progress-fill quar-progress-fill--amber" style="width:5%"></div>
-            </div>
-          </div>
-          <button class="quar-flight-toggle">
-            <span class="toggle-arrow">▼</span> Flight details
-          </button>
-          <div class="quar-flight-details">
-            ZT791 / AWC7791 · Airbus A320 · Titan Airways · TFS → Manchester (MAN) · 22 passengers · 20 British + 1 German + 1 Japanese
-          </div>
-        </div>
 
-        <!-- Netherlands -->
-        <div class="quar-card" data-arrival="2026-05-10" data-duration="21">
-          <div class="quar-header">
-            <div class="quar-flag">🇳🇱</div>
-            <div class="quar-icon">
-              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
-                <circle cx="22" cy="16" r="5" fill="currentColor"/>
-                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
-              </svg>
+          <!-- Spain -->
+          <div id="quar-detail-es" class="travel-content-pane quar-card" data-arrival="2026-05-10" data-duration="21" style="display:none">
+            <div class="panel-header"><span class="panel-title">🇪🇸 Spain</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="quar-header">
+                <div class="quar-flag">🇪🇸</div>
+                <div class="quar-icon">
+                  <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                    <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                    <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="quar-title">
+                  <h3>Spain</h3>
+                  <p>Gómez Ulla Central Defense Hospital, Madrid</p>
+                </div>
+                <span class="quar-status quar-status--clear">All clear</span>
+              </div>
+              <div class="quar-people">14 passengers · Hospital quarantine</div>
+              <div class="quar-progress-wrap">
+                <div class="quar-progress-label">
+                  <span class="quar-day-label">Day 1 of 21</span>
+                  <span>21-day isolation</span>
+                </div>
+                <div class="quar-progress-bar">
+                  <div class="quar-progress-fill" style="width:5%"></div>
+                </div>
+              </div>
+              <button class="quar-flight-toggle">
+                <span class="toggle-arrow">▼</span> Flight details
+              </button>
+              <div class="quar-flight-details">
+                Spanish Air Force A310 "Reino de España" (T.22-2) · TFS → Torrejón Air Base · 14 Spanish nationals · First group to leave the ship
+              </div>
             </div>
-            <div class="quar-title">
-              <h3>Netherlands</h3>
-              <p>Eindhoven</p>
-            </div>
-            <span class="quar-status quar-status--clear">All clear</span>
           </div>
-          <div class="quar-people">26 passengers · incl. 2 Indian crew members · All evacuation flight arrivals tested NEGATIVE — Dutch authorities (May 14)</div>
-          <div class="quar-progress-wrap">
-            <div class="quar-progress-label">
-              <span class="quar-day-label">Day 1 of 21</span>
-              <span>21-day isolation</span>
-            </div>
-            <div class="quar-progress-bar">
-              <div class="quar-progress-fill" style="width:5%"></div>
-            </div>
-          </div>
-          <button class="quar-flight-toggle">
-            <span class="toggle-arrow">▼</span> Flight details
-          </button>
-          <div class="quar-flight-details">
-            Charter · TFS → Eindhoven (EIN) · 26 passengers incl. 2 Indian crew members
-          </div>
-        </div>
 
-        <!-- Ireland -->
-        <div class="quar-card" data-arrival="2026-05-06" data-duration="42">
-          <div class="quar-header">
-            <div class="quar-flag">🇮🇪</div>
-            <div class="quar-icon">
-              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
-                <circle cx="22" cy="16" r="5" fill="currentColor"/>
-                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
-              </svg>
+          <!-- United Kingdom -->
+          <div id="quar-detail-gb" class="travel-content-pane quar-card quar-card--monitoring" data-arrival="2026-05-10" data-duration="21" style="display:none">
+            <div class="panel-header"><span class="panel-title">🇬🇧 United Kingdom</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="quar-header">
+                <div class="quar-flag">🇬🇧</div>
+                <div class="quar-icon">
+                  <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                    <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                    <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="quar-title">
+                  <h3>United Kingdom</h3>
+                  <p>Arrowe Park Hospital, Wirral, Merseyside</p>
+                </div>
+                <span class="quar-status quar-status--monitoring">Monitoring</span>
+              </div>
+              <div class="quar-people">20 British nationals + 1 German + 1 Japanese · Arrowe Park Hospital</div>
+              <div class="quar-progress-wrap">
+                <div class="quar-progress-label">
+                  <span class="quar-day-label">Day 1 of 21</span>
+                  <span>21-day isolation</span>
+                </div>
+                <div class="quar-progress-bar">
+                  <div class="quar-progress-fill quar-progress-fill--amber" style="width:5%"></div>
+                </div>
+              </div>
+              <button class="quar-flight-toggle">
+                <span class="toggle-arrow">▼</span> Flight details
+              </button>
+              <div class="quar-flight-details">
+                ZT791 / AWC7791 · Airbus A320 · Titan Airways · TFS → Manchester (MAN) · 22 passengers · 20 British + 1 German + 1 Japanese
+              </div>
             </div>
-            <div class="quar-title">
-              <h3>Ireland</h3>
-              <p>Mater Hospital National Isolation Unit, Dublin</p>
-            </div>
-            <span class="quar-status quar-status--clear">All clear</span>
           </div>
-          <div class="quar-people">2 passengers · 42-day isolation from May 6 · Mater Hospital, Dublin</div>
-          <div class="quar-progress-wrap">
-            <div class="quar-progress-label">
-              <span class="quar-day-label">Day 1 of 42</span>
-              <span>42-day isolation</span>
-            </div>
-            <div class="quar-progress-bar">
-              <div class="quar-progress-fill" style="width:2%"></div>
-            </div>
-          </div>
-          <button class="quar-flight-toggle">
-            <span class="toggle-arrow">▼</span> Flight details
-          </button>
-          <div class="quar-flight-details">
-            IRL290 · Irish Air Corps · TFS → Baldonnel Aerodrome, Dublin · 2 passengers · Landed ~9:00 PM May 10
-          </div>
-        </div>
 
-        <!-- Australia -->
-        <div class="quar-card" data-arrival="2026-05-15" data-duration="21">
-          <div class="quar-header">
-            <div class="quar-flag">🇦🇺</div>
-            <div class="quar-icon">
-              <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
-                <circle cx="22" cy="16" r="5" fill="currentColor"/>
-                <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
-              </svg>
+          <!-- Netherlands -->
+          <div id="quar-detail-nl" class="travel-content-pane quar-card" data-arrival="2026-05-10" data-duration="21" style="display:none">
+            <div class="panel-header"><span class="panel-title">🇳🇱 Netherlands</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="quar-header">
+                <div class="quar-flag">🇳🇱</div>
+                <div class="quar-icon">
+                  <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                    <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                    <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="quar-title">
+                  <h3>Netherlands</h3>
+                  <p>Eindhoven</p>
+                </div>
+                <span class="quar-status quar-status--clear">All clear</span>
+              </div>
+              <div class="quar-people">26 passengers · incl. 2 Indian crew members · All evacuation flight arrivals tested NEGATIVE — Dutch authorities (May 14)</div>
+              <div class="quar-progress-wrap">
+                <div class="quar-progress-label">
+                  <span class="quar-day-label">Day 1 of 21</span>
+                  <span>21-day isolation</span>
+                </div>
+                <div class="quar-progress-bar">
+                  <div class="quar-progress-fill" style="width:5%"></div>
+                </div>
+              </div>
+              <button class="quar-flight-toggle">
+                <span class="toggle-arrow">▼</span> Flight details
+              </button>
+              <div class="quar-flight-details">
+                Charter · TFS → Eindhoven (EIN) · 26 passengers incl. 2 Indian crew members
+              </div>
             </div>
-            <div class="quar-title">
-              <h3>Australia + New Zealand</h3>
-              <p>Bullsbrook Centre for National Resilience · Perth, WA</p>
-            </div>
-            <span class="quar-status quar-status--monitoring">⚠ Monitoring</span>
           </div>
-          <div class="quar-people">6 passengers · 4 AU citizens + 1 AU permanent resident + 1 New Zealander · All from NSW/QLD · Landed RAAF Base Pearce ~11am WST May 15 · All tested negative · Asymptomatic</div>
-          <div class="quar-progress-wrap">
-            <div class="quar-progress-label">
-              <span class="quar-day-label">In quarantine</span>
-              <span>21-day minimum · up to 42 days</span>
-            </div>
-            <div class="quar-progress-bar">
-              <div class="quar-progress-fill" style="width:0%"></div>
-            </div>
-          </div>
-          <button class="quar-flight-toggle">
-            <span class="toggle-arrow">▼</span> Flight details
-          </button>
-          <div class="quar-flight-details">
-            Leg 1: TFS → Netherlands ✅ (May 12) · Leg 2: Netherlands → RAAF Pearce ⏳ delayed (refuelling clearance) · Flight crew quarantining alongside · Staff from Darwin's National Critical Care &amp; Trauma Response Centre · Butler: mission "difficult" — hard to find crew willing under strict quarantine rules
-          </div>
-        </div>
 
-      </div>
+          <!-- Ireland -->
+          <div id="quar-detail-ie" class="travel-content-pane quar-card" data-arrival="2026-05-06" data-duration="42" style="display:none">
+            <div class="panel-header"><span class="panel-title">🇮🇪 Ireland</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="quar-header">
+                <div class="quar-flag">🇮🇪</div>
+                <div class="quar-icon">
+                  <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                    <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                    <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="quar-title">
+                  <h3>Ireland</h3>
+                  <p>Mater Hospital National Isolation Unit, Dublin</p>
+                </div>
+                <span class="quar-status quar-status--clear">All clear</span>
+              </div>
+              <div class="quar-people">2 passengers · 42-day isolation from May 6 · Mater Hospital, Dublin</div>
+              <div class="quar-progress-wrap">
+                <div class="quar-progress-label">
+                  <span class="quar-day-label">Day 1 of 42</span>
+                  <span>42-day isolation</span>
+                </div>
+                <div class="quar-progress-bar">
+                  <div class="quar-progress-fill" style="width:2%"></div>
+                </div>
+              </div>
+              <button class="quar-flight-toggle">
+                <span class="toggle-arrow">▼</span> Flight details
+              </button>
+              <div class="quar-flight-details">
+                IRL290 · Irish Air Corps · TFS → Baldonnel Aerodrome, Dublin · 2 passengers · Landed ~9:00 PM May 10
+              </div>
+            </div>
+          </div>
+
+          <!-- Australia -->
+          <div id="quar-detail-au" class="travel-content-pane quar-card" data-arrival="2026-05-15" data-duration="21" style="display:none">
+            <div class="panel-header"><span class="panel-title">🇦🇺 Australia + New Zealand</span></div>
+            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="quar-header">
+                <div class="quar-flag">🇦🇺</div>
+                <div class="quar-icon">
+                  <svg viewBox="0 0 44 56" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+                    <circle cx="22" cy="16" r="5" fill="currentColor"/>
+                    <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="quar-title">
+                  <h3>Australia + New Zealand</h3>
+                  <p>Bullsbrook Centre for National Resilience · Perth, WA</p>
+                </div>
+                <span class="quar-status quar-status--monitoring">⚠ Monitoring</span>
+              </div>
+              <div class="quar-people">6 passengers · 4 AU citizens + 1 AU permanent resident + 1 New Zealander · All from NSW/QLD · Landed RAAF Base Pearce ~11am WST May 15 · All tested negative · Asymptomatic</div>
+              <div class="quar-progress-wrap">
+                <div class="quar-progress-label">
+                  <span class="quar-day-label">In quarantine</span>
+                  <span>21-day minimum · up to 42 days</span>
+                </div>
+                <div class="quar-progress-bar">
+                  <div class="quar-progress-fill" style="width:0%"></div>
+                </div>
+              </div>
+              <button class="quar-flight-toggle">
+                <span class="toggle-arrow">▼</span> Flight details
+              </button>
+              <div class="quar-flight-details">
+                Leg 1: TFS → Netherlands ✅ (May 12) · Leg 2: Netherlands → RAAF Pearce ⏳ delayed (refuelling clearance) · Flight crew quarantining alongside · Staff from Darwin's National Critical Care &amp; Trauma Response Centre · Butler: mission "difficult" — hard to find crew willing under strict quarantine rules
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end travel-right-panel -->
+      </div><!-- end travel-layout -->
     </div>
 
     <!-- Tab 7: Info -->
@@ -1570,6 +1634,19 @@ const ReaderMode = {
 };
 
 document.addEventListener('DOMContentLoaded', () => ReaderMode.init());
+</script>
+
+<script>
+const QuarNav = {
+  select(key) {
+    document.querySelectorAll('#tab-quarantine .travel-nav-item').forEach(el => el.classList.remove('selected'));
+    document.querySelectorAll('#tab-quarantine .travel-content-pane').forEach(el => el.style.display = 'none');
+    const nav = document.querySelector(`#tab-quarantine [data-quar="${key}"]`);
+    const pane = document.getElementById(`quar-detail-${key}`);
+    if (nav) nav.classList.add('selected');
+    if (pane) pane.style.display = 'block';
+  }
+};
 </script>
 </body>
 </html>

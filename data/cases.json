@@ -985,11 +985,11 @@
     },
     {
       "id": "PCAN04",
-      "name": "Canadian Passenger — Yukon, Presumptive Positive (Vancouver Island isolation)",
+      "name": "Canadian Passenger — Yukon, CONFIRMED POSITIVE · 10th case from MV Hondius",
       "age": null,
       "sex": null,
       "nationality": "Canadian",
-      "status": "symptomatic",
+      "status": "confirmed",
       "generation": 1,
       "infected_by": null,
       "onset_date": "2026-05-15",
@@ -1015,8 +1015,8 @@
       "flights": [],
       "source_url": "https://www.nbcnews.com/health/health-news/canadian-hondius-cruise-passenger-positive-hantavirus-rcna345478",
       "source_notes": "NBC News / BBC / Public Health Agency of Canada, May 16 2026",
-      "clinical_notes": "Yukon resident — one of four Vancouver Island group passengers isolating in BC. Developed symptoms and was hospitalized Thursday May 15 along with spouse (also experiencing mild symptoms — both Hondius passengers). Returned PRESUMPTIVE POSITIVE for Andes hantavirus on Friday May 16. Dr. Bonnie Henry (BC PHO): 'Clearly, this is not what we hoped for, but it is what we planned for.' Samples sent to National Microbiology Laboratory in Winnipeg for confirmatory testing — results expected in ~2 days. A third person isolating in secure lodging also taken to hospital for assessment 'out of abundance of caution' — connection to couple unclear. All four Vancouver Island passengers confirmed to have had no contact with the general public since arriving in Canada. PHAC: overall risk to Canadian public remains low. This is the first presumptive positive among passengers who have returned home after disembarkation.",
-      "reporter": "NBC News / BBC / PHAC / Dr. Bonnie Henry"
+      "clinical_notes": "Yukon resident, couple in their 70s — one of four Vancouver Island group passengers isolating in BC. Developed symptoms and was hospitalized Thursday May 15 along with spouse. Returned PRESUMPTIVE POSITIVE on Friday May 16 (BC PHO Dr. Bonnie Henry). UPDATE May 18: PHAC OFFICIALLY CONFIRMED positive for Andes hantavirus — the 10th confirmed case from MV Hondius. Spouse tested NEGATIVE. Both remain in hospital in Victoria, BC in isolation. Dr. Bonnie Henry: 'Clearly, this is not what we hoped for, but it is what we planned for.' A third person isolating in secure lodging also taken to hospital for assessment 'out of abundance of caution' — connection to couple unclear. All four Vancouver Island passengers confirmed to have had no contact with the general public since arriving in Canada. PHAC: 'All confirmed cases to date have been passengers or crew on the MV Hondius cruise ship. The overall risk to the general population in Canada remains low.' This is the first confirmed case among passengers who had returned home after disembarkation.",
+      "reporter": "NBC News / BBC / PHAC / ABC7 / Dr. Bonnie Henry"
     },
     {
       "id": "PUSPAR01",

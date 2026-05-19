@@ -1585,6 +1585,43 @@
       "reporter": "USA Today"
     },
     {
+      "id": "PUSPER01",
+      "name": "Angela Perryman — US Citizen (Ecuador), UNMC Omaha — Mandatory Federal Quarantine Order",
+      "age": 47,
+      "sex": "F",
+      "nationality": "American",
+      "status": "monitoring",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-11",
+      "incubation_start": null,
+      "location": {
+        "city": "Omaha",
+        "state": "Nebraska",
+        "country": "USA",
+        "venue": "National Quarantine Unit — UNMC",
+        "lat": 41.26,
+        "lng": -95.94
+      },
+      "ship_info": {
+        "vessel": "MV Hondius",
+        "voyage": "HDS2526",
+        "disembark_port": "Tenerife",
+        "disembark_date": "2026-05-10"
+      },
+      "transport": {
+        "type": "flight",
+        "notes": "US DoS airlift — TFS → Washington D.C. → Nebraska (UNMC)"
+      },
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.nytimes.com/2026/05/18/us/hantavirus-ship-passenger-quarantine-order.html",
+      "source_notes": "New York Times, May 18 2026",
+      "clinical_notes": "Angela Perryman, 47, US citizen currently living in Ecuador, home in South Florida. MV Hondius passenger — had brief conversations on the ship with a passenger who later died from hantavirus. Tested NEGATIVE for hantavirus. Asymptomatic. Was planning to leave UNMC and isolate at an Airbnb in South Florida; government offered transport so she would not use commercial flights. On May 19, received a federal mandatory quarantine order requiring her to remain at UNMC through May 31 (21 days from arrival). Order authorized by Jay Bhattacharya, acting CDC director. Law enforcement threatened if she attempts to leave. Two people in Nebraska total received orders (Perryman + 1 unnamed). Perryman: 'They are requiring us to remain in a locked facility and threatening us — and denying us the right to home quarantine.' Order says she will be given a medical review within 72 hours and can appeal. HHS cited recent confirmed cases in France, Spain, and Canada as grounds for the orders. Last federal quarantine orders were January 2020 for Wuhan evacuees. Jennifer Nuzzo (Brown University pandemic center): 'Typically we don't hold people against their will unless there is no alternative.' — NYT, May 18 2026",
+      "reporter": "New York Times / HHS"
+    },
+    {
       "id": "PUSIL01",
       "name": "Illinois Resident — Possible Hantavirus, NOT Tied to Cruise Ship",
       "age": null,

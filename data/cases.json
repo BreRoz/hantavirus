@@ -1786,6 +1786,35 @@
       "source_notes": "Firstpost / CDC / Dr. David Fitter, May 15 2026",
       "clinical_notes": "16 Americans who were passengers on the April 25 Airlink flight 4Z 301 (Saint Helena → Johannesburg), which carried index case PEDB43 (the Dutch woman who died in Johannesburg on April 26). These are Gen 2 contacts — NOT MV Hondius passengers. Announced May 15 by CDC/Dr. David Fitter. CDC is 'monitoring all Americans that potentially would have been exposed, whether in the U.S. or abroad.' CDC declined to disclose where in the US these individuals are located. All in quarantine/monitoring. No confirmed cases among them as of May 15. Brings total US monitoring to 41: 18 ship passengers (UNMC/Emory biocontainment) + 7 pre-detection St. Helena returnees (state-monitored) + 16 Johannesburg flight contacts (this group) = 41.",
       "reporter": "Firstpost / CDC"
+    },
+    {
+      "id": "PPRT01",
+      "name": "Portuguese National — Suspected Case, TESTED NEGATIVE (Retesting Required)",
+      "age": null,
+      "sex": null,
+      "nationality": "Portuguese",
+      "status": "monitoring",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-19",
+      "incubation_start": null,
+      "location": {
+        "city": "Lisbon",
+        "state": "",
+        "country": "Portugal",
+        "venue": "Curry Cabral Hospital (reference centre), Lisbon",
+        "lat": 38.72,
+        "lng": -9.14
+      },
+      "ship_info": null,
+      "transport": { "type": "flight", "notes": "Traveled by plane as part of the hantavirus outbreak on a cruise ship with confirmed cases" },
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.euronews.com/health/2026/05/20/first-suspected-hantavirus-case-in-portugal-tests-negative",
+      "source_notes": "Euronews / RTP / DGS Portugal, May 20 2026",
+      "clinical_notes": "Adult Portuguese national admitted to São Francisco Xavier Hospital, Lisbon on May 19 with flu-like symptoms. Traveled by plane as part of the hantavirus outbreak linked to MV Hondius. First suspected hantavirus case in Portugal. Initial test came back NEGATIVE. Per DGS (Directorate-General of Health) protocol, even a negative result within the 42-day maximum incubation period requires retesting and reclassification. Patient transferred to Curry Cabral reference hospital (also served as COVID-19 reference centre; received Lisbon's first COVID patient). DGS defines a suspected case as any person who shared transport with a confirmed/probable case, or who had contact with an MV Hondius passenger/crew member since April 5, 2026 and presents symptoms. Not yet confirmed — monitoring continues.",
+      "reporter": "Euronews / RTP / DGS Portugal"
     }
   ],
   "edges": [

@@ -1431,7 +1431,7 @@ const DisclaimerSystem = {
     }
 
     // Show shutdown notice unless user checked "don't show again"
-    const seen = localStorage.getItem('epitrace_notice_v2');
+    const seen = localStorage.getItem('epitrace_notice_v3');
     if (!seen) this.openModal();
   },
 
@@ -1442,7 +1442,7 @@ const DisclaimerSystem = {
   closeModal() {
     document.getElementById('disclaimer-modal')?.classList.remove('open');
     const cb = document.getElementById('disclaimer-no-show');
-    if (cb?.checked) localStorage.setItem('epitrace_notice_v2', '1');
+    if (cb?.checked) localStorage.setItem('epitrace_notice_v3', '1');
   },
 
   dismissBanner() {

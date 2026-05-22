@@ -1815,6 +1815,40 @@
       "source_notes": "Euronews / RTP / DGS Portugal, May 20 2026",
       "clinical_notes": "Adult Portuguese national admitted to São Francisco Xavier Hospital, Lisbon on May 19 with flu-like symptoms. Traveled by plane as part of the hantavirus outbreak linked to MV Hondius. First suspected hantavirus case in Portugal. Initial test came back NEGATIVE. Per DGS (Directorate-General of Health) protocol, even a negative result within the 42-day maximum incubation period requires retesting and reclassification. Patient transferred to Curry Cabral reference hospital (also served as COVID-19 reference centre; received Lisbon's first COVID patient). DGS defines a suspected case as any person who shared transport with a confirmed/probable case, or who had contact with an MV Hondius passenger/crew member since April 5, 2026 and presents symptoms. Not yet confirmed — monitoring continues.",
       "reporter": "Euronews / RTP / DGS Portugal"
+    },
+    {
+      "id": "PNLCREW01",
+      "name": "MV Hondius Crew Member — Confirmed Positive (Andes Virus), Netherlands",
+      "age": null,
+      "sex": null,
+      "nationality": "Unknown",
+      "status": "confirmed",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-22",
+      "incubation_start": null,
+      "location": {
+        "city": "Netherlands",
+        "state": "",
+        "country": "Netherlands",
+        "venue": "Hospital isolation (location undisclosed)",
+        "lat": 52.37,
+        "lng": 4.90
+      },
+      "ship_info": {
+        "vessel": "MV Hondius",
+        "voyage": "HDS2526",
+        "disembark_port": "Rotterdam",
+        "disembark_date": "2026-05-18"
+      },
+      "transport": { "type": "ship", "notes": "Remained aboard MV Hondius for return voyage to Rotterdam (arrived May 18)" },
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.gmanetwork.com/news/topstories/world/988643/positive-hantavirus-hospital-dutch-authorities/story/",
+      "source_notes": "RIVM / Reuters / GMA Network, May 22 2026",
+      "clinical_notes": "MV Hondius crew member confirmed positive for Andes hantavirus while in quarantine in the Netherlands. First confirmed crew member case — all previous confirmed cases have been passengers. Crew member remained aboard the ship for the return voyage to Rotterdam (ship arrived May 18), then entered quarantine in the Netherlands. Tested positive during quarantine and admitted to hospital as a precaution. In isolation. RIVM: 'The Andes virus has been detected in one person who was in quarantine in the Netherlands. The patient has since been admitted to the hospital as a precaution and is in isolation.' Andes virus is the human-to-human transmissible strain. Nationality not disclosed. Identity not disclosed. — Reuters/GMA, May 22 2026",
+      "reporter": "RIVM / Reuters / GMA Network"
     }
   ],
   "edges": [

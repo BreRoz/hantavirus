@@ -679,11 +679,11 @@
     },
     {
       "id": "PAR002",
-      "name": "Bariloche Male Patient (Argentina Domestic, 2026)",
+      "name": "Bariloche Male Patient (Argentina Domestic, 2026 — NOT MV Hondius)",
       "age": null,
       "sex": "male",
       "nationality": "Argentine",
-      "status": "confirmed",
+      "status": "symptomatic",
       "generation": 0,
       "infected_by": null,
       "onset_date": null,

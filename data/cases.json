@@ -1849,6 +1849,74 @@
       "source_notes": "RIVM / Reuters / GMA Network, May 22 2026",
       "clinical_notes": "MV Hondius crew member confirmed positive for Andes hantavirus while in quarantine in the Netherlands. First confirmed crew member case — all previous confirmed cases have been passengers. Crew member remained aboard the ship for the return voyage to Rotterdam (ship arrived May 18), then entered quarantine in the Netherlands. Tested positive during quarantine and admitted to hospital as a precaution. In isolation. RIVM: 'The Andes virus has been detected in one person who was in quarantine in the Netherlands. The patient has since been admitted to the hospital as a precaution and is in isolation.' Andes virus is the human-to-human transmissible strain. Nationality not disclosed. Identity not disclosed. — Reuters/GMA, May 22 2026",
       "reporter": "RIVM / Reuters / GMA Network"
+    },
+    {
+      "id": "PNLCREW02",
+      "name": "Dutch Crew Member — Confirmed Positive, Disembarked Spain (MV Hondius)",
+      "age": null,
+      "sex": null,
+      "nationality": "Dutch",
+      "status": "confirmed",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-22",
+      "incubation_start": null,
+      "location": {
+        "city": "Spain",
+        "state": "",
+        "country": "Spain",
+        "venue": "Hospital isolation (location undisclosed)",
+        "lat": 40.42,
+        "lng": -3.70
+      },
+      "ship_info": {
+        "vessel": "MV Hondius",
+        "voyage": "HDS2526",
+        "disembark_port": "Spain",
+        "disembark_date": "2026-05-10"
+      },
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.cidrap.umn.edu/hantavirus/hantavirus-outbreak-linked-cruise-ship-grows-13-cases",
+      "source_notes": "CIDRAP, May 27 2026",
+      "clinical_notes": "Dutch crew member who disembarked the MV Hondius in Spain (Tenerife, May 10) and was being monitored for hantavirus. Confirmed positive in late May — one of the two new cases bringing the outbreak total to 13. Separate from PNLCREW01 (Dutch crew member who remained aboard for return voyage to Rotterdam and tested positive in Netherlands). Both are Dutch nationals but disembarked at different points. Being monitored in Spain at time of confirmation. — CIDRAP, May 27 2026",
+      "reporter": "CIDRAP"
+    },
+    {
+      "id": "PESP02",
+      "name": "Spanish Citizen — Confirmed Positive, MV Hondius Passenger, Hospital Madrid",
+      "age": null,
+      "sex": null,
+      "nationality": "Spanish",
+      "status": "confirmed",
+      "generation": 1,
+      "infected_by": null,
+      "onset_date": null,
+      "date": "2026-05-25",
+      "incubation_start": null,
+      "location": {
+        "city": "Madrid",
+        "state": "",
+        "country": "Spain",
+        "venue": "Hospital isolation, Madrid",
+        "lat": 40.42,
+        "lng": -3.70
+      },
+      "ship_info": {
+        "vessel": "MV Hondius",
+        "voyage": "HDS2526",
+        "disembark_port": "Tenerife",
+        "disembark_date": "2026-05-10"
+      },
+      "transport": {},
+      "exposures": [],
+      "flights": [],
+      "source_url": "https://www.cidrap.umn.edu/hantavirus/hantavirus-outbreak-linked-cruise-ship-grows-13-cases",
+      "source_notes": "CIDRAP / Spain Health Ministry, May 25-27 2026",
+      "clinical_notes": "Spanish citizen who was aboard the MV Hondius, isolated at a hospital in Madrid. Spain confirmed positive May 25, 2026. Second confirmed Spanish case from MV Hondius (PESP_GU01 was the first, confirmed earlier at Gómez Ulla Defense Hospital). One of two new cases bringing outbreak total to 13. — CIDRAP, May 27 2026",
+      "reporter": "CIDRAP / Spain Health Ministry"
     }
   ],
   "edges": [

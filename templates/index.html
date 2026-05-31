@@ -347,8 +347,8 @@
           <div id="flight-list" style="overflow-y:auto;flex:1"><!-- populated by JS --></div>
 
           <div class="travel-nav-item selected" data-repat="es" onclick="RepatNav.select('es')">
-            <div style="font-weight:700">🇪🇸 Arrived in Spain</div>
-            <div style="font-size:10px;color:#10b981;margin-top:2px">TFS → Torrejón Air Base · A310 "Reino de España"</div>
+            <div style="font-weight:700">🇪🇸 Arrived in Spain 🔴</div>
+            <div style="font-size:10px;color:#ef4444;margin-top:2px">2 confirmed · Spanish passenger (May 25) + Dutch crew (disembarked Spain)</div>
           </div>
           <div class="travel-nav-item" data-repat="fr" onclick="RepatNav.select('fr')">
             <div style="font-weight:700">🇫🇷 Arrived in France 🔴</div>
@@ -706,8 +706,8 @@
             <div style="font-size:10px;color:#ef4444;margin-top:2px">Mandatory quarantine orders issued · 2 held at UNMC through May 31</div>
           </div>
           <div class="travel-nav-item" data-quar="es" onclick="QuarNav.select('es')">
-            <div style="font-weight:700">🇪🇸 Spain</div>
-            <div style="font-size:10px;color:#10b981;margin-top:2px">Gómez Ulla Hospital · ✅ All clear</div>
+            <div style="font-weight:700">🇪🇸 Spain 🔴</div>
+            <div style="font-size:10px;color:#ef4444;margin-top:2px">2 confirmed · 1 Spanish passenger + 1 Dutch crew (disembarked Spain)</div>
           </div>
           <div class="travel-nav-item" data-quar="gb" onclick="QuarNav.select('gb')">
             <div style="font-weight:700">🇬🇧 United Kingdom</div>
@@ -862,9 +862,11 @@
                   <h3>Spain</h3>
                   <p>Gómez Ulla Central Defense Hospital, Madrid</p>
                 </div>
-                <span class="quar-status quar-status--clear">All clear</span>
+                <span class="quar-status quar-status--symptomatic">🔴 2 Confirmed</span>
               </div>
-              <div class="quar-people">14 passengers · Hospital quarantine</div>
+              <div class="quar-people">🔴 UPDATE May 25: Spanish citizen aboard MV Hondius confirmed positive · Isolated at hospital in Madrid · CIDRAP, May 27</div>
+              <div class="quar-people" style="margin-top:6px">🔴 Dutch crew member who disembarked in Spain also confirmed positive (separate from NL crew member) · Late May · CIDRAP, May 27</div>
+              <div class="quar-people" style="margin-top:6px">14 Spanish passengers · Gómez Ulla Central Defense Hospital · 1 previously confirmed (PESP_GU01)</div>
               <div class="quar-progress-wrap">
                 <div class="quar-progress-label">
                   <span class="quar-day-label">Day 1 of 21</span>
@@ -1109,7 +1111,7 @@
             <div class="info-fact"><span class="info-fact-label">Exposure origin</span><span>Dutch index couple believed infected during wildlife/bird-watching excursion in Ushuaia; traveled Argentina, Chile, and Uruguay before boarding</span></div>
             <div class="info-fact"><span class="info-fact-label">Current location</span><span>⚓ Docked — Port of Granadilla, Tenerife, Canary Islands. Disembarkation underway May 10, 2026.</span></div>
             <div class="info-fact"><span class="info-fact-label">Deaths</span><span>3 — Dutch male (Apr 11), Dutch female (Apr 26), German female (May 2)</span></div>
-            <div class="info-fact"><span class="info-fact-label">WHO count</span><span><strong style="color:#4ade80">11 reported · 10 confirmed · 1 probable/suspected · 3 deaths</strong> — Canadian case confirmed May 18, bringing confirmed total to 10 · NBC News / PHAC / ABC7, May 18</span></div>
+            <div class="info-fact"><span class="info-fact-label">WHO count</span><span><strong style="color:#4ade80">13 cases · 3 deaths</strong> as of May 27 · All cases passengers or crew of MV Hondius · No community spread confirmed · CIDRAP, May 27</span></div>
             <div class="info-fact"><span class="info-fact-label">CDC (US)</span><span><strong style="color:#4ade80">0 confirmed U.S. cases</strong> as of May 15 · <strong>41 people monitored</strong>: 16 at UNMC quarantine unit (incl. Dr. Kornfeld, moved from biocontainment after subsequent negative tests) · 2 at Emory Atlanta · 7 St. Helena returnees (state monitoring) · 16 April 25 Johannesburg flight contacts · 10 states monitoring: AZ, CA, GA, KS, MD, MN, NJ, TX, VA, WA · Yahoo News / CDC, May 15</span></div>
             <div class="info-fact"><span class="info-fact-label">Italy 🇮🇹</span><span>⚠️ 1 of 4 monitored Italians (young man, Calabria) has developed symptoms — samples transferred to Lazzaro Spallanzani National Institute, Rome for analysis (May 13). The 4 were KLM flight contacts of the deceased Dutch woman. Italy Health Ministry: "maximum precaution" protocol — 42-day quarantine + daily monitoring.</span></div>
             <div class="info-fact"><span class="info-fact-label">WHO notified</span><span>May 2, 2026</span></div>
@@ -1166,7 +1168,7 @@
           <div class="info-facts">
             <div class="info-fact"><span class="info-fact-label">David Fitter<br><span style="font-weight:400;text-transform:none;letter-spacing:0">CDC Hantavirus Response Lead · May 13</span></span><span>"At this moment, I want to emphasize that the risk to the general public is low. Our top priority is to the passengers that were on the ship and American communities." 100+ CDC staff working the outbreak. — CDC press conference, Statesman Journal May 13</span></div>
             <div class="info-fact"><span class="info-fact-label">Dr. Brendan Jackson<br><span style="font-weight:400;text-transform:none;letter-spacing:0">CDC Acting Director, High-Consequence Pathogens · May 13</span></span><span>"The passengers that are being monitored that were on shared flights were separate from the passengers who were on the ship at the time the outbreak was detected — they had actually left the ship before the outbreak was detected. Passengers on the ship after detection were transported directly to Nebraska." — CDC press conference, May 13</span></div>
-            <div class="info-fact"><span class="info-fact-label">Dr. Tedros<br><span style="font-weight:400;text-transform:none;letter-spacing:0">WHO Director-General · May 12</span></span><span><strong style="color:#4ade80">10 hantavirus cases confirmed</strong> as of May 12, 2026, linked to the MV Hondius cruise ship. "While this is a serious incident, WHO assesses the public health risk as low. More cases may be reported given the incubation period." — TeleSUR, May 13</span></div>
+            <div class="info-fact"><span class="info-fact-label">Dr. Tedros<br><span style="font-weight:400;text-transform:none;letter-spacing:0">WHO Director-General · May 24</span></span><span>"The situation is stable for now. We continue to remain vigilant and in close contact with all relevant governments. All passengers and crew remain in quarantine and under close monitoring to ensure they receive care if needed." — X/Twitter, May 24 · 13 total cases, 3 deaths · No community spread</span></div>
             <div class="info-fact"><span class="info-fact-label">Stéphanie Rist<br><span style="font-weight:400;text-transform:none;letter-spacing:0">French Health Minister · May 14</span></span><span>"As of today, all close contacts of a person who tested positive for hantavirus, present in France, have tested negative, without exception." 26 contacts tested 3x/week going forward. Authorities will no longer communicate results unless a positive is detected. — X/Twitter, May 14</span></div>
             <div class="info-fact"><span class="info-fact-label">Dr. Van Kerkhove<br><span style="font-weight:400;text-transform:none;letter-spacing:0">WHO · May 15</span></span><span>"I want to be unequivocal here: this is not SARS-CoV-2. This is not the start of a COVID pandemic." — and on mutation: "What they are telling me is that they haven't identified any changes to suggest a change in the virus to make it more transmissible, more severe, anything like that." — WGN/NewsNation, May 15</span></div>
             <div class="info-fact"><span class="info-fact-label">Dr. Bonnie Henry<br><span style="font-weight:400;text-transform:none;letter-spacing:0">BC Provincial Health Officer · May 16</span></span><span>"Clearly, this is not what we hoped for, but it is what we planned for." On the virus: "Hantavirus is a very different virus than the other respiratory viruses that we've been dealing with — like Covid, like influenza, like measles — and it remains one that we do not consider to have pandemic potential." — CBC / BBC, May 16</span></div>

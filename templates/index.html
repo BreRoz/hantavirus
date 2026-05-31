@@ -113,15 +113,6 @@
       <div class="stat-chip stat-chip--total">
         <span>Tracked</span><span class="stat-chip-count" id="stat-total">—</span>
       </div>
-      <div class="stat-chip stat-chip--total" style="color:var(--color-gen-0)">
-        <span>Gen 0</span><span class="stat-chip-count" id="stat-gen-0">—</span>
-      </div>
-      <div class="stat-chip stat-chip--total" style="color:var(--color-gen-1)">
-        <span>Gen 1</span><span class="stat-chip-count" id="stat-gen-1">—</span>
-      </div>
-      <div class="stat-chip stat-chip--total" style="color:var(--color-gen-2)">
-        <span>Gen 2+</span><span class="stat-chip-count" id="stat-gen-2plus">—</span>
-      </div>
     </div>
 
     <div class="header-actions">
@@ -129,10 +120,6 @@
         <span class="header-updated-dot"></span>
         <span id="header-last-updated">—</span>
       </div>
-      <button class="reader-toggle-btn" id="btn-reader-toggle" title="Switch to mobile-friendly card view">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        Mobile View
-      </button>
     </div>
   </header>
 
@@ -140,9 +127,6 @@
   <nav class="tab-nav" role="tablist">
     <button class="tab-btn active" data-tab="overview" role="tab">
       World Map
-    </button>
-    <button class="tab-btn" data-tab="transmission" role="tab">
-      Transmission
     </button>
     <button class="tab-btn" data-tab="flights" role="tab">
       Travel Exposure
@@ -168,18 +152,14 @@
       </div>
     </div>
 
-    <div class="sidebar-section">
-      <div class="sidebar-label">Generation</div>
-      <div class="filter-pills" id="gen-filter-pills">
-        <label class="filter-pill filter-pill--gen-0"><input type="checkbox" value="0" checked> G0</label>
-        <label class="filter-pill filter-pill--gen-1"><input type="checkbox" value="1" checked> G1</label>
-        <label class="filter-pill filter-pill--gen-2"><input type="checkbox" value="2" checked> G2</label>
-        <label class="filter-pill filter-pill--gen-3"><input type="checkbox" value="3" checked> G3+</label>
-      </div>
-    </div>
-
     <div class="sidebar-section" style="padding-bottom:var(--space-2)">
       <div class="sidebar-label">Cases <span id="sidebar-count" style="font-weight:400;text-transform:none;letter-spacing:0"></span></div>
+    </div>
+    <div style="margin:12px 16px;padding:14px 16px;background:rgba(74,222,128,0.06);border:1px solid rgba(74,222,128,0.2);border-radius:8px;font-size:12px;line-height:1.8;color:rgba(255,255,255,0.75)">
+      <div style="font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#4ade80;margin-bottom:8px">Current Situation — May 27, 2026</div>
+      <strong style="color:rgba(255,255,255,0.9)">13 confirmed cases · 3 deaths · 0 community spread</strong><br>
+      All cases are passengers or crew of the MV Hondius. The ship arrived Rotterdam May 18 for disinfection. WHO Director-General Tedros: <em>"The situation is stable for now."</em> (May 24)<br>
+      <span style="color:rgba(255,255,255,0.5);font-size:11px">US: 0 confirmed · 41 monitored · mandatory quarantine orders through May 31 &nbsp;·&nbsp; Canada: 1 confirmed (Yukon) &nbsp;·&nbsp; Spain: 2 confirmed &nbsp;·&nbsp; Netherlands: 1 crew confirmed</span>
     </div>
     <div class="case-list" id="case-list"></div>
 
@@ -229,90 +209,6 @@
       </div>
     </div>
 
-    <!-- Tab 2: Transmission (merged Chains + Timeline) -->
-    <div class="tab-pane" id="tab-transmission">
-      <div class="travel-layout">
-
-        <!-- Left: sub-nav -->
-        <div class="travel-left-panel">
-          <div class="travel-nav-item selected" data-trans="chains" onclick="TransNav.select('chains')" style="padding:14px 16px;font-weight:600">Transmission Chains</div>
-          <div class="travel-nav-item" data-trans="timeline" onclick="TransNav.select('timeline')" style="padding:14px 16px;font-weight:600">Transmission Timeline</div>
-        </div>
-
-        <!-- Right: content panes -->
-        <div class="travel-right-panel">
-
-          <!-- Chains pane -->
-          <div id="trans-content-chains" class="travel-content-pane" style="display:flex;flex-direction:column;height:100%;width:100%">
-            <div class="chain-layout" style="display:flex;flex-direction:column;height:100%;width:100%">
-              <div class="chain-toolbar">
-                <span class="chain-toolbar-label">Layout</span>
-                <div class="btn-group">
-                  <button class="btn btn--ghost btn--sm active" id="layout-force" title="Force-directed">Force</button>
-                  <button class="btn btn--ghost btn--sm" id="layout-timeline" title="Timeline (left=early, right=late)">Timeline</button>
-                </div>
-
-                <span class="chain-toolbar-label" style="margin-left:var(--space-2)">Show</span>
-                <label class="filter-pill filter-pill--all" style="font-size:var(--text-xs)">
-                  <input type="checkbox" id="show-exposure-nodes" checked> Exposure events
-                </label>
-                <label class="filter-pill filter-pill--all" style="font-size:var(--text-xs)">
-                  <input type="checkbox" id="show-flight-nodes" checked> Flights
-                </label>
-
-                <div style="margin-left:auto;display:flex;gap:var(--space-3);align-items:center">
-                  <!-- Generation legend -->
-                  <div class="gen-legend">
-                    <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-gen-0)"></span>Gen 0</div>
-                    <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-gen-1)"></span>Gen 1</div>
-                    <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-gen-2)"></span>Gen 2</div>
-                    <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-gen-3)"></span>Gen 3+</div>
-                    <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-node-exposure);border-radius:2px;width:10px;height:10px"></span>Exposure</div>
-                    <div class="gen-legend-item"><span class="gen-dot" style="background:var(--color-node-flight);clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);width:10px;height:10px;border-radius:0"></span>Flight</div>
-                  </div>
-                  <button class="btn btn--ghost btn--sm" id="chain-fit-btn">⊡ Fit</button>
-                </div>
-              </div>
-              <div id="chain-cy"></div>
-            </div>
-          </div>
-
-          <!-- Timeline pane -->
-          <div id="trans-content-timeline" class="travel-content-pane" style="display:none;flex-direction:column;height:100%;width:100%">
-            <div class="timeline-layout" style="display:flex;flex-direction:column;height:100%;width:100%">
-              <div class="timeline-toolbar">
-                <span class="chain-toolbar-label">Sort by</span>
-                <div class="btn-group">
-                  <button class="btn btn--ghost btn--sm active" id="tl-sort-onset">Onset date</button>
-                  <button class="btn btn--ghost btn--sm" id="tl-sort-gen">Generation</button>
-                </div>
-                <div style="margin-left:auto;display:flex;gap:var(--space-4);align-items:center;font-size:var(--text-xs)">
-                  <div style="display:flex;align-items:center;gap:6px;color:var(--color-text-muted)">
-                    <div style="width:20px;height:10px;background:rgba(255,255,255,0.06);border:1px dashed rgba(255,255,255,0.2);border-radius:2px"></div>
-                    Incubation window (14 days)
-                  </div>
-                  <div style="display:flex;align-items:center;gap:6px;color:var(--color-text-muted)">
-                    <div style="width:20px;height:10px;background:rgba(79,142,247,0.4);border-radius:2px"></div>
-                    Infectious period
-                  </div>
-                  <div style="display:flex;align-items:center;gap:6px;color:var(--color-text-muted)">
-                    <span style="font-size:14px">✈</span> Flight event
-                  </div>
-                  <div style="display:flex;align-items:center;gap:6px;color:var(--color-text-muted)">
-                    <span style="font-size:12px">●</span> Onset
-                  </div>
-                </div>
-              </div>
-              <div class="gantt-wrapper">
-                <svg id="gantt-svg"></svg>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
     <!-- Tab 3: Travel Exposure (merged) -->
     <div class="tab-pane" id="tab-flights">
       <div class="travel-layout">
@@ -323,25 +219,13 @@
           <div class="travel-nav-item" data-section="deck" onclick="TravelNav.select('deck')">MV Hondius — Deck Schematic</div>
           <div class="travel-nav-item" data-section="exposure" onclick="TravelNav.select('exposure')">MV Hondius — Exposure Events</div>
           <div class="travel-flights-divider">Shore Stops</div>
-          <div class="travel-nav-item" data-section="shore-sgeorgia" onclick="TravelNav.select('shore-sgeorgia')">
-            <div style="font-weight:700">South Georgia Island</div>
-            <div style="font-size:10px;color:var(--color-text-muted);margin-top:2px">Apr 4–7 · Shore excursions</div>
-          </div>
           <div class="travel-nav-item" data-section="shore-tristan" onclick="TravelNav.select('shore-tristan')">
             <div style="font-weight:700">Tristan da Cunha</div>
             <div style="font-size:10px;color:var(--color-text-muted);margin-top:2px">Apr 13–16 · Inaccessible &amp; Nightingale Is.</div>
           </div>
-          <div class="travel-nav-item" data-section="shore-gough" onclick="TravelNav.select('shore-gough')">
-            <div style="font-weight:700">Gough Island</div>
-            <div style="font-size:10px;color:var(--color-text-muted);margin-top:2px">Apr 17 · Shore stop</div>
-          </div>
           <div class="travel-nav-item" data-section="shore-sthelena" onclick="TravelNav.select('shore-sthelena')">
             <div style="font-weight:700">St. Helena</div>
             <div style="font-size:10px;color:#f97316;margin-top:2px">Apr 21–24 · 32 guests disembarked</div>
-          </div>
-          <div class="travel-nav-item" data-section="shore-ascension" onclick="TravelNav.select('shore-ascension')">
-            <div style="font-weight:700">Ascension Island</div>
-            <div style="font-size:10px;color:var(--color-text-muted);margin-top:2px">Apr 27 · Medevac point</div>
           </div>
           <div class="travel-flights-divider">Repatriation Flights</div>
           <div id="flight-list" style="overflow-y:auto;flex:1"><!-- populated by JS --></div>
@@ -430,16 +314,6 @@
           </div>
 
           <!-- Shore stop panes -->
-          <div id="travel-content-shore-sgeorgia" class="travel-content-pane" style="display:none">
-            <div class="panel-header"><span class="panel-title">South Georgia Island — Apr 4–7, 2026</span></div>
-            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
-              <div class="travel-status-row muted">South Atlantic · British Overseas Territory · Pop. ~30 (research staff only)</div>
-              <div class="travel-status-row muted">Passengers and crew went ashore for wildlife excursions — penguin colonies, elephant seals, historic Grytviken whaling station</div>
-              <div class="travel-status-row muted">No permanent civilian population — contact limited to fellow passengers and expedition guides</div>
-              <div class="travel-acc-note" style="margin-top:16px">One of the first stops after departing Ushuaia. Passengers mingled on shore in small groups. No cases have been linked specifically to this stop, but it preceded the earliest known symptom onset dates.</div>
-            </div>
-          </div>
-
           <div id="travel-content-shore-tristan" class="travel-content-pane" style="display:none">
             <div class="panel-header"><span class="panel-title">Tristan da Cunha — Apr 13–16, 2026</span></div>
             <div style="padding:var(--space-4);overflow-y:auto;flex:1">
@@ -451,16 +325,6 @@
             </div>
           </div>
 
-          <div id="travel-content-shore-gough" class="travel-content-pane" style="display:none">
-            <div class="panel-header"><span class="panel-title">Gough Island — Apr 17, 2026</span></div>
-            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
-              <div class="travel-status-row muted">South Atlantic · British Overseas Territory · Uninhabited except for a small South African weather station (~6 staff)</div>
-              <div class="travel-status-row muted">Passengers went ashore for wildlife viewing — seabirds, endemic species. Gough Island is a UNESCO World Heritage site.</div>
-              <div class="travel-status-row muted">Minimal local contact — weather station staff may have had brief interaction with passengers at the shoreline</div>
-              <div class="travel-acc-note" style="margin-top:16px">No cases have been linked to this stop. Low-risk given very small isolated population present.</div>
-            </div>
-          </div>
-
           <div id="travel-content-shore-sthelena" class="travel-content-pane" style="display:none">
             <div class="panel-header"><span class="panel-title">St. Helena — Apr 21–24, 2026</span></div>
             <div style="padding:var(--space-4);overflow-y:auto;flex:1">
@@ -469,17 +333,6 @@
               <div class="travel-status-row amber">Passengers who disembarked spent time ashore in Jamestown and surrounding areas — shops, restaurants, tourist sites — before flying or sailing onward</div>
               <div class="travel-status-row amber">Dutch index couple left the ship here and traveled onward — they had been symptomatic or pre-symptomatic during their time aboard</div>
               <div class="travel-acc-note" style="margin-top:16px">Most epidemiologically significant shore stop. 32 passengers dispersed from here — some flying to the UK and Europe, potentially carrying the virus before the outbreak was identified. Local St. Helena health authorities were subsequently alerted.</div>
-            </div>
-          </div>
-
-          <div id="travel-content-shore-ascension" class="travel-content-pane" style="display:none">
-            <div class="panel-header"><span class="panel-title">Ascension Island — Apr 27, 2026</span></div>
-            <div style="padding:var(--space-4);overflow-y:auto;flex:1">
-              <div class="travel-status-row muted">South Atlantic · British Overseas Territory · Pop. ~800 (military and contractor staff) · RAF Ascension Island base</div>
-              <div class="travel-status-row amber">2 guests medevaced off the ship here — symptomatic British national (P003) and American partner (PUSPAR01)</div>
-              <div class="travel-status-row muted">Not a standard shore stop — used as a medical evacuation point as the ship's situation became more urgent</div>
-              <div class="travel-status-row muted">RAF base on the island provided logistics for the medevac · Island population is largely military and contractors</div>
-              <div class="travel-acc-note" style="margin-top:16px">First formal medevac of the voyage — 2 passengers transferred here on Apr 27 as symptoms escalated. After this point the ship had 147 remaining aboard.</div>
             </div>
           </div>
 
@@ -699,7 +552,7 @@
           </div>
           <div class="travel-nav-item" data-quar="fr" onclick="QuarNav.select('fr')">
             <div style="font-weight:700">🇫🇷 France</div>
-            <div style="font-size:10px;color:#ef4444;margin-top:2px">Paris area · 🔴 1 critically ill (ECMO)</div>
+            <div style="font-size:10px;color:#ef4444;margin-top:2px">Initial 21-day quarantine ended May 31 · Extended — 1 critically ill</div>
           </div>
           <div class="travel-nav-item" data-quar="us" onclick="QuarNav.select('us')">
             <div style="font-weight:700">🇺🇸 United States 🔴</div>
@@ -711,7 +564,7 @@
           </div>
           <div class="travel-nav-item" data-quar="gb" onclick="QuarNav.select('gb')">
             <div style="font-weight:700">🇬🇧 United Kingdom</div>
-            <div style="font-size:10px;color:#10b981;margin-top:2px">Arrowe Park → home isolation · ✅ Monitoring</div>
+            <div style="font-size:10px;color:var(--color-text-muted);margin-top:2px">21-day quarantine ended May 31 · Discharged to home isolation</div>
           </div>
           <div class="travel-nav-item" data-quar="nl" onclick="QuarNav.select('nl')">
             <div style="font-weight:700">🇳🇱 Netherlands 🔴</div>
@@ -772,6 +625,7 @@
           <div id="quar-detail-fr" class="travel-content-pane quar-card quar-card--symptomatic" data-arrival="2026-05-10" data-duration="21" style="display:none">
             <div class="panel-header"><span class="panel-title">🇫🇷 France</span></div>
             <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="travel-status-row muted" style="background:rgba(74,222,128,0.06);border-left:3px solid rgba(74,222,128,0.4);color:rgba(255,255,255,0.65)">Initial 21-day facility quarantine ended May 31 · Patient with ECMO remains under hospital care</div>
               <div class="quar-header">
                 <div class="quar-flag">🇫🇷</div>
                 <div class="quar-icon">
@@ -889,6 +743,7 @@
           <div id="quar-detail-gb" class="travel-content-pane quar-card quar-card--monitoring" data-arrival="2026-05-10" data-duration="21" style="display:none">
             <div class="panel-header"><span class="panel-title">🇬🇧 United Kingdom</span></div>
             <div style="padding:var(--space-4);overflow-y:auto;flex:1">
+              <div class="travel-status-row muted" style="color:rgba(255,255,255,0.55)">21-day quarantine at Arrowe Park ended May 31 · Passengers discharged to home isolation to complete 42-day period</div>
               <div class="quar-header">
                 <div class="quar-flag">🇬🇧</div>
                 <div class="quar-icon">

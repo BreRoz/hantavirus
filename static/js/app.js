@@ -543,38 +543,14 @@ const OverviewTab = {
       iconAnchor: [16, 36],
     });
 
-    // Glowing airplane SVG (amber) — repatriation flights departing
-    const planeIcon = L.divIcon({
-      html: `
-        <div style="filter:drop-shadow(0 0 6px #f59e0b) drop-shadow(0 0 14px #f59e0b88);animation:pulse-live 2s infinite">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 18 L24 8 L28 10 L18 18 L28 22 L26 26 L18 22 L14 28 L10 27 L14 20 L6 18Z" stroke="#f59e0b" stroke-width="1.6" fill="rgba(245,158,11,0.15)" stroke-linejoin="round"/>
-          </svg>
-        </div>`,
-      className: "",
-      iconSize: [36, 36],
-      iconAnchor: [18, 18],
-    });
+    const flightsPos = [28.48, -16.25];
 
     // Tenerife: disembarkation point (simple circle marker, ship has sailed)
     L.circleMarker(tenerifePos, {
       radius: 5, color: "#2dd4bf", fillColor: "#2dd4bf", fillOpacity: 0.5, weight: 1.5,
-    }).bindTooltip("Tenerife — MV Hondius disembarkation point · May 10, 2026 · Ship now en route to Rotterdam", {
+    }).bindTooltip("Tenerife — MV Hondius disembarkation point · May 10, 2026 · All repatriation flights complete", {
       permanent: false, className: "dark-tooltip", direction: "top",
     }).addTo(this._map);
-
-    // Repatriation flights marker (offset slightly from ship)
-    const flightsPos = [28.48, -16.25];
-    L.marker(flightsPos, { icon: planeIcon, zIndexOffset: 999 })
-      .bindPopup(`
-        <div style="font-family:Inter,sans-serif;min-width:200px">
-          <div style="font-weight:700;font-size:12px;color:#10b981;margin-bottom:4px">✈️ Repatriation Flights — TFS Airport</div>
-          <div style="font-size:11px;color:#10b981;font-weight:600">✅ ALL FLIGHTS COMPLETE — May 10–15, 2026</div>
-          <div style="font-size:11px;color:#10b981;margin-top:6px">🇪🇸 🇫🇷 🇳🇱 🇺🇸 🇬🇧 🇩🇪 🇨🇦 🇧🇪 🇮🇪 ✓ DEPARTED & ARRIVED</div>
-          <div style="font-size:11px;color:#10b981;margin-top:2px">🇦🇺 + 🇳🇿 → Netherlands → Perth ✓ ARRIVED May 15</div>
-          <div style="font-size:10px;color:#aaa;margin-top:6px">All passengers disembarked May 10–11 · MV Hondius now en route Rotterdam</div>
-        </div>`, { className: "dark-popup" })
-      .addTo(this._map);
 
     // Flight routes from TFS Airport → destination countries (full manifest)
     // confirmed=true: flight officially confirmed | crew=true: crew-only nationality
@@ -596,14 +572,13 @@ const OverviewTab = {
       const color = status === "symptomatic" ? "#ef4444" : status === "monitoring" ? "#f59e0b" : "#10b981";
       return L.divIcon({
         className: "",
-        iconSize: [36, 46],
-        iconAnchor: [18, 23],
-        tooltipAnchor: [0, -26],
+        iconSize: [28, 28],
+        iconAnchor: [14, 14],
+        tooltipAnchor: [0, -18],
         html: `<div style="color:${color};filter:drop-shadow(0 0 5px ${color}99)">
-          <svg viewBox="0 0 44 56" width="36" height="46" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="22" cy="28" rx="19" ry="25" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
-            <circle cx="22" cy="16" r="5" fill="currentColor"/>
-            <path d="M13 42 Q13 29 22 29 Q31 29 31 42 Z" fill="currentColor"/>
+          <svg viewBox="0 0 44 44" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="18" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3.5"/>
+            <circle cx="22" cy="22" r="5" fill="currentColor"/>
           </svg>
         </div>`
       });
@@ -655,36 +630,7 @@ const OverviewTab = {
     // Ship's Rotterdam disinfection route removed from map — overlapped with NL quarantine icon.
     // Detail noted in Docking Notes pane instead.
 
-    // Tristan da Cunha — suspected case, British paratroopers airdropped
-    const tristanPos = [-37.067, -12.311];
-    const tristanIcon = L.divIcon({
-      html: `<div style="filter:drop-shadow(0 0 6px #ef4444) drop-shadow(0 0 14px #ef444499);animation:pulse-live 1.5s infinite">
-        <svg width="36" height="40" viewBox="0 0 36 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Parachute canopy -->
-          <path d="M4 16 Q4 4 18 4 Q32 4 32 16" stroke="#ef4444" stroke-width="1.8" fill="rgba(239,68,68,0.15)" stroke-linecap="round"/>
-          <!-- Suspension lines -->
-          <line x1="4"  y1="16" x2="18" y2="30" stroke="#ef4444" stroke-width="1.2" opacity="0.8"/>
-          <line x1="11" y1="10" x2="18" y2="30" stroke="#ef4444" stroke-width="1.2" opacity="0.8"/>
-          <line x1="25" y1="10" x2="18" y2="30" stroke="#ef4444" stroke-width="1.2" opacity="0.8"/>
-          <line x1="32" y1="16" x2="18" y2="30" stroke="#ef4444" stroke-width="1.2" opacity="0.8"/>
-          <!-- Person / harness -->
-          <rect x="15" y="29" width="6" height="7" rx="1.5" stroke="#ef4444" stroke-width="1.5" fill="rgba(239,68,68,0.3)"/>
-        </svg>
-      </div>`,
-      className: "", iconSize: [36, 40], iconAnchor: [18, 40],
-    });
-    L.marker(tristanPos, { icon: tristanIcon, zIndexOffset: 1100 })
-      .bindPopup(`
-        <div style="font-family:Inter,sans-serif;min-width:210px">
-          <div style="font-weight:700;font-size:12px;color:#ef4444;margin-bottom:4px">🪂 TRISTAN DA CUNHA — SUSPECTED CASE</div>
-          <div style="font-size:11px;color:#ccc">British Overseas Territory · Pop. ~200 · World's most remote inhabited island · No airstrip</div>
-          <div style="font-size:11px;color:#f97316;margin-top:4px;font-weight:600">British man — MV Hondius passenger · Ship docked Apr 13–15 · Symptoms reported Apr 28 · Stable, in isolation</div>
-          <div style="font-size:11px;color:#10b981;margin-top:4px;font-weight:600">🪖 16 Air Assault Brigade: 6 paratroopers + 2 clinicians jumped from RAF A400M</div>
-          <div style="font-size:11px;color:#aaa;margin-top:2px">RAF Brize Norton → Ascension Is. (6,788 km) → Tristan da Cunha (3,000 km) · Refuelled by RAF Voyager</div>
-          <div style="font-size:11px;color:#aaa;margin-top:2px">Oxygen at critical level on island · First-ever UK humanitarian parachute medical deployment</div>
-          <div style="font-size:10px;color:#666;margin-top:4px;font-style:italic">Source: Reuters / UK MoD · May 10, 2026</div>
-        </div>`, { className: "dark-popup" })
-      .addTo(this._map);
+    // Tristan da Cunha — parachute marker removed (outbreak phase complete)
   },
 
   _fit() {

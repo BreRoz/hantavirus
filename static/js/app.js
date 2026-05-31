@@ -549,7 +549,7 @@ const OverviewTab = {
     // confirmed=true: flight officially confirmed | crew=true: crew-only nationality
     const flightDestinations = [
       // ── Confirmed repatriation flights ──────────────────────────────────────
-      { pos: [40.42, -3.70],  flag: "🇪🇸", label: "Spain · 14 passengers · Quarantine: Gómez Ulla Hospital, Madrid · All asymptomatic", count: 14, confirmed: true, landed: true, quarStatus: "clear",       arrivedDate: "2026-05-10" },
+      { pos: [40.55, -3.70],  flag: "🇪🇸", label: "Spain · 14 passengers · Quarantine: Gómez Ulla Hospital, Madrid · 2 confirmed positive", count: 14, confirmed: true, landed: true, quarStatus: "symptomatic", arrivedDate: "2026-05-10" },
       { pos: [48.97,  2.44],  flag: "🇫🇷", label: "France · 5 passengers · Quarantine: Paris · ⚠ 1 of 5 symptomatic in-flight — testing underway", count: 5, confirmed: true, landed: true, quarStatus: "symptomatic", arrivedDate: "2026-05-10" },
       { pos: [49.25, -123.12], flag: "🇨🇦", label: "Canada · 4 passengers · LANDED British Columbia · Quarantine: 21-42 day isolation · All asymptomatic", count: 4, confirmed: true, landed: true, quarStatus: "clear", arrivedDate: "2026-05-11" },
       { pos: [51.45,  5.37],  flag: "🇳🇱", label: "Netherlands · 26 passengers · Quarantine: Eindhoven · incl. 2 Indian crew members · All asymptomatic", count: 26, confirmed: true, landed: true, quarStatus: "clear",       arrivedDate: "2026-05-10" },
@@ -628,10 +628,10 @@ const OverviewTab = {
     // DRC Congo — Ebola outbreak crosslink
     const drcPos = [-2.5, 23.5];
     const drcIcon = L.divIcon({
-      html: `<div style="background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.6);border-radius:4px;padding:3px 6px;font-size:10px;font-family:Inter,sans-serif;color:#fca5a5;white-space:nowrap;box-shadow:0 0 8px rgba(239,68,68,0.3)">🦠 Ebola outbreak</div>`,
+      html: `<div style="font-size:22px;filter:drop-shadow(0 0 6px rgba(239,68,68,0.6));cursor:pointer">🦠</div>`,
       className: "",
-      iconSize: [110, 24],
-      iconAnchor: [55, 12],
+      iconSize: [28, 28],
+      iconAnchor: [14, 14],
     });
     L.marker(drcPos, { icon: drcIcon, zIndexOffset: 800 })
       .bindPopup(`

@@ -153,16 +153,6 @@
 
   <!-- ===== SIDEBAR ===== -->
   <aside class="sidebar">
-    <div class="sidebar-section">
-      <div class="sidebar-label">Status</div>
-      <div class="filter-pills">
-        <label class="filter-pill filter-pill--confirmed"><input type="checkbox" value="confirmed" checked> Confirmed</label>
-        <label class="filter-pill filter-pill--symptomatic"><input type="checkbox" value="symptomatic" checked> Monitoring — Symptomatic</label>
-        <label class="filter-pill filter-pill--asymptomatic"><input type="checkbox" value="asymptomatic" checked> Monitoring — Asymptomatic</label>
-        <label class="filter-pill filter-pill--recovered"><input type="checkbox" value="recovered" checked> Recovered</label>
-        <label class="filter-pill filter-pill--all"><input type="checkbox" value="deceased" checked> Deceased</label>
-      </div>
-    </div>
 
     <div class="sidebar-section" style="padding-bottom:var(--space-2)">
       <div class="sidebar-label">Cases <span id="sidebar-count" style="font-weight:400;text-transform:none;letter-spacing:0"></span></div>
@@ -1168,29 +1158,6 @@
 <div class="toast-container" id="toast-container" aria-live="polite"></div>
 
 
-<!-- ===== DISCLAIMER MODAL ===== -->
-<div class="disclaimer-modal" id="disclaimer-modal">
-  <div class="disclaimer-modal-overlay" onclick="DisclaimerSystem.closeModal()"></div>
-  <div class="disclaimer-modal-content" style="max-width:480px">
-    <div class="disclaimer-modal-header">
-      <span style="font-size:18px;flex-shrink:0">🦠</span>
-      <div class="disclaimer-modal-title" style="color:#4ade80">NEW TRACKER LAUNCHED — MAY 20, 2026</div>
-    </div>
-    <div class="disclaimer-modal-body" style="text-align:center;padding:24px 20px">
-      <p style="font-size:15px;line-height:1.8;color:rgba(255,255,255,0.85)">Track the Ebola virus outbreak with this free tracker</p>
-      <a href="https://ebola.fyi" target="_blank" rel="noopener"
-         style="display:inline-block;margin-top:16px;padding:10px 22px;background:rgba(74,222,128,0.12);border:1px solid rgba(74,222,128,0.4);border-radius:6px;color:#4ade80;text-decoration:none;font-size:13px;font-family:var(--font-mono);letter-spacing:0.05em">
-        ebola.fyi ↗
-      </a>
-    </div>
-    <div class="disclaimer-modal-footer">
-      <label>
-        <input type="checkbox" id="disclaimer-no-show"> DON'T SHOW AGAIN
-      </label>
-      <button class="disclaimer-close-btn" onclick="DisclaimerSystem.closeModal()">[ CLOSE ]</button>
-    </div>
-  </div>
-</div>
 
 <!-- ===== READER MODE PANEL ===== -->
 <div id="reader-panel" class="reader-panel" aria-hidden="true">

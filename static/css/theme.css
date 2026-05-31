@@ -312,6 +312,7 @@ body {
   gap: 0;
   padding: 0 var(--space-4);
   overflow-x: auto;
+  overflow-y: visible;
   scrollbar-width: none;
 }
 .tab-nav::-webkit-scrollbar { display: none; }

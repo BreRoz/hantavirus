@@ -545,13 +545,6 @@ const OverviewTab = {
 
     const flightsPos = [28.48, -16.25];
 
-    // Tenerife: disembarkation point (simple circle marker, ship has sailed)
-    L.circleMarker(tenerifePos, {
-      radius: 5, color: "#2dd4bf", fillColor: "#2dd4bf", fillOpacity: 0.5, weight: 1.5,
-    }).bindTooltip("Tenerife — MV Hondius disembarkation point · May 10, 2026 · All repatriation flights complete", {
-      permanent: false, className: "dark-tooltip", direction: "top",
-    }).addTo(this._map);
-
     // Flight routes from TFS Airport → destination countries (full manifest)
     // confirmed=true: flight officially confirmed | crew=true: crew-only nationality
     const flightDestinations = [

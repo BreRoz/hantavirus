@@ -631,6 +631,26 @@ const OverviewTab = {
     // Detail noted in Docking Notes pane instead.
 
     // Tristan da Cunha — parachute marker removed (outbreak phase complete)
+
+    // DRC Congo — Ebola outbreak crosslink
+    const drcPos = [-2.5, 23.5];
+    const drcIcon = L.divIcon({
+      html: `<div style="background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.6);border-radius:4px;padding:3px 6px;font-size:10px;font-family:Inter,sans-serif;color:#fca5a5;white-space:nowrap;box-shadow:0 0 8px rgba(239,68,68,0.3)">🦠 Ebola outbreak</div>`,
+      className: "",
+      iconSize: [110, 24],
+      iconAnchor: [55, 12],
+    });
+    L.marker(drcPos, { icon: drcIcon, zIndexOffset: 800 })
+      .bindPopup(`
+        <div style="font-family:Inter,sans-serif;min-width:200px">
+          <div style="font-weight:700;font-size:12px;color:#ef4444;margin-bottom:6px">🦠 Ebola Outbreak — DRC & Uganda</div>
+          <div style="font-size:11px;color:#ccc;margin-bottom:8px">WHO Public Health Emergency · Bundibugyo strain · 500+ suspected cases · 130+ deaths · May 2026</div>
+          <a href="https://ebola.fyi" target="_blank" rel="noopener"
+             style="display:inline-block;padding:5px 12px;background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.4);border-radius:4px;color:#fca5a5;text-decoration:none;font-size:11px;font-family:monospace">
+            Track it free → ebola.fyi ↗
+          </a>
+        </div>`, { className: "dark-popup" })
+      .addTo(this._map);
   },
 
   _fit() {
@@ -1775,15 +1795,14 @@ const App = {
     DetailPanel.init();
     OverviewTab.init();
     MapSlider.initUI();
-    ChainTab.init();
+    if (document.getElementById("chain-cy")) ChainTab.init();
     ExposureTab.init();
     FlightRiskTab.init();
-    TimelineTab.init();
+    if (document.getElementById("timeline-svg")) TimelineTab.init();
     CaseForm.init(() => this.refresh());
 
     // Tab activation handlers
     TabNav.onActivate("overview", () => OverviewTab.invalidate());
-    TabNav.onActivate("transmission", () => { TransNav.select(TransNav._current || "chains"); });
     TabNav.onActivate("flights", () => {
       FlightRiskTab.render(this._flights);
       ExposureTab.render(this._exposureEvents, this._cases);

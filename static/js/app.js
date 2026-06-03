@@ -653,7 +653,7 @@ const OverviewTab = {
         div.innerHTML = `
           <a href="https://amzn.to/4fpQjbI" target="_blank" rel="noopener sponsored"
              style="display:block;width:130px;background:rgba(10,18,10,0.92);border:1px solid rgba(74,222,128,0.25);border-radius:7px;overflow:hidden;text-decoration:none;box-shadow:0 2px 12px rgba(0,0,0,0.5);font-family:Inter,sans-serif">
-            <img src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0C3FXZLZ5&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=dealdossier09-20"
+            <img src="/static/img/puroair.png"
                  width="130" style="display:block" alt="PuroAir 400 HEPA Air Purifier"/>
             <div style="padding:6px 8px">
               <div style="font-size:9px;color:rgba(74,222,128,0.7);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">Sponsored</div>

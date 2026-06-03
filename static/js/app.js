@@ -644,6 +644,29 @@ const OverviewTab = {
           </a>
         </div>`, { className: "dark-popup" })
       .addTo(this._map);
+
+    // Amazon affiliate ad — PuroAir 400 HEPA (bottom-right corner)
+    const AirPurifierAd = L.Control.extend({
+      options: { position: 'bottomright' },
+      onAdd() {
+        const div = L.DomUtil.create('div');
+        div.innerHTML = `
+          <a href="https://amzn.to/4fpQjbI" target="_blank" rel="noopener sponsored"
+             style="display:block;width:130px;background:rgba(10,18,10,0.92);border:1px solid rgba(74,222,128,0.25);border-radius:7px;overflow:hidden;text-decoration:none;box-shadow:0 2px 12px rgba(0,0,0,0.5);font-family:Inter,sans-serif">
+            <img src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0C3FXZLZ5&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=dealdossier09-20"
+                 width="130" style="display:block" alt="PuroAir 400 HEPA Air Purifier"/>
+            <div style="padding:6px 8px">
+              <div style="font-size:9px;color:rgba(74,222,128,0.7);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">Sponsored</div>
+              <div style="font-size:10px;font-weight:600;color:rgba(255,255,255,0.9);line-height:1.3">PuroAir 400 HEPA Air Purifier</div>
+              <div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:2px">Filters 99.9% of airborne particles</div>
+              <div style="margin-top:6px;padding:3px 6px;background:rgba(74,222,128,0.12);border:1px solid rgba(74,222,128,0.3);border-radius:3px;font-size:9px;color:#4ade80;text-align:center">View on Amazon ↗</div>
+            </div>
+          </a>`;
+        L.DomEvent.disableClickPropagation(div);
+        return div;
+      }
+    });
+    new AirPurifierAd().addTo(this._map);
   },
 
   _fit() {

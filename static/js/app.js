@@ -645,28 +645,39 @@ const OverviewTab = {
         </div>`, { className: "dark-popup" })
       .addTo(this._map);
 
-    // Amazon affiliate ad — PuroAir 400 HEPA (bottom-right corner)
-    const AirPurifierAd = L.Control.extend({
+    // Rotating Amazon affiliate ads (bottom-right corner)
+    const _ads = [
+      { url: "https://amzn.to/4fpQjbI", name: "PuroAir 400 HEPA Air Purifier", tag: "Filters 99.9% of airborne particles" },
+      { url: "https://amzn.to/3Q16DoH", name: "Funight KN95 Masks — 50 Pack", tag: "5-layer filtration · Black" },
+      { url: "https://amzn.to/4eiMFiF", name: "Supmedic Nitrile Exam Gloves — 100ct", tag: "Latex-free · Powder-free · Medical grade" },
+      { url: "https://amzn.to/4acrKLH", name: "No-Touch Forehead Thermometer", tag: "Instant readings · Fever alarm · Silent mode" },
+    ];
+    const RotatingAd = L.Control.extend({
       options: { position: 'bottomright' },
       onAdd() {
         const div = L.DomUtil.create('div');
-        div.innerHTML = `
-          <a href="https://amzn.to/4fpQjbI" target="_blank" rel="noopener sponsored"
-             style="display:block;width:130px;background:rgba(10,18,10,0.92);border:1px solid rgba(74,222,128,0.25);border-radius:7px;overflow:hidden;text-decoration:none;box-shadow:0 2px 12px rgba(0,0,0,0.5);font-family:Inter,sans-serif">
-            <img src="/static/img/puroair.png"
-                 width="130" style="display:block" alt="PuroAir 400 HEPA Air Purifier"/>
-            <div style="padding:6px 8px">
-              <div style="font-size:9px;color:rgba(74,222,128,0.7);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">Sponsored</div>
-              <div style="font-size:10px;font-weight:600;color:rgba(255,255,255,0.9);line-height:1.3">PuroAir 400 HEPA Air Purifier</div>
-              <div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:2px">Filters 99.9% of airborne particles</div>
-              <div style="margin-top:6px;padding:3px 6px;background:rgba(74,222,128,0.12);border:1px solid rgba(74,222,128,0.3);border-radius:3px;font-size:9px;color:#4ade80;text-align:center">View on Amazon ↗</div>
-            </div>
-          </a>`;
-        L.DomEvent.disableClickPropagation(div);
+        let idx = 0;
+        const render = () => {
+          const ad = _ads[idx % _ads.length];
+          div.innerHTML = `
+            <a href="${ad.url}" target="_blank" rel="noopener sponsored"
+               style="display:block;width:148px;background:rgba(10,18,10,0.93);border:1px solid rgba(74,222,128,0.25);border-radius:7px;text-decoration:none;box-shadow:0 2px 12px rgba(0,0,0,0.5);font-family:Inter,sans-serif;padding:8px 10px">
+              <div style="font-size:9px;color:rgba(74,222,128,0.65);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:4px">Sponsored</div>
+              <div style="font-size:10px;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.35;margin-bottom:3px">${ad.name}</div>
+              <div style="font-size:9px;color:rgba(255,255,255,0.45);line-height:1.4;margin-bottom:7px">${ad.tag}</div>
+              <div style="padding:3px 6px;background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.28);border-radius:3px;font-size:9px;color:#4ade80;text-align:center">View on Amazon ↗</div>
+              <div style="display:flex;justify-content:center;gap:4px;margin-top:6px">
+                ${_ads.map((_, i) => `<span style="width:5px;height:5px;border-radius:50%;background:${i===idx%_ads.length?'#4ade80':'rgba(255,255,255,0.2)'}"></span>`).join('')}
+              </div>
+            </a>`;
+          L.DomEvent.disableClickPropagation(div);
+        };
+        render();
+        setInterval(() => { idx++; render(); }, 6000);
         return div;
       }
     });
-    new AirPurifierAd().addTo(this._map);
+    new RotatingAd().addTo(this._map);
   },
 
   _fit() {
